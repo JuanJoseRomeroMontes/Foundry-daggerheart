@@ -1,3 +1,5 @@
-2025/12/28-14:50:13.052 53c8 Recovering log #767
-2025/12/28-14:50:13.052 53c8 Delete type=0 #767
-2025/12/28-14:50:13.052 53c8 Delete type=3 #766
+2025/12/28-20:41:10.113 4cc0 Log #771: 0 ops saved to Table #772 OK
+2025/12/28-20:41:10.115 4cc0 Archiving ..\..\Data\Data\modules\the-void-unofficial\packs\transformations/000771.log: OK
+2025/12/28-20:41:10.116 4cc0 Table #299: 18 entries OK
+2025/12/28-20:41:10.120 4cc0 Archiving ..\..\Data\Data\modules\the-void-unofficial\packs\transformations/MANIFEST-000770: OK
+2025/12/28-20:41:10.127 4cc0 **** Repaired leveldb ..\..\Data\Data\modules\the-void-unofficial\packs\transformations; recovered 1 files; 7306 bytes. Some data may have been lost. ****

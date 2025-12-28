@@ -1,3 +1,5 @@
-2025/12/28-14:50:12.851 53d8 Recovering log #661
-2025/12/28-14:50:12.851 53d8 Delete type=0 #661
-2025/12/28-14:50:12.851 53d8 Delete type=3 #660
+2025/12/28-20:41:09.407 3ab8 Log #665: 0 ops saved to Table #666 OK
+2025/12/28-20:41:09.410 3ab8 Archiving ..\..\Data\Data\modules\daggerheart-extra-content\packs\loot-and-consumable-tables/000665.log: OK
+2025/12/28-20:41:09.411 3ab8 Table #5: 594 entries OK
+2025/12/28-20:41:09.418 3ab8 Archiving ..\..\Data\Data\modules\daggerheart-extra-content\packs\loot-and-consumable-tables/MANIFEST-000664: OK
+2025/12/28-20:41:09.425 3ab8 **** Repaired leveldb ..\..\Data\Data\modules\daggerheart-extra-content\packs\loot-and-consumable-tables; recovered 1 files; 101237 bytes. Some data may have been lost. ****

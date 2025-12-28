@@ -1,3 +1,4 @@
-2025/12/28-14:50:12.290 53d8 Recovering log #79
-2025/12/28-14:50:12.296 53d8 Delete type=0 #79
-2025/12/28-14:50:12.296 53d8 Delete type=3 #78
+2025/12/28-20:41:07.660 33f4 Log #83: 0 ops saved to Table #84 OK
+2025/12/28-20:41:07.662 33f4 Archiving ../../Data/Data/worlds/fe-west-marches/data/cards/000083.log: OK
+2025/12/28-20:41:07.670 33f4 Archiving ../../Data/Data/worlds/fe-west-marches/data/cards/MANIFEST-000082: OK
+2025/12/28-20:41:07.679 33f4 **** Repaired leveldb ../../Data/Data/worlds/fe-west-marches/data/cards; recovered 0 files; 0 bytes. Some data may have been lost. ****

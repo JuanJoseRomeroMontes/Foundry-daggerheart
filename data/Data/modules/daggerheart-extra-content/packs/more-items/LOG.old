@@ -1,3 +1,5 @@
-2025/12/28-14:50:12.895 539c Recovering log #504
-2025/12/28-14:50:12.900 539c Delete type=0 #504
-2025/12/28-14:50:12.900 539c Delete type=3 #503
+2025/12/28-20:41:09.522 75d0 Log #508: 0 ops saved to Table #509 OK
+2025/12/28-20:41:09.524 75d0 Archiving ..\..\Data\Data\modules\daggerheart-extra-content\packs\more-items/000508.log: OK
+2025/12/28-20:41:09.525 75d0 Table #76: 68 entries OK
+2025/12/28-20:41:09.530 75d0 Archiving ..\..\Data\Data\modules\daggerheart-extra-content\packs\more-items/MANIFEST-000507: OK
+2025/12/28-20:41:09.537 75d0 **** Repaired leveldb ..\..\Data\Data\modules\daggerheart-extra-content\packs\more-items; recovered 1 files; 42246 bytes. Some data may have been lost. ****

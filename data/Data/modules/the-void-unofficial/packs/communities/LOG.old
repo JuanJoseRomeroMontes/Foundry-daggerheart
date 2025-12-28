@@ -1,3 +1,5 @@
-2025/12/28-14:50:13.020 539c Recovering log #894
-2025/12/28-14:50:13.020 539c Delete type=0 #894
-2025/12/28-14:50:13.020 539c Delete type=3 #893
+2025/12/28-20:41:10.013 4cc0 Log #898: 0 ops saved to Table #899 OK
+2025/12/28-20:41:10.016 4cc0 Archiving ..\..\Data\Data\modules\the-void-unofficial\packs\communities/000898.log: OK
+2025/12/28-20:41:10.017 4cc0 Table #14: 13 entries OK
+2025/12/28-20:41:10.021 4cc0 Archiving ..\..\Data\Data\modules\the-void-unofficial\packs\communities/MANIFEST-000897: OK
+2025/12/28-20:41:10.027 4cc0 **** Repaired leveldb ..\..\Data\Data\modules\the-void-unofficial\packs\communities; recovered 1 files; 4492 bytes. Some data may have been lost. ****

@@ -1,3 +1,5 @@
-2025/12/28-14:50:12.995 5260 Recovering log #910
-2025/12/28-14:50:13.000 5260 Delete type=0 #910
-2025/12/28-14:50:13.000 5260 Delete type=3 #909
+2025/12/28-20:41:09.902 4cc0 Log #914: 0 ops saved to Table #915 OK
+2025/12/28-20:41:09.906 4cc0 Archiving ..\..\Data\Data\modules\the-void-unofficial\packs\subclasses/000914.log: OK
+2025/12/28-20:41:09.908 4cc0 Table #842: 129 entries OK
+2025/12/28-20:41:09.913 4cc0 Archiving ..\..\Data\Data\modules\the-void-unofficial\packs\subclasses/MANIFEST-000913: OK
+2025/12/28-20:41:09.920 4cc0 **** Repaired leveldb ..\..\Data\Data\modules\the-void-unofficial\packs\subclasses; recovered 1 files; 55191 bytes. Some data may have been lost. ****

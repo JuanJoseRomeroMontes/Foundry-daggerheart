@@ -1,3 +1,5 @@
-2025/12/28-14:50:12.820 53d8 Recovering log #679
-2025/12/28-14:50:12.828 53d8 Delete type=0 #679
-2025/12/28-14:50:12.828 53d8 Delete type=3 #678
+2025/12/28-20:41:09.302 33f4 Log #683: 0 ops saved to Table #684 OK
+2025/12/28-20:41:09.304 33f4 Archiving ..\..\Data\Data\modules\daggerheart-extra-content\packs\adversaries-features/000683.log: OK
+2025/12/28-20:41:09.308 33f4 Table #79: 429 entries OK
+2025/12/28-20:41:09.312 33f4 Archiving ..\..\Data\Data\modules\daggerheart-extra-content\packs\adversaries-features/MANIFEST-000682: OK
+2025/12/28-20:41:09.318 33f4 **** Repaired leveldb ..\..\Data\Data\modules\daggerheart-extra-content\packs\adversaries-features; recovered 1 files; 256835 bytes. Some data may have been lost. ****

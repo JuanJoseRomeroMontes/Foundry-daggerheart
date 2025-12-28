@@ -1,3 +1,5 @@
-2025/12/28-14:50:12.778 53d8 Recovering log #718
-2025/12/28-14:50:12.780 53d8 Delete type=0 #718
-2025/12/28-14:50:12.780 53d8 Delete type=3 #717
+2025/12/28-20:41:09.168 33f4 Log #722: 0 ops saved to Table #723 OK
+2025/12/28-20:41:09.171 33f4 Archiving ..\..\Data\Data\modules\daggerheart-extra-content\packs\motherboard-items/000722.log: OK
+2025/12/28-20:41:09.172 33f4 Table #106: 25 entries OK
+2025/12/28-20:41:09.176 33f4 Archiving ..\..\Data\Data\modules\daggerheart-extra-content\packs\motherboard-items/MANIFEST-000721: OK
+2025/12/28-20:41:09.182 33f4 **** Repaired leveldb ..\..\Data\Data\modules\daggerheart-extra-content\packs\motherboard-items; recovered 1 files; 5796 bytes. Some data may have been lost. ****

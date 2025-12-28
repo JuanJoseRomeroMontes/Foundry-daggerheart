@@ -1,3 +1,5 @@
-2025/12/28-14:50:12.544 53c8 Recovering log #96
-2025/12/28-14:50:12.545 53c8 Delete type=0 #96
-2025/12/28-14:50:12.545 53c8 Delete type=3 #95
+2025/12/28-20:41:08.308 75d0 Log #100: 0 ops saved to Table #101 OK
+2025/12/28-20:41:08.310 75d0 Archiving ../../Data/Data/worlds/fe-west-marches/data/users/000100.log: OK
+2025/12/28-20:41:08.311 75d0 Table #86: 8 entries OK
+2025/12/28-20:41:08.316 75d0 Archiving ../../Data/Data/worlds/fe-west-marches/data/users/MANIFEST-000099: OK
+2025/12/28-20:41:08.322 75d0 **** Repaired leveldb ../../Data/Data/worlds/fe-west-marches/data/users; recovered 1 files; 4192 bytes. Some data may have been lost. ****

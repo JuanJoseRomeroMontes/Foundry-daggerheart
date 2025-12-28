@@ -1,3 +1,5 @@
-2025/12/28-14:50:13.100 539c Recovering log #479
-2025/12/28-14:50:13.100 539c Delete type=0 #479
-2025/12/28-14:50:13.100 539c Delete type=3 #478
+2025/12/28-20:41:10.253 4cc0 Log #483: 0 ops saved to Table #484 OK
+2025/12/28-20:41:10.256 4cc0 Archiving ..\..\Data\Data\modules\the-void-unofficial\packs\adversaries--environments/000483.log: OK
+2025/12/28-20:41:10.258 4cc0 Table #153: 116 entries OK
+2025/12/28-20:41:10.263 4cc0 Archiving ..\..\Data\Data\modules\the-void-unofficial\packs\adversaries--environments/MANIFEST-000482: OK
+2025/12/28-20:41:10.268 4cc0 **** Repaired leveldb ..\..\Data\Data\modules\the-void-unofficial\packs\adversaries--environments; recovered 1 files; 90738 bytes. Some data may have been lost. ****

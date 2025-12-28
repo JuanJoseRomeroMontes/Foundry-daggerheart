@@ -1,3 +1,5 @@
-2025/12/28-14:50:12.940 539c Recovering log #375
-2025/12/28-14:50:12.940 539c Delete type=0 #375
-2025/12/28-14:50:12.940 539c Delete type=3 #374
+2025/12/28-20:41:09.684 4cc0 Log #379: 0 ops saved to Table #380 OK
+2025/12/28-20:41:09.687 4cc0 Archiving ..\..\Data\Data\modules\daggerheart-extra-content\packs\house-rules/000379.log: OK
+2025/12/28-20:41:09.688 4cc0 Table #37: 12 entries OK
+2025/12/28-20:41:09.693 4cc0 Archiving ..\..\Data\Data\modules\daggerheart-extra-content\packs\house-rules/MANIFEST-000378: OK
+2025/12/28-20:41:09.698 4cc0 **** Repaired leveldb ..\..\Data\Data\modules\daggerheart-extra-content\packs\house-rules; recovered 1 files; 2719 bytes. Some data may have been lost. ****

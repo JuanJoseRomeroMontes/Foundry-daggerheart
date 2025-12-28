@@ -1,3 +1,5 @@
-2025/12/28-14:50:12.720 539c Recovering log #83
-2025/12/28-14:50:12.720 539c Delete type=0 #83
-2025/12/28-14:50:12.720 539c Delete type=3 #82
+2025/12/28-20:41:08.992 75d0 Log #87: 0 ops saved to Table #88 OK
+2025/12/28-20:41:08.994 75d0 Archiving ..\..\Data\Data\systems\daggerheart\packs\environments/000087.log: OK
+2025/12/28-20:41:08.995 75d0 Table #5: 109 entries OK
+2025/12/28-20:41:09.001 75d0 Archiving ..\..\Data\Data\systems\daggerheart\packs\environments/MANIFEST-000086: OK
+2025/12/28-20:41:09.007 75d0 **** Repaired leveldb ..\..\Data\Data\systems\daggerheart\packs\environments; recovered 1 files; 94118 bytes. Some data may have been lost. ****

@@ -1,3 +1,5 @@
-2025/12/28-14:50:12.970 53c8 Recovering log #123
-2025/12/28-14:50:12.970 53c8 Delete type=0 #123
-2025/12/28-14:50:12.970 53c8 Delete type=3 #122
+2025/12/28-20:41:09.785 4cc0 Log #127: 0 ops saved to Table #128 OK
+2025/12/28-20:41:09.787 4cc0 Archiving ..\..\Data\Data\modules\daggerheart-extra-content\packs\subclasses/000127.log: OK
+2025/12/28-20:41:09.788 4cc0 Table #59: 33 entries OK
+2025/12/28-20:41:09.793 4cc0 Archiving ..\..\Data\Data\modules\daggerheart-extra-content\packs\subclasses/MANIFEST-000126: OK
+2025/12/28-20:41:09.798 4cc0 **** Repaired leveldb ..\..\Data\Data\modules\daggerheart-extra-content\packs\subclasses; recovered 1 files; 17061 bytes. Some data may have been lost. ****

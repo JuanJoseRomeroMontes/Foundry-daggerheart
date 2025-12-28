@@ -1,3 +1,5 @@
-2025/12/28-14:50:12.910 5260 Recovering log #437
-2025/12/28-14:50:12.912 5260 Delete type=0 #437
-2025/12/28-14:50:12.912 5260 Delete type=3 #436
+2025/12/28-20:41:09.578 75d0 Log #441: 0 ops saved to Table #442 OK
+2025/12/28-20:41:09.580 75d0 Archiving ..\..\Data\Data\modules\daggerheart-extra-content\packs\curses/000441.log: OK
+2025/12/28-20:41:09.582 75d0 Table #5: 89 entries OK
+2025/12/28-20:41:09.586 75d0 Archiving ..\..\Data\Data\modules\daggerheart-extra-content\packs\curses/MANIFEST-000440: OK
+2025/12/28-20:41:09.592 75d0 **** Repaired leveldb ..\..\Data\Data\modules\daggerheart-extra-content\packs\curses; recovered 1 files; 17298 bytes. Some data may have been lost. ****

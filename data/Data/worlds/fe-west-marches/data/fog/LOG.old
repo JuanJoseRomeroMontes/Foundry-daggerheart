@@ -1,3 +1,5 @@
-2025/12/28-14:50:12.370 539c Recovering log #81
-2025/12/28-14:50:12.379 539c Delete type=0 #81
-2025/12/28-14:50:12.379 539c Delete type=3 #80
+2025/12/28-20:41:07.843 33f4 Log #85: 0 ops saved to Table #86 OK
+2025/12/28-20:41:07.844 33f4 Archiving ../../Data/Data/worlds/fe-west-marches/data/fog/000085.log: OK
+2025/12/28-20:41:07.848 33f4 Table #71: 5 entries OK
+2025/12/28-20:41:07.855 33f4 Archiving ../../Data/Data/worlds/fe-west-marches/data/fog/MANIFEST-000084: OK
+2025/12/28-20:41:07.861 33f4 **** Repaired leveldb ../../Data/Data/worlds/fe-west-marches/data/fog; recovered 1 files; 199104 bytes. Some data may have been lost. ****

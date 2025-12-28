@@ -1,3 +1,5 @@
-2025/12/28-14:50:13.080 5260 Recovering log #573
-2025/12/28-14:50:13.080 5260 Delete type=0 #573
-2025/12/28-14:50:13.080 5260 Delete type=3 #572
+2025/12/28-20:41:10.208 4cc0 Log #577: 0 ops saved to Table #578 OK
+2025/12/28-20:41:10.211 4cc0 Archiving ..\..\Data\Data\modules\the-void-unofficial\packs\macros/000577.log: OK
+2025/12/28-20:41:10.211 4cc0 Table #5: 1 entries OK
+2025/12/28-20:41:10.217 4cc0 Archiving ..\..\Data\Data\modules\the-void-unofficial\packs\macros/MANIFEST-000576: OK
+2025/12/28-20:41:10.222 4cc0 **** Repaired leveldb ..\..\Data\Data\modules\the-void-unofficial\packs\macros; recovered 1 files; 2910 bytes. Some data may have been lost. ****

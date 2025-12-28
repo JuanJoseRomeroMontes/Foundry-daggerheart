@@ -1,3 +1,5 @@
-2025/12/28-14:50:12.920 53c8 Recovering log #444
-2025/12/28-14:50:12.927 53c8 Delete type=0 #444
-2025/12/28-14:50:12.928 53c8 Delete type=3 #443
+2025/12/28-20:41:09.630 4cc0 Log #448: 0 ops saved to Table #449 OK
+2025/12/28-20:41:09.632 4cc0 Archiving ..\..\Data\Data\modules\daggerheart-extra-content\packs\ancestry/000448.log: OK
+2025/12/28-20:41:09.635 4cc0 Table #282: 72 entries OK
+2025/12/28-20:41:09.640 4cc0 Archiving ..\..\Data\Data\modules\daggerheart-extra-content\packs\ancestry/MANIFEST-000447: OK
+2025/12/28-20:41:09.646 4cc0 **** Repaired leveldb ..\..\Data\Data\modules\daggerheart-extra-content\packs\ancestry; recovered 1 files; 39210 bytes. Some data may have been lost. ****

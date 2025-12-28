@@ -1,3 +1,5 @@
-2025/12/28-14:50:13.011 53c8 Recovering log #894
-2025/12/28-14:50:13.011 53c8 Delete type=0 #894
-2025/12/28-14:50:13.011 53c8 Delete type=3 #893
+2025/12/28-20:41:09.961 4cc0 Log #898: 0 ops saved to Table #899 OK
+2025/12/28-20:41:09.964 4cc0 Archiving ..\..\Data\Data\modules\the-void-unofficial\packs\ancestries/000898.log: OK
+2025/12/28-20:41:09.966 4cc0 Table #14: 23 entries OK
+2025/12/28-20:41:09.972 4cc0 Archiving ..\..\Data\Data\modules\the-void-unofficial\packs\ancestries/MANIFEST-000897: OK
+2025/12/28-20:41:09.979 4cc0 **** Repaired leveldb ..\..\Data\Data\modules\the-void-unofficial\packs\ancestries; recovered 1 files; 8657 bytes. Some data may have been lost. ****

@@ -1,0 +1,22 @@
+{
+  "BABELE.CompendiumTranslations": "Traduzioni",
+  "BABELE.TranslateActorHeadBtn": "Traduci",
+  "BABELE.TranslateActorTitle": "Traduci Attore",
+  "BABELE.TranslateActorHint": "Traduci automaticamente tutti gli oggetti/privilegi/incantesimi dell'attore per i quali è disponibile un compendio tradotto",
+  "BABELE.TranslateActorBtn": "Traduci!",
+  "BABELE.ExportTranslationTitle": "Esporta il File di Traduzione",
+  "BABELE.ExportTranslationBtn": "Esporta!",
+  "BABELE.ExportTranslationNotes": "seleziona il formato da uilizzare per il file di traduzione esportato. Seleziona “Nativo” per il formato originale nativo, oppure “Compatibile” nel caso in cui si intenda gestire la traduzione mediante una Localization Platform esterna (ex. Weblate, Transifex, etc..)",
+  "BABELE.ExportTranslationFormat": "Formato",
+  "BABELE.ExportTranslationFormatLegacy": "Nativo",
+  "BABELE.ExportTranslationFormatCompatible": "Compatibile",
+  "BABELE.TranslationDirTitle": "Directory File di Traduzione",
+  "BABELE.TranslationDirHint": "Immettere la directory in cui si trovano i file di traduzione locale dei compendium",
+  "BABELE.EnableTranslationExportTile": "Abilita Export Traduzioni",
+  "BABELE.EnableTranslationExportHint": "Abilita questa opzione se vuoi aggiungere un pulsante su ogni compendio per generare il file di traduzione, utile come file template da cui partire",
+  "BABELE.ShowOriginalName": "Mostra Nome Originale",
+  "BABELE.ShowOriginalNameHint": "Mostra il nome non tradotto dell'elemento del compendio oltre a quello tradotto. Ciò ti consentirà anche di filtrare in base al nome originale unitamente a quello tradotto nel widget di ricerca.",
+  "BABELE.ShowTranslateOption": "Mostra Pulsante Traduzione",
+  "BABELE.ShowTranslateOptionHint": "Abilita/disabilita il pulsante di traduzione sulle schede PG",
+  "BABELE.requireLibWrapperMessage": "Babele richiede il modulo 'libWrapper'. Si prega di installarlo e attivarlo."
+}

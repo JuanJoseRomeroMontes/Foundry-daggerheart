@@ -1,0 +1,115 @@
+{
+    "barbrawl": {
+        "translatedBy": "Lioheart",
+        "barStyle": {
+            "name": "Styl paska",
+            "hint": "Zmienia sposób wyświetlania pasków.",
+            "minimal": "Minimalistyczny (wąski, bez obramowania)",
+            "default": "Domyślny Foundry",
+            "large": "Duży (szeroki, cienkie obramowanie)",
+            "legacy": "Starszy (grube obramowanie)"
+        },
+        "textStyle": {
+            "name": "Etykieta paska",
+            "hint": "Zmienia liczbę wyświetlaną na pasku.",
+            "user": "Domyślne ustawienia użytkownika",
+            "none": "Brak",
+            "fraction": "Ułamek (wartość / maksimum)",
+            "percent": "Procentowo (%)"
+        },
+        "compactHud": {
+            "name": "Kompaktowy HUD",
+            "hint": "Zmniejsza rozmiar pól wprowadzania zasobów w token HUD."
+        },
+        "hideHostile": {
+            "name": "Ukryj wszystkie paski wrogów",
+            "hint": "Zapobiega wyświetlaniu pasków dla wrogich tokenów, których gracze nie posiadają. Należy pamiętać, że może to zastąpić ustawienia widoczności specyficzne dla zasobów."
+        },
+        "heightMultiplier": {
+            "name": "Mnożnik wysokości paska",
+            "hint": "Mnoży wysokość paska przez skonfigurowaną wartość w celu zwiększenia czytelności. Wpłynie to na etykietę, ale nie na tło lub obraz pierwszego planu paska."
+        },
+        "cacheBitmaps": {
+            "name": "Pamięć podręczna renderowanych słupków",
+            "hint": "Włącza buforowanie bitmap dla pasków na płótnie, co może poprawić wydajność kosztem czytelności (szczególnie w przypadku etykiet)."
+        },
+        "config": {
+            "attribute": "Atrybut",
+            "ownerVisibility": "Widoczność (właściciel)",
+            "otherVisibility": "Widoczność (każdy)",
+            "gmVisibility": "Widoczność (MG)",
+            "hide": "Ukryj pasek",
+            "hideHint": "Nie wyświetlaj paska, gdy spełniony jest którykolwiek z zaznaczonych warunków.",
+            "hideFull": "Pełny",
+            "hideEmpty": "Pusty",
+            "hideCombat": "W walce",
+            "hideNoCombat": "Poza walką",
+            "hideHud": "Ukryj HUD",
+            "value": "Wartość (aktualna/maksymalna)",
+            "color": "Kolor (min/max)",
+            "position": "Pozycja",
+            "advanced": "Zaawansowana konfiguracja",
+            "indent": "Wcięcie",
+            "indentHint": "Dodatkowe miejsce z boku paska w procentach szerokości tokena.",
+            "indentLeft": "Lewo",
+            "indentRight": "Prawo",
+            "shareHeight": "Współczynnik wysokości",
+            "shareHeightHint": "Zapobiega zarezerwowaniu przez pasek miejsca w pionie, co powoduje przesunięcie następnego paska do tej samej linii.",
+            "style": "Etykieta",
+            "ignoreLimits": "Ignoruj ograniczenia",
+            "ignoreLimitsHint": "Wyłącza zaciskanie wartości wejściowych pomiędzy 0 (dolna) i maksymalną (górna). Jest to stosowane tylko do niestandardowych pasków, ponieważ zaciskanie dla innych atrybutów jest obsługiwane przez system.",
+            "ignoreMin": "Dolna granica",
+            "ignoreMax": "Górna granica",
+            "invert": "Odwrócenie wartości",
+            "invertDirection": "Odwrócenie kierunku",
+            "invertHint": "Wyświetla 0 jako pełny pasek i maksymalną wartość jako pusty pasek.",
+            "invertDirectionHint": "Odwraca kierunek wypełniania paska.",
+            "label": "Przedrostek etykiety",
+            "labelHint": "Wyświetla skonfigurowany tekst na pasku.",
+            "approximate": "Przybliżenie",
+            "approximateHint": "Wyświetla przybliżoną wartość na pasku i jego etykiecie. Konfiguruje liczbę wyświetlanych segmentów.",
+            "approximateOwner": "Przybliżenie dla właściciela",
+            "approximateOwnerHint": "Wskazuje, czy przybliżona wartość jest wyświetlana również dla właściciela tokena.",
+            "fgImage": "Obraz pierwszoplanowy",
+            "fgImageHint": "Zastępuje zwykły pasek obrazem, który jest przycinany na podstawie procentu wypełnienia.",
+            "bgImage": "Obraz tła",
+            "bgImageHint": "Zastępuje zwykłe tło paska obrazem. Zaleca się, aby oba obrazy miały taką samą szerokość jak rozmiar siatki sceny.",
+            "hideBg": "Ukryj tło",
+            "opacity": "Krycie"
+        },
+        "attribute": {
+            "none": "Brak (usuń)",
+            "custom": "Niestandardowe (wartości poniżej)"
+        },
+        "visibility": {
+            "inheritFromOwner": "Odziedziczone po właścicielu",
+            "inheritFromOther": "Odziedziczone po wszystkich",
+            "none": "Nigdy",
+            "always": "Zawsze",
+            "hover": "Po najechaniu",
+            "control": "Po zaznaczeniu",
+            "hoverOrControl": "Po najechaniu kursorem lub zaznaczeniu"
+        },
+        "position": {
+            "top-inner": "Góra (od wewnątrz)",
+            "top-outer": "Góra (na zewnątrz)",
+            "bottom-inner": "Dół (od wewnątrz)",
+            "bottom-outer": "Dół (na zewnątrz)",
+            "left-inner": "Lewo (od wewnątrz)",
+            "left-outer": "Lewo (na zewnątrz)",
+            "right-inner": "Prawo (od wewnątrz)",
+            "right-outer": "Prawo (na zewnątrz)"
+        },
+        "section": "Paski zasobów",
+        "add": "Dodaj zasób",
+        "defaults": {
+            "save": "Zapisz jako...",
+            "saveConfirmation": "Zapisane zasoby w {target}.",
+            "load": "Załaduj z...",
+            "defaultToken": "Domyślny token",
+            "typeDefaults": "{type} domyślny",
+            "prototypeToken": "Token prototypowy {name}",
+            "activeTokens": "Aktywne tokeny {name}"
+        }
+    }
+}

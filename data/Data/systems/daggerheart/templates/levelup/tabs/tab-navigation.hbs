@@ -1,0 +1,28 @@
+{{#unless tabs.summary.active}}
+<section class='tab-navigation'>
+    {{#if levelupAuto}}
+        <line-div></line-div>
+        <div class="levelup-navigation-container">
+            {{#if this.showTabs}}
+                <nav class='feature-tab sheet-tabs tabs' data-group='primary'>
+                    {{#each tabs as |tab|}}
+                        {{#if (not (eq tab.id 'summary'))}}
+                            <div class="levelup-tab-container">
+                                <a class='{{tab.id}} {{tab.cssClass}}' data-action='tab' data-group='{{tab.group}}' data-tab='{{tab.id}}'>
+                                    {{localize tab.label}}
+                                    {{#if tab.progress}}
+                                        <span>{{tab.progress.selected}}/{{tab.progress.max}}</span>
+                                    {{/if}}
+                                </a>
+                            </div>
+                        {{/if}}
+                    {{/each}}
+                </nav>
+            {{/if}}
+        </div>
+        <line-div></line-div>
+    {{/if}}
+</section>
+{{else}}
+<section></section>
+{{/unless}}

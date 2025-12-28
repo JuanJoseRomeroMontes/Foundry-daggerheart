@@ -1,0 +1,30 @@
+<div class="tab {{tab.cssClass}}" data-tab="general" data-group="dsn-main">
+    <div class="settings-list">
+        <div id="dice-configuration-canvas-container"></div>
+        <div class="dsn-settings-container">
+            <hr />
+            <div class="form-group">
+                <label>{{localize "DICESONICE.enable"}}</label>
+                <input type="checkbox" name="enabled" data-dtype="Boolean" {{checked enabled}} />
+            </div>
+            <div class="form-group">
+                <label>{{localize "DICESONICE.showExtraDice"}}</label>
+                <input type="checkbox" name="showExtraDice" data-showExtraDice data-dtype="Boolean" {{checked showExtraDice}} />
+            </div>
+            <hr />
+            <a class="dice-more-theme" href="https://gitlab.com/riccisi/foundryvtt-dice-so-nice/-/wikis/Links" target="_blank">
+                <i class="fa-solid fa-store"></i> {{localize "DICESONICE.FindMoreTheme"}}
+            </a>
+            <nav class="tabs dsn-appearance-tabs">
+                <span class="item" data-action="tab" data-group="dsn-dice" data-tab="global">Global</span>
+                <span class="dsn-appearance-hint" {{{displayHint}}}>{{localize "DICESONICE.navAppearanceHint"}}</span>
+                {{#each navAppearance as |name key|}}
+                <span class="item" data-action="tab" data-group="dsn-dice" data-tab="{{key}}">{{name}} <i class="fa-solid fa-times" data-close-tab></i></span>
+                {{/each}}
+            </nav>
+            <section id="dsn-appearance-content">
+                {{{tabsAppearance}}}
+            </section>
+        </div>
+    </div>
+</div>

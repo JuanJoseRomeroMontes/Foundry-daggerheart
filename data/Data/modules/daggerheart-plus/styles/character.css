@@ -1,0 +1,2632 @@
+.roll-mode-select {
+  padding: 0;
+}
+
+.daggerheart-plus.sheet .resource-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.daggerheart-plus.sheet.character form {
+  position: relative;
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  grid-template-rows: auto 1fr;
+  grid-template-areas:
+    "header header"
+    "sidebar body";
+  height: 100%;
+  background: var(--dhp-background);
+  overflow: visible;
+}
+
+.daggerheart-plus.sheet.character .sheet-header {
+  grid-area: header;
+}
+
+.daggerheart-plus.sheet.character .sheet-sidebar {
+  grid-area: sidebar;
+  width: 300px;
+  min-width: 300px;
+  max-width: 300px;
+  overflow: hidden;
+}
+
+/* Removed separate grid slot for tabs; they are absolutely positioned */
+
+.daggerheart-plus.sheet.character .sheet-body {
+  grid-area: body;
+}
+
+.daggerheart-plus.sheet.character .character-header-modern {
+  padding: 0.35rem 0.75rem;
+  padding-top: var(--header-height);
+  border-bottom: 2px solid var(--dhp-primary);
+  box-shadow: 0 4px 8px var(--dhp-shadow);
+  background-image: url("../assets/backgrounds/domain-pattern.png");
+  background-repeat: repeat;
+  background-size: contain;
+  border-top-right-radius: 10px;
+}
+
+.daggerheart-plus.sheet.character
+  .character-header-modern
+  .header-main-section {
+  display: flex;
+  align-items: stretch;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.daggerheart-plus.sheet.character
+  .character-header-modern
+  .header-top-portrait {
+  position: relative;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  max-height: 13em;
+}
+
+.daggerheart-plus.sheet.character
+  .character-header-modern
+  .header-top-portrait
+  img {
+  width: 140px;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  border-radius: 8px;
+  border: 2px solid var(--dhp-primary);
+  box-shadow: 0 4px 8px var(--dhp-shadow);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.daggerheart-plus.sheet.character
+  .character-header-modern
+  .header-top-portrait
+  img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px var(--dhp-shadow);
+}
+
+.daggerheart-plus.sheet.character
+  .character-header-modern
+  .spellcast-indicator {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  background: var(--dhp-accent);
+  color: var(--dhp-background);
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  box-shadow: 0 2px 4px var(--dhp-shadow);
+  cursor: pointer;
+}
+
+.daggerheart-plus.sheet.character
+  .character-header-modern
+  .header-top-portrait
+  .quick-actions {
+  position: absolute;
+  left: 50%;
+  bottom: 4px;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.5rem;
+  z-index: 2;
+}
+
+.daggerheart-plus.sheet.character
+  .character-header-modern
+  .header-top-portrait
+  .death-tint {
+  filter: sepia(100%) saturate(300%) hue-rotate(-40deg) brightness(0.3);
+}
+
+.daggerheart-plus.sheet.character .character-header-modern .death-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(139, 0, 0, 0.8);
+  color: white;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.daggerheart-plus.sheet.character
+  .character-header-modern
+  .death-overlay:hover {
+  background: rgba(139, 0, 0, 1);
+  transform: translate(-50%, -50%) scale(1.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7);
+}
+
+.daggerheart-plus.sheet.character .character-header-modern .header-top-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  justify-content: space-between;
+}
+
+.daggerheart-plus.sheet.character .character-header-modern .header-top-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.daggerheart-plus.sheet.character .character-header-modern .character-info {
+  display: flex;
+  flex: 1;
+  min-width: 0;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.daggerheart-plus.sheet.character
+  .character-header-modern
+  .character-name
+  input {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--dhp-primary);
+  border: none;
+  background: transparent;
+  width: 100%;
+  margin-bottom: 0.25rem;
+  font-family: "Cinzel Decorative", serif;
+  backdrop-filter: blur(0);
+  -webkit-backdrop-filter: blur(0);
+}
+
+.daggerheart-plus.sheet.character .character-header-modern .character-classes {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--dhp-accent);
+  margin-bottom: 0.25rem;
+  text-transform: uppercase;
+}
+
+.daggerheart-plus.sheet.character
+  .character-header-modern
+  .character-classes
+  .class-name,
+.daggerheart-plus.sheet.character
+  .character-header-modern
+  .character-classes
+  .multiclass-name {
+  color: var(--dhp-accent);
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.daggerheart-plus.sheet.character
+  .character-header-modern
+  .character-classes
+  .subclass-name,
+.daggerheart-plus.sheet.character
+  .character-header-modern
+  .character-classes
+  .multiclass-subclass {
+  color: var(--dhp-text-light);
+  margin-left: 0.25rem;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.daggerheart-plus.sheet.character .character-header-modern .character-heritage {
+  font-size: 0.9rem;
+  color: var(--dhp-text-light);
+}
+
+.daggerheart-plus.sheet.character
+  .character-header-modern
+  .character-heritage
+  span {
+  margin-right: 0.5rem;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.daggerheart-plus.sheet.character
+  .character-header-modern
+  .character-heritage
+  span:hover,
+.daggerheart-plus.sheet.character
+  .character-header-modern
+  .character-classes
+  span:hover {
+  color: var(--dhp-primary);
+}
+
+.daggerheart-plus.sheet.character
+  .character-header-modern
+  .character-level-section {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.daggerheart-plus.sheet.character .character-header-modern .level-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.daggerheart-plus.sheet.character .character-header-modern .level-label {
+  color: var(--dhp-text-light);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.25rem;
+}
+
+.daggerheart-plus.sheet.character .character-header-modern .level-up-btn {
+  background: var(--dhp-accent);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.daggerheart-plus.sheet.character .character-header-modern .level-up-btn:hover {
+  background: var(--dhp-secondary);
+  transform: scale(1.1);
+}
+
+.daggerheart-plus.sheet.character .character-header-modern .level-value {
+  width: 50px;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: 2px solid var(--dhp-primary);
+  border-radius: 5px;
+  padding: 0.25rem;
+  background: var(--dhp-surface);
+  color: var(--dhp-primary);
+}
+
+.daggerheart-plus.sheet.character .character-header-modern .missing-class,
+.daggerheart-plus.sheet.character .character-header-modern .missing-heritage {
+  color: var(--dhp-text-light);
+  font-style: italic;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.daggerheart-plus.sheet.character .character-header-modern .missing-class:hover,
+.daggerheart-plus.sheet.character
+  .character-header-modern
+  .missing-heritage:hover {
+  color: var(--dhp-accent);
+}
+
+.daggerheart-plus.sheet.character .character-header-modern .character-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.daggerheart-plus.sheet.character .character-header-modern .domains-display {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.daggerheart-plus.sheet.character .character-header-modern .domain-icon img {
+  width: 35px;
+  height: auto;
+  border-radius: 6px;
+  /* border: 1px solid var(--dhp-primary); */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  /* box-shadow: 0 2px 4px var(--dhp-shadow); */
+  filter: brightness(0) invert(1);
+}
+
+.daggerheart-plus.sheet.character
+  .character-header-modern
+  .domain-icon
+  img:hover {
+  transform: scale(1.1);
+  filter: brightness(0) saturate(100%) invert(72%) sepia(50%) saturate(748%)
+    hue-rotate(-15deg) brightness(107%) contrast(93%);
+}
+
+.daggerheart-plus.sheet.character .character-header-modern .quick-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.daggerheart-plus.sheet .item-buttons {
+  grid-column: span 3;
+  display: flex;
+  gap: 1em;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.daggerheart-plus.sheet
+  .inventory-item:not(.single-img):hover:has(.inventory-item-content.extensible)
+  .inventory-item-header,
+.application.daggerheart.dh-style
+  .inventory-item:not(.single-img):hover:has(.inventory-item-content.extensible)
+  .inventory-item-content {
+  background: transparent;
+}
+
+.daggerheart-plus.sheet
+  .inventory-item
+  .inventory-item-content.extensible
+  .invetory-description {
+  overflow: hidden;
+  margin-top: 1em;
+  text-align: left;
+}
+
+.daggerheart-plus.sheet.character
+  .character-header-modern
+  .quick-actions
+  button {
+  background: var(--dhp-surface);
+  border: 1px solid var(--dhp-border);
+  border-radius: 6px;
+  padding: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: var(--dhp-text);
+  font-size: 1rem;
+}
+
+.daggerheart-plus.sheet.character
+  .character-header-modern
+  .quick-actions
+  button:hover {
+  background: var(--dhp-accent);
+  border-color: var(--dhp-primary);
+  color: var(--dhp-background);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px var(--dhp-shadow);
+}
+
+.daggerheart-plus.sheet.character .character-header-modern .stats-row {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.daggerheart-plus.sheet.character .character-header-modern .core-stats {
+  display: flex;
+  gap: 1rem;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--dhp-border);
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.daggerheart-plus.sheet.character .character-header-modern .stat-item {
+  text-align: center;
+  min-width: 60px;
+}
+
+.daggerheart-plus.sheet.character .character-header-modern .stat-value {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: var(--dhp-text);
+  margin-bottom: 0.25rem;
+}
+
+.daggerheart-plus.sheet.character .character-header-modern .stat-label {
+  font-size: 0.7rem;
+  color: var(--dhp-text-light);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.daggerheart-plus.sheet.character .character-header-modern .hope-diamonds {
+  display: flex;
+  gap: 0.25rem;
+  justify-content: center;
+  margin-bottom: 0.25rem;
+}
+
+.daggerheart-plus.sheet.character .character-header-modern .hope-diamond {
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.daggerheart-plus.sheet.character .character-header-modern .hope-diamond:hover {
+  transform: scale(1.2);
+}
+
+.daggerheart-plus.sheet.character .character-header-modern .hope-diamond i {
+  font-size: 1.2rem;
+  color: var(--dhp-accent);
+  filter: drop-shadow(0 0 4px var(--dhp-accent));
+}
+
+.daggerheart-plus.sheet.character .character-header-modern .attributes-row {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.daggerheart-plus.sheet.character
+  .character-header-modern
+  .attribute-container {
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 0.5em 0em;
+}
+
+.daggerheart-plus.sheet.character
+  .character-header-modern
+  .attribute-container:hover {
+  transform: translateY(-2px) scale(1.02);
+}
+
+.daggerheart-plus.sheet.character .character-header-modern .attribute-bg {
+  /* background-image: url('../styles/assets/containers/Stats BG-2.png'); */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.daggerheart-plus.sheet.character
+  .character-header-modern
+  .attribute-container:hover
+  .attribute-bg {
+  border-color: var(--dhp-primary);
+}
+
+.daggerheart-plus.sheet.character .character-header-modern .attribute-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0rem 0.5rem;
+  text-align: center;
+  height: 100%;
+  min-height: 80px;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--dhp-border);
+  border-radius: 12px;
+}
+
+/* Spellcasting trait highlight: blue particle FX (inspired by duality crit) */
+.daggerheart-plus.sheet.character
+  .character-header-modern
+  .attribute-container.spellcasting-trait
+  .attribute-content {
+  --sc-glow: #57b2ff;
+  --sc-accent: #8fd6ff;
+  --sc-core: #c8ecff;
+  overflow: hidden; /* Clip particles to rounded corners */
+  background: linear-gradient(
+    180deg,
+    color-mix(in oklab, var(--sc-glow) 18%, transparent) 0%,
+    color-mix(in oklab, var(--sc-glow) 10%, transparent) 100%
+  );
+  border-color: rgba(87, 178, 255, 0.55);
+  border-color: color-mix(in oklab, var(--sc-glow) 55%, var(--dhp-border));
+  box-shadow: 0 0 0 1px rgba(87, 178, 255, 0.35),
+    0 0 16px rgba(87, 178, 255, 0.25);
+  box-shadow: 0 0 0 1px color-mix(in oklab, var(--sc-glow) 35%, transparent),
+    0 0 16px color-mix(in oklab, var(--sc-glow) 25%, transparent);
+}
+
+.daggerheart-plus.sheet.character
+  .character-header-modern
+  .attribute-container.spellcasting-trait
+  .attribute-content::before {
+  /* Subtle diagonal sweep */
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: radial-gradient(
+      120% 80% at 50% 110%,
+      color-mix(in oklab, var(--sc-glow) 18%, transparent),
+      transparent 60%
+    ),
+    linear-gradient(
+      135deg,
+      transparent 40%,
+      color-mix(in oklab, var(--sc-glow) 10%, transparent) 60%,
+      transparent 80%
+    );
+  mix-blend-mode: screen;
+}
+
+.daggerheart-plus.sheet.character
+  .character-header-modern
+  .attribute-container.spellcasting-trait
+  .attribute-content::after {
+  /* Blue particles rising */
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  pointer-events: none;
+  background: radial-gradient(
+      2px 2px at 30% 130%,
+      rgba(255, 255, 255, 0.8) 42%,
+      transparent 43%
+    ),
+    radial-gradient(
+      3px 3px at 48% 122%,
+      rgba(160, 215, 255, 0.8) 42%,
+      transparent 43%
+    ),
+    radial-gradient(
+      2px 2px at 66% 138%,
+      rgba(120, 200, 255, 0.75) 42%,
+      transparent 43%
+    );
+  background-repeat: no-repeat;
+  animation: scEmberScroll 7s linear infinite,
+    scParticleTwinkle 2.2s ease-in-out infinite;
+  opacity: 0.7;
+  mix-blend-mode: screen;
+}
+
+.daggerheart-plus.sheet.character
+  .character-header-modern
+  .attribute-container.spellcasting-trait
+  .attribute-value {
+  color: color-mix(in oklab, var(--sc-core) 90%, white);
+  text-shadow: 0 0 6px color-mix(in oklab, var(--sc-accent) 75%, transparent),
+    0 0 18px color-mix(in oklab, var(--sc-glow) 35%, transparent);
+}
+
+.daggerheart-plus.sheet.character
+  .character-header-modern
+  .attribute-container.spellcasting-trait
+  .attribute-name {
+  color: color-mix(in oklab, var(--sc-accent) 80%, var(--dhp-text-light));
+}
+
+.daggerheart-plus.sheet.character
+  .character-header-modern
+  .attribute-container.spellcasting-trait
+  .attribute-tier {
+  color: color-mix(in oklab, var(--sc-accent) 65%, var(--dhp-accent));
+}
+
+/* Hover intensifies the glow */
+.daggerheart-plus.sheet.character
+  .character-header-modern
+  .attribute-container.spellcasting-trait:hover
+  .attribute-content {
+  box-shadow: 0 0 0 1px rgba(87, 178, 255, 0.55),
+    0 0 24px rgba(87, 178, 255, 0.45);
+  box-shadow: 0 0 0 1px color-mix(in oklab, var(--sc-glow) 55%, #ffffff40),
+    0 0 24px color-mix(in oklab, var(--sc-glow) 45%, transparent);
+}
+
+/* Keyframes for spellcast glow animations with fallbacks */
+@keyframes scSpellGlowPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 1px rgba(87, 178, 255, 0.35),
+      0 0 12px rgba(87, 178, 255, 0.2);
+    box-shadow: 0 0 0 1px color-mix(in oklab, var(--sc-glow) 35%, #ffffff20),
+      0 0 12px color-mix(in oklab, var(--sc-glow) 20%, transparent);
+  }
+  50% {
+    box-shadow: 0 0 0 1px rgba(87, 178, 255, 0.55),
+      0 0 26px rgba(87, 178, 255, 0.45);
+    box-shadow: 0 0 0 1px color-mix(in oklab, var(--sc-glow) 55%, #ffffff40),
+      0 0 26px color-mix(in oklab, var(--sc-glow) 45%, transparent);
+  }
+}
+
+@keyframes scSpellGlowPulseKnowledge {
+  0%, 100% { box-shadow: 0 0 0 1px rgba(87, 178, 255, 0.35), 0 0 12px rgba(87, 178, 255, 0.2); }
+  50% { box-shadow: 0 0 0 1px rgba(87, 178, 255, 0.55), 0 0 26px rgba(87, 178, 255, 0.45); }
+}
+
+@keyframes scSpellGlowPulsePresence {
+  0%, 100% { box-shadow: 0 0 0 1px rgba(255, 121, 176, 0.35), 0 0 12px rgba(255, 121, 176, 0.2); }
+  50% { box-shadow: 0 0 0 1px rgba(255, 121, 176, 0.55), 0 0 26px rgba(255, 121, 176, 0.45); }
+}
+
+@keyframes scSpellGlowPulseInstinct {
+  0%, 100% { box-shadow: 0 0 0 1px rgba(107, 255, 138, 0.35), 0 0 12px rgba(107, 255, 138, 0.2); }
+  50% { box-shadow: 0 0 0 1px rgba(107, 255, 138, 0.55), 0 0 26px rgba(107, 255, 138, 0.45); }
+}
+
+@keyframes scSpellGlowPulseAgility {
+  0%, 100% { box-shadow: 0 0 0 1px rgba(74, 227, 211, 0.35), 0 0 12px rgba(74, 227, 211, 0.2); }
+  50% { box-shadow: 0 0 0 1px rgba(74, 227, 211, 0.55), 0 0 26px rgba(74, 227, 211, 0.45); }
+}
+
+@keyframes scSpellGlowPulseFinesse {
+  0%, 100% { box-shadow: 0 0 0 1px rgba(181, 123, 255, 0.35), 0 0 12px rgba(181, 123, 255, 0.2); }
+  50% { box-shadow: 0 0 0 1px rgba(181, 123, 255, 0.55), 0 0 26px rgba(181, 123, 255, 0.45); }
+}
+
+@keyframes scSpellGlowPulseStrength {
+  0%, 100% { box-shadow: 0 0 0 1px rgba(255, 148, 77, 0.35), 0 0 12px rgba(255, 148, 77, 0.2); }
+  50% { box-shadow: 0 0 0 1px rgba(255, 148, 77, 0.55), 0 0 26px rgba(255, 148, 77, 0.45); }
+}
+
+@keyframes scParticleTwinkle {
+  0%,
+  100% {
+    opacity: 0.55;
+    filter: brightness(0.95) saturate(1.05);
+  }
+  50% {
+    opacity: 0.9;
+    filter: brightness(1.15) saturate(1.15);
+  }
+}
+
+@keyframes scEmberScroll {
+  0% {
+    background-position: 20% 110%, 60% 120%, 85% 130%;
+  }
+  100% {
+    background-position: 20% -10%, 60% -20%, 85% -30%;
+  }
+}
+
+/* Canvas overlay for moving particles inside spellcasting tile */
+.daggerheart-plus.sheet.character
+  .character-header-modern
+  .attribute-container.spellcasting-trait
+  .attribute-content {
+  position: relative; /* ensure absolutely positioned canvas anchors here */
+}
+.daggerheart-plus.sheet.character
+  .character-header-modern
+  .attribute-container.spellcasting-trait
+  .dhp-spell-particles {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: 1; /* keep below text */
+  mix-blend-mode: screen;
+}
+.daggerheart-plus.sheet.character
+  .character-header-modern
+  .attribute-container.spellcasting-trait
+  .attribute-content
+  > *:not(.dhp-spell-particles) {
+  position: relative;
+  z-index: 2;
+}
+
+/* Spellcasting color presets per-trait */
+.daggerheart-plus.sheet.character
+  .character-header-modern[data-spellcasting-trait="knowledge"]
+  .attribute-container.spellcasting-trait
+  .attribute-content {
+  --sc-glow: #57b2ff; /* blue */
+  --sc-accent: #8fd6ff;
+  --sc-core: #c8ecff;
+  animation: scSpellGlowPulseKnowledge 3.2s ease-in-out infinite;
+}
+.daggerheart-plus.sheet.character
+  .character-header-modern[data-spellcasting-trait="presence"]
+  .attribute-container.spellcasting-trait
+  .attribute-content {
+  --sc-glow: #ff79b0; /* pink */
+  --sc-accent: #ff9cc6;
+  --sc-core: #ffd1e7;
+  animation: scSpellGlowPulsePresence 3.2s ease-in-out infinite;
+}
+.daggerheart-plus.sheet.character
+  .character-header-modern[data-spellcasting-trait="instinct"]
+  .attribute-container.spellcasting-trait
+  .attribute-content {
+  --sc-glow: #6bff8a; /* green */
+  --sc-accent: #92ffab;
+  --sc-core: #d3ffde;
+  animation: scSpellGlowPulseInstinct 3.2s ease-in-out infinite;
+}
+.daggerheart-plus.sheet.character
+  .character-header-modern[data-spellcasting-trait="agility"]
+  .attribute-container.spellcasting-trait
+  .attribute-content {
+  --sc-glow: #4ae3d3; /* teal */
+  --sc-accent: #79efe4;
+  --sc-core: #c4faf5;
+  animation: scSpellGlowPulseAgility 3.2s ease-in-out infinite;
+}
+.daggerheart-plus.sheet.character
+  .character-header-modern[data-spellcasting-trait="finesse"]
+  .attribute-container.spellcasting-trait
+  .attribute-content {
+  --sc-glow: #b57bff; /* purple */
+  --sc-accent: #cfabff;
+  --sc-core: #eadbff;
+  animation: scSpellGlowPulseFinesse 3.2s ease-in-out infinite;
+}
+.daggerheart-plus.sheet.character
+  .character-header-modern[data-spellcasting-trait="strength"]
+  .attribute-container.spellcasting-trait
+  .attribute-content {
+  --sc-glow: #ff944d; /* warm orange */
+  --sc-accent: #ffb27f;
+  --sc-core: #ffe0c8;
+  animation: scSpellGlowPulseStrength 3.2s ease-in-out infinite;
+}
+
+.daggerheart-plus.sheet.character .character-header-modern .attribute-icon {
+  font-size: 1.2rem;
+  color: var(--dhp-primary);
+  margin-bottom: 0.25rem;
+  transition: all 0.3s ease;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+.daggerheart-plus.sheet.character
+  .character-header-modern
+  .attribute-container:hover
+  .attribute-icon {
+  color: var(--dhp-accent);
+  transform: scale(1.1);
+}
+
+.daggerheart-plus.sheet.character .character-header-modern .attribute-value {
+  font-size: 1.75rem;
+  font-weight: bold;
+  color: var(--dhp-accent);
+  /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); */
+}
+
+.daggerheart-plus.sheet.character
+  .character-header-modern
+  .attribute-container:hover
+  .attribute-value {
+  color: var(--dhp-accent);
+}
+
+.daggerheart-plus.sheet.character .character-header-modern .attribute-name {
+  font-size: 0.55rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--dhp-text-light);
+  line-height: 1.1;
+}
+
+.daggerheart-plus.sheet.character
+  .character-header-modern
+  .attribute-container:hover
+  .attribute-name {
+  color: var(--dhp-primary);
+}
+
+.daggerheart-plus.sheet.character .character-header-modern .attribute-tier {
+  color: var(--dhp-accent);
+  font-size: 0.7rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+  z-index: 3;
+  margin-top: 0.5em;
+}
+
+.daggerheart-plus.sheet .tab.inventory .items-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  overflow-y: auto;
+  mask-image: linear-gradient(
+    0deg,
+    transparent 0%,
+    black 5%,
+    black 95%,
+    transparent 100%
+  );
+  padding: 20px 0;
+  scrollbar-width: thin;
+  scrollbar-color: light-dark(#18162e, #f3c267) transparent;
+}
+
+.daggerheart-plus.sheet .items-section .inventory-item .inventory-item-header {
+  gap: 1em;
+}
+
+.daggerheart-plus.sheet fieldset {
+  align-items: center;
+  margin-top: 1em;
+  border-radius: 6px;
+  border-color: light-dark(#18162e, #f3c267);
+  border: none;
+}
+
+.daggerheart-plus.sheet fieldset legend {
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: light-dark(#f3c267, #18162e);
+  width: 100%;
+  background: var(--dhp-primary) !important;
+  border-radius: 5px;
+  padding: 0.25em 0.5em;
+  margin: 0;
+  border: 1px solid var(--dhp-secondary);
+}
+
+.daggerheart-plus.sheet fieldset.glassy legend {
+  background-color: transparent;
+}
+
+.daggerheart-plus.sheet fieldset.glassy {
+  background-color: transparent;
+}
+
+.daggerheart-plus.sheet .tab.active {
+  padding-top: 1em;
+}
+
+.daggerheart-plus.sheet.companion .tab.active {
+  height: 100%;
+  overflow-y: auto;
+  padding-top: 0em;
+}
+
+.daggerheart-plus.sheet.character .character-sidebar-sheet {
+  padding: var(--dh-space-md);
+  padding-top: var(--header-height);
+  background: url("../assets/backgrounds/sidebar-bg.png");
+  background-position: left;
+  background-size: cover;
+  border-right: 2px solid var(--dhp-primary);
+  backdrop-filter: blur(4px);
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  overflow-y: auto;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  max-width: 100%;
+  scrollbar-width: thin;
+  scrollbar-color: var(--dhp-primary) transparent;
+  border-radius: 10px 0px 0px 10px;
+}
+
+.daggerheart-plus.sheet.character .character-sidebar-sheet::-webkit-scrollbar {
+  width: 6px;
+}
+
+.daggerheart-plus.sheet.character
+  .character-sidebar-sheet::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.daggerheart-plus.sheet.character
+  .character-sidebar-sheet::-webkit-scrollbar-thumb {
+  background: var(--dhp-primary);
+  border-radius: 3px;
+}
+
+.daggerheart-plus.sheet.character
+  .character-sidebar-sheet::-webkit-scrollbar-thumb:hover {
+  background: var(--dhp-accent);
+}
+
+.daggerheart-plus.sheet.character .character-sidebar-sheet .death-warning {
+  text-align: center;
+  flex-shrink: 0;
+  width: 100%;
+}
+
+.daggerheart-plus.sheet.character .character-sidebar-sheet .death-roll-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: var(--dhp-danger);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.daggerheart-plus.sheet.character
+  .character-sidebar-sheet
+  .death-roll-btn:hover {
+  background: var(--dhp-warning);
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px var(--dhp-shadow);
+}
+
+.daggerheart-plus.sheet.character .character-sidebar-sheet .death-save {
+  font-size: 1.2rem;
+}
+
+/* Disable interactions on the sidebar when the sheet is minimizing/minimized */
+.application.sheet.daggerheart-plus.minimizing .character-sidebar-sheet,
+.application.sheet.daggerheart-plus.minimized .character-sidebar-sheet {
+  pointer-events: none;
+}
+
+.daggerheart-plus.sheet.character
+  .character-sidebar-sheet
+  .shortcut-items-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: 100%;
+  min-width: 0;
+  scrollbar-width: none;
+}
+
+.daggerheart-plus.sheet.character .character-sidebar-sheet .equipment-section,
+.daggerheart-plus.sheet.character .character-sidebar-sheet .loadout-section,
+.daggerheart-plus.sheet.character .character-sidebar-sheet .experience-section,
+.dh-inline-rails.rails-left .floating-rail-left .loadout-section {
+  border-radius: var(--dh-radius-lg);
+  padding: 0.5em 0em;
+  transition: all 0.3s ease;
+  border: none;
+  width: 100%;
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+.daggerheart-plus.sheet.character
+  .character-sidebar-sheet
+  .equipment-section:hover,
+.daggerheart-plus.sheet.character
+  .character-sidebar-sheet
+  .loadout-section:hover,
+.daggerheart-plus.sheet.character
+  .character-sidebar-sheet
+  .experience-section:hover,
+.dh-inline-rails.rails-left .floating-rail-left .loadout-section:hover {
+  border-color: var(--dhp-primary);
+}
+
+.daggerheart-plus.sheet.character .character-sidebar-sheet .title,
+.dh-inline-rails.rails-left .floating-rail-left .loadout-section .title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+  /*border-bottom: 1px solid var(--dhp-primary);*/
+  /*padding-bottom: 0.5rem;*/
+  width: 100%;
+  min-width: 0;
+}
+
+.daggerheart-plus.sheet.character .character-sidebar-sheet .title h3,
+.dh-inline-rails.rails-left .floating-rail-left .loadout-section .title h3 {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--dhp-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: bold;
+}
+
+.dh-inline-rails.rails-left .floating-rail-left .loadout-section .title h3 {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: bold;
+  border: none;
+  padding: 0.35em 0.25em;
+  width: 100%;
+  border-radius: var(--dh-radius-lg, 8px);
+  background: var(--dhp-surface);
+  color: var(--dh-color-gold, #f3c267);
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 0 0 2px rgba(243, 194, 103, 0.65),
+    0 6px 18px rgba(0, 0, 0, 0.35);
+  display: none;
+}
+
+.daggerheart-plus.sheet.character .character-sidebar-sheet .items-sidebar-list,
+.dh-inline-rails.rails-left
+  .floating-rail-left
+  .loadout-section
+  .items-sidebar-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  min-width: 0;
+  display: flex;
+  gap: 0.4rem;
+  flex-direction: column;
+}
+
+/*.daggerheart-plus.sheet.character
+  .character-sidebar-sheet
+  .items-sidebar-list
+  .item {
+  display: none;
+} BEFORE SIDEBAR CHANGE*/
+
+.daggerheart-plus.sheet.character
+  .character-sidebar-sheet
+  .items-sidebar-list
+  .item {
+  background: var(--dhp-surface);
+  border: 1px solid var(--dhp-border);
+  border-radius: 8px;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.daggerheart-plus.sheet.character
+  .character-sidebar-sheet
+  .items-sidebar-list
+  .item:hover {
+  background: rgba(230, 168, 0, 0.15);
+  border-color: var(--dhp-primary);
+}
+
+.daggerheart-plus.sheet.character
+  .character-sidebar-sheet
+  .items-sidebar-list
+  .item
+  img {
+  width: 24px;
+  height: 24px;
+  border-radius: 5px;
+}
+.daggerheart-plus.sheet .experience-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--dhp-border);
+  border-radius: 5px;
+  margin-bottom: 0.25rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  width: 100%;
+  box-sizing: border-box;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.daggerheart-plus.sheet .experience-row:hover {
+  background: rgba(230, 168, 0, 0.15);
+  border-color: var(--dhp-primary);
+}
+
+.daggerheart-plus.sheet .experience-value {
+  background: var(--dhp-success);
+  color: white;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: bold;
+  box-shadow: 0 2px 4px var(--dhp-shadow);
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.daggerheart-plus.sheet .experience-row:hover .experience-value {
+  background: var(--dhp-primary);
+}
+
+.daggerheart-plus.sheet .experience-row span {
+  flex: 1;
+  font-size: 0.8rem;
+  color: var(--dhp-text);
+  transition: color 0.3s ease;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  line-height: 1.2;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.daggerheart-plus.sheet .experience-row:hover span {
+  color: var(--dhp-primary);
+}
+
+.daggerheart-plus.sheet.character
+  .character-sidebar-sheet
+  .inventory-item
+  .controls
+  a {
+  padding: 3px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: unset;
+  height: unset;
+  font-size: 0.8rem;
+  color: var(--dhp-text-light);
+}
+
+.daggerheart-plus.sheet.character .character-sidebar-sheet .controls a:hover {
+  color: var(--dhp-primary);
+  background: rgba(230, 168, 0, 0.1);
+  transform: scale(1.1);
+}
+
+.daggerheart-plus.sheet.character .character-sidebar-sheet .inventory-item {
+  width: auto;
+  box-sizing: unset;
+  overflow: hidden;
+  align-items: center;
+  padding: 0.5rem 0.25rem;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--dhp-border);
+  margin-bottom: 0.25rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  word-wrap: break-word;
+  word-break: break-word;
+  border-radius: 5px;
+}
+
+.daggerheart-plus.sheet .items-list .inventory-item:first-of-type {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.daggerheart-plus.sheet .items-list .inventory-item:last-of-type {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom: 1px solid var(--dhp-border);
+}
+
+.daggerheart-plus.sheet .items-list .inventory-item:only-of-type {
+  border-radius: 5px;
+  border-bottom: 1px solid var(--dhp-border);
+}
+
+.daggerheart-plus.sheet .inventory-item .inventory-item-header .item-label {
+  flex: 1;
+  font-family: "Montserrat", sans-serif;
+  align-self: center;
+  text-align: left;
+}
+
+.daggerheart-plus.sheet.character .item-buttons .item-button {
+  display: flex;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  border-radius: 6px;
+  margin-top: 0.5em;
+  gap: 0.5em;
+}
+
+.daggerheart-plus.sheet.character .item-buttons .item-button .spacer {
+  display: none;
+}
+
+.daggerheart-plus.sheet.character
+  .character-sidebar-sheet
+  .inventory-item:hover {
+  background: rgba(230, 168, 0, 0.15);
+  border-color: var(--dhp-primary);
+  transform: none;
+  box-shadow: none;
+}
+
+.daggerheart-plus.sheet.character
+  .character-sidebar-sheet
+  .inventory-item
+  .item-img {
+  border-radius: 5px;
+  border: 1px solid var(--dhp-border);
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+  margin: 0;
+}
+
+.daggerheart-plus.sheet.character
+  .character-sidebar-sheet
+  .inventory-item:hover
+  .item-img {
+  border-color: var(--dhp-primary);
+}
+
+.daggerheart-plus.sheet .inventory-item .inventory-item-header .item-resource {
+  display: flex;
+  align-items: center;
+  gap: .5em;
+  padding: 0em 1em;
+}
+
+.daggerheart-plus.sheet input.inventory-item-resource {
+  height: 2em;
+  max-width: 4em;
+  min-width: 2em;
+  padding: 0em;
+}
+.daggerheart-plus.sheet.character
+  .character-sidebar-sheet
+  .inventory-item
+  .item-label-wrapper {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.daggerheart-plus.sheet.character
+  .character-sidebar-sheet
+  .inventory-item
+  .item-label {
+  min-width: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.daggerheart-plus.sheet.character
+  .character-sidebar-sheet
+  .inventory-item
+  .item-name {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--dhp-text);
+  margin-bottom: 0.25rem;
+  /* Allow wrapping to two lines like experiences */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  line-height: 1.2;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  min-width: 0;
+}
+
+.daggerheart-plus.sheet.character
+  .character-sidebar-sheet
+  .inventory-item
+  .item-labels {
+  font-size: 0.75rem;
+  color: var(--dhp-text-light);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+  line-height: 1.2;
+}
+
+.daggerheart-plus.sheet.character
+  .character-sidebar-sheet
+  .inventory-item
+  .item-labels
+  .label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+  line-height: 1.2;
+}
+
+.daggerheart-plus.sheet.character
+  .character-sidebar-sheet
+  .inventory-item
+  .controls {
+  display: flex;
+  gap: 0;
+  flex-shrink: 0;
+  align-items: center;
+  margin-left: auto;
+  flex-wrap: wrap;
+}
+
+.daggerheart-plus.sheet.character .inventory-item .inventory-item-header .controls {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: .75em;
+}
+
+.daggerheart-plus.sheet.character
+  .character-sidebar-sheet
+  .inventory-item
+  .controls
+  a {
+  padding: 0.25rem;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  font-size: 0.8rem;
+  color: var(--dhp-text-light);
+}
+
+.daggerheart-plus.sheet.character
+  .character-sidebar-sheet
+  .inventory-item
+  .controls
+  a:hover {
+  color: var(--dhp-primary);
+  background: rgba(230, 168, 0, 0.1);
+  transform: scale(1.1);
+}
+
+/* --- Sidebar Loadout: Card Style -------------------------------------------------- */
+/* Scope tightly to only affect the Loadout section in the character sidebar */
+.daggerheart-plus.sheet.character
+  .character-sidebar-sheet
+  .loadout-section
+  .items-sidebar-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.daggerheart-plus.sheet.character
+  .character-sidebar-sheet
+  .loadout-section
+  .inventory-item,
+.dh-inline-rails.rails-left
+  .floating-rail-left
+  .loadout-section
+  .inventory-item {
+  position: relative !important;
+  padding: 0 !important; /* content overlays handle padding */
+  height: 100px !important; /* compact default height */
+  min-width: 210px;
+  border-radius: 10px !important;
+  overflow: hidden !important;
+  /* expects url(...) stored in --sidebar-card-bg */
+  background: var(--sidebar-card-bg) !important;
+  background-size: cover !important;
+  background-position: top center !important;
+  background-repeat: no-repeat !important;
+  border: 1px solid var(--dhp-border) !important;
+  box-shadow: 0 1px 2px var(--dhp-shadow) !important;
+  transition: transform 180ms ease, box-shadow 180ms ease, height 180ms ease,
+    border-color 180ms ease !important;
+  /* No delay by default; collapse immediately when leaving */
+  transition-delay: 0ms, 0ms, 0ms, 0ms !important;
+  margin-bottom: 0.25rem;
+}
+
+.daggerheart-plus.sheet.character
+  .character-sidebar-sheet
+  .loadout-section
+  .inventory-item:hover,
+.dh-inline-rails.rails-left
+  .floating-rail-left
+  .loadout-section
+  .inventory-item:hover {
+  height: 168px !important; /* expand on hover */
+  border-color: var(--dhp-primary) !important;
+  /* Delay only the height transition (3rd in the list above) */
+  transition-delay: 0ms, 0ms, 350ms, 0ms !important;
+}
+
+/* Hide the inline item image; use it as a background instead */
+.daggerheart-plus.sheet.character
+  .character-sidebar-sheet
+  .loadout-section
+  .inventory-item
+  .item-img,
+.dh-inline-rails.rails-left
+  .floating-rail-left
+  .loadout-section
+  .inventory-item
+  .item-img {
+  opacity: 0 !important;
+  position: absolute !important;
+  pointer-events: none !important;
+}
+
+/* Collapse the original portrait container but keep roll-img usable */
+.daggerheart-plus.sheet.character
+  .character-sidebar-sheet
+  .loadout-section
+  .inventory-item
+  .img-portait,
+.dh-inline-rails.rails-left
+  .floating-rail-left
+  .loadout-section
+  .inventory-item
+  .img-portait {
+  width: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important; /* collapse original container */
+}
+
+/* Ensure the header shows the background (and doesn’t paint over it) */
+.daggerheart-plus.sheet.character
+  .character-sidebar-sheet
+  .loadout-section
+  .inventory-item
+  .inventory-item-header,
+.dh-inline-rails.rails-left
+  .floating-rail-left
+  .loadout-section
+  .inventory-item
+  .inventory-item-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  border-radius: 3px;
+  flex-wrap: wrap;
+  flex-direction: row;
+  background: transparent !important;
+  background-image: var(--sidebar-card-bg) !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
+
+.daggerheart-plus.sheet .inventory-item .inventory-item-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: .75em;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+/* Optional: show the roll d20 near controls (hidden if not desired) */
+.daggerheart-plus.sheet.character
+  .character-sidebar-sheet
+  .loadout-section
+  .inventory-item
+  .img-portait
+  .roll-img,
+.dh-inline-rails.rails-left
+  .floating-rail-left
+  .loadout-section
+  .inventory-item
+  .img-portait
+  .roll-img {
+  position: absolute;
+  top: 6px;
+  right: 40px; /* leave room for .controls bubble */
+  width: 22px;
+  height: 22px;
+  z-index: 2;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.6));
+  cursor: pointer;
+}
+
+/* Soft vignette and a bottom gradient band for text readability */
+.daggerheart-plus.sheet.character
+  .character-sidebar-sheet
+  .loadout-section
+  .inventory-item::before,
+.dh-inline-rails.rails-left
+  .floating-rail-left
+  .loadout-section
+  .inventory-item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    100% 120% at 50% 50%,
+    transparent 40%,
+    rgba(0, 0, 0, 0.35) 100%
+  );
+  pointer-events: none;
+}
+
+.daggerheart-plus.sheet.character
+  .character-sidebar-sheet
+  .loadout-section
+  .inventory-item::after,
+.dh-inline-rails.rails-left
+  .floating-rail-left
+  .loadout-section
+  .inventory-item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  /* Pitch black at bottom, ~50% at 50%, 0% by 70% */
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0.5) 50%,
+    rgba(0, 0, 0, 0) 70%
+  );
+  pointer-events: none;
+}
+
+/* Text overlay sits on top of gradients */
+.daggerheart-plus.sheet.character
+  .character-sidebar-sheet
+  .loadout-section
+  .inventory-item
+  .item-label,
+.dh-inline-rails.rails-left
+  .floating-rail-left
+  .loadout-section
+  .inventory-item
+  .item-label {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding: 0.4rem 0.6rem;
+  z-index: 1;
+}
+
+.daggerheart-plus.sheet.character
+  .character-sidebar-sheet
+  .loadout-section
+  .inventory-item
+  .item-name,
+.dh-inline-rails.rails-left
+  .floating-rail-left
+  .loadout-section
+  .inventory-item
+  .item-name {
+  color: var(--dhp-primary);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+  text-align: left;
+  margin: 0;
+  /* Improve readability over busy images */
+  display: inline-block;
+  max-width: 100%;
+  /* padding: 2px 7px;
+  margin-left: -7px;*/
+  border-radius: 6px;
+  /*background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 0.45) 60%,
+    rgba(0, 0, 0, 0) 90%
+  );
+  -webkit-backdrop-filter: blur(1px);
+  backdrop-filter: blur(1px);*/
+}
+
+.daggerheart-plus.sheet.character
+  .character-sidebar-sheet
+  .loadout-section
+  .inventory-item
+  .item-labels,
+.daggerheart-plus.sheet.character
+  .character-sidebar-sheet
+  .loadout-section
+  .inventory-item
+  .item-labels
+  .label,
+.dh-inline-rails.rails-left
+  .floating-rail-left
+  .loadout-section
+  .inventory-item
+  .item-labels,
+.dh-inline-rails.rails-left
+  .floating-rail-left
+  .loadout-section
+  .inventory-item
+  .item-labels
+  .label {
+  color: rgba(255, 255, 255, 0.85);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+/* Controls overlay in the top-right corner */
+.daggerheart-plus.sheet.character
+  .character-sidebar-sheet
+  .loadout-section
+  .inventory-item
+  .controls,
+.dh-inline-rails.rails-left
+  .floating-rail-left
+  .loadout-section
+  .inventory-item
+  .controls {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  padding: 0.5em.75em;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  border-radius: 999px;
+  opacity: 0;
+  transform: translateY(-2px);
+  pointer-events: none;
+  transition: opacity 160ms ease, transform 160ms ease, background 160ms ease;
+}
+.daggerheart-plus.sheet.character
+  .character-sidebar-sheet
+  .loadout-section
+  .inventory-item:hover
+  .controls,
+.dh-inline-rails.rails-left
+  .floating-rail-left
+  .loadout-section
+  .inventory-item:hover
+  .controls {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.daggerheart-plus.sheet.character
+  .character-sidebar-sheet
+  .loadout-section
+  .inventory-item
+  .controls
+  a,
+.dh-inline-rails.rails-left
+  .floating-rail-left
+  .loadout-section
+  .inventory-item
+  .controls
+  a {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.daggerheart-plus.sheet.character
+  .character-sidebar-sheet
+  .loadout-section
+  .inventory-item
+  .controls
+  a:hover,
+.dh-inline-rails.rails-left
+  .floating-rail-left
+  .loadout-section
+  .inventory-item
+  .controls
+  a:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.daggerheart-plus.sheet.character
+  .character-sidebar-sheet
+  .loadout-section
+  .inventory-item
+  .loadout-resource-badge,
+.dh-inline-rails.rails-left
+  .floating-rail-left
+  .loadout-section
+  .inventory-item
+  .loadout-resource-badge {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.55rem;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  line-height: 1;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  cursor: pointer;
+  user-select: none;
+  z-index: 3;
+  opacity: 0;
+  transform: translateY(-2px);
+  pointer-events: none;
+  transition: opacity 160ms ease, transform 160ms ease, background 160ms ease;
+}
+
+.daggerheart-plus.sheet.character .tab.loadout .inventory-item .loadout-resource-badge {
+  display: none !important;
+}
+
+.daggerheart-plus.sheet.character
+  .character-sidebar-sheet
+  .loadout-section
+  .inventory-item:hover
+  .loadout-resource-badge,
+.dh-inline-rails.rails-left
+  .floating-rail-left
+  .loadout-section
+  .inventory-item:hover
+  .loadout-resource-badge,
+.daggerheart-plus.sheet.character
+  .character-sidebar-sheet
+  .loadout-section
+  .inventory-item
+  .loadout-resource-badge.is-always-visible,
+.dh-inline-rails.rails-left
+  .floating-rail-left
+  .loadout-section
+  .inventory-item
+  .loadout-resource-badge.is-always-visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.daggerheart-plus.sheet.character
+  .character-sidebar-sheet
+  .loadout-section
+  .inventory-item
+  .loadout-resource-badge:hover,
+.dh-inline-rails.rails-left
+  .floating-rail-left
+  .loadout-section
+  .inventory-item
+  .loadout-resource-badge:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.daggerheart-plus.sheet.character
+  .character-sidebar-sheet
+  .loadout-section
+  .inventory-item
+  .loadout-resource-badge i,
+.dh-inline-rails.rails-left
+  .floating-rail-left
+  .loadout-section
+  .inventory-item
+  .loadout-resource-badge i {
+  font-size: 0.85rem;
+}
+
+.daggerheart-plus.sheet.character
+  .character-sidebar-sheet
+  .loadout-section
+  .inventory-item
+  .loadout-resource-badge .badge-text,
+.dh-inline-rails.rails-left
+  .floating-rail-left
+  .loadout-section
+  .inventory-item
+  .loadout-resource-badge .badge-text {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.2rem;
+}
+
+.daggerheart-plus.sheet.character
+  .character-sidebar-sheet
+  .loadout-section
+  .inventory-item
+  .loadout-resource-badge .badge-value,
+.dh-inline-rails.rails-left
+  .floating-rail-left
+  .loadout-section
+  .inventory-item
+  .loadout-resource-badge .badge-value {
+  min-width: 1.1em;
+  text-align: center;
+}
+
+.daggerheart-plus.sheet.character
+  .character-sidebar-sheet
+  .loadout-section
+  .inventory-item
+  .loadout-resource-badge .badge-separator,
+.dh-inline-rails.rails-left
+  .floating-rail-left
+  .loadout-section
+  .inventory-item
+  .loadout-resource-badge .badge-separator {
+  font-size: 0.75rem;
+  opacity: 0.6;
+}
+
+.daggerheart-plus.sheet.character
+  .character-sidebar-sheet
+  .loadout-section
+  .inventory-item
+  .loadout-resource-badge .badge-max,
+.dh-inline-rails.rails-left
+  .floating-rail-left
+  .loadout-section
+  .inventory-item
+  .loadout-resource-badge .badge-max {
+  font-size: 0.75rem;
+  opacity: 0.8;
+}
+
+.daggerheart-plus.sheet.character .character-sidebar-sheet .threshold-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.daggerheart-plus.sheet.character
+  .character-sidebar-sheet
+  .threshold-group
+  > label {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: var(--dhp-text-light);
+  margin-bottom: 0.25em;
+}
+
+.daggerheart-plus.sheet.character
+  .character-sidebar-sheet
+  .threshold-group
+  .resource-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.daggerheart-plus.sheet.character
+  .character-sidebar-sheet
+  .threshold-group
+  input {
+  width: 40px;
+  font-size: 16px;
+  font-weight: 700;
+  background: transparent;
+  border: 1px solid var(--dhp-border);
+  border-radius: 0.5em;
+  padding: 0.2em;
+  color: var(--dhp-text);
+  text-align: center;
+}
+
+.daggerheart-plus.sheet.character
+  .character-header-modern
+  .core-stats
+  .threshold-values {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+
+.daggerheart-plus.sheet.character
+  .character-header-modern
+  .core-stats
+  .threshold-text {
+  color: var(--dhp-text-light);
+  font-size: 0.75em;
+  text-transform: uppercase;
+  opacity: 0.7;
+  text-align: center;
+  line-height: 1.1;
+  margin: 0;
+  padding: 0 2px;
+  width: 35px;
+  height: auto;
+  word-break: normal;
+  white-space: nowrap;
+  display: inline-block;
+  margin: 0 0.25em;
+}
+
+.daggerheart-plus.sheet.character
+  .character-header-modern
+  .core-stats
+  .threshold-clickable {
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.daggerheart-plus.sheet.character
+  .character-header-modern
+  .core-stats
+  .threshold-clickable:hover {
+  color: var(--dhp-primary);
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.daggerheart-plus.sheet.character
+  .character-header-modern
+  .core-stats
+  .threshold-clickable:active {
+  transform: scale(0.95);
+}
+
+.daggerheart-plus.sheet.character
+  .character-header-modern
+  .core-stats
+  .threshold-group
+  .threshold-value-display,
+.daggerheart-plus.sheet.character
+  .character-header-modern
+  .core-stats
+  .threshold-values
+  .threshold-value-display {
+  background: url("assets/containers/DH-Arrow.png") no-repeat center center !important;
+  background-size: contain !important;
+  border: none !important;
+  width: 45px !important;
+  height: 45px !important;
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  color: white !important;
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.daggerheart-plus.sheet.character
+  .character-header-modern
+  .core-stats
+  .threshold-group
+  .threshold-value-display:hover,
+.daggerheart-plus.sheet.character
+  .character-header-modern
+  .core-stats
+  .threshold-values
+  .threshold-value-display:hover {
+  transform: scale(1.05);
+}
+
+.daggerheart-plus.sheet.character
+  .character-header-modern
+  .core-stats
+  .threshold-group
+  .threshold-value-display:active,
+.daggerheart-plus.sheet.character
+  .character-header-modern
+  .core-stats
+  .threshold-values
+  .threshold-value-display:active {
+  transform: scale(0.98);
+}
+
+.daggerheart-plus.sheet.character
+  .character-header-modern
+  .core-stats
+  .trait-effects {
+  color: var(--dhp-text-light);
+  font-size: 0.75em;
+  text-decoration: none;
+  margin-top: 0.25em;
+}
+
+@keyframes DHPPulseGlow {
+  0% {
+    box-shadow: 0 0 0 0 rgba(230, 168, 0, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(230, 168, 0, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(230, 168, 0, 0);
+  }
+}
+
+/* Right-side tabs navigation
+   NOTE: Scope all positioning and sizing rules to `.tabs-right` so that
+   the system's default horizontal navigation is unaffected. A previous
+   unscoped selector (`nav.tabs`) unintentionally targeted the header
+   navbar and collapsed/hid its items. */
+/* (Removed) Sidebar tabs styling - feature dropped */
+
+/* === Sidebar Quick Stats: refreshed look === */
+.daggerheart-plus.sheet.character .character-sidebar-sheet .info-section {
+  width: 100%;
+  margin-bottom: var(--dh-space-md);
+}
+.daggerheart-plus.sheet.character .character-sidebar-sheet .resources-section {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.6rem;
+}
+.daggerheart-plus.sheet.character .character-sidebar-sheet .status-bar {
+  --qs-bar-height: 30px;
+  display: grid;
+  grid-template-rows: auto var(--qs-bar-height);
+  align-items: stretch;
+  gap: 0.4rem;
+  padding: 0.6rem;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--dhp-border);
+  border-radius: 8px;
+  /* expose computed percent for children (e.g., split text overlay) */
+  --bar-value: var(--value, 0);
+  --bar-max: max(var(--max, 1), 1);
+  --percent: calc((var(--bar-value) / var(--bar-max)) * 100%);
+}
+
+.daggerheart-plus.sheet.character .character-sidebar-sheet .top-info-container {
+  padding-bottom: 1em;
+  border-bottom: 1px solid var(--dhp-primary);
+}
+
+.daggerheart-plus.sheet.character
+  .character-sidebar-sheet
+  .information-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.daggerheart-plus.sheet.character
+  .character-sidebar-sheet
+  .status-bar
+  .status-label {
+  order: -1;
+}
+.daggerheart-plus.sheet.character
+  .character-sidebar-sheet
+  .status-bar
+  .status-label
+  h4 {
+  margin: 0;
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--dhp-text-light);
+  background: transparent !important;
+  border: none !important;
+  padding: 0;
+  text-align: center;
+}
+
+.daggerheart-plus.sheet.character
+  .character-sidebar-sheet
+  .status-bar
+  .status-value {
+  grid-area: 2 / 1 / 3 / 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  z-index: 2;
+  width: 100%;
+  position: relative;
+  font-size: 1.25em;
+  font-weight: 600;
+  font-family: "Montserrat";
+}
+.daggerheart-plus.sheet.character
+  .character-sidebar-sheet
+  .status-bar
+  .status-value
+  p {
+  color: var(--dhp-text);
+  font-weight: 800;
+}
+.daggerheart-plus.sheet.character
+  .character-sidebar-sheet
+  .status-bar
+  .status-value
+  p {
+  color: var(--dh-color-gold-light);
+  font-weight: 600;
+}
+
+/* Two-tone value text overlay that splits at the fill edge */
+.daggerheart-plus.sheet.character
+  .character-sidebar-sheet
+  .status-bar
+  .status-value::before,
+.daggerheart-plus.sheet.character
+  .character-sidebar-sheet
+  .status-bar
+  .status-value::after {
+  content: attr(data-value) " / " attr(data-max);
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none; /* allow input interaction */
+  font: inherit;
+}
+
+/* Right side (unfilled track) uses light text */
+.daggerheart-plus.sheet.character
+  .character-sidebar-sheet
+  .status-bar
+  .status-value::before {
+  color: var(--dhp-text-light);
+  clip-path: inset(0 0 0 var(--percent));
+}
+
+/* Left side (filled bar) uses dark text for contrast on yellow */
+.daggerheart-plus.sheet.character
+  .character-sidebar-sheet
+  .status-bar
+  .status-value::after {
+  /* dark-on-fill; tuned for bright gold bar */
+  color: #111111;
+  clip-path: inset(0 calc(100% - var(--percent)) 0 0);
+}
+
+/* Hide the underlying static text and show live input only when editing */
+/* Hide only the static slash and max; keep input visible */
+.daggerheart-plus.sheet.character
+  .character-sidebar-sheet
+  .status-bar
+  .status-value
+  > p:nth-child(2),
+.daggerheart-plus.sheet.character
+  .character-sidebar-sheet
+  .status-bar
+  .status-value
+  > .bar-label {
+  display: none;
+}
+
+.daggerheart-plus.sheet.character
+  .character-sidebar-sheet
+  .status-bar
+  .status-value:focus-within
+  > p:nth-child(2),
+.daggerheart-plus.sheet.character
+  .character-sidebar-sheet
+  .status-bar
+  .status-value:focus-within
+  > .bar-label {
+  display: block;
+}
+
+.daggerheart-plus.sheet.character
+  .character-sidebar-sheet
+  .status-bar
+  .status-value
+  .bar-input {
+  opacity: 1;
+  color: transparent;
+  caret-color: var(--dhp-text);
+  outline: none;
+}
+
+/* When user is editing, reveal the input text and hide overlay */
+.daggerheart-plus.sheet.character
+  .character-sidebar-sheet
+  .status-bar
+  .status-value:focus-within::before,
+.daggerheart-plus.sheet.character
+  .character-sidebar-sheet
+  .status-bar
+  .status-value:focus-within::after {
+  content: "";
+}
+
+.daggerheart-plus.sheet.character
+  .character-sidebar-sheet
+  .status-bar
+  .status-value:focus-within
+  .bar-input {
+  color: var(--dhp-text);
+}
+.daggerheart-plus.sheet.character
+  .character-sidebar-sheet
+  .status-bar
+  .bar-input,
+.daggerheart-plus.sheet.character
+  .character-sidebar-sheet
+  .status-number
+  .bar-input {
+  text-align: center;
+  color: var(--dh-color-off-white);
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  width: 15px;
+  margin-top: -1px;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.daggerheart-plus.sheet.character
+  .character-sidebar-sheet
+  .status-bar
+  .bar-label {
+  color: var(--dhp-text);
+  font-weight: 700;
+}
+
+/* Progress Bar (base element)
+   - This is the TRACK (empty portion) for Firefox and general styling.
+   - Track color: var(--dhp-border) */
+.daggerheart-plus.sheet.character .character-sidebar-sheet .progress-bar {
+  grid-area: 2 / 1 / 3 / 2; /* row 2, col 1 overlay */
+  width: 100%;
+  height: var(--qs-bar-height);
+  border-radius: 6px;
+  /* Compute percent from provided CSS variables */
+  --bar-value: var(--value, 0);
+  --bar-max: max(var(--max, 1), 1);
+  --percent: calc((var(--bar-value) / var(--bar-max)) * 100%);
+  /* Static gradient revealed by covering the unfilled portion on the right */
+  background: linear-gradient(var(--dhp-border), var(--dhp-border)) right /
+      calc(100% - var(--percent)) 100% no-repeat,
+    var(--dhp-hp-gradient, var(--dhp-damage-gradient));
+  -webkit-appearance: none;
+  appearance: none;
+  z-index: 1;
+}
+.daggerheart-plus.sheet.character
+  .character-sidebar-sheet
+  .progress-bar::-webkit-progress-bar {
+  /* Let the element background show through (we paint our own layers) */
+  background: transparent;
+  border-radius: 6px;
+}
+.daggerheart-plus.sheet.character
+  .character-sidebar-sheet
+  .progress-bar::-webkit-progress-value {
+  /* Value layer is transparent; reveal happens via element background */
+  background: transparent !important;
+  border-radius: 6px;
+  box-shadow: none !important;
+}
+.daggerheart-plus.sheet.character
+  .character-sidebar-sheet
+  .progress-bar::-moz-progress-bar {
+  /* Firefox value portion transparent; use element background layers */
+  background: transparent !important;
+  border-radius: 6px;
+  box-shadow: none !important;
+}
+.daggerheart-plus.sheet.character
+  .character-sidebar-sheet
+  .progress-bar.stress-color::-webkit-progress-value,
+.daggerheart-plus.sheet.character
+  .character-sidebar-sheet
+  .progress-bar.stress-color::-moz-progress-bar {
+  /* Variants now inherit the same reveal mechanic */
+  background: transparent !important;
+  box-shadow: none !important;
+}
+.daggerheart-plus.sheet.character
+  .character-sidebar-sheet
+  .progress-bar.armor-color::-webkit-progress-value,
+.daggerheart-plus.sheet.character
+  .character-sidebar-sheet
+  .progress-bar.armor-color::-moz-progress-bar {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+/* Metrics (Evasion / Armor Slots / Proficiency) */
+.daggerheart-plus.sheet.character .character-sidebar-sheet .status-section {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.6rem;
+}
+.daggerheart-plus.sheet.character .character-sidebar-sheet .status-number {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  padding: 0.6rem;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--dhp-border);
+  border-radius: 8px;
+}
+.daggerheart-plus.sheet.character
+  .character-sidebar-sheet
+  .status-number
+  .status-label {
+  order: -1;
+}
+.daggerheart-plus.sheet.character
+  .character-sidebar-sheet
+  .status-number
+  .status-label
+  h4 {
+  margin: 0;
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--dhp-text-light);
+  background: transparent !important;
+  border: none !important;
+  padding: 0;
+}
+.daggerheart-plus.sheet.character
+  .character-sidebar-sheet
+  .status-number
+  .status-value
+  p {
+  margin: 0;
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: var(--dhp-text);
+}
+
+.daggerheart-plus.sheet .card-item .card-label {
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  align-items: center;
+  gap: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  width: 100%;
+  position: absolute;
+  background-color: var(--dh-bg);
+  bottom: 0;
+  mask-image: linear-gradient(180deg, transparent 0%, black 20%);
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.daggerheart-plus.sheet .card-item .card-label .card-name {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: #efe6d8;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  padding: 0.25em 0.5em;
+}
+
+*.daggerheart-plus.sheet.character
+  .character-sidebar-sheet
+  .equipment-section
+  .items-sidebar-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  min-width: 0;
+}
+
+.daggerheart-plus.sheet
+  .inventory-item
+  .inventory-item-header
+  .item-label
+  .item-name {
+  font-size: 14px;
+  text-align: left;
+}
+
+.daggerheart-plus.sheet .tab.effects .effects-sections {
+  overflow-y: auto;
+}
+
+.daggerheart-plus.sheet .tab.inventory .currency-section {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 5px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  border-radius: 12px;
+}
+
+.daggerheart-plus.sheet .tab.inventory .currency-input {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 5px;
+  padding: 0.5em 0.35em;
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--dhp-border);
+  border-radius: 10px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.daggerheart-plus.sheet .tab.inventory .currency-input:hover {
+  border-color: var(--dhp-primary);
+  box-shadow: 0 2px 6px var(--dhp-shadow);
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.daggerheart-plus.sheet .tab.inventory .currency-input .icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--dhp-primary);
+  color: var(--dhp-border);
+  box-shadow: 0 1px 3px var(--dhp-shadow);
+}
+
+.daggerheart-plus.sheet .tab.inventory .currency-input .icon i {
+  font-size: 0.9rem;
+}
+
+.daggerheart-plus.sheet .tab.inventory .currency-input .label {
+  font-weight: 700;
+  color: var(--dhp-text);
+  letter-spacing: 0.02em;
+}
+
+.daggerheart-plus.sheet .tab.inventory .currency-input input,
+.daggerheart-plus.sheet .tab.inventory .currency-input .currency-field {
+  text-align: center;
+  min-width: 0;
+  width: 2em;
+  height: 1.75em;
+  border-radius: 8px;
+  border: 1px solid var(--dhp-border);
+  background: var(--dhp-card-bg);
+  color: var(--dhp-primary);
+  outline: 2px solid transparent;
+  transition: outline-color 0.2s ease, border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.daggerheart-plus.sheet .tab.inventory .currency-input input:focus,
+.daggerheart-plus.sheet .tab.inventory .currency-input .currency-field:focus {
+  border-color: var(--dhp-primary);
+  outline-color: color-mix(in oklab, var(--dhp-primary) 30%, transparent);
+  box-shadow: 0 0 0 3px color-mix(in oklab, var(--dhp-primary) 15%, transparent);
+}
+
+/* Responsive: stack into two columns on narrow sheets */
+@media (max-width: 900px) {
+  .daggerheart-plus.sheet .tab.inventory .currency-section {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .daggerheart-plus.sheet .tab.inventory .currency-section {
+    grid-template-columns: 1fr;
+  }
+}
+
+.daggerheart-plus.sheet a.filter-button,
+.daggerheart-plus.sheet a[data-tooltip="Compendium Browser"] {
+  color: var(--dhp-primary) !important;
+}
+.daggerheart-plus.sheet .tab .search-section {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-top: 0.33em;
+}
+
+.daggerheart-plus.sheet .tab .search-section .search-bar input {
+  border-radius: 50px;
+  font-family: "Montserrat", sans-serif;
+  background: var(--dhp-surface);
+  border: 1px solid var(--dhp-border);
+  outline: 2px solid transparent;
+  transition: all 0.3s ease;
+  padding: 0 20px;
+  color: var(--dhp-primary);
+}
+
+.daggerheart-plus.sheet .tab .search-section .search-bar {
+  position: relative;
+  color: light-dark(#18162e50, #efe6d850);
+  width: 100%;
+}
+
+.daggerheart-plus.sheet
+  .tab.inventory
+  .search-section
+  .search-bar
+  input::placeholder {
+  color: var(--dhp-border);
+}
+
+.application.daggerheart.dh-style
+  .inventory-item
+  .inventory-item-content.extensible.extended {
+  grid-template-rows: 1fr;
+  transition: grid-template-rows 0.3s ease-in-out;
+}
+
+.application.daggerheart.dh-style
+  .inventory-item
+  .inventory-item-content.extensible {
+  display: grid;
+  grid-template-rows: 0;
+  transition: grid-template-rows 0.3s ease-in-out;
+}
+
+.daggerheart-plus.sheet button.btn-toggle-view {
+  background: transparent;
+  border: none;
+}
+
+/* DH+ configurable gradients for HP/stress/armor progress bars */
+.daggerheart-plus.sheet.character
+  .character-sidebar-sheet
+  .progress-bar.hp-color {
+  background: linear-gradient(var(--dhp-border), var(--dhp-border)) right /
+      calc(100% - var(--percent)) 100% no-repeat,
+    var(--dhp-hp-gradient, var(--dhp-damage-gradient));
+}
+
+.daggerheart-plus.sheet.character
+  .character-sidebar-sheet
+  .progress-bar.stress-color {
+  background: linear-gradient(var(--dhp-border), var(--dhp-border)) right /
+      calc(100% - var(--percent)) 100% no-repeat,
+    var(--dhp-stress-gradient, var(--dhp-damage-gradient));
+}
+
+.daggerheart-plus.sheet.character
+  .character-sidebar-sheet
+  .progress-bar.armor-color {
+  background: linear-gradient(var(--dhp-border), var(--dhp-border)) right /
+      calc(100% - var(--percent)) 100% no-repeat,
+    var(--dhp-armor-gradient, var(--dhp-damage-gradient));
+}
+
+/* Adversary sidebar: allow item names to wrap to two lines */
+.daggerheart-plus.sheet .adversary-sidebar-sheet .inventory-item .item-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  line-height: 1.2;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}

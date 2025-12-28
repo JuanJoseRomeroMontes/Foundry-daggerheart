@@ -1,0 +1,115 @@
+{
+    "barbrawl": {
+        "translatedBy": "DJ Addi",
+        "barStyle": {
+            "name": "Bar Stil",
+            "hint": "Verändert, wie die Balken angezeigt werden.",
+            "minimal": "Minimalistisch (dünn, kein Rand)",
+            "default": "Foundry-Standard",
+            "large": "Groß (breit, dünner Rand)",
+            "legacy": "Alt (dicker Rand)"
+        },
+        "textStyle": {
+            "name": "Bar Beschriftung",
+            "hint": "Ändert die Zahl, die auf dem Balken angezeigt wird.",
+            "user": "Benutzereinstellung",
+            "none": "Keine",
+            "fraction": "Bruch (Wert / Max.)",
+            "percent": "Prozent (%)"
+        },
+        "compactHud": {
+            "name": "Kompaktes HUD",
+            "hint": "Reduziert die Größe von Eingabefeldern für Ressourcen im Token HUD."
+        },
+        "hideHostile": {
+            "name": "Alle feindlichen Bars verstecken",
+            "hint": "Verhindert das Anzeigen von Bars für feindliche Tokens, welche der Spieler nicht besitzt. Dies kann ressourcenspezifische Einstellungen überschreiben."
+        },
+        "heightMultiplier": {
+            "name": "Höhenmultiplikator",
+            "hint": "Multipliziert die Höhe der Bars mit dem eingestellten Wert, um die Lesbarkeit zu verbessern. Dies wirkt sich auch auf die Beschriftung, jedoch nicht auf Vorder- oder Hintergrundbilder aus."
+        },
+        "cacheBitmaps": {
+            "name": "Bar-Grafiken speichern",
+            "hint": "Aktiviert zwischengespeicherte Grafiken für Bars. Dadurch kann sich die Leistung verbessern, aber die Lesbarkeit (v.A. von Beschriftungen) verschlechtern."
+        },
+        "config": {
+            "attribute": "Attribut",
+            "ownerVisibility": "Sichtbarkeit (Besitzer)",
+            "otherVisibility": "Sichtbarkeit (alle)",
+            "gmVisibility": "Sichtbarkeit (SL)",
+            "hide": "Bar verstecken",
+            "hideHint": "Die Bar wird nicht angezeigt, wenn eine der ausgewählten Konditionen zutrifft.",
+            "hideFull": "Voll",
+            "hideEmpty": "Leer",
+            "hideCombat": "Im Kampf",
+            "hideNoCombat": "Außerhalb des Kampfes",
+            "hideHud": "HUD verstecken",
+            "value": "Wert (aktuell/max)",
+            "color": "Farbe (min/max)",
+            "position": "Position",
+            "advanced": "Erweiterte Einstellungen",
+            "indent": "Einzug",
+            "indentHint": "Zusätzlicher Abstand an der Seite der Bar in Prozent der Breite des Tokens.",
+            "indentLeft": "Links",
+            "indentRight": "Rechts",
+            "shareHeight": "Höhe teilen",
+            "shareHeightHint": "Verhindert, dass die Bar vertikalen Platz reserviert, so dass die nächste Bar dieselbe Zeile verwendet.",
+            "style": "Beschriftung",
+            "ignoreLimits": "Limits ignorieren",
+            "ignoreLimitsHint": "Deaktiviert die Begrenzung von Werten zwischen 0 (Untergrenze) und dem Maximalwert (Obergrenze). Dies gilt nur für benutzerdefinierte Bars - andere Attribute werden vom System begrenzt.",
+            "ignoreMin": "Untergrenze",
+            "ignoreMax": "Obergrenze",
+            "invert": "Werte umkehren",
+            "invertDirection": "Richtung umkehren",
+            "invertHint": "Zeigt 0 als leere Bar und den Maximalwert als volle Bar an.",
+            "invertDirectionHint": "Kehrt die Richtung um, aus der dieser Balken gefüllt wird.",
+            "label": "Beschriftungspräfix",
+            "labelHint": "Zeit den konfigurierten Text auf der Bar an.",
+            "approximate": "Näherungswert",
+            "approximateHint": "Zeigt einen angenäherten Wert auf der Bar und deren Beschriftung an. Die Einstellung bestimmt, wie viele Segmente angezeigt werden.",
+            "approximateOwner": "Näherung für Besitzer",
+            "approximateOwnerHint": "Gibt an, ob der angenäherte Wert auch für den Besitzer des Tokens angezeigt wird.",
+            "fgImage": "Vordergrundbild",
+            "fgImageHint": "Ersetzt die übliche Bar mit einem Bild, das entsprechend der Füllung abgeschnitten ist.",
+            "bgImage": "Hintergrundbild",
+            "bgImageHint": "Ersetzt den üblichen Hintergrund der Bar mit einem Bild. Es wird empfohlen, dass beide Bilder dieselbe Breite wie das Gitter der Szene haben.",
+            "hideBg": "Hintergrund verstecken",
+            "opacity": "Deckkraft"
+        },
+        "attribute": {
+            "none": "Keins (entfernen)",
+            "custom": "Benutzerdefiniert (Werte unten)"
+        },
+        "visibility": {
+            "inheritFromOwner": "Von Besitzer erben",
+            "inheritFromOther": "Von allen erben",
+            "none": "Nie",
+            "always": "Immer",
+            "hover": "Wenn Mauszeiger darüber",
+            "control": "Wenn ausgewählt",
+            "hoverOrControl": "Wenn Mauszeiger darüber oder ausgewählt"
+        },
+        "position": {
+            "top-inner": "Oben (innen)",
+            "top-outer": "Oben (außen)",
+            "bottom-inner": "Unten (innen)",
+            "bottom-outer": "Unten (außen)",
+            "left-inner": "Links (innen)",
+            "left-outer": "Links (außen)",
+            "right-inner": "Rechts (innen)",
+            "right-outer": "Rechts (außen)"
+        },
+        "section": "Ressourcen Bars",
+        "add": "Ressource hinzufügen",
+        "defaults": {
+            "save": "Speichern in...",
+            "saveConfirmation": "Ressourcen in {target} gespeichert.",
+            "load": "Laden aus...",
+            "defaultToken": "Standardtoken",
+            "typeDefaults": "{type} Standard",
+            "prototypeToken": "{name}s Prototyp-Token",
+            "activeTokens": "{name}s aktive Tokens"
+        }
+    }
+}

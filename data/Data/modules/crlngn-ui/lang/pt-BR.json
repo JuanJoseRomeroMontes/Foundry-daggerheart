@@ -1,0 +1,485 @@
+{
+  "CRLNGN_UI": { 
+    "ui": { 
+      "generalSettingsLabel": "Configurações Gerais",
+      "clientSettingsLabel": "Configurações do Jogador (Cliente)",
+      "worldSettingsLabel": "Configurações do Mundo (GM)",
+      "toggleHints": "Alternar Ajuda",
+      "navDisabled": "A navegação de cenas está desativada na aba 'Elementos'. As configurações abaixo só terão efeito se o Layout Personalizado estiver ativado para a Navegação de Cenas.",
+      "reloadRequiredTitle": "Recarregar Foundry",
+      "reloadRequiredLabel": "É necessário recarregar. Recarregar agora?",
+      "macroBarTooltipKeepOpen": "Manter aberto",
+      "macroBarTooltipAutoHide": "Ocultar",
+      "reset": "Redefinir",
+      "save": "Salvar",
+      "reloadButton": "Recarregar",
+      "cancelButton": "Cancelar",
+      "notifications": {
+        "incompatibleVersion": "O módulo Carolingian UI requer Foundry versão 13.339 ou superior. Por favor, atualize o Foundry ou instale a versão 1.x de Carolingian UI.",
+        "settingsUpdated": "Configurações atualizadas",
+        "minimalUiNotSupported": "Carolingian UI não é compatível com Minimal UI, e oferece a maioria de suas funcionalidades. Por favor, desabilite Minimal UI para evitar problemas de performance.",
+        "monksScenesNotSupported": "A Navegação Horizontal de Carolingian UI não é compatível com Monk's Scene Navigation. Desative Monk's Scene Navigation ou desative 'Custom Layout' para a Navegação de Cenas nas configurações de Carolingian UI.",
+        "ripperScenesCompat": "Carolingian UI agora tem Navegação de Cenas com Pastas e Busca de Cenas, que não podem ser usados junto com a Compact Scene Navigation. Desative o outro módulo ou desative 'Ativar pastas na barra de navegação' nas configurações de Carolingian UI.",
+        "monksPlayerSettingsConflict": "Algumas configurações do módulo Carolingian UI foram desativadas para evitar conflitos com o módulo Monk's Player Settings.",
+        "forceClientSettingsConflict": "Algumas configurações do módulo Carolingian UI foram desativadas para evitar conflitos com o módulo Force Client Settings.",
+        "initialViewSet": "A visualização inicial desta cena foi definida para a visualização atual."
+      },
+      "sceneNav": {
+        "searchPlaceholder": "Buscar cenas...",
+        "backTo": "Voltar para ",
+        "favoritesFolder": "Voltar às Cenas Selecionadas",
+        "addToFavorites": "Adicionar à Navegação",
+        "removeFromFavorites": "Remover da Navegação",
+        "initialViewBtn": "Definir Visualização",
+        "backButtonTooltip": "Cena anterior",
+        "sceneLookupTooltip": "Buscar cena",
+        "hideSceneFoldersTooltip": "Ocultar pastas",
+        "showSceneFoldersTooltip": "Mostrar pastas",
+        "globalLightOn": "Iluminação global ativa",
+        "globalLightOff": "Iluminação global desativada",
+        "tokenVisionOn": "Visão do token ativa",
+        "tokenVisionOff": "Visão do token desativada",
+        "playlistSoundOn": "Som da playlist ativo",
+        "playlistSoundOff": "Som da playlist desativado",
+        "preloadScene": "Preload scene",
+        "sceneConfig": "Scene Configuration"
+      },
+      "updates": {
+        "label": "Último ID de Atualização",
+        "hint": "Rastreia a última notificação de atualização exibida"
+      },
+      "toggleChatBox": "Caixa de Mensagens"
+    },
+    "settings": {
+      "supportPatreon": {
+        "label": "Apoie o desenvolvedor",
+        "buttonLabel": "Apoio no Patreon",
+        "hint": "Se você gosta de Carolingian UI e meus outros módulos, considere apoiar o desenvolvimento com $2 ou $5 por mês."
+      },
+      "moduleSettingsMenu": {
+        "label": "Configurações de Interface",
+        "title": "Configurar Opções",
+        "hint": "Personalize Carolingian UI, ative ou desative estilos personalizados e outras opções.",
+        "tabs": {
+          "interface": "Interface",
+          "fonts": "Fontes",
+          "themes": "Tema & Estilos",
+          "chat": "Barra Lateral & Chat",
+          "controls": "Controles de Cena",
+          "scenes": "Navegação de Cenas",
+          "players": "Lista de Jogadores",
+          "camera": "Câmeras"
+        },
+        "reset": "Redefinir",
+        "save": "Salvar"
+      },
+      "hideInterface": {
+        "label": "Ocultar/Mostrar Interface",
+        "hint": "Oculta ou mostra a interface. Isso afetará todos os elementos dentro do bloco html #interface"
+      },
+      "sidebarTabs": {
+        "ChatLog": "Mensagens do Chat",
+        "CombatTracker": "Combate",
+        "SceneDirectory": "Cenas",
+        "ActorDirectory": "Atores",
+        "ItemDirectory": "Itens",
+        "JournalDirectory": "Diário",
+        "RollTableDirectory": "Tabelas de Rolagem",
+        "CardsDirectory": "Pilhas de Cartas",
+        "MacroDirectory": "Macros",
+        "PlaylistDirectory": "Áudio",
+        "CompendiumDirectory": "Compendium",
+        "Settings": "Configurações",
+        "tabsColumn": "Abas à Esquerda",
+        "gmHideColumn": "Ocultar (Mestre)",
+        "playerHideColumn": "Ocultar (Jogador)"
+      },
+      "interfaceOptionsMenu": {
+        "label": "Desvanecimento e Layout",
+        "title": "Desvanecimento e Layout da Interface",
+        "hint": "Desative o comportamento de 'desvanecimento' dos elementos da interface individualmente. Você também pode desativar o layout personalizado do Carolingian UI para eles.",
+        "description": "<b>Coluna 'Desvanecimento':</b> Desmarque para impedir que o elemento desvaneça quando não estiver sob o cursor. <b>Coluna 'Layout Personalizado':</b> Desmarque para desativar os estilos do Carolingian UI para esse elemento específico. O tema de cores e fontes ainda serão aplicados.",
+        "fields": {
+          "sceneControls": "Botões de Controle (Lado Esquerdo)",
+          "sidebarTabs": "Botões da Barra Lateral (Lado Direito)",
+          "playerList": "Lista de Jogadores",
+          "cameraDock": "Dock de Câmera",
+          "macroHotbar": "Barra de Macros",
+          "sceneNav": "Navegação de Cenas",
+          "chatLogControls": "Controles do Chat",
+          "fadeOutColumn": "Desvanecimento",
+          "hideColumn": "Ocultar",
+          "customLayoutColumn": "Layout Personalizado",
+          "elementColumn": "Elemento da Interface",
+          "hoverableSettingsHints": {
+            "label": "Dicas de Configurações ao Passar o Mouse",
+            "hint": "Isso organiza as configurações e formulários de aplicação adicionando dicas de ferramentas com ponto de interrogação para mostrar/ocultar o texto de dica ao passar o mouse. Afeta as configurações padrão do Foundry e janelas de módulos."
+          },
+          "preventMacroBarReposition": {
+            "label": "Evitar Reposicionamento da Barra de Macros",
+            "hint": "Quando ativado, ocultar a caixa de entrada de bate-papo também impede que a barra de macros seja reposicionada quando a aba da barra lateral muda. Mantém a barra de macros em sua posição original, independentemente do estado da barra lateral."
+          }
+        },
+        "reset": "Redefinir",
+        "save": "Salvar"
+      },
+      "customFontsMenu": {
+        "label": "Fontes Personalizadas",
+        "title": "Configurar Fontes",
+        "hint": "Configure as famílias de fontes usadas na interface",
+        "description": "Selecione ou digite o nome de uma fonte personalizada, se já estiver carregada no Foundry.",
+        "fields": {
+          "uiBody": {
+            "label": "Fonte da Interface"
+          },
+          "uiTitles": {
+            "label": "Títulos da Interface"
+          },
+          "journalBody": {
+            "label": "Corpo do Diário"
+          },
+          "journalTitles": {
+            "label": "Títulos do Diário"
+          }
+        },
+        "postDescription": "Para importar do <b>Google Fonts</b>, primeiro cole o link @import no campo \"Estilos CSS\" nas configurações de estilo, e a fonte será listada aqui.",
+        "reset": "Redefinir",
+        "save": "Salvar"
+      },
+      "themeAndStylesMenu": {
+        "label": "Tema de Cores e CSS",
+        "title": "Configurar Estilos",
+        "hint": "Selecione um tema de cores para a interface, ou adicione CSS customizado",
+        "fields": {
+          "colorTheme": {
+            "label": "Tema de cores",
+            "hint": "Selecione um tema de cores primária e secundária. Isto apenas afeta cores de destaques na interface e botões"
+          },
+          "adjustOtherModules": {
+            "label": "Aplicar estilos a outros módulos",
+            "hint": "Habilite para aplicar meus ajustes de estilo e fontes customizadas a outros módulos, como Dice Tray, CRUX ou Combat Carousel. Para suporte a outros módulos, solicite no Github"
+          },
+          "applyDarkThemeToModules": {
+            "label": "Aplicar tema escuro a janelas de módulos",
+            "hint": "Alguns módulos nunca implementaram tema escuro. Esta opção tenta aplicar tema escuro às janelas de outros módulos usando a classe .app.theme-light. Se algum módulo ou janela se tornar parcialmente ilegível, desmarque esta opção. "
+          },
+          "otherModulesList": {
+            "label": "Aplicar estilos a outros módulos",
+            "hint": "Habilite meus ajustes de estilo em outros módulos. Clique na caixa no topo da lista para selecionar/desmarcar todos."
+          },
+          "forcedDarkTheme": {
+            "label": "Forçar Tema Escuro",
+            "hint": "EXPERIMENTAL. Se a caixa de seleção acima não funcionar para um módulo específico, você pode tentar forçar o fundo escuro e a fonte clara para módulos usando um seletor CSS. Pode não funcionar se os módulos tiverem estilos hardcoded. Digite no campo abaixo o id ou classe CSS dos elementos, separados por vírgula. Exemplo: #element-id, .element-class"
+          },
+          "customStyles": {
+            "label": "Estilos CSS",
+            "hint": "Estilos digitados aqui serão aplicados na próxima vez que você carregar o Foundry. Você pode incluir fontes do Google Fonts colando o link @import, e a fonte será listada nas configurações de Fontes Personalizadas."
+          }, 
+          "enforceDarkMode": {
+            "label": "Forçar Modo Escuro",
+            "hint": "<b>Não habilite se usar Force Client Settings ou módulos semelhantes.</b> Define o tema da interface do Foundry para o jogador como Escuro caso o tema atual seja 'Padrão do Navegador'. Se o jogador selecionar modo claro, sua opção será respeitada"
+          }
+        },
+        "reset": "Redefinir",
+        "save": "Salvar",
+        "colorPicker": {
+          "hint": "Com grandes cores vêm grandes responsabilidades. Lembre-se de cuidar das suas retinas: para a cor de destaque, use cores com pelo menos uma classificação de contraste 'média' para melhor legibilidade.",
+          "title": "Cores de Tema Personalizadas",
+          "presets": "Temas Predefinidos",
+          "accentColor": "Cor de Destaque",
+          "secondaryColor": "Cor Secundária",
+          "hue": "Matiz",
+          "saturation": "Saturação",
+          "lightness": "Luminosidade",
+          "accentOnBackground": "Destaque no Fundo",
+          "textOnAccent": "Texto no Destaque",
+          "secondaryPreview": "Visualização da Cor Secundária",
+          "contrastGood": "Contraste: Bom",
+          "contrastMedium": "Contraste: Médio",
+          "contrastPoor": "Contraste: Ruim",
+          "apply": "Salvar",
+          "applySecondaryColorToBg": {
+            "label": "Aplicar cor secundária aos fundos da interface do Foundry",
+            "hint": "Quando habilitado, a cor secundária será aplicada aos fundos da interface como barra lateral e controles. Isso cria um tema de cores mais unificado."
+          }
+        }
+      },
+      "chatMessagesMenu": {
+        "label": "Opções de Mensagens de Chat",
+        "title": "Configurar Chat",
+        "hint": "[Requer recarregamento] Modificar a aparência e o comportamento dos cartões de mensagens de chat no painel lateral direito",
+        "fields": {
+          "enableChatStyles": {
+            "label": "Ativar estilos no chat",
+            "hint": "Adiciona modificações de estilo às cartas do chat. Quando o modo escuro for ativado no Foundry, as cartas do chat também ficarão escuras. PRINCIPALMENTE PARA DND5E - suporte parcial para outros sistemas."
+          },
+          "borderColor": {
+            "label": "Cor da borda do cartão de chat",
+            "hint": "Isso pode ser substituído por outros módulos. <b>Cor do jogador</b>: usa a cor do jogador no Foundry; <b>Tipo de Rolagem</b>: usa codificação de cores para ataque, salvaguarda, teste de habilidade, etc. <b>Nenhuma:</b> sem bordas (permite bordas de outros módulos).",
+            "options": {
+              "playerColor": "Cor do Jogador",
+              "rollType": "Tipo de Rolagem (DnD5e)",
+              "none": "Nenhuma"
+            }
+          },
+          "borderPosition": {
+            "label": "Posição da borda colorida",
+            "hint": "[Requer recarregamento] <b>Esquerda:</b> borda aparece apenas no lado esquerdo do cartão de chat. <br/><b>Topo:</b> borda aparece apenas na parte superior do cartão de chat. <br/><b>Todas:</b> borda aparece em todos os lados do cartão de chat.",
+            "options": {
+              "left": "Esquerda",
+              "right": "Direita",
+              "top": "Topo",
+              "all": "Completa"
+            }
+          },
+          "useLeftChatBorder": {
+            "label": "Mostrar apenas a borda esquerda",
+            "hint": "A sua escolha de cor de borda aparece apenas no lado esquerdo do chat - os outros lados não têm borda."
+          },
+          "sideBarWidth": {
+            "label": "Largura do painel lateral",
+            "hint": "Largura do painel ao lado direito da tela."
+          },
+          "openChatLogOnLoad": {
+            "label": "Abrir Log de Chat ao Carregar",
+            "hint": "Quando ativado, a barra lateral se expandirá automaticamente para mostrar o Log de Chat quando o módulo for carregado."
+          },
+          "closeSidebarWhenIdle": {
+            "label": "Fechar Barra Lateral Quando Inativa",
+            "hint": "Quando ativado, a barra lateral será recolhida automaticamente 3 segundos após o mouse deixar a área da barra lateral."
+          },
+          "useHorizontalSidebarTabs": {
+            "label": "Usar Abas Horizontais na Barra Lateral",
+            "hint": "Quando ativado, altera as abas da barra lateral para orientação horizontal, no topo da barra lateral, em vez de verticalmente na lateral. (estilo v12)"
+          },
+          "showChatNotificationsOnTop": {
+            "label": "Mostrar Notificações de Chat do Topo",
+            "hint": "Quando ativado, as notificações de cartão de chat aparecem do topo da área de entrada de chat em vez da parte inferior."
+          }
+        },
+        "reset": "Redefinir",
+        "save": "Salvar"
+      },
+      "leftControlsMenu": {
+        "label": "Ícones de Controle",
+        "title": "Configurar",
+        "hint": "Essas configurações modificam a aparência e o comportamento dos botões de controle de cena, no lado esquerdo da tela",
+        "fields": {
+          "autoHideSecondary": {
+            "label": "Auto-ocultar controles secundários",
+            "hint": "Ative para mostrar apenas os controles primários - os controles da barra secundária aparecem apenas ao passar o mouse sobre a região."
+          }
+        },
+        "reset": "Redefinir",
+        "save": "Salvar"
+      },
+      "playersListMenu": {
+        "label": "Lista de Jogadores",
+        "title": "Opções da Lista de Jogadores",
+        "hint": "Alterar comportamento ou adicionar avatares à lista de jogadores",
+        "fields": {
+          "autoHidePlayerList": {
+            "label": "Ocultar automaticamente a lista de jogadores",
+            "hint": "Ative para manter a lista de jogadores no canto inferior esquerdo minimizada, exceto quando passar o mouse sobre ela."
+          },
+          "playerListAvatars": {
+            "label": "Mostrar avatares",
+            "hint": "Mostrar avatares dos jogadores na lista. Procura pela imagem do personagem, ou imagem do usuário se nenhum personagem estiver atribuído"
+          }
+        },
+        "reset": "Redefinir",
+        "save": "Salvar"
+      },
+      "cameraDockMenu": {
+        "label": "Câmera",
+        "title": "Configurar Dock de Câmeras",
+        "hint": "Ative o dock de câmeras flutuante, que pode ser posicionado em qualquer lugar e redimensionado",
+        "fields": {
+          "enableFloatingDock": {
+            "label": "Ativar dock flutuante",
+            "hint": "<b>[Requer recarregamento]</b> Permite que o grupo de vídeo seja arrastado e colocado em qualquer lugar da tela"
+          }, 
+          "dockPosX": {
+            "label": "Posição horizontal",
+            "hint": "Posição do dock da câmera quando configurado para flutuar. A partir do canto inferior esquerdo da tela, em pixels"
+          }, 
+          "dockPosY": {
+            "label": "Posição vertical",
+            "hint": "Posição do dock da câmera quando configurado para flutuar. A partir do canto inferior esquerdo da tela, em pixels"
+          }, 
+          "dockWidth": {
+            "label": "Largura do grupo de câmeras",
+            "hint": "Dimensões do dock da câmera quando configurado para flutuar, se não minimizado. Em pixels"
+          }, 
+          "dockHeight": {
+            "label": "Altura do grupo de câmeras",
+            "hint": "Dimensões do dock da câmera quando configurado para flutuar, se não minimizado. Em pixels"
+          },
+          "dockResizeOnUserJoin": {
+            "label": "Redimensionar Dock para Ajustar Vídeos",
+            "hint": "Quando ativado, o dock será redimensionado quando um usuário entrar. O redimensionamento manual pode ser substituído quando um novo usuário entrar.",
+            "options": {
+              "off": "DESATIVADO: Não redimensionar automaticamente",
+              "horizontal": "Redimensionar para ajustar horizontalmente",
+              "vertical": "Redimensionar para ajustar verticalmente"
+            }
+          },
+          "defaultVideoWidth": {
+            "label": "Largura padrão do vídeo",
+            "hint": "Largura de cada câmera individual no dock, em pixels. A largura mínima é 140px, para permitir espaço para os ícones de controle da câmera."
+          }
+        },
+        "reset": "Redefinir",
+        "save": "Salvar"
+      },
+      "sceneNavMenu": {
+        "label": "Navegação Entre Cenas",
+        "title": "Configurar Navegação",
+        "hint": "Altere as opções para a barra de navegação entre cenas, no topo",
+        "fields": {
+          "hideLoadingSceneName": {
+            "label": "Ocultar nome da cena na barra de carregamento",
+            "hint": "A barra de carregamento mostra o nome da cena, o que pode estragar o conteúdo para os jogadores. Marque esta opção para mostrar apenas uma barra de carregamento fina."
+          },
+          "sceneNavEnabled": {
+            "label": "Ativar navegação de cenas",
+            "hint": "Se você estiver enfrentando problemas de layout com um módulo incompatível, pode desativar meus estilos personalizados para Navegação de Cenas."
+          }, 
+          "showNavOnHover": {
+            "label": "Alternar visibilidades",
+            "hint": "Se a navegação de cenas estiver recolhida, você pode exibi-la passando o mouse sobre a parte superior da tela."
+          },
+          "useSceneFolders": {
+            "label": "Ativar pastas na barra de navegação",
+            "hint": "Se a navegação de cenas customizada estiver ativada, esta opção inclui uma lista de diretórios e busca de cenas na barra do topo."
+          },
+          "useSceneLookup": {
+            "label": "Ativar busca de cenas na barra de navegação",
+            "hint": "Se a navegação de cenas customizada estiver ativa, esta opção adiciona um botão para buscar cenas na barra de navegação."
+          },
+          "navFoldersForPlayers": {
+            "label": "Mostrar pastas para os jogadores",
+            "hint": "Ative para permitir que a lista de pastas seja exibida aos jogadores. Se o jogador não tem permissão para ver uma past, ela não será exibida."
+          },
+          "navStartCollapsed": {
+            "label": "Recolher navegação ao iniciar",
+            "hint": "Ative esta opção para recolher a navegação de cenas ao carregar o Foundry, independentemente do estado anterior."
+          },
+          "sceneClickToView": {
+            "label": "Ativar Clique e Duplo Clique",
+            "hint": "Quando ativado, um clique na cena a abre para visualização. Um duplo clique a ativa para os jogadores."
+          },
+          "useSceneIcons": {
+            "label": "Usar ícones de cena",
+            "hint": "Mostra ícones próximos ao nome da cena: <i class='fas fa-lock'></i> Invisível para jogadores até ser ativada; <i class='fas fa-crown'></i> Atualmente visualizada pelo GM; <i class='fas fa-bullseye'></i> Atualmente ativa para os jogadores;"
+          },
+          "useSceneBackButton": {
+            "label": "Habilitar Botão Voltar",
+            "hint": "<b>'Voltar para Cena Anterior'</b>: ao clicar, retorna para a cena anteriormente visualizada, <b>'Voltar para Cenas Padrão'</b>: somente aparece na vista de pasta, ao clicar abre a navegação de cena padrão, <b>'Desabilitado'</b>: Nenhum botão Voltar"
+          },
+          "useScenePreview": {
+            "label": "Usar Previsualização de Cena",
+            "hint": "Quando ativado, a miniatura da cena será exibida quando passar o mouse sobre o item na barra de navegação"
+          },
+          "navShowRootFolders": {
+            "label": "Mostrar pastas na navegação de cena",
+            "hint": "Pastas serão mostradas na navegação de cena inicial. Se você tiver muitas pastas na raiz do diretório de cenas, pode querer desabilitar esta opção."
+          },
+          "hideInactiveOnFolderToggle": {
+            "label": "Ocultar cenas inativas ao mostrar pastas",
+            "hint": "A lista de cenas padrão será ocultada quando as pastas estiverem visíveis, e aparecerá novamente quando você ocultar as pastas. Isso visa evitar a duplicação de cenas na navegação."
+          },
+          "sceneItemWidth": {
+            "label": "Largura do item de navegação",
+            "hint": "Deixe vazio para usar a largura padrão, ou defina um novo número. O mínimo é 100px"
+          }
+        },
+        "reset": "Redefinir", 
+        "save": "Salvar" 
+      },
+      "sheets5eMenu": {
+        "label": "Fichas DnD5e",
+        "title": "Configurar Fichas de DnD5e",
+        "hint": "Alterar opções para as fichas de personagens np sistema DnD5e",
+        "fields": {
+          "applyThemeToSheets": {
+            "label": "Aplicar estilos a fichas de personagem (DnD5e, Daggerheart)",
+            "hint": "Ative para aplicar o tema de cores global e ajustes de estilo às fichas de personagens de DnD5e or Daggerheart"
+          },
+          "useHorizontalSheetTabs": {
+            "label": "Usar abas horizontais com rótulos",
+            "hint": "Funciona apenas quando temas estiverem aplicados às fichas. Ative para usar abas horizontais com rótulos nas fichas de personagens de DnD5e em vez das abas laterais com ícones"
+          }
+        },
+        "reset": "Redefinir",
+        "save": "Salvar"
+      },
+      "enforceGMSettings": {
+        "label": "Aplicar Configurações do GM aos Jogadores",
+        "hint": "Quando ativado, todos os jogadores usarão as configurações de interface do GM ao se conectarem. Isso garante uma experiência consistente para todos os jogadores.",
+        "conflictWarning": "Carolingian UI: 'Aplicar Configurações do GM aos Jogadores' está desativado porque o módulo Force Client Settings está ativo. Use um ou outro, não ambos."
+      },
+      "defaultSettings": {
+        "label": "Configurações Padrão do GM",
+        "hint": "Armazena as configurações preferidas do GM para aplicar aos jogadores"
+      },
+      "controlIconSize": {
+        "label": "Tamanho dos ícones de controle",
+        "hint": "Se você usa uma tela muito grande, pode querer alterar o tamanho dos ícones nos controles à esquerda. Isso pode afetar alguns outros elementos da interface",
+        "options": {
+          "small": "pequeno",
+          "regular": "normal",
+          "large": "grande"
+        }
+      },
+      "sceneNavCollapsed": {
+        "label": "Estado da Navegação de Cena",
+        "hint": "Estado atual do botão de navegação de cena. Está recolhido?"
+      },
+      "sceneNavPos": {
+        "label": "Posição da Navegação de Cena",
+        "hint": "Armazena a posição atual da navegação para redefinição ao ser renderizada novamente"
+      },
+      "enableMacroLayout": {
+        "label": "Ativar layout de macros",
+        "hint": "O módulo reduz o tamanho dos slots de macro na barra de atalhos e aumenta os números. Desative essa configuração para usar o layout padrão do Foundry."
+      },
+      "autoHideLeftControls": {
+        "label": "Ocultar os controles secundários",
+        "hint": "Ative para manter a barra secundária nos controles à esquerda oculta, a menos que você passe o mouse sobre a região ou clique em um item."
+      },
+      "collapseMacroBar": {
+        "label": "Ocultar barra de macros",
+        "hint": "Ative para manter a barra de macros minimizada, exceto quando quando passar o mouse sobre ela."
+      },
+      "useFolderStyle": {
+        "label": "Usar cores discretas nos diretórios",
+        "hint": "Ative para usar cores mais discretas nos diretórios do painel lateral, com a cor selecionada apenas nas bordas."
+      },
+      "debugMode": {
+        "label": "Modo de Depuração",
+        "hint": "Ative ou desative mensagens de depuração no console do navegador. Utilize apenas para debug."
+      },
+      "disableUI":{
+        "label": "Desativar Interface neste Cliente",
+        "hint": "Se um jogador não quiser usar a interface de Carolingian UI, pode desativá-la. Nenhuma outra funcionalidade do módulo funcionará, exceto o estilo escuro nos cartões de chat - que pode ser desativado separadamente."
+      }
+    }, 
+    "dnd5e": {
+      "chatCard": {
+        "buttons": {
+          "summons": "Invocações",
+          "attack": "Ataque",
+          "healing": "Cura",
+          "damage": "Dano",
+          "template": "Área",
+          "consume": "Consumir",
+          "refund": "Devolver",
+          "macro": "Macro",
+          "savedc": "CD",
+          "save": "Check"
+        }
+      }
+    }
+  }
+}

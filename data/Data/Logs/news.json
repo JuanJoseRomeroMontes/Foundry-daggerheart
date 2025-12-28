@@ -1,0 +1,34 @@
+{
+  "news": [
+    {
+      "title": "Holiday Sale 2025",
+      "caption": "Foundry Virtual Tabletop software licenses are now on sale for 20% off until noon Eastern time on Monday, December 8!",
+      "url": "https://foundryvtt.com/purchase/",
+      "image": "https://r2.foundryvtt.com/website-uploads-public/asset/user_1/holiday-sale-2025-banner-2025-11-28.webp"
+    },
+    {
+      "title": "Version 13 Stable Release",
+      "caption": "Version 13 Stable has now been released! Check out our release notes for everything you need to know.",
+      "url": "https://foundryvtt.com/releases/13.341",
+      "image": "https://r2.foundryvtt.com/website-uploads-public/screen/user_70/v13-stable-release-screenshot-2025-04-29.webp"
+    },
+    {
+      "title": "2025 Year in Review",
+      "caption": "Join us in a look back at what we accomplished since our last anniversary celebration, and look ahead towards the exciting things we plan for during the coming year. This annual article is a great way to get some insight into what we do as a company and how we do it.",
+      "url": "https://foundryvtt.com/article/year-in-review-2025/",
+      "image": "https://r2.foundryvtt.com/website-uploads-public/asset/user_671/year-in-review-2025-banner-2025-05-26.webp"
+    },
+    {
+      "title": "Overview Video",
+      "caption": "Watch a comprehensive video overview which summarizes the features of Foundry Virtual Tabletop.",
+      "url": "https://youtu.be/_d7k8ognC0w",
+      "image": "https://r2.foundryvtt.com/website-uploads-public/screen/user_70/2023-overview-banner-2023-06-23.webp"
+    }
+  ],
+  "featuredContent": {
+    "title": "Heroes of the Borderlands",
+    "caption": "Gather your party and prepare for an unforgettable journey in D&D's largest starter set ever! Heroes of the Borderlands is your magical portal into the world of Dungeons & Dragons. Perfect for seasoned adventurers and newcomers alike.",
+    "url": "https://foundryvtt.com/packages/dnd-heroes-borderlands",
+    "image": "https://r2.foundryvtt.com/website-uploads-public/screen/user_70/heroes-of-the-borderlands-featured-text-2025-09-19.png"
+  }
+}

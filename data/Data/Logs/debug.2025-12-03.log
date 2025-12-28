@@ -1,0 +1,26 @@
+{"level":"info","message":"Running on Node.js - Version 20.18.3","timestamp":"2025-12-03 20:00:51"}
+{"level":"info","message":"Foundry Virtual Tabletop - Version 13 Build 348","timestamp":"2025-12-03 20:00:51"}
+{"level":"info","message":"User Data Directory - \"../../data/data\"","timestamp":"2025-12-03 20:00:51"}
+{"level":"info","message":"Application Options:\n{\n  \"compressStatic\": true,\n  \"fullscreen\": false,\n  \"hostname\": null,\n  \"language\": \"en.core\",\n  \"localHostname\": null,\n  \"port\": 30000,\n  \"proxyPort\": null,\n  \"proxySSL\": false,\n  \"routePrefix\": null,\n  \"updateChannel\": \"stable\",\n  \"upnp\": true,\n  \"awsConfig\": null,\n  \"compressSocket\": true,\n  \"cssTheme\": \"dark\",\n  \"deleteNEDB\": false,\n  \"hotReload\": false,\n  \"passwordSalt\": null,\n  \"sslCert\": null,\n  \"sslKey\": null,\n  \"world\": null,\n  \"serviceConfig\": null,\n  \"telemetry\": true,\n  \"adminPassword\": null,\n  \"noBackups\": false\n}","timestamp":"2025-12-03 20:00:51"}
+{"level":"info","message":"Software license verification succeeded","timestamp":"2025-12-03 20:00:51"}
+{"level":"info","message":"Requesting UPnP port forwarding to destination port 30000","timestamp":"2025-12-03 20:00:51"}
+{"level":"info","message":"Running Electron application with version 34.4.0 using Chromium 132.0.6834.210","timestamp":"2025-12-03 20:00:51"}
+{"level":"info","message":"Server started and listening on port 30000","timestamp":"2025-12-03 20:00:51"}
+{"level":"info","message":"Created client session 3856ef929fec9c1986467a2e","timestamp":"2025-12-03 20:00:54"}
+{"level":"info","message":"Core software stable update 13.351 is available!","timestamp":"2025-12-03 20:00:54"}
+{"level":"info","message":"Shutting down Foundry Virtual Tabletop server","timestamp":"2025-12-03 20:00:56"}
+{"level":"info","message":"Shut-down success. Goodbye!","timestamp":"2025-12-03 20:00:56"}
+{"level":"info","message":"Running on Node.js - Version 20.18.3","timestamp":"2025-12-03 20:00:58"}
+{"level":"info","message":"Foundry Virtual Tabletop - Version 13 Build 348","timestamp":"2025-12-03 20:00:58"}
+{"level":"info","message":"User Data Directory - \"../../data/data\"","timestamp":"2025-12-03 20:00:58"}
+{"level":"info","message":"Application Options:\n{\n  \"compressStatic\": true,\n  \"fullscreen\": false,\n  \"hostname\": null,\n  \"language\": \"en.core\",\n  \"localHostname\": null,\n  \"port\": 30000,\n  \"proxyPort\": null,\n  \"proxySSL\": false,\n  \"routePrefix\": null,\n  \"updateChannel\": \"stable\",\n  \"upnp\": true,\n  \"awsConfig\": null,\n  \"compressSocket\": true,\n  \"cssTheme\": \"dark\",\n  \"deleteNEDB\": false,\n  \"hotReload\": false,\n  \"passwordSalt\": null,\n  \"sslCert\": null,\n  \"sslKey\": null,\n  \"world\": null,\n  \"serviceConfig\": null,\n  \"telemetry\": true,\n  \"adminPassword\": null,\n  \"noBackups\": false\n}","timestamp":"2025-12-03 20:00:58"}
+{"level":"info","message":"Software license verification succeeded","timestamp":"2025-12-03 20:00:58"}
+{"level":"info","message":"Requesting UPnP port forwarding to destination port 30000","timestamp":"2025-12-03 20:00:58"}
+{"level":"info","message":"Running Electron application with version 34.4.0 using Chromium 132.0.6834.210","timestamp":"2025-12-03 20:00:58"}
+{"level":"info","message":"Server started and listening on port 30000","timestamp":"2025-12-03 20:00:58"}
+{"level":"info","message":"Created client session 1f074472a1d818e99891793d","timestamp":"2025-12-03 20:01:00"}
+{"level":"info","message":"Core software stable update 13.351 is available!","timestamp":"2025-12-03 20:01:01"}
+{"level":"info","message":"Saved application configuration options to ../Config/options.json","timestamp":"2025-12-03 20:01:07"}
+{"level":"info","message":"Saved application configuration options to ..\\Config\\options.json","timestamp":"2025-12-03 20:01:07"}
+{"level":"info","message":"Shutting down Foundry Virtual Tabletop server","timestamp":"2025-12-03 20:01:11"}
+{"level":"info","message":"Shut-down success. Goodbye!","timestamp":"2025-12-03 20:01:11"}

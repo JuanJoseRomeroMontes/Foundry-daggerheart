@@ -1,0 +1,31 @@
+{
+  "id": "progress-countdown-tracker",
+  "title": "Progress/Countdown Tracker",
+  "description": "Adds a GM-controlled, collapsable overlay for progress clocks/trackers and countdowns. https://github.com/andrewbrick/progress-countdown-tracker-for-foundry/",
+  "version": "1.0.21",
+  "compatibility": {
+    "minimum": "13",
+    "verified": "13.350"
+  },
+  "styles": ["styles/trackers.css"],
+  "scripts": ["lib/jquery-ui.min.js"],
+  "esmodules": ["progress-countdown-tracker.js"],
+  "packs": [],
+  "languages": [],
+  "socket": true,
+  "url": "https://github.com/andrewbrick/progress-countdown-tracker-for-foundry/",
+  "manifest": "https://raw.githubusercontent.com/andrewbrick/progress-countdown-tracker-for-foundry/refs/heads/main/module.json",
+  "download": "https://github.com/andrewbrick/progress-countdown-tracker-for-foundry/archive/refs/tags/v1.0.21.zip",
+  "relationships": {
+    "requires": [{
+      "id": "color-picker",
+      "type": "module",
+      "manifest": "https://raw.githubusercontent.com/Larkinabout/fvtt-color-picker/refs/heads/master/module.json"
+    }]
+  },
+  "authors": [
+    {
+      "name": "Epic Name",
+      "discord": "epic__name"
+    }]
+} 

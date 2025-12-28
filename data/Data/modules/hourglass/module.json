@@ -1,0 +1,29 @@
+{
+    "id": "hourglass",
+    "title": "Hourglass",
+    "description": "Configurable animated graphical timers & round trackers that can be shown by the GM to all players.",
+    "authors": [
+        {
+            "name": "Octarine"
+        }
+    ],
+    "version": "1.9.0",
+    "compatibility": {
+        "minimum": "10",
+        "verified": "12"
+    },
+    "esmodules": [
+        "scripts/main.js"
+    ],
+    "socket": true,
+    "styles": [
+        "styles/hourglass.css",
+        "styles/hourglass-gui.css",
+        "styles/flipdown.css"
+    ],
+    "url": "https://github.com/Octarines/FoundryHourglass",
+    "readme": "https://raw.githubusercontent.com/Octarines/FoundryHourglass/main/README.md",
+    "bugs": "https://github.com/Octarines/FoundryHourglass/issues",
+    "manifest": "https://github.com/Octarines/FoundryHourglass/releases/latest/download/module.json",
+    "download": "https://github.com/Octarines/FoundryHourglass/releases/download/v1.9.0/module.zip"
+}

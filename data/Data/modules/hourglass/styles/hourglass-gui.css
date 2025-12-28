@@ -1,0 +1,98 @@
+.hourglass-gui {
+    /* height: auto; */
+    /* width: 30em; */
+}
+
+.hourglass-gui .hourglass-gui__form {
+    height: 100%;
+    width: 100%;
+}
+
+.hourglass-gui .hourglass-gui__form .hourglass-gui__form__item {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+    margin-bottom: 0.5em;
+}
+
+.hourglass-gui .hourglass-gui__form .hourglass-gui__form__item__input {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5em;
+}
+
+.hourglass-gui .hourglass-gui__form .hourglass-gui__form__item__fileselect {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 0.5em;
+}
+
+.hourglass-gui .hourglass-gui__form .hourglass-gui__form__item__fileselect__button {
+    height: 2em;
+    width: 2em;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.1);
+    border: 2px groove #f0f0e0;
+    box-sizing: border-box;
+}
+
+.hourglass-gui__form__item__fileselect__button:hover {
+    box-shadow: 0 0 5px red;
+}
+
+.hourglass-gui .hourglass-gui__form .hourglass-gui__form__title {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5em;
+}
+
+.hourglass-gui .hourglass-gui__form .hourglass-gui__form__subtitle {
+    margin-left: 1.5em;
+}
+
+.hourglass-gui .hourglass-gui__form .colour-picker {
+    height: 100%;
+    width: 100%;
+}
+
+.hourglass-gui .hourglass-gui__form .hourglass-gui__form__buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 1.8em;
+    grid-gap: 0.3em;
+}
+
+.hourglass-gui__form__button {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.1);
+    border: 2px groove #f0f0e0;
+    box-sizing: border-box;
+}
+
+.hourglass-gui__form__button:hover {
+    box-shadow: 0 0 5px red;
+}
+
+.hourglass-gui__form__button__disabled {
+    pointer-events:none;
+    cursor: none;
+    opacity: 0.5;
+}
+
+.hourglass-gui__form__divider {
+    border-bottom: 3px groove #f0f0e0;
+    margin-bottom: 1em;
+    margin-top: 1em;
+}
+
+::placeholder {
+    font-style: italic;
+  }

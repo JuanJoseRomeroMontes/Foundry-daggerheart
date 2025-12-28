@@ -1,0 +1,115 @@
+{
+    "barbrawl": {
+        "translatedBy": "Kharmans",
+        "barStyle": {
+            "name": "Estilo da Barra",
+            "hint": "Altera como as barras são mostradas.",
+            "minimal": "Minimalista (slim, sem borda)",
+            "default": "Padrão Foundry",
+            "large": "Grande (larga, borda fina)",
+            "legacy": "Legado (borda grossa)"
+        },
+        "textStyle": {
+            "name": "Etiqueta da Barra",
+            "hint": "Altera o número mostrado na barra.",
+            "user": "Padrão do usuário",
+            "none": "Nenhum",
+            "fraction": "Fração (valor/máx)",
+            "percent": "Porcentagem (%)"
+        },
+        "compactHud": {
+            "name": "HUD Compacta",
+            "hint": "Reduz o tamanho dos campos de recursos na HUD do token."
+        },
+        "hideHostile": {
+            "name": "Esconder Barras Hostis",
+            "hint": "Impede que as barras de tokens hostis apareçam para os jogadores que não são donos deles. Isso pode sobrepor algumas configurações de visibilidade."
+        },
+        "heightMultiplier": {
+            "name": "Multiplicador de Altura",
+            "hint": "Multiplica a altura da barra pelo valor configurado para melhorar sua leitura. Isso afetará a etiquera, mas não o fundo ou primeiro plano da imagem da barra."
+        },
+        "cacheBitmaps": {
+            "name": "Cache rendered bars",
+            "hint": "Enables bitmap caching for bars on the canvas, which may improve performance at the cost of readability (especially for labels)."
+        },
+        "config": {
+            "attribute": "Atributo",
+            "ownerVisibility": "Visibilidade (dono)",
+            "otherVisibility": "Visibilidade (todos)",
+            "gmVisibility": "Visibilidade (MJ)",
+            "hide": "Esconder Barra",
+            "hideHint": "Não exibe a barra quando qualquer uma das opções abaixo seja marcada.",
+            "hideFull": "Cheia",
+            "hideEmpty": "Vazia",
+            "hideCombat": "Em Combate",
+            "hideNoCombat": "Fora de Combate",
+            "hideHud": "Hide HUD",
+            "value": "Valor (atual/máx)",
+            "color": "Cor (min/máx)",
+            "position": "Posição",
+            "advanced": "Configurações Avançadas",
+            "indent": "Recuo",
+            "indentHint": "Espaço adicional na lateral da barra em porcentagem da largura do token.",
+            "indentLeft": "Esquerda",
+            "indentRight": "Direita",
+            "shareHeight": "Compartilhar Altura",
+            "shareHeightHint": "Impede que a barra reserve qualquer espaço vertical, o que move a barra para a mesma linha.",
+            "style": "Etiqueta",
+            "ignoreLimits": "Ignorar Limites",
+            "ignoreLimitsHint": "Desabilita a definição de valores entre 0 (inferior) e o máximo (superior). Isso só se aplica a barras personalizadas, já que a definição de outroa atributos é feita pelo sistema.",
+            "ignoreMin": "Limite Inferior",
+            "ignoreMax": "Limite Superior",
+            "invert": "Inverter Valores",
+            "invertDirection": "Inverter Direção",
+            "invertHint": "Exibe 0 como cheio e o valor máximo como vazio.",
+            "invertDirectionHint": "Inverte a direção que a barra é preenchida.",
+            "label": "Etiqueta Personalizada",
+            "labelHint": "Exibe o texto configurado na barra.",
+            "approximate": "Aproximação",
+            "approximateHint": "Mostra um valor aproximado na barra e em sua etiqueta. Isso configura a quantidade de seguimentos exibidos.",
+            "approximateOwner": "Aproximação para Dono",
+            "approximateOwnerHint": "Indica se o valor aproximado também é exibido para o dono do token.",
+            "fgImage": "Primeiro Plano",
+            "fgImageHint": "Substitui a barra normal por uma imagem recortada, com base na porcentagem de preenchimento.",
+            "bgImage": "Imagem de Fundo",
+            "bgImageHint": "Substitui o fundo normal da barra por uma imagem. Recomenda-se que ambas as imagens tenham a mesma largura que o tamanho da grade da cena.",
+            "hideBg": "Hide background",
+            "opacity": "Opacidade"
+        },
+        "attribute": {
+            "none": "Nenhum (remover)",
+            "custom": "Personalizado (valores abaixo)"
+        },
+        "visibility": {
+            "inheritFromOwner": "Herdar do Dono",
+            "inheritFromOther": "Herdar de Todos",
+            "none": "Nunca",
+            "always": "Sempre",
+            "hover": "Quando Passar o Mouse",
+            "control": "Quando Selecionado",
+            "hoverOrControl": "Quando Passar o Mouse ou Selecionar"
+        },
+        "position": {
+            "top-inner": "Acima (interior)",
+            "top-outer": "Acima (exterior)",
+            "bottom-inner": "Abaixo (interior)",
+            "bottom-outer": "Abaixo (exterior)",
+            "left-inner": "Esquerda (interior)",
+            "left-outer": "Esquerda (exterior)",
+            "right-inner": "Direita (interior)",
+            "right-outer": "Direita (exterior)"
+        },
+        "section": "Resource Bars",
+        "add": "Adicionar Recurso",
+        "defaults": {
+            "save": "Salvar em...",
+            "saveConfirmation": "Salvar recursos em {target}.",
+            "load": "Carregar de...",
+            "defaultToken": "Token Padrão",
+            "typeDefaults": "Padrão de {type}",
+            "prototypeToken": "Protótipo de token de {name}",
+            "activeTokens": "Tokens ativos de {name}"
+        }
+    }
+}

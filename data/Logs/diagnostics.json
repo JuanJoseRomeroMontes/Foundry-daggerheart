@@ -1,0 +1,79 @@
+{
+  "timestamp": 1766929927275,
+  "os": {
+    "platform": "win32",
+    "version": "10.0.19045",
+    "node": "20.18.3",
+    "electron": "34.4.0"
+  },
+  "foundry": {
+    "generation": 13,
+    "build": 348,
+    "channel": "stable",
+    "hosting": null
+  },
+  "modules": {
+    "art-for-daggerheart": {
+      "version": "1.0.0"
+    },
+    "babele": {
+      "version": "2.7.5"
+    },
+    "barbrawl": {
+      "version": "1.8.13"
+    },
+    "better-entity-link": {
+      "version": "1.7"
+    },
+    "color-picker": {
+      "version": "1.7"
+    },
+    "crlngn-ui": {
+      "version": "2.14.11"
+    },
+    "daggerheart-es": {
+      "version": "0.1.0"
+    },
+    "daggerheart-extra-content": {
+      "version": "1.3.9"
+    },
+    "daggerheart-plus": {
+      "version": "1.2.9"
+    },
+    "dice-so-nice": {
+      "version": "5.2.4"
+    },
+    "hourglass": {
+      "version": "1.9.0"
+    },
+    "journal-backlinks-extended": {
+      "version": "0.13.0"
+    },
+    "lib-wrapper": {
+      "version": "1.13.4.0"
+    },
+    "progress-countdown-tracker": {
+      "version": "1.0.21"
+    },
+    "smalltime": {
+      "version": "1.25.2"
+    },
+    "the-void-unofficial": {
+      "version": "1.1.1"
+    },
+    "vtta-tokenizer": {
+      "version": "4.5.6"
+    }
+  },
+  "systems": {
+    "daggerheart": {
+      "version": "1.1.2",
+      "playtime": 35948
+    }
+  },
+  "worlds": {},
+  "playtime": {
+    "total": 35948,
+    "max": 35948
+  }
+}

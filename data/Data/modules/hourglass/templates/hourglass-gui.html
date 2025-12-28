@@ -1,0 +1,187 @@
+<form class="hourglass-gui__form">
+    <div class="hourglass-gui__form__item">
+      <label for="presets">Presets</label>
+      <select name="presets" 
+              id="hourglassPresets">
+        <option value="" 
+                selected="selected">Select preset
+        </option>
+      </select>
+    </div>
+
+    <div class="hourglass-gui__form__buttons">
+      <div  class="hourglass-gui__form__button"
+            name="savePreset"
+            id="hourglassNewPreset">
+        <i class="fa fa-plus-square" style="color:darkgreen; margin-right: 0.5em"></i> 
+        Save New
+      </div>
+      <div  class="hourglass-gui__form__button"
+            name="updatePreset"
+            id="hourglassUpdatePreset">
+        <i class="fa fa-save" style="margin-right: 0.5em"></i> 
+        Update Selected
+      </div>
+      <div  class="hourglass-gui__form__button"
+            name="deletePreset"
+            id="hourglassDeletePreset">
+        <i class="fa fa-trash" style="color:darkred; margin-right: 0.5em"></i> 
+        Delete Selected
+      </div>
+    </div>
+
+    <div class="hourglass-gui__form__divider"></div>
+
+    <div class="hourglass-gui__form__item">
+      <label for="timerType">Timer Type</label>
+      <select id="timerType" name="timerType">
+        <option value="hourglass" selected>Hourglass</option>
+        <option value="flipdown" selected>Flipdown Clock</option>
+      </select>
+    </div>
+
+    <div class="hourglass-gui__form__item">
+      <label for="style">Style</label>
+      <select id="styleSelect" name="style">
+      </select>
+    </div>
+
+    <div class="hourglass-gui__form__item">
+      <label for="title">Title</label>
+      <input  type="text" 
+              name="title"
+              id="hourglassTitle"
+              value="{{defaultOptions.title}}" 
+              maxlength="40">
+    </div>
+
+    <div class="hourglass-gui__form__item">
+      <label for="hourglassSize">Size</label>
+      <select id="hourglassSize" name="size">
+        <option value="tiny" selected>Tiny</option>
+        <option value="small" selected>Small</option>
+        <option value="medium" selected>Medium</option>
+        <option value="large" selected>Large</option>
+      </select>
+    </div>
+
+    <div class="hourglass-gui__form__title">Duration</div>
+    <div class="hourglass-gui__form__item">
+      <label class="hourglass-gui__form__subtitle" for="durationType">Duration Type</label>
+      <select id="durationType" name="durationType">
+        <option value="timed" selected>Countdown (timed)</option>
+        <option value="manual" selected>Manual (user click)</option>
+      </select>
+    </div>
+
+    <div  class="hourglass-gui__form__item" id="hourglassDurationSecondsContainer">
+        <label  class="hourglass-gui__form__subtitle" for="durationSeconds">
+          Seconds
+        </label>
+        <input  type="number" 
+                name="durationSeconds"
+                id="hourglassDurationSeconds"
+                value="{{defaultOptions.durationSeconds}}">
+    </div>
+    <div  class="hourglass-gui__form__item" id="hourglassDurationMinutesContainer">
+      <label  class="hourglass-gui__form__subtitle" for="durationMinutes">
+        Minutes</label>
+      <input  type="number" 
+              name="durationMinutes"
+              id="hourglassDurationMinutes"
+              value="{{defaultOptions.durationMinutes}}">
+    </div>
+
+    <div  class="hourglass-gui__form__item" id="hourglassDurationIncrementsContainer">
+      <label  class="hourglass-gui__form__subtitle" for="durationIncrements">
+        Increments</label>
+      <input  type="number" 
+              name="durationIncrements"
+              id="hourglassDurationIncrements"
+              value="{{defaultOptions.durationIncrements}}">
+    </div>
+
+    <div class="hourglass-gui__form__item" id="hourglassColourContainer">
+      <label for="sandColour">Sand Colour</label>
+      <div class="hourglass-gui__form__item__input">
+        <input  type="text" 
+                name="sandColour"
+                value="{{defaultOptions.sandColour}}"
+                id="hourglassColourText">
+        <input  type="color"
+                value="{{defaultOptions.sandColour}}"
+                id="hourglassColour"
+                class="colour-picker">
+      </div>
+    </div>
+  
+    <div class="hourglass-gui__form__item" id="hourglassTimeAsTextContainer">
+      <label id="hourglassTimeAsTextLabel" for="timeAsText">Display time as text?</label>
+      <label id="hourglassIncrementsAsTextLabel" for="timeAsText">Display increments as text?</label>
+      <input  type="checkbox" 
+              name="timeAsText"
+              id="hourglassTimeAsText"
+              checked=false>
+    </div>
+  
+    <div class="hourglass-gui__form__item">
+      <label for="endMessage">End message</label>
+      <input  type="text" 
+              name="endMessage"
+              id="hourglassEndMessage"
+              value="{{defaultOptions.endMessage}}"
+              placeholder="Text displayed after duration"
+              maxlength="150">
+    </div>
+
+    <div class="hourglass-gui__form__item">
+      <label for="endSound">End sound</label>
+      <div class="hourglass-gui__form__item__fileselect">
+        <select id="endSound" name="endSound">
+          <option value="" selected>None</option>
+          <option value="clock-bell" selected>Alarm Clock (Bell)</option>
+          <option value="clock-beep" selected>Alarm Clock (Beep)</option>
+          <option value="broken-glass" selected>Glass Breaking</option>
+          <option value="chime" selected>Chime</option>
+          <option value="explosion" selected>Explosion</option>
+          <option value="gong" selected>Gong</option>
+          <option value="scream" selected>Scream</option>
+          <option value="custom" selected>Select from audio file...</option>
+        </select>
+        <div  class="hourglass-gui__form__item__fileselect__button"
+              name="endSoundPreview"
+              id="endSoundPreview">
+          <i class="fas fa-play fa-fw"></i>
+        </div>
+      </div>
+    </div>
+    <div class="hourglass-gui__form__item" id="endSoundPathContainer">
+      <label for="endSoundPath"></label>
+      <div class="hourglass-gui__form__item__fileselect">
+        <input  type="text"
+                name="endSoundPath"
+                id="endSoundPath"
+                value="{{defaultOptions.endSoundPath}}"
+                placeholder="path/sound.mp3">
+        <div  class="hourglass-gui__form__item__fileselect__button"
+              name="endSoundFileSelect"
+              id="endSoundPathButton">
+          <i class="fas fa-file-import fa-fw"></i>
+        </div>
+      </div>
+    </div>
+    <div class="hourglass-gui__form__item" id="hourglassCloseAtEndContainer">
+      <label  for="closeAtEnd">Close after duration?</label>
+      <input  type="checkbox" 
+              name="closeAtEnd"
+              id="hourglassCloseAtEnd"
+              checked=false>
+    </div>  
+    <footer class="sheet-footer flexrow"
+            style="margin-top: 1em">
+      <button type="submit" 
+              name="submit">
+        <i class="fa fa-hourglass"></i> Start Hourglass
+      </button>
+    </footer>
+</form>

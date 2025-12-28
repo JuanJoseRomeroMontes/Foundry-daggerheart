@@ -1,0 +1,41 @@
+<div class="tab {{tab.cssClass}}" data-tab="performance" data-group="dsn-main">
+    <div class="settings-list">
+        <div class="form-group">
+            <label>{{localize "DICESONICE.imageQuality"}}</label>
+            <select data-imageQuality name="imageQuality">
+                {{selectOptions imageQualityList selected=imageQuality}}
+            </select>
+        </div>
+
+        <hr/>
+
+        <div class="form-group">
+            <label>{{localize "DICESONICE.bumpMapping"}}</label>
+            <input type="checkbox" data-bumpMapping name="bumpMapping" data-dtype="Boolean" {{checked bumpMapping}} />
+        </div>
+
+        <div class="form-group">
+            <label>{{localize "DICESONICE.shadowQuality"}}</label>
+            <select data-shadowQuality name="shadowQuality">
+                {{selectOptions shadowQualityList selected=shadowQuality}}
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>{{localize "DICESONICE.glow"}}</label>
+            <input type="checkbox" data-glow name="glow" data-dtype="Boolean" {{checked glow}} />
+        </div>
+
+        <div class="form-group">
+            <label>{{localize "DICESONICE.antialiasing"}}</label>
+            <select data-antialiasing name="antialiasing">
+                {{selectOptions antialiasingList selected=antialiasing}}
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>{{localize "DICESONICE.useHighDPI"}}</label>
+            <input type="checkbox" data-useHighDPI name="useHighDPI" data-dtype="Boolean" {{checked useHighDPI}} />
+        </div>
+    </div>
+</div>

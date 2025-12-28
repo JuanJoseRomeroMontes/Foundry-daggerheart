@@ -1,0 +1,15 @@
+{
+	"label": "Weapons",
+	"folders": {
+		"Combat Wheelchairs": "Sillas de ruedas de combate",
+		"Primary Weapons": "Armas principales",
+		"Secondary Weapons": "Armas secundarias",
+		"Magical Weapons": "Armas mágicas",
+		"Physical Weapons": "Armas físicas",
+		"Tier 1": "Rango 1",
+		"Tier 2": "Rango 2",
+		"Tier 3": "Rango 3",
+		"Tier 4": "Rango 4"
+	},
+	"entries": {}
+}

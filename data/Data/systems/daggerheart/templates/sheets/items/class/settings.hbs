@@ -1,0 +1,152 @@
+<section
+    class='tab {{tabs.settings.cssClass}} {{tabs.settings.id}}'
+    data-tab='{{tabs.settings.id}}'
+    data-group='{{tabs.settings.group}}'
+>
+    <fieldset class="two-columns even">
+        <legend>{{localize tabs.settings.label}}</legend>
+        {{formGroup systemFields.hitPoints value=source.system.hitPoints localize=true}}
+        {{formGroup systemFields.evasion value=source.system.evasion localize=true}}
+    </fieldset>
+
+    <div class="fieldsets-section">
+        <fieldset class="drop-section two-columns">
+            <legend>{{localize "DAGGERHEART.GENERAL.Trait.plural"}}</legend>
+
+            <span>{{localize "DAGGERHEART.CONFIG.Traits.agility.name"}}</span>
+            <input type="text" name="system.characterGuide.suggestedTraits.agility" value="{{source.system.characterGuide.suggestedTraits.agility}}" />
+
+            <span>{{localize "DAGGERHEART.CONFIG.Traits.strength.name"}}</span>
+            <input type="text" name="system.characterGuide.suggestedTraits.strength" value="{{source.system.characterGuide.suggestedTraits.strength}}" />
+
+            <span>{{localize "DAGGERHEART.CONFIG.Traits.finesse.name"}}</span>
+            <input type="text" name="system.characterGuide.suggestedTraits.finesse" value="{{source.system.characterGuide.suggestedTraits.finesse}}" />
+
+            <span>{{localize "DAGGERHEART.CONFIG.Traits.instinct.name"}}</span>
+            <input type="text" name="system.characterGuide.suggestedTraits.instinct" value="{{source.system.characterGuide.suggestedTraits.instinct}}" />
+
+            <span>{{localize "DAGGERHEART.CONFIG.Traits.presence.name"}}</span>
+            <input type="text" name="system.characterGuide.suggestedTraits.presence" value="{{source.system.characterGuide.suggestedTraits.presence}}" />
+
+            <span>{{localize "DAGGERHEART.CONFIG.Traits.knowledge.name"}}</span>
+            <input type="text" name="system.characterGuide.suggestedTraits.knowledge" value="{{source.system.characterGuide.suggestedTraits.knowledge}}" />
+        </fieldset>
+        
+        <fieldset class="one-column">
+            <legend>{{localize "DAGGERHEART.ITEMS.Class.guide.suggestedEquipment"}}</legend>
+            <fieldset class="one-column drop-section primary-weapon-section {{#if (eq document.parent.type 'character')}}inactive{{/if}}">
+                <legend>{{localize "DAGGERHEART.ITEMS.Class.guide.suggestedPrimaryWeaponTitle"}}</legend>
+                <div class="drop-section-body list-items">
+                    {{#if document.system.characterGuide.suggestedPrimaryWeapon}}
+                        <div class="suggested-item item-line" data-action="editDoc" data-item-uuid="{{document.system.characterGuide.suggestedPrimaryWeapon.uuid}}">
+                            <img class="image" src="{{document.system.characterGuide.suggestedPrimaryWeapon.img}}" />
+                            <span>{{document.system.characterGuide.suggestedPrimaryWeapon.name}}</span>
+                            <div class="controls">
+                                {{#unless (eq document.parent.type 'character')}}<a data-action="removeSuggestedItem" data-target="suggestedPrimaryWeapon"><i class="fa-solid fa-trash icon-button"></i></a>{{/unless}}
+                            </div>
+                        </div>
+                    {{else}}
+                        <div class="drag-area">{{localize "DAGGERHEART.GENERAL.missingDragDropThing" thing=(localize "DAGGERHEART.GENERAL.weapons")}}</div>
+                    {{/if}}
+                </div>
+            </fieldset>
+
+            <fieldset class="one-column drop-section secondary-weapon-section {{#if (eq document.parent.type 'character')}}inactive{{/if}}">
+                <legend>{{localize "DAGGERHEART.ITEMS.Class.guide.suggestedSecondaryWeaponTitle"}}</legend>
+                <div class="drop-section-body list-items">
+                    {{#if document.system.characterGuide.suggestedSecondaryWeapon}}
+                        <div class="suggested-item item-line" data-action="editDoc" data-item-uuid="{{document.system.characterGuide.suggestedSecondaryWeapon.uuid}}">
+                            <img class="image" src="{{document.system.characterGuide.suggestedSecondaryWeapon.img}}" />
+                            <span>{{document.system.characterGuide.suggestedSecondaryWeapon.name}}</span>
+                            <div class="controls">
+                                {{#unless (eq document.parent.type 'character')}}<a data-action="removeSuggestedItem" data-target="suggestedSecondaryWeapon"><i class="fa-solid fa-trash icon-button"></i></a>{{/unless}}
+                            </div>
+                        </div>
+                    {{else}}
+                        <div class="drag-area">{{localize "DAGGERHEART.GENERAL.missingDragDropThing" thing=(localize "DAGGERHEART.GENERAL.weapons")}}</div>
+                    {{/if}}
+                </div>
+            </fieldset>
+
+            <fieldset class="one-column drop-section armor-section {{#if (eq document.parent.type 'character')}}inactive{{/if}}">
+                <legend>{{localize "DAGGERHEART.ITEMS.Class.guide.suggestedArmorTitle"}}</legend>
+                <div class="drop-section-body list-items">
+                    {{#if document.system.characterGuide.suggestedArmor}}
+                        <div class="suggested-item item-line" data-action="editDoc" data-item-uuid="{{document.system.characterGuide.suggestedArmor.uuid}}">
+                            <img class="image" src="{{document.system.characterGuide.suggestedArmor.img}}" />
+                            <span>{{document.system.characterGuide.suggestedArmor.name}}</span>
+                            <div class="controls">
+                                {{#unless (eq document.parent.type 'character')}}<a data-action="removeSuggestedItem" data-target="suggestedArmor"><i class="fa-solid fa-trash icon-button"></i></a>{{/unless}}
+                            </div>
+                        </div>
+                    {{else}}
+                        <div class="drag-area">{{localize "DAGGERHEART.GENERAL.missingDragDropThing" thing=(localize "DAGGERHEART.GENERAL.armors")}}</div>
+                    {{/if}}
+                </div>
+            </fieldset>
+        </fieldset>
+
+        <fieldset class="one-column">
+            <legend>{{localize "DAGGERHEART.GENERAL.inventory"}}</legend>
+            <fieldset class="one-column drop-section take-section {{#if (eq document.parent.type 'character')}}inactive{{/if}}">
+                <legend>{{localize "DAGGERHEART.GENERAL.take"}}</legend>
+                <div class="drop-section-body list-items">
+                    {{#unless source.system.inventory.take}}
+                        <div class="drag-area">{{localize "DAGGERHEART.GENERAL.missingDragDropThing" thing=(localize "DAGGERHEART.GENERAL.items")}}</div>
+                    {{/unless}}
+                    {{#each source.system.inventory.take}}
+                        {{#if this}}
+                            <div class="suggested-item item-line" data-action="editDoc" data-item-uuid="{{this.uuid}}">
+                                <img class="image" src="{{this.img}}" />
+                                <span>{{this.name}}</span>
+                                <div class="controls">
+                                    {{#unless (eq document.parent.type 'character')}}<a data-action="removeItemFromCollection" data-target="inventory.take" data-uuid="{{this.uuid}}"><i class="fa-solid fa-trash icon-button"></i></a>{{/unless}}
+                                </div>
+                            </div>
+                        {{/if}}
+                    {{/each}}
+                </div>
+            </fieldset>
+
+            <fieldset class="one-column drop-section choice-a-section {{#if (eq document.parent.type 'character')}}inactive{{/if}}">
+                <legend>{{localize "DAGGERHEART.ITEMS.Class.guide.inventory.thenChoose"}}</legend>
+                <div class="drop-section-body list-items">
+                    {{#unless source.system.inventory.choiceA}}
+                        <div class="drag-area">{{localize "DAGGERHEART.GENERAL.missingDragDropThing" thing=(localize "DAGGERHEART.GENERAL.items")}}</div>
+                    {{/unless}}
+                    {{#each source.system.inventory.choiceA}}
+                        {{#if this}}
+                            <div class="suggested-item item-line" data-action="editDoc" data-item-uuid="{{this.uuid}}">
+                                <img class="image" src="{{this.img}}" />
+                                <span>{{this.name}}</span>
+                                <div class="controls">
+                                    {{#unless (eq document.parent.type 'character')}}<a data-action="removeItemFromCollection" data-target="inventory.choiceA" data-uuid="{{this.uuid}}"><i class="fa-solid fa-trash icon-button"></i></a>{{/unless}}
+                                </div>
+                            </div>
+                        {{/if}}
+                    {{/each}}
+                </div>
+            </fieldset>
+
+            <fieldset class="one-column drop-section choice-b-section {{#if (eq document.parent.type 'character')}}inactive{{/if}}">
+                <legend>{{localize "DAGGERHEART.ITEMS.Class.guide.inventory.andEither"}}</legend>
+                <div class="drop-section-body list-items">
+                    {{#unless source.system.inventory.choiceB}}
+                        <div class="drag-area">{{localize "DAGGERHEART.GENERAL.missingDragDropThing" thing=(localize "DAGGERHEART.GENERAL.items")}}</div>
+                    {{/unless}}
+                    {{#each source.system.inventory.choiceB}}
+                        {{#if this}}
+                            <div class="suggested-item item-line" data-action="editDoc" data-item-uuid="{{this.uuid}}">
+                                <img class="image" src="{{this.img}}" />
+                                <span>{{this.name}}</span>
+                                <div class="controls">
+                                    {{#unless (eq document.parent.type 'character')}}<a data-action="removeItemFromCollection" data-target="inventory.choiceB" data-uuid="{{this.uuid}}"><i class="fa-solid fa-trash icon-button"></i></a>{{/unless}}
+                                </div>
+                            </div>
+                        {{/if}}
+                    {{/each}}
+                </div>
+            </fieldset>
+        </fieldset>
+    </div>
+</section>

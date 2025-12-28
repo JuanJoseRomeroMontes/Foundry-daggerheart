@@ -1,0 +1,265 @@
+body.daggerheart-plus-active .daggerheart.sheet.actor {
+  display: none !important;
+}
+
+body.daggerheart-plus-active .daggerheart.sheet.item {
+  display: none !important;
+}
+
+body.theme-dark .application.daggerheart.sheet {
+  background: #1e1e2a99;
+  backdrop-filter: blur(5px);
+}
+
+.dh-style select {
+  background: light-dark(transparent, transparent);
+  color: light-dark(#222, #efe6d8);
+  font-family: "Montserrat", sans-serif;
+  outline: 2px solid transparent;
+  border: 1px solid light-dark(#222, #efe6d8);
+  height: 2em;
+  padding: 0;
+}
+
+.dh-style fieldset .nest-inputs {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  gap: 0.5em;
+  justify-content: space-evenly;
+}
+
+form#roll-selection {
+  background: #181827e0;
+  backdrop-filter: blur(5px);
+}
+
+form#roll-selection .window-content {
+  backdrop-filter: none !important;
+}
+
+.daggerheart-plus.sheet {
+  --dhp-primary: #f3c267;
+  --dhp-secondary: #cc9900;
+  --dhp-accent: #ffbb33;
+  --dhp-background: #0a0a0f;
+  --dhp-surface: #1a1a25;
+  --dhp-text: #ffffff;
+  --dhp-text-light: #cccccc;
+  --dhp-border: #333344;
+  --dhp-shadow: rgba(0, 0, 0, 0.5);
+  --dhp-success: #4caf50;
+  --dhp-warning: #ff9800;
+  --dhp-danger: #f44336;
+  --dhp-info: #2196f3;
+  --dhp-gradient: linear-gradient(
+    135deg,
+    #1a1a25 0%,
+    #2a2a35 50%,
+    #1a1a25 100%
+  );
+
+  /* Progress bar damage gradient aligned with theme */
+  --dhp-damage-gradient: linear-gradient(
+    90deg,
+    var(--dh-color-gold-light, var(--dhp-primary)) 0%,
+    var(--dhp-accent) 30%,
+    var(--dhp-warning) 65%,
+    var(--dhp-danger) 100%
+  );
+  --dhp-damage-gradient-webkit: var(--dhp-damage-gradient);
+  --dhp-damage-gradient-moz: var(--dhp-damage-gradient);
+
+  --dh-color-dark-blue: #0a0f21;
+  --dh-color-purple: #1e184d;
+  --dh-color-purple-light: #38227b;
+  --dh-color-blue: #2878be;
+  --dh-color-gold: #f3c267;
+  --dh-color-gold-light: #fef790;
+  --dh-color-off-white: #f2f3f4;
+  --dh-color-off-black: #1c1c1c;
+  --dh-border-purple: #6d6795;
+
+  --dh-space-xs: 0.25rem;
+  --dh-space-sm: 0.5rem;
+  --dh-space-md: 0.75rem;
+  --dh-space-lg: 1rem;
+  --dh-space-xl: 1.5rem;
+
+  --dh-radius-md: 6px;
+  --dh-radius-lg: 8px;
+  --dh-radius-xl: 10px;
+}
+
+.daggerheart-plus.sheet .window-header {
+  border: none;
+}
+
+.daggerheart-plus.sheet input[type="number"] {
+  backdrop-filter: blur(0);
+  -webkit-backdrop-filter: blur(0);
+}
+
+.daggerheart-plus.sheet .window-header .window-title {
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.daggerheart-plus.sheet .window-header a {
+  color: white;
+}
+
+.daggerheart-plus.sheet .window-content {
+  padding: 0;
+  overflow: hidden;
+  color: var(--dhp-text);
+  border-radius: 10px;
+}
+
+.daggerheart-plus.sheet form {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.daggerheart-plus.sheet .sheet-header {
+  background-color: var(--dhp-surface);
+  border-bottom: 2px solid var(--dhp-border);
+  padding: 1rem;
+  box-shadow: 0 2px 4px var(--dhp-shadow);
+}
+
+.daggerheart-plus.sheet .sheet-header h1 {
+  margin: 0;
+  color: var(--dhp-primary);
+  font-size: 1.5rem;
+}
+
+.daggerheart-plus.sheet .sheet-tabs {
+}
+
+.daggerheart-plus.sheet .rail-nav .sheet-tabs {
+  background: none;
+  border-bottom: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 0.5em;
+  box-shadow: none;
+}
+
+.daggerheart-plus.sheet .sheet-tabs .tab {
+  padding: 1rem 1.5rem;
+  background-color: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+  color: var(--dhp-text-light);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.daggerheart-plus.sheet .sheet-tabs .tab:hover {
+  background-color: rgba(230, 168, 0, 0.1);
+  color: var(--dhp-primary);
+  transform: translateY(-2px);
+}
+
+.daggerheart-plus.sheet .sheet-tabs .tab.active {
+  background-color: rgba(230, 168, 0, 0.15);
+  border-bottom-color: var(--dhp-primary);
+  color: var(--dhp-primary);
+  font-weight: bold;
+}
+
+.daggerheart-plus.sheet .sheet-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1.5rem;
+  background-color: var(--dhp-background);
+  color: var(--dhp-text);
+}
+
+.daggerheart-plus.sheet input.inventory-item-quantity {
+  max-width: 3em;
+}
+
+.daggerheart-plus.sheet input[type="text"],
+.daggerheart-plus.sheet input[type="number"],
+.daggerheart-plus.sheet textarea,
+.daggerheart-plus.sheet select {
+  color: var(--dhp-text);
+  border-radius: 4px;
+  padding: 0em 0em;
+  transition: all 0.2s ease;
+  backdrop-filter: unset;
+}
+
+.daggerheart-plus.sheet input[type="text"]:focus,
+.daggerheart-plus.sheet input[type="number"]:focus,
+.daggerheart-plus.sheet textarea:focus,
+.daggerheart-plus.sheet select:focus {
+  outline: none;
+  border-color: var(--dhp-primary);
+  box-shadow: 0 0 0 2px rgba(230, 168, 0, 0.2);
+}
+
+.daggerheart-plus.sheet button {
+  background: var(--dhp-surface);
+  border: 1px solid var(--dhp-border);
+  color: var(--dhp-text);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.daggerheart-plus.sheet button:hover {
+  background: var(--dhp-primary);
+  color: var(--dhp-background);
+  border-color: var(--dhp-secondary);
+}
+
+/* Enhanced progress bar styling with damage gradient */
+.daggerheart-plus.sheet .progress-bar {
+  position: relative;
+  overflow: hidden;
+}
+
+.daggerheart-plus.sheet .progress-bar::-webkit-progress-value {
+  background: var(--dhp-damage-gradient);
+  box-shadow: 0 0 4px rgba(255, 235, 59, 0.3);
+  transition: all 0.3s ease;
+}
+
+.daggerheart-plus.sheet .progress-bar::-moz-progress-bar {
+  background: var(--dhp-damage-gradient);
+  box-shadow: 0 0 4px rgba(255, 235, 59, 0.3);
+  transition: all 0.3s ease;
+}
+
+/* Add subtle glow effect for low health/damage */
+.daggerheart-plus.sheet .progress-bar[value="0"]::-webkit-progress-value,
+.daggerheart-plus.sheet .progress-bar[value="0"]::-moz-progress-bar {
+  box-shadow: 0 0 8px rgba(255, 235, 59, 0.6);
+}
+
+/* Add warning glow for high damage */
+.daggerheart-plus.sheet .progress-bar[value="5"]::-webkit-progress-value,
+.daggerheart-plus.sheet .progress-bar[value="6"]::-webkit-progress-value,
+.daggerheart-plus.sheet .progress-bar[value="5"]::-moz-progress-bar,
+.daggerheart-plus.sheet .progress-bar[value="6"]::-moz-progress-bar {
+  box-shadow: 0 0 8px rgba(244, 67, 54, 0.6);
+  animation: damagePulse 2s ease-in-out infinite;
+}
+
+@keyframes damagePulse {
+  0%,
+  100% {
+    box-shadow: 0 0 8px rgba(244, 67, 54, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 12px rgba(244, 67, 54, 0.8);
+  }
+}

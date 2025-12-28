@@ -1,0 +1,485 @@
+{
+  "CRLNGN_UI": { 
+    "ui": { 
+      "generalSettingsLabel": "通用设置",
+      "clientSettingsLabel": "玩家设置 (客户端)",
+      "worldSettingsLabel": "世界设置 (游戏主持人)",
+      "toggleHints": "切换帮助",
+      "navDisabled": "场景导航已在\"元素\"选项卡中禁用。以下设置将在自定义布局为场景导航时生效。",
+      "reloadRequiredTitle": "重新加载Foundry",
+      "reloadRequiredLabel": "需要重新加载。现在重新加载？",
+      "macroBarTooltipKeepOpen": "保持打开",
+      "macroBarTooltipAutoHide": "自动隐藏",
+      "reset": "重置",
+      "save": "保存",
+      "reloadButton": "重新加载",
+      "cancelButton": "取消",
+      "notifications": {
+        "incompatibleVersion": "Carolingian UI 需要 Foundry v13.339 或更高版本。请更新 Foundry 或安装 Carolingian UI 的 1.x 版本。",
+        "settingsUpdated": "设置已更新",
+        "minimalUiNotSupported": "Carolingian UI与Minimal UI不兼容，并提供了大多数的功能。请禁用该模块以避免性能问题。",
+        "monksScenesNotSupported": "Carolingian UI的场景导航和Monk's场景导航不可兼容。请禁用Monk's场景导航或在设置中取消选择场景导航的\"自定义布局\"。",
+        "ripperScenesCompat": "Carolingian UI现在包含场景文件夹导航和场景搜索功能，这些功能无法与紧凑场景导航一起使用。请禁用其他模块或在Carolingian UI设置中禁用“场景文件夹导航”。",
+        "monksPlayerSettingsConflict": "Carolingian UI的“强制暗黑模式”设置已被禁用，以防止与Monk's Player Settings发生冲突。",
+        "forceClientSettingsConflict": "Carolingian UI的“强制暗黑模式”设置已被禁用，以防止与Force Client Settings发生冲突。",
+        "initialViewSet": "此场景的初始视图已设置为当前视图。"
+      },
+      "sceneNav": {
+        "searchPlaceholder": "搜索场景...",
+        "backTo": "返回",
+        "favoritesFolder": "返回已选场景",
+        "addToFavorites": "添加到导航",
+        "removeFromFavorites": "从导航中移除",
+        "initialViewBtn": "设置初始视图",
+        "backButtonTooltip": "上一个场景",
+        "sceneLookupTooltip": "搜索场景",
+        "hideSceneFoldersTooltip": "隐藏场景文件夹",
+        "showSceneFoldersTooltip": "显示场景文件夹",
+        "globalLightOn": "全局照明打开",
+        "globalLightOff": "全局照明关闭",
+        "tokenVisionOn": "令牌视力打开",
+        "tokenVisionOff": "令牌视力关闭",
+        "playlistSoundOn": "播放列表声音打开",
+        "playlistSoundOff": "播放列表声音关闭",
+        "preloadScene": "预加载场景",
+        "sceneConfig": "场景配置"
+      },
+      "updates": {
+        "label": "最新更新ID",
+        "hint": "跟踪最后显示的更新通知"
+      },
+      "toggleChatBox": "切换聊天框"
+    },
+    "settings": {
+      "supportPatreon": {
+        "label": "支持开发者",
+        "buttonLabel": "通过 Patreon 支持",
+        "hint": "如果您喜欢 Carolingian UI 和我开发的其他模组，欢迎通过每月 $2 或 $5 的赞助来支持后续开发。"
+      },
+      "moduleSettingsMenu": {
+        "label": "界面设置",
+        "title": "配置选项",
+        "hint": "自定义 Carolingian UI，启用或禁用自定义样式和其他选项。",
+        "tabs": {
+          "interface": "元素",
+          "fonts": "字体",
+          "themes": "主题 & 样式",
+          "chat": "侧边栏 & 聊天",
+          "controls": "场景控制",
+          "scenes": "场景",
+          "players": "玩家列表",
+          "camera": "摄像机停靠栏"
+        },
+        "reset": "重置",
+        "save": "保存"
+      },
+      "hideInterface": {
+        "label": "切换隐藏/显示界面",
+        "hint": "隐藏或显示界面。这将影响 #interface 块中的所有元素"
+      },
+      "sidebarTabs": {
+        "ChatLog": "聊天记录",
+        "CombatTracker": "录",
+        "SceneDirectory": "场景",
+        "ActorDirectory": "角色",
+        "ItemDirectory": "物品",
+        "JournalDirectory": "日志",
+        "RollTableDirectory": "骰表",
+        "CardsDirectory": "牌组",
+        "MacroDirectory": "宏",
+        "PlaylistDirectory": "播放列表",
+        "CompendiumDirectory": "编纂",
+        "Settings": "设置",
+        "tabsColumn": "侧边栏选项卡",
+        "gmHideColumn": "GM隐藏",
+        "playerHideColumn": "玩家隐藏"
+      },
+      "interfaceOptionsMenu": {
+        "label": "淡出 & 布局",
+        "title": "界面淡出 & 布局",
+        "hint": "单独禁用界面元素的“淡出”行为。您也可以禁用 Carolingian UI 对它们的自定义布局。",
+        "description": "<b>“淡出”列：</b> 取消勾选以防止元素在不被悬停时淡出。 <b>“自定义布局”列：</b> 取消勾选以禁用 Carolingian UI 对该特定元素的样式。颜色主题和字体仍将生效。",
+        "fields": {
+          "sceneControls": "控制按钮（左侧）",
+          "sidebarTabs": "侧边栏按钮（右侧）",
+          "playerList": "玩家列表",
+          "cameraDock": "摄像机停靠栏",
+          "macroHotbar": "宏快捷栏",
+          "sceneNav": "场景导航",
+          "chatLogControls": "聊天记录控制",
+          "fadeOutColumn": "淡出",
+          "hideColumn": "隐藏",
+          "customLayoutColumn": "自定义布局",
+          "elementColumn": "界面元素",
+          "hoverableSettingsHints": {
+            "label": "可悬停的设置提示",
+            "hint": "通过添加问号工具提示来整理设置和应用程序表单，以便在悬停时显示/隐藏提示文本。影响默认的Foundry设置和模块窗口。"
+          },
+          "preventMacroBarReposition": {
+            "label": "防止宏栏重新定位",
+            "hint": "启用后，隐藏聊天输入框时也会防止宏快捷栏在侧边栏标签更改时被重新定位。无论侧边栏状态如何，都保持宏快捷栏在其原始位置。"
+          }
+        },
+        "reset": "重置",
+        "save": "保存"
+      },
+      "customFontsMenu": {
+        "label": "自定义字体",
+        "title": "配置字体",
+        "hint": "配置界面中使用的字体",
+        "description": "选择或输入已在 Foundry 核心中加载的自定义字体名称。",
+        "fields": {
+          "uiBody": {
+            "label": "界面字体"
+          },
+          "uiTitles": {
+            "label": "界面标题"
+          },
+          "journalBody": {
+            "label": "日志正文"
+          },
+          "journalTitles": {
+            "label": "日志标题"
+          }
+        },
+        "postDescription": "要从 Google Fonts 导入，请先将 @import 链接粘贴到样式设置的 Custom CSS 字段中，字体将在此处列出。",
+        "reset": "重置",
+        "save": "保存"
+      },
+      "themeAndStylesMenu": {
+        "label": "颜色主题和样式",
+        "title": "配置样式",
+        "hint": "为用户界面选择颜色主题，并添加自定义CSS样式",
+        "fields": {
+          "colorTheme": {
+            "label": "颜色主题",
+            "hint": "为高亮显示和次要颜色选择主题。仅影响UI高亮和按钮"
+          },
+          "adjustOtherModules": {
+              "label": "在其他模块中应用样式",
+              "hint": "在其他模块上启用我的样式调整和自定义字体，例如CRUX或Combat Carousel。如果您需要支持特定模块，请在Github issues上提出请求"
+          },
+          "applyDarkThemeToModules": {
+            "label": "应用暗色主题到模块窗口",
+            "hint": "一些模块从未实现暗色主题。此选项尝试使用 .app.theme-light 类将暗色主题应用于其他模块的窗口。如果某些模块变得部分难以辨认，请取消选中此选项。"
+          },
+          "otherModulesList": {
+              "label": "在其他模块中应用样式",
+              "hint": "在其他模块上启用我的样式调整。点击列表顶部的复选框可全选/取消全选。"
+          },
+          "forcedDarkTheme": {
+            "label": "强制元素使用深色主题",
+            "hint": "实验性功能。如果上面的复选框对特定模块不起作用，您可以尝试通过CSS选择器强制为模块应用深色背景和浅色字体。如果模块有硬编码样式，这可能不总是有效。在下面的字段中输入元素的CSS ID或类，用逗号分隔。示例：#element-id, .element-class"
+          },
+          "customStyles": {
+            "label": "自定义CSS",
+            "hint": "这些样式将在您下次加载 Foundry 时被载入。您可以通过粘贴 '@import' 链接来包含 'Google Fonts'，字体将在自定义字体设置中列出。"
+          }, 
+          "enforceDarkMode": {
+            "label": "强制暗色模式",
+            "hint": "在玩家客户端上将Foundry UI主题设置为暗色。如果你使用任何模块如'强制客户端设置'，你可能需要关闭此选项。"
+          }
+        },
+        "reset": "重置",
+        "save": "保存",
+        "colorPicker": {
+          "hint": "颜色选择需谨慎使用。请记住保护您的视网膜：对于强调色，请使用至少'中等'对比度等级的颜色以获得更好的可读性。",
+          "title": "自定义主题颜色",
+          "presets": "预设主题",
+          "accentColor": "强调色",
+          "secondaryColor": "次要颜色",
+          "hue": "色调",
+          "saturation": "饱和度",
+          "lightness": "亮度",
+          "accentOnBackground": "背景上的强调色",
+          "textOnAccent": "强调色上的文本",
+          "secondaryPreview": "次要颜色预览",
+          "contrastGood": "对比度：良好",
+          "contrastMedium": "对比度：中等",
+          "contrastPoor": "对比度：较差",
+          "apply": "保存",
+          "applySecondaryColorToBg": {
+            "label": "将次要颜色应用到Foundry界面背景",
+            "hint": "启用后，次要颜色将应用到侧边栏和控件等界面背景。这会创建更统一的颜色主题。"
+          }
+        }
+      },
+      "chatMessagesMenu": {
+        "label": "聊天消息选项",
+        "title": "配置聊天",
+        "hint": "修改右侧面板上聊天消息卡片的外观和行为",
+        "fields": {
+          "enableChatStyles": {
+            "label": "启用聊天消息样式",
+            "hint": "为聊天卡片添加样式修改。当 Foundry 选择暗模式时，聊天卡片也将变为暗色。主要适用于 DND5E - 对其他系统的支持有限。"
+          },
+          "borderColor": {
+            "label": "聊天卡片边框颜色",
+            "hint": "[需要重新加载] <b>玩家颜色</b>：使用玩家在Foundry上的颜色；<b>骰子类型</b>：为攻击、豁免、技能检定等使用颜色编码。<b>无</b>：完全没有边框。",
+            "options": {
+              "playerColor": "玩家颜色",
+              "rollType": "骰子类型 (DnD5e)",
+              "none": "无"
+            }
+          },
+          "borderPosition": {
+            "label": "边框位置",
+            "hint": "[需要重新加载] <b>左:</b> 只在聊天卡片的左侧显示边框。 <br/><b>上:</b> 只在聊天卡片的顶部显示边框。 <br/><b>无:</b> 没有边框（将允许其他模块设置的边框）。 <br/><b>全:</b> 在聊天卡片的所有边上显示边框。",
+            "options": {
+              "left": "左",
+              "right": "右",
+              "top": "上",
+              "all": "全"
+            }
+          },
+          "useLeftChatBorder": {
+            "label": "仅使用左侧边框",
+            "hint": "你的边框颜色选择仅显示在聊天卡片的左侧 - 其他边没有边框。"
+          },
+          "sideBarWidth": {
+            "label": "右侧侧面板宽度",
+            "hint": "右侧侧面板的宽度。"
+          },
+          "openChatLogOnLoad": {
+            "label": "加载时打开聊天记录",
+            "hint": "启用后，模块加载时侧边栏将自动展开以显示聊天记录。"
+          },
+          "closeSidebarWhenIdle": {
+            "label": "空闲时关闭侧边栏",
+            "hint": "启用后，鼠标离开侧边栏区域3秒后，侧边栏将自动折叠。"
+          },
+          "useHorizontalSidebarTabs": {
+            "label": "使用水平侧边栏标签",
+            "hint": "启用后，将侧边栏标签更改为水平方向，位于侧边栏顶部，而不是垂直放置在侧面。（v12样式）"
+          },
+          "showChatNotificationsOnTop": {
+            "label": "从顶部显示聊天通知",
+            "hint": "启用后，聊天卡片通知从聊天输入区域的顶部显示，而不是底部。"
+          }
+        },
+        "reset": "重置",
+        "save": "保存"
+      },
+      "playersListMenu": {
+        "label": "玩家列表",
+        "title": "玩家列表选项",
+        "hint": "更改玩家列表的行为或添加头像",
+        "fields": {
+          "autoHidePlayerList": {
+            "label": "自动隐藏玩家列表",
+            "hint": "启用后，左下角的玩家列表将保持最小化，除非悬停。"
+          },
+          "playerListAvatars": {
+            "label": "显示头像",
+            "hint": "显示玩家头像。它会查找角色图像，或者如果没有分配角色则查找用户图像。"
+          }
+        },
+        "reset": "重置",
+        "save": "保存"
+      },
+      "leftControlsMenu": {
+        "label": "左侧控制栏",
+        "title": "配置控件",
+        "hint": "修改场景控制按钮的外观和行为，位于屏幕左侧",
+        "fields": {
+          "autoHideSecondary": {
+            "label": "自动隐藏次要控件",
+            "hint": "启用后，左侧的次要控制栏将保持隐藏，直到您将鼠标悬停在该区域或单击某个项目。"
+          }
+        },
+        "reset": "重置",
+        "save": "保存"
+      },
+      "cameraDockMenu": {
+        "label": "摄像头",
+        "title": "配置停靠栏",
+        "hint": "启用可放置在任意位置的浮动摄像头停靠栏",
+        "fields": {
+          "enableFloatingDock": {
+            "label": "启用浮动摄像头停靠栏",
+            "hint": "<b>[需要重新加载]</b> 允许视频播放器组被拖动并放置在屏幕上的任何位置"
+          }, 
+          "dockPosX": {
+            "label": "水平位置",
+            "hint": "设置为浮动时摄像头停靠栏的位置。从屏幕左下角开始，单位为像素"
+          }, 
+          "dockPosY": {
+            "label": "垂直位置",
+            "hint": "设置为浮动时摄像头停靠栏的位置。从屏幕左下角开始，单位为像素"
+          }, 
+          "dockWidth": {
+            "label": "摄像头组宽度",
+            "hint": "设置为浮动时非最小化摄像头停靠栏的尺寸，单位为像素"
+          }, 
+          "dockHeight": {
+            "label": "摄像头组高度",
+            "hint": "设置为浮动时非最小化摄像头停靠栏的尺寸，单位为像素"
+          },
+          "dockResizeOnUserJoin": {
+            "label": "调整停靠栏以适应视频",
+            "hint": "启用后，当用户加入时，停靠栏将被调整大小。当新用户加入时，手动调整的大小可能会被覆盖。",
+            "options": {
+              "off": "关闭：不自动调整大小",
+              "horizontal": "水平调整以适应",
+              "vertical": "垂直调整以适应"
+            }
+          },
+          "defaultVideoWidth": {
+            "label": "默认视频宽度",
+            "hint": "停靠栏中每个摄像头的宽度，单位为像素。最小宽度为140像素，以便为摄像头控制图标留出空间。"
+          }
+        },
+        "reset": "重置",
+        "save": "保存"
+      },
+      "sceneNavMenu": {
+        "label": "场景导航",
+        "title": "配置导航",
+        "hint": "更改顶部栏中场景导航菜单的选项",
+        "fields": {
+          "hideLoadingSceneName": {
+            "label": "隐藏加载栏中的场景名称",
+            "hint": "加载栏会显示场景名称，这可能会向玩家剧透内容。勾选此选项将只显示一个细长的加载条。"
+          },
+          "sceneNavEnabled": {
+            "label": "启用水平场景导航",
+            "hint": "[需要重新加载] 如果您与非兼容模块存在布局问题，可以尝试禁用我对场景导航的自定义样式。"
+          }, 
+          "showNavOnHover": {
+            "label": "悬停时显示导航",
+            "hint": "如果场景导航已折叠，您可以通过将鼠标悬停在屏幕顶部来显示它。"
+          },
+          "useSceneFolders": {
+            "label": "在导航栏启用场景文件夹",
+            "hint": "如果启用了自定义场景导航，此选项将在场景导航栏中添加带有场景搜索功能的文件夹列表。"
+          },
+          "useSceneLookup": {
+            "label": "在导航栏启用场景搜索",
+            "hint": "如果启用了自定义场景导航，此选项将在场景导航栏中添加一个按钮，用于搜索场景。"
+          },
+          "navFoldersForPlayers": {
+            "label": "为玩家启用场景文件夹",
+            "hint": "启用此选项允许玩家查看文件夹列表。如果他们没有文件夹的查看权限，该文件夹将不会出现在列表中。"
+          },
+          "navStartCollapsed": {
+            "label": "启动时折叠",
+            "hint": "启用此选项可在加载 Foundry 时折叠场景导航，无论之前保存的状态如何。"
+          },
+          "sceneClickToView": {
+            "label": "启用单击和双击",
+            "hint": "启用后，单击场景将打开该场景。双击则激活它。"
+          },
+          "useSceneIcons": {
+            "label": "使用场景图标",
+            "hint": "在场景名称旁显示图标：<i class='fas fa-lock'></i> 激活前对玩家不可见；<i class='fas fa-crown'></i> GM当前正在查看；<i class='fas fa-bullseye'></i> 当前对玩家激活；"
+          },
+          "useSceneBackButton": {
+            "label": "启用返回按钮",
+            "hint": "<b>'返回到上一个场景'</b>: 点击返回到之前查看的场景，<b>'返回到默认场景'</b>: 只在文件夹视图中出现，点击打开默认场景导航，<b>禁用</b>: 无返回按钮"
+          },
+          "useScenePreview": {
+            "label": "使用场景预览",
+            "hint": "启用后，悬停在场景导航上时将显示场景的缩略图预览"
+          },
+          "navShowRootFolders": {
+            "label": "在场景导航中显示根文件夹",
+            "hint": "从场景目录的根文件夹将显示在默认场景导航中。如果你有很多根文件夹，你可能希望禁用此选项。"
+          },
+          "hideInactiveOnFolderToggle": {
+            "label": "在文件夹切换时隐藏非激活场景",
+            "hint": "启用后，当文件夹视图打开时，未激活的场景列表将被隐藏。列表会在你隐藏文件夹时重新显示。这旨在避免导航中的场景重复。"
+          },
+          "sceneItemWidth": {
+            "label": "导航项目宽度",
+            "hint": "留空以使用默认宽度，或定义一个新数值。最小为100px"
+          }
+        },
+        "reset": "重置",
+        "save": "保存"
+      },
+      "sheets5eMenu": {
+        "label": "DnD5e 角色表",
+        "title": "配置DnD5e 角色表",
+        "hint": "更改DnD5e 角色表的选项",
+        "fields": {
+          "applyThemeToSheets": {
+            "label": "将颜色和样式应用于DnD5e/Daggerheart角色表",
+            "hint": "启用以应用全局颜色主题和样式到DnD5e/Daggerheart 角色表"
+          },
+          "useHorizontalSheetTabs": {
+            "label": "使用带有标签的水平标签",
+            "hint": "仅在启用角色表自定义样式时有效。这会在5e角色表上应用带标签的水平标签页，而不是侧边图标标签页"
+          }
+        },
+        "reset": "重置",
+        "save": "保存"
+      },
+      "enforceGMSettings": {
+        "label": "强制应用GM设置到玩家",
+        "hint": "启用后，所有玩家连接时将使用GM的UI设置。这确保了所有玩家的UI体验一致。",
+        "conflictWarning": "Carolingian UI: '强制应用GM设置到玩家' 已禁用，因为 Force Client Settings 模块处于活动状态。请只使用其中一个，不要同时使用两者。"
+      },
+      "defaultSettings": {
+        "label": "默认GM设置",
+        "hint": "存储GM的首选设置以强制应用到玩家"
+      },
+      "controlIconSize": {
+        "label": "控制图标大小",
+        "hint": "如果您使用非常大的屏幕，您可能希望更改左侧控制栏上图标的大小。这可能会影响其他一些 UI 元素。",
+        "options": {
+          "small": "小",
+          "regular": "正常",
+          "large": "大"
+        }
+      },
+      "sceneNavCollapsed": {
+        "label": "场景导航已折叠",
+        "hint": "场景导航切换的当前状态。是否已折叠？"
+      },
+      "sceneNavPos": {
+        "label": "场景导航位置",
+        "hint": "存储导航的当前位置，以便在重新渲染时重置"
+      },
+      "enableMacroLayout": {
+        "label": "启用宏调整大小",
+        "hint": "该模块减小了快捷栏上宏槽的大小，并放大了数字。禁用此设置以使用默认的 Foundry 布局。"
+      },
+      "autoHideLeftControls": {
+        "label": "自动隐藏左侧次要控件",
+        "hint": "启用后，左侧的次要控制栏将保持隐藏，除非您将鼠标悬停在该区域或单击某个项目。"
+      },
+      "collapseMacroBar": {
+        "label": "自动隐藏宏快捷栏",
+        "hint": "启用后，宏快捷栏将默认折叠，并在悬停时显示。"
+      },
+      "useFolderStyle": {
+        "label": "侧边栏文件夹使用简洁颜色",
+        "hint": "启用后，侧边栏文件夹将使用更简洁的颜色，只在边框上显示选中的颜色。"
+      },
+      "debugMode": {
+        "label": "调试模式",
+        "hint": "启用或禁用浏览器控制台上的调试消息。"
+      },
+      "disableUI":{
+        "label": "在此客户端禁用界面",
+        "hint": "如果玩家不想使用卡罗琳界面，可以禁用它。除了聊天卡片中的深色样式（可以单独禁用）外，模组的其他功能将不会生效。"
+      }
+    },
+    "dnd5e": {
+      "chatCard": {
+        "buttons": {
+          "summons": "召唤",
+          "attack": "攻击",
+          "healing": "治疗",
+          "damage": "伤害",
+          "template": "模板",
+          "consume": "消耗",
+          "refund": "退还",
+          "macro": "宏",
+          "savedc": "豁免DC",
+          "save": "豁免"
+        }
+      }
+    }
+  }
+}

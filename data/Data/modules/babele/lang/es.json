@@ -1,0 +1,25 @@
+{
+  "I18N.LANGUAGE": "Español",
+  "I18N.MAINTAINERS": "@Viriato139ac#0342",
+  
+  "BABELE.CompendiumTranslations": "Traducciones",
+  "BABELE.TranslateActorHeadBtn": "Traducir",
+  "BABELE.TranslateActorTitle": "Traducir Actor",
+  "BABELE.TranslateActorHint": "Traduce automáticamente todos los objetos que posee el actor para los que existe un compendio de traducción",
+  "BABELE.TranslateActorBtn": "¡Traducir!",
+  "BABELE.ExportTranslationTitle": "Exportar Fichero de Traducción",
+  "BABELE.ExportTranslationBtn": "¡Exportar!",
+  "BABELE.ExportTranslationNotes": "Seleccione el formato del fichero de exportación de la traducción. Seleccione \"Heredado\" si desea usar el formato nativo original, o \"Compatible\" si lo que desea es gestionar la traducción usando alguna plataforma externa de localización (p.ej. Weblate, Transifex, etc ..)",
+  "BABELE.ExportTranslationFormat": "Formato",
+  "BABELE.ExportTranslationFormatLegacy": "Heredado",
+  "BABELE.ExportTranslationFormatCompatible": "Compatible",
+  "BABELE.TranslationDirTitle": "Directorio de ficheros de traducción",
+  "BABELE.TranslationDirHint": "Especifique el directorio donde se almacenan los ficheros locales de traducción de compendios",
+  "BABELE.EnableTranslationExportTile": "Habilitar exportación de traducciones",
+  "BABELE.EnableTranslationExportHint": "Active esta opción si desea añadir un botón en cada compendio para generar un fichero de traducción, útil para generar plantillas con las que trabajar",
+  "BABELE.ShowOriginalName": "Mostrar nombre original",
+  "BABELE.ShowOriginalNameHint": "Muestra el nombre sin traducir del objeto del compendio además de la traducción. Esto le permitirá filtrar por el nombre original además de por la traducción en la herramienta de búsqueda",
+  "BABELE.ShowTranslateOption": "Mostrar opción de traducción",
+  "BABELE.ShowTranslateOptionHint": "Conmuta la opción de tradución en las hojas de los actores",
+  "BABELE.requireLibWrapperMessage": "Babele necesita el módulo 'libWrapper'. Por favor, instálelo y actívelo"
+}

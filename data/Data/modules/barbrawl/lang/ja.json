@@ -1,0 +1,115 @@
+{
+    "barbrawl": {
+        "translatedBy": "tonishi",
+        "barStyle": {
+            "name": "バーのスタイル",
+            "hint": "バーの表示方法を変更します。",
+            "minimal": "最小限 (スリム, 枠線無)",
+            "default": "ファウンドリのデフォルト",
+            "large": "最大限(ワイド,枠線あり)",
+            "legacy": "従来(太枠)"
+        },
+        "textStyle": {
+            "name": "バーのラベル",
+            "hint": "バーが表示される数を変更します。",
+            "user": "デフォルト",
+            "none": "なし",
+            "fraction": "分数(値/最大)",
+            "percent": "パーセンテージ(%)"
+        },
+        "compactHud": {
+            "name": "Compact HUD",
+            "hint": "Reduces the size of the resource input fields in the token HUD."
+        },
+        "hideHostile": {
+            "name": "Hide all hostile bars",
+            "hint": "Prevents the display of bars for hostile tokens that players don't own. Be aware that this may override resource specific visibility settings."
+        },
+        "heightMultiplier": {
+            "name": "Bar height multiplier",
+            "hint": "Multiplies the bar height by the configured value to increase readability. This will affect the label, but not the background or foreground image of a bar."
+        },
+        "cacheBitmaps": {
+            "name": "Cache rendered bars",
+            "hint": "Enables bitmap caching for bars on the canvas, which may improve performance at the cost of readability (especially for labels)."
+        },
+        "config": {
+            "attribute": "能力値",
+            "ownerVisibility": "可視性（自分）",
+            "otherVisibility": "可視性（他人）",
+            "gmVisibility": "可視性（GM）",
+            "hide": "Hide bar",
+            "hideHint": "Don't display the bar when any of the checked conditions are met.",
+            "hideFull": "Full",
+            "hideEmpty": "Empty",
+            "hideCombat": "In combat",
+            "hideNoCombat": "Out of combat",
+            "hideHud": "Hide HUD",
+            "value": "値 (現在/最大)",
+            "color": "色 (最小/最大)",
+            "position": "位置",
+            "advanced": "高度な設定",
+            "indent": "インデント",
+            "indentHint": "バーの側面にある余白を、トークンの幅に対する%で表したもの。",
+            "indentLeft": "左側",
+            "indentRight": "右側",
+            "shareHeight": "高さ共有",
+            "shareHeightHint": "バーの高さを専用にせず、他のバーと被るようになります。",
+            "style": "ラベル",
+            "ignoreLimits": "制限の無視",
+            "ignoreLimitsHint": "0（下）から最大（上）までの入力値のクランプを無効にする。他の属性のクランピングはシステムで処理されるため、これはカスタムバーにのみ適用されます。",
+            "ignoreMin": "下限",
+            "ignoreMax": "上限",
+            "invert": "値の反転",
+            "invertDirection": "方向を反転",
+            "invertHint": "0をフルバー、最大値をエンプティバーで表示します。",
+            "invertDirectionHint": "このバーが塗りつぶされる方向を反転します。",
+            "label": "ラベルプレフィックス",
+            "labelHint": "設定されたテキストをバーに表示します。",
+            "approximate": "近似値",
+            "approximateHint": "バーとそのラベルに概算値を表示します。表示するセグメントの数を設定します。",
+            "approximateOwner": "所持者に近似値を表示する",
+            "approximateOwnerHint": "トークンの所有者に対しても近似値を表示するかどうかを示します。",
+            "fgImage": "前景イメージ",
+            "fgImageHint": "通常のバーを、塗りつぶし率に応じてクリッピングされたイメージで置き換えます。",
+            "bgImage": "背景イメージ",
+            "bgImageHint": "通常のバーの背景を画像で置き換えます。両方の画像の幅は、シーンのグリッドサイズと同じにすることをお勧めします。",
+            "hideBg": "Hide background",
+            "opacity": "不透明度"
+        },
+        "attribute": {
+            "none": "なし(除去)",
+            "custom": "カスタム(以下の値)"
+        },
+        "visibility": {
+            "inheritFromOwner": "所有者から引き継ぐ",
+            "inheritFromOther": "全員から引き継ぐ",
+            "none": "なし",
+            "always": "常に",
+            "hover": "ホバー時",
+            "control": "選択時",
+            "hoverOrControl": "ホバーまたは選択時"
+        },
+        "position": {
+            "top-inner": "上部(内)",
+            "top-outer": "上部(外)",
+            "bottom-inner": "下部(内)",
+            "bottom-outer": "下部(外)",
+            "left-inner": "左(内)",
+            "left-outer": "左(外)",
+            "right-inner": "右(内)",
+            "right-outer": "右(外)"
+        },
+        "section": "Resource Bars",
+        "add": "リソースの追加",
+        "defaults": {
+            "save": "Save to...",
+            "saveConfirmation": "Saved resources in {target}.",
+            "load": "Load from...",
+            "defaultToken": "Default token",
+            "typeDefaults": "{type} default",
+            "prototypeToken": "{name}'s prototype token",
+            "activeTokens": "{name}'s active tokens"
+        }
+    }
+}

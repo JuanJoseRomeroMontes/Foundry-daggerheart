@@ -1,0 +1,22 @@
+{
+  "timestamp": 1764788461137,
+  "os": {
+    "platform": "win32",
+    "version": "10.0.19045",
+    "node": "20.18.3",
+    "electron": "34.4.0"
+  },
+  "foundry": {
+    "generation": 13,
+    "build": 348,
+    "channel": "stable",
+    "hosting": null
+  },
+  "modules": {},
+  "systems": {},
+  "worlds": {},
+  "playtime": {
+    "total": 0,
+    "max": 0
+  }
+}

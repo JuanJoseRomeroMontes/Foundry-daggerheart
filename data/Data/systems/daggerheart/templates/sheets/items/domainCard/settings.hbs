@@ -1,0 +1,20 @@
+<section
+    class='tab {{tabs.settings.cssClass}} {{tabs.settings.id}}'
+    data-tab='{{tabs.settings.id}}'
+    data-group='{{tabs.settings.group}}'
+>
+    <fieldset class="two-columns">
+        <legend>{{localize tabs.settings.label}}</legend>
+
+        <span>{{localize "DAGGERHEART.GENERAL.type"}}</span>
+        {{formField systemFields.type value=source.system.type localize=true}}
+        <span>{{localize "DAGGERHEART.GENERAL.Domain.single"}}</span>
+        {{formField systemFields.domain value=source.system.domain choices=domainChoices valueAttr="id" labelAttr="label" localize=true}}
+        <span>{{localize "DAGGERHEART.GENERAL.level"}}</span>
+        {{formField systemFields.level value=source.system.level data-dtype="Number"}}
+        <span>{{localize "DAGGERHEART.ITEMS.DomainCard.recallCost"}}</span>
+        {{formField systemFields.recallCost value=source.system.recallCost data-dtype="Number"}}
+    </fieldset>
+
+    {{> "systems/daggerheart/templates/sheets/global/partials/resource-section.hbs" }}
+</section>

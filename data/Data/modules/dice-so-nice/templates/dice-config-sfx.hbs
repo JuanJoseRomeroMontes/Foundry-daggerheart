@@ -1,0 +1,19 @@
+<div class="tab {{tab.cssClass}}" data-tab="sfx" data-group="dsn-main">
+    <div class="settings-list">
+        <div class="form-group">
+            <label>{{localize "DICESONICE.showOthersSFX"}}</label>
+            <input type="checkbox" name="showOthersSFX" data-dtype="Boolean" {{checked showOthersSFX}} />
+        </div>
+        <ol id="sfxs-list" class="sfxs-list">
+            <li class="sfx flexrow sfx-header">
+                <div class="sfx-name sfx-flex-2">{{localize "DICESONICE.diceType"}}</div>
+                <div class="sfx-name sfx-flex-5">{{localize "DICESONICE.onResult"}}</div>
+                <div class="sfx-name sfx-flex-3">{{localize "DICESONICE.specialEffect"}}</div>
+                <div class="sfx-controls">
+                    <a class="sfx-control" data-sfx-create title='{{localize "DICESONICE.Add"}}'><i class="fas fa-plus"></i></a>
+                </div>
+            </li>
+            {{{specialEffectsList}}}
+        </ol>
+    </div>
+</div>

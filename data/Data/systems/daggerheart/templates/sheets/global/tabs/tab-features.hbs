@@ -1,0 +1,11 @@
+<section class='tab {{tabs.features.cssClass}} {{tabs.features.id}}' data-tab='{{tabs.features.id}}'
+    data-group='{{tabs.features.group}}'>
+    {{> 'daggerheart.inventory-items'
+    title='DAGGERHEART.GENERAL.features'
+    type='feature'
+    isGlassy=true
+    collection=document.system.features
+    canCreate=(or document.parent isGM)
+    showActions=false
+    }}
+</section>

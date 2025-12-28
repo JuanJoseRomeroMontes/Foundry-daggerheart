@@ -1,0 +1,56 @@
+{
+    "id": "daggerheart-es",
+    "title": "Translation: Español [Daggerheart]",
+    "description": "Unofficial spanish translation of the Foundryborne Daggerheart system for FoundryVTT",
+    "version": "0.1.0",
+    "compatibility": {
+        "minimum": "13",
+        "verified": "13"
+    },
+    "authors": [
+        {
+            "name": "Miguel Molina",
+            "email": "miguel@erizocosmi.co",
+            "discord": "erizocosmico",
+            "flags": {}
+        }
+    ],
+    "esmodules": [
+        "module.js"
+    ],
+    "relationships": {
+        "systems": [
+            {
+                "id": "daggerheart",
+                "manifest": "https://github.com/Foundryborne/daggerheart/releases/latest/download/system.json",
+                "compatibility": {
+                    "minimum": "1.0.0",
+                    "verified": "1.0.5"
+                },
+                "type": "system"
+            }
+        ],
+        "requires": [
+            {
+                "id": "babele",
+                "type": "module",
+                "manifest": "https://gitlab.com/riccisi/foundryvtt-babele/raw/master/module/module.json",
+                "compatibility": {
+                    "minimum": "2.5.5",
+                    "verified": "2"
+                }
+            }
+        ]
+    },
+    "languages": [
+        {
+            "lang": "es",
+            "name": "Español",
+            "path": "lang/es.json",
+            "flags": {}
+        }
+    ],
+    "url": "https://github.com/erizocosmico/fvtt-daggerheart-es",
+    "manifest": "https://github.com/erizocosmico/fvtt-daggerheart-es/releases/latest/download/module.json",
+    "download": "https://github.com/erizocosmico/fvtt-daggerheart-es/releases/download/v0.1.0/module.zip"
+}

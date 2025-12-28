@@ -1,0 +1,223 @@
+.hourglass {
+  height: 600;
+  width: 350;
+  margin: 0;
+  box-shadow: none;
+}
+
+.hourglass .window-content {
+    background: none;
+    overflow: hidden;
+}
+
+.hourglass .window-header {
+    border: none;
+}
+
+  
+.hourglass .hourglass-canvas{
+  --sand-color: #EDD0AA;
+  --sand-duration: 0;
+  --translate-top-sand: none;
+  --translate-bottom-sand: 100%;
+  --scale: 1;
+  --animationPlayState: running;
+  --styleUrl: url(../images/Hourglass_Empty_Stone_Square.png);
+
+  position: relative;
+  margin: auto;
+  display: block;
+  width: 100%;
+  height:100%;
+}
+
+.hourglass .hourglass-body {
+  background-image: var(--styleUrl);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  position: relative;
+  margin: auto;
+  display: grid;
+  width: 100%;
+  height:100%;
+
+  align-content: end;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  text-shadow:
+    -1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+  font-size: calc(2em * var(--scale));
+}
+
+.hourglass-decrement {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  line-height: calc(3em * var(--scale));
+  height: calc(3em * var(--scale));
+  width: calc(3em * var(--scale));
+}
+
+.hourglass-increment {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  line-height: calc(3em * var(--scale));
+  height: calc(3em * var(--scale));
+  width: calc(3em * var(--scale));
+}
+
+.hourglass-controls {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: row;
+}
+
+.hourglass-controls__control {
+  cursor: pointer;
+  font-size: 0.6em;
+  display: grid;
+  grid-gap: 0.3em;
+  grid-template-columns: auto 1fr;
+  justify-items: left;
+  align-items: center;
+  margin-right: 0.6em;
+}
+
+.hourglass-controls__control:hover {
+  text-shadow: 0 0 5px red;
+}
+
+.hourglass .top {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 42%);
+  width: 42%;
+  height: 36%;
+  overflow: hidden;
+  clip-path: url(#hourglassTopMask);
+  -webkit-clip-path: url(#hourglassTopMask);
+}
+
+/* Sand - top */
+.hourglass .top::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 90%;
+  bottom: 0;
+  background: var(--sand-color);
+  animation: var(--sand-duration) lowerTopSand linear;
+  animation-fill-mode: forwards;
+  animation-play-state: var(--animationPlayState);
+
+  transform: translateY(var(--translate-top-sand));
+}
+
+@keyframes lowerTopSand {
+  0% {
+    transform: none;
+  }
+  
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+.hourglass .bottom {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 50%;
+  width: 42%;
+  height: 36%;
+  overflow: hidden;
+  clip-path: url(#hourglassBottomMask);
+}
+
+/* Bottom sand */
+.hourglass .bottom::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 72%;
+  bottom: 0;
+  background: var(--sand-color);
+  animation: var(--sand-duration) raiseBottomSand linear;
+  animation-fill-mode: forwards;
+  animation-play-state: var(--animationPlayState);
+
+  transform: translateY(var(--translate-bottom-sand));
+}
+
+@keyframes raiseBottomSand {
+  0% {
+    transform: translateY(100%);
+  }
+  
+  100% {
+    transform: none;
+  }
+}
+
+
+/* Drip through to bottom */
+.hourglass .drip {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  
+  border-top: 10px solid var(--sand-color);
+  
+  animation: fadeDrip var(--sand-duration) linear;
+  animation-fill-mode: forwards;
+  animation-play-state: var(--animationPlayState);
+}
+
+@keyframes fadeDrip {
+  0% {
+    opacity: 1;
+  }
+  
+  70% {
+    opacity: 1;
+  }
+  
+  100% {
+    opacity: 0;
+  }
+}
+
+.hourglass .drip::before {
+  content: '';
+  position: absolute;
+  left: -1px;
+  width: 3px;
+  height: 200px;
+  background: var(--sand-color);
+  /* animation: drip 1s linear;
+  animation-fill-mode: forwards; */
+}
+
+@keyframes drip {
+  from {
+    transform: translateY(-150px);
+    opacity: 1;
+  }
+  
+  to {
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,148 @@
+<aside class="adversary-sidebar-sheet">
+    <div class="portrait {{#if (and source.system.resources.hitPoints.max (gte source.system.resources.hitPoints.value source.system.resources.hitPoints.max))}}death-roll{{/if}}">
+        <img src="{{source.img}}" alt="{{source.name}}" data-action='editImage' data-edit="img">
+        <!--<a class="death-roll-btn"><i class="fa-solid fa-skull death-save"></i></a>-->
+    </div>
+
+    <div class="information-section">
+        <div class="resources-section">
+            <div class="status-bar" style="--value: {{source.system.resources.hitPoints.value}}; --max: {{source.system.resources.hitPoints.max}};">
+                <div class='status-value' data-value="{{source.system.resources.hitPoints.value}}" data-max="{{source.system.resources.hitPoints.max}}">
+                </div>
+                <progress
+                    class='progress-bar hp-color'
+                    data-field="resources.hitPoints.value"
+                    max='{{source.system.resources.hitPoints.max}}'
+                    value='{{source.system.resources.hitPoints.value}}'
+                    style='--value: {{source.system.resources.hitPoints.value}}; --max: {{source.system.resources.hitPoints.max}};'
+                    aria-label='{{localize "DAGGERHEART.GENERAL.HitPoints.short"}}'
+                ></progress>
+                <div class="status-label">
+                    <h4>{{localize "DAGGERHEART.GENERAL.HitPoints.short"}}</h4>
+                </div>
+
+            </div>
+            <div class="status-bar" style="--value: {{source.system.resources.stress.value}}; --max: {{source.system.resources.stress.max}};">
+                <div class='status-value' data-value="{{source.system.resources.stress.value}}" data-max="{{source.system.resources.stress.max}}">
+                </div>
+                <progress
+                    class='progress-bar stress-color'
+                    data-field="resources.stress.value"
+                    value='{{source.system.resources.stress.value}}'
+                    min="0"
+                    max='{{source.system.resources.stress.max}}'
+                    style='--value: {{source.system.resources.stress.value}}; --max: {{source.system.resources.stress.max}};'
+                    aria-label='{{localize "DAGGERHEART.GENERAL.stress"}}'
+                ></progress>
+                <div class="status-label">
+                    <h4>{{localize "DAGGERHEART.GENERAL.stress"}}</h4>
+                </div>
+            </div>
+        </div>
+        <div class="status-section">
+            <div class="status-number" data-action="requestDifficultyRoll" data-tooltip-text="Click to request a roll at this difficulty">
+                <div class='status-value'>
+                    {{#if source.system.difficulty}}
+                        <p>{{source.system.difficulty}}</p>
+                    {{else}}
+                        <p>-</p>
+                    {{/if}}
+                </div>
+                <div class="status-label">
+                    <h4>{{localize "DAGGERHEART.GENERAL.difficulty"}}</h4>
+                </div>
+            </div>
+            <div class="status-number">
+                <div class='status-value'>
+                    {{#if source.system.attack.roll.bonus includeZero=true}}
+                        <p>{{numberFormat source.system.attack.roll.bonus sign=true}}</p>
+                    {{else}}
+                        <p>-</p>
+                    {{/if}}
+                </div>
+                <div class="status-label">
+                    <h4>{{localize "DAGGERHEART.GENERAL.attack"}}</h4>
+                </div>
+            </div>
+        </div>
+                    <div class="status-number">
+                <div class="threshold-values">
+                    <span class="threshold-text threshold-clickable" data-action="mark-hp" data-hp-amount="1">
+                        {{localize "DAGGERHEART.GENERAL.DamageThresholds.mark1HP"}}
+                    </span>
+                    <div class="resource-group">
+                        <div class="attribute-value-display threshold-value-display"
+                            data-field="system.damageThresholds.major"
+                            data-label="Major Threshold"
+                            data-has-modifiers="true"
+                            data-min="0">
+                            {{document.system.damageThresholds.major}}
+                        </div>
+                         <!--<a class="trait-effects">{{localize "DAGGERHEART.GENERAL.DamageThresholds.major"}}</a>-->
+                    </div>
+                    <span class="threshold-text threshold-clickable" data-action="mark-hp" data-hp-amount="2">
+                        {{localize "DAGGERHEART.GENERAL.DamageThresholds.mark2HP"}}
+                    </span>
+                    <div class="resource-group">
+                        <div class="attribute-value-display threshold-value-display"
+                            data-field="system.damageThresholds.severe"
+                            data-label="Severe Threshold"
+                            data-has-modifiers="true"
+                            data-min="0">
+                            {{document.system.damageThresholds.severe}}
+                        </div>
+                         <!--<a class="trait-effects">{{localize "DAGGERHEART.GENERAL.DamageThresholds.severe"}}</a>-->
+                    </div>
+                    <span class="threshold-text threshold-clickable" data-action="mark-hp" data-hp-amount="3">
+                        {{localize "DAGGERHEART.GENERAL.DamageThresholds.mark3HP"}}
+                    </span>
+                </div>
+            </div>
+    </div>
+    <div class="shortcut-items-section">
+        <div class="attack-section">
+            <div class="title">
+                <!-- <side-line-div class="invert"></side-line-div>-->
+                <h3>{{localize "DAGGERHEART.GENERAL.attack"}}</h3>
+                <!-- <side-line-div></side-line-div>-->
+            </div>
+            <ul class="items-sidebar-list">
+                {{> 'daggerheart.inventory-item'
+                item=document.system.attack
+                type='action'
+                hideTags=true
+                hideDescription=true
+                hideResources=true
+                noExtensible=true
+                noCompendiumEdit=true
+                }}
+            </ul>
+        </div>
+        <div class="experience-section">
+            <div class="title">
+                <!-- <side-line-div class="invert"></side-line-div>-->
+                <h3>{{localize "DAGGERHEART.GENERAL.experience.plural"}}</h3>
+                <!-- <side-line-div></side-line-div>-->
+            </div>
+            <div class="experience-list">
+                {{#each source.system.experiences as |experience id|}}
+                    <div class="experience-row" data-tooltip-text="{{experience.description}}">
+                        <div class="experience-value">
+                            +{{experience.value}}
+                        </div>
+                        <span class="experience-name">{{experience.name}}</span>
+                        <div class="controls">
+                            <a data-action="sendExpToChat" data-id="{{id}}">
+                                <i class="fa-regular fa-message"></i>
+                            </a>
+                        </div>
+                    </div>
+                {{/each}}
+            </div>
+        </div>
+         <!-- <line-div></line-div>-->
+        <div class="reaction-section">
+            <button type="button" data-action="reactionRoll">{{localize "DAGGERHEART.GENERAL.Roll.reaction"}}</button>
+        </div>
+    </div>
+</aside>

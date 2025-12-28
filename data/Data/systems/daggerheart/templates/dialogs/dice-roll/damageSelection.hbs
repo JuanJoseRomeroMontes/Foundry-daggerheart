@@ -1,0 +1,54 @@
+<section class="damage-section-container">
+    <header class="dialog-header">
+        <h1>{{title}}</h1>
+    </header>
+    {{#each @root.formula}}
+        <div class="damage-formula">
+            <span class="damage-resource"><b>{{localize "DAGGERHEART.GENERAL.formula"}}:</b> {{roll.formula}}</span>
+            <span class="damage-details">
+                {{#with (lookup @root.config.GENERAL.healingTypes applyTo)}}
+                    {{localize label}}
+                {{/with}}
+                {{#unless @root.hasHealing}}
+                    {{#if damageTypes}}
+                        {{#each damageTypes as | type | }}
+                            {{#with (lookup @root.config.GENERAL.damageTypes type)}}
+                                <i class="fa-solid {{icon}}"></i>
+                            {{/with}}
+                        {{/each}}
+                    {{/if}}
+                {{/unless}}
+            </span>
+        </div>
+        <div class="form-group">
+            <input type="text" value="{{extraFormula}}" name="roll.{{ @index }}.extraFormula" placeholder="Situational Bonus">
+        </div>
+    {{/each}}
+    {{#unless (empty @root.modifiers)}}
+        <fieldset class="modifier-container two-columns">
+            <legend>{{localize "DAGGERHEART.GENERAL.Modifier.plural"}}</legend>
+            {{#each @root.modifiers}}
+                <span class="formula-label">{{ localize label }}</span>
+                {{#if (hasProperty this "values")}}
+                    <select name="modifiers.{{@key}}.value">
+                        {{selectOptions values blank="" selected=value}}
+                    </select>
+                {{/if}}
+                {{#if (hasProperty this "enabled")}}
+                    <input type="checkbox" name="modifiers.{{@key}}.enabled" {{ checked enabled }}>
+                {{/if}}
+            {{/each}}
+        </fieldset>
+    {{/unless}}
+    <div class="damage-section-controls">
+        {{#if directDamage}}
+            <select class="roll-mode-select" name="selectedRollMode">
+                {{selectOptions rollModes selected=selectedRollMode valueAttr="action" labelAttr="label" localize=true}}
+            </select>
+        {{/if}}
+        <button class="submit-btn" data-action="submitRoll">
+            <i class="fa-solid fa-dice"></i>
+            <span class="label">{{localize "DAGGERHEART.GENERAL.roll"}}</span>
+        </button>
+    </div>
+</section>

@@ -1,0 +1,22 @@
+{
+  "BABELE.CompendiumTranslations": "Traduction",
+  "BABELE.TranslateActorHeadBtn": "Traduire",
+  "BABELE.TranslateActorTitle": "Traduire le personnage",
+  "BABELE.TranslateActorHint": "Traduit automatiquement tous les items du personnage à partir des compendiums traduits",
+  "BABELE.TranslateActorBtn": "Traduire!",
+  "BABELE.ExportTranslationTitle": "Exporter le fichier de traduction",
+  "BABELE.ExportTranslationBtn": "Exporter !",
+  "BABELE.ExportTranslationNotes": "Sélectionnez le format à utiliser pour le fichier de traduction exporté. Sélectionnez \"Legacy\" pour le format natif d'origine, ou \"compatible\" si vous avez l'intention de gérer la traduction via une plateforme de localisation externe (par exemple Weblate, Transifex, etc.)",
+  "BABELE.ExportTranslationFormat": "Format",
+  "BABELE.ExportTranslationFormatLegacy": "Legacy",
+  "BABELE.ExportTranslationFormatCompatible": "Compatible",
+  "BABELE.TranslationDirTitle": "Répertoire des fichiers de traduction",
+  "BABELE.TranslationDirHint": "Entrez le répertoire dans lequel se trouvent les fichiers de traduction locaux du compendium",
+  "BABELE.EnableTranslationExportTile": "Activer l'export de la traduction",
+  "BABELE.EnableTranslationExportHint": "Activez cette option si vous souhaitez ajouter un bouton sur chaque compendium pour générer le fichier de traduction, utile comme modèle de démarrage",
+  "BABELE.ShowOriginalName": "Montrer le nom original",
+  "BABELE.ShowOriginalNameHint": "Montre le nom avant traduction de l'objet du compendium en plus du nom traduit. Cela va vous permettre de filtrer par le nom original ainsi que par le nom traduit dans la barre de recherche.",
+  "BABELE.ShowTranslateOption": "Montrer l'option de traduction",
+  "BABELE.ShowTranslateOptionHint": "Afficher/Masquer l'option Traduire sur les fiches d'acteurs",
+  "BABELE.requireLibWrapperMessage": "Babele nécessite l'utilisation du module 'libWrapper'. Merci de l'installer et de l'activer."
+}

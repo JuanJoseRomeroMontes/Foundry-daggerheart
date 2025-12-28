@@ -1,0 +1,8 @@
+<div class="attribute {{css}} resource-input">
+    {{#each bars}}
+    <input type="text" class="{{#if (gte this.value 1000)}}fs-xs{{else if (gte this.value 100)}}fs-s{{/if}}"
+        style="border: 1px solid{{this.maxcolor}};"
+        name="{{#if (eq this.attribute "custom")}}flags.barbrawl.resourceBars.{{this.id}}.value{{else}}{{this.id}}{{/if}}"
+        value="{{this.value}}" {{#unless this.editable}}disabled{{/unless}}>
+    {{/each}}
+</div>

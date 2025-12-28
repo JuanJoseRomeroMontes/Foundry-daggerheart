@@ -1,0 +1,33 @@
+{
+  "id": "journal-backlinks-extended",
+  "title": "Extended Journal-Links",
+  "description": "Include links to entities that reference the viewed journal, actor and item",
+  "authors": [
+    {
+      "name": "muwak",
+      "flags": {}
+    }
+  ],
+  "url": "https://github.com/Muwak77/journal-backlinks-extended/",
+  "version": "0.13.0",
+  "compatibility": {
+    "minimum": "13",
+    "verified": "13"
+  },
+  "esmodules": [
+    "scripts/index.js"
+  ],
+  "styles": [
+    "css/journallink.css"
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json",
+      "flags": {}
+    }
+  ],
+  "manifest": "https://github.com/Muwak77/journal-backlinks-extended/releases/download/0-13-0/module.json",
+  "download": "https://github.com/Muwak77/journal-backlinks-extended/releases/download/0-13-0/journal-backlinks-extended.zip"
+}

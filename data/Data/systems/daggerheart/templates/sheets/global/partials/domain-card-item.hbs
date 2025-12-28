@@ -1,0 +1,24 @@
+<li class="card-item" data-item-uuid="{{item.uuid}}" data-type="domainCard">
+    <img src="{{item.img}}" data-action="useItem" class="card-img" />
+    <div class="card-label">
+        <div
+            class="menu {{#if item.system.resource}}resource-menu{{/if}} {{#if (eq item.system.resource.type 'diceValue')}}dice-menu{{/if}}">
+            {{#if item.system.resource}}
+            {{> "systems/daggerheart/templates/sheets/global/partials/item-resource.hbs"}}
+            {{/if}}
+            <div class="controls">
+                <a data-action="toggleVault"
+                    data-tooltip="DAGGERHEART.UI.Tooltip.{{ifThen item.system.inVault 'sendToLoadout' 'sendToVault' }}">
+                    <i class="fa-solid {{ifThen item.system.inVault 'fa-arrow-up' 'fa-arrow-down'}}"></i>
+                </a>
+                <a data-action="toChat" data-tooltip="DAGGERHEART.UI.Tooltip.sendToChat">
+                    <i class="fa-regular fa-message"></i>
+                </a>
+                <a data-action="triggerContextMenu" data-tooltip="DAGGERHEART.UI.Tooltip.moreOptions">
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                </a>
+            </div>
+        </div>
+        <div class="card-name">{{item.name}}</div>
+    </div>
+</li>

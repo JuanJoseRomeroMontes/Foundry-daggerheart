@@ -1,0 +1,1 @@
+La carpeta data es la que vamos a usar para almacenar assets, si tienes alguna duda de como esta orgnaizada dejala en el canal de sala de profesores para que todo el mundo con la misma duda pueda ver como la resolvimos.

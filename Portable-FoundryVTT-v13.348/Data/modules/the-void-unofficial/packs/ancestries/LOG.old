@@ -1,0 +1,8 @@
+2025/12/28-00:22:12.685 1a2ac Recovering log #888
+2025/12/28-00:22:12.688 1a2ac Delete type=0 #888
+2025/12/28-00:22:12.688 1a2ac Delete type=3 #887
+2025/12/28-00:22:26.122 172e0 Level-0 table #892: started
+2025/12/28-00:22:26.122 172e0 Level-0 table #892: 0 bytes OK
+2025/12/28-00:22:26.122 172e0 Delete type=0 #890
+2025/12/28-00:22:26.123 172e0 Manual compaction at level-0 from '!folders!dSAccOl5ccgXPyje' @ 72057594037927935 : 1 .. '!items.effects!sRsezFAnQHJGwp0Z.UFpatriYCNtw7g4S' @ 0 : 0; will stop at (end)
+2025/12/28-00:22:26.123 172e0 Manual compaction at level-1 from '!folders!dSAccOl5ccgXPyje' @ 72057594037927935 : 1 .. '!items.effects!sRsezFAnQHJGwp0Z.UFpatriYCNtw7g4S' @ 0 : 0; will stop at (end)

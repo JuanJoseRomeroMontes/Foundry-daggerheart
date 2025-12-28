@@ -1,0 +1,173 @@
+<div>
+        <div class="roll-dialog-container">
+    {{#if @root.hasRoll}}
+            {{#unless @root.isLite}}
+                <div class="dices-section">
+                    {{#if (eq @root.rollType 'D20Roll')}}
+                        <div class="dice-option">
+                            <img class="dice-icon normal" src="{{concat 'systems/daggerheart/assets/icons/dice/default/' @root.roll.d20.denomination '.svg'}}" alt="">
+                            <div class="dice-select">
+                                <select name="roll.dice.d20">
+                                    {{selectOptions diceOptions selected=@root.roll.d20.denomination}}
+                                </select>
+                            </div>
+                        </div>
+                        {{#if @root.advantage}}
+                            {{#if (eq @root.advantage 1)}}
+                                <div class="dice-option">
+                                    <img class="dice-icon" src="{{concat 'systems/daggerheart/assets/icons/dice/adv/' @root.roll.d20.denomination '.svg'}}" alt="">
+                                    <div class="dice-select">
+                                        <span class="label">{{localize "DAGGERHEART.GENERAL.Advantage.full"}}</span>
+                                    </div>
+                                </div>
+                            {{else if (eq @root.advantage -1)}}
+                                <div class="dice-option">
+                                    <img class="dice-icon" src="{{concat 'systems/daggerheart/assets/icons/dice/disadv/' @root.roll.d20.denomination '.svg'}}" alt="">
+                                    <div class="dice-select">
+                                        <span class="label">{{localize "DAGGERHEART.GENERAL.Disadvantage.full"}}</span>
+                                    </div>
+                                </div>
+                            {{/if}}
+                        {{/if}}
+                    {{/if}}
+                    {{#if (eq @root.rollType 'DualityRoll')}}
+                        <div class="dice-option">
+                            <img class="dice-icon" src="{{concat 'systems/daggerheart/assets/icons/dice/hope/' @root.roll.dHope.denomination '.svg'}}" alt="">
+                            <div class="dice-select">
+                                <span class="label">{{localize "DAGGERHEART.GENERAL.hope"}}</span>
+                                <select name="roll.dice.dHope">
+                                    {{selectOptions diceOptions selected=@root.roll.dHope.denomination}}
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="dice-option">
+                            <img class="dice-icon" src="{{concat 'systems/daggerheart/assets/icons/dice/fear/' @root.roll.dFear.denomination '.svg'}}" alt="">
+                            <div class="dice-select">
+                                <span class="label">{{localize "DAGGERHEART.GENERAL.fear"}}</span>
+                                <select name="roll.dice.dFear">
+                                    {{selectOptions diceOptions selected=@root.roll.dFear.denomination}}
+                                </select>
+                            </div>
+                        </div>
+                        {{#if @root.advantage}}
+                            {{#if (eq @root.advantage 1)}}
+                                <div class="dice-option">
+                                    <img class="dice-icon" src="{{concat 'systems/daggerheart/assets/icons/dice/adv/' @root.roll.dAdvantage.denomination '.svg'}}" alt="">
+                                    <div class="dice-select">
+                                        <span class="label">{{localize "DAGGERHEART.GENERAL.Advantage.full"}}</span>
+                                    </div>
+                                </div>
+                            {{else if (eq @root.advantage -1)}}
+                                <div class="dice-option">
+                                    <img class="dice-icon" src="{{concat 'systems/daggerheart/assets/icons/dice/disadv/' @root.roll.dAdvantage.denomination '.svg'}}" alt="">
+                                    <div class="dice-select">
+                                        <span class="label">{{localize "DAGGERHEART.GENERAL.Disadvantage.full"}}</span>
+                                    </div>
+                                </div>
+                            {{/if}}
+                        {{/if}}
+                    {{/if}}
+                </div>
+
+                <fieldset class="experience-container">
+                    <legend>{{localize "DAGGERHEART.GENERAL.experience.plural"}}</legend>
+                    {{#each experiences}}
+                        {{#if name}}
+                            <div class="experience-chip {{#if (includes ../selectedExperiences id)}}selected{{/if}}" data-action="selectExperience" data-key="{{id}}">
+                                {{#if (includes ../selectedExperiences id)}}
+                                    <span><i class="fa-solid fa-circle"></i></span>
+                                {{else}}
+                                    <span><i class="fa-regular fa-circle"></i></span>
+                                {{/if}}
+                                {{#if (eq @root.rollType 'D20Roll')}}
+                                    <span class="label">{{name}} +{{modifier}}</span>
+                                {{else}}
+                                    <span class="label">{{name}} +{{value}}</span>
+                                {{/if}}
+                            </div>
+                        {{/if}}
+                    {{/each}}
+                </fieldset>
+                <fieldset class="modifier-container {{#if (eq @root.rollType 'DualityRoll')}}two-columns{{else}}one-column{{/if}}">
+                    <legend>{{localize "DAGGERHEART.GENERAL.Modifier.plural"}}</legend>
+                    <div class="nest-inputs">
+                        <button class="advantage-chip flex1 {{#if (eq advantage 1)}}selected{{/if}}" data-action="updateIsAdvantage" data-advantage="1">
+                            {{#if (eq advantage 1)}}
+                                <span><i class="fa-solid fa-circle"></i></span>
+                            {{else}}
+                                <span><i class="fa-regular fa-circle"></i></span>
+                            {{/if}}
+                            <span class="label">{{localize "DAGGERHEART.GENERAL.Advantage.full"}}</span>
+                            {{#if @root.rollConfig.data.advantageSources.length}}
+                                <span class="advantage-chip-tooltip" data-tooltip="{{concat "#advantage#" @root.rollConfig.source.actor}}"><i class="fa-solid fa-circle-info"></i></span>
+                            {{/if}}
+                        </button>
+                        <button class="disadvantage-chip flex1 {{#if (eq advantage -1)}}selected{{/if}}" data-action="updateIsAdvantage" data-advantage="-1">
+                            {{#if (eq advantage -1)}}
+                                <span><i class="fa-solid fa-circle"></i></span>
+                            {{else}}
+                                <span><i class="fa-regular fa-circle"></i></span>
+                            {{/if}}
+                            <span class="label">{{localize "DAGGERHEART.GENERAL.Disadvantage.full"}}</span>
+                            {{#if @root.rollConfig.data.disadvantageSources.length}}
+                                <span class="advantage-chip-tooltip" data-tooltip="{{concat "#disadvantage#" @root.rollConfig.source.actor}}"><i class="fa-solid fa-circle-info"></i></span>
+                            {{/if}}
+                        </button>
+                    </div>
+                    {{#unless (eq @root.rollType 'D20Roll')}}
+                        <div class="nest-inputs">
+                            <select name="roll.dice.advantageNumber"{{#unless advantage}} disabled{{/unless}}>
+                                {{#times 10}}
+                                    <option value="{{add this 1}}" {{#if (eq @root.roll.advantageNumber (add this 1))}} selected{{/if}}>{{add this 1}}</option>
+                                {{/times}}
+                            </select>
+                            <select name="roll.dice.advantageFaces"{{#unless advantage}} disabled{{/unless}}>
+                                {{selectOptions diceOptions selected=@root.roll.dAdvantage.denomination}}
+                            </select>
+                        </div>
+                    {{/unless}}
+                    {{#if @root.rallyDie.length}}
+                        <span class="formula-label">{{localize "DAGGERHEART.CLASS.Feature.rallyDice"}}</span>
+                        <select name="roll.dice._rallyIndex">
+                            {{selectOptions @root.rallyDie blank="" selected=@root.roll._rallyIndex}}
+                        </select>
+                    {{/if}}
+                    {{#if (eq @root.rollType 'DualityRoll')}}<span class="formula-label">{{localize "DAGGERHEART.GENERAL.situationalBonus"}}</span>{{/if}}
+                    <input type="text" value="{{extraFormula}}" name="extraFormula" placeholder="{{#if (eq @root.rollType 'DualityRoll')}}Ex: 1d6 + 5{{else}}Situational Bonus{{/if}}">
+                </fieldset>
+            {{/unless}}
+
+            {{#if (or costs uses)}}
+                {{> 'systems/daggerheart/templates/dialogs/dice-roll/costSelection.hbs'}}
+            {{/if}}
+
+            <span class="formula-label"><b>{{localize "DAGGERHEART.GENERAL.formula"}}:</b> {{@root.formula}}</span>
+                
+            <div class="roll-dialog-controls">
+                <select class="roll-mode-select" name="selectedRollMode">
+                    {{selectOptions rollModes selected=selectedRollMode valueAttr="action" labelAttr="label" localize=true}}
+                </select>
+                <button class="sunmit-btn" data-action="submitRoll"{{#unless canRoll}} disabled{{/unless}}>
+                    <i class="fa-solid fa-dice"></i>
+                    <span class="label">
+                        {{#if @root.rollConfig.roll.difficulty}}
+                            {{localize "DAGGERHEART.GENERAL.Roll.difficulty" difficulty=@root.rollConfig.roll.difficulty}}
+                        {{else}}
+                            {{localize "DAGGERHEART.GENERAL.roll"}}
+                        {{/if}}
+                    </span>
+                </button>
+            </div>
+    {{else}}
+        {{#if (or costs uses)}}
+            {{> 'systems/daggerheart/templates/dialogs/dice-roll/costSelection.hbs'}}
+        {{/if}}
+        <div class="roll-dialog-controls">
+            <button class="sunmit-btn" data-action="submitRoll"{{#unless canRoll}} disabled{{/unless}}>
+                <span class="label">{{localize "DAGGERHEART.GENERAL.continue"}}</span>
+            </button>
+        </div>
+    {{/if}}
+        </div>
+</div>

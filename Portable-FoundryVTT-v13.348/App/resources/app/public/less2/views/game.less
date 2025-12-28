@@ -1,0 +1,113 @@
+/* ----------------------------------------- */
+/*  Game Layout                              */
+/* ----------------------------------------- */
+
+body.game {
+  position: fixed;
+  display: flex;
+  padding: 0;
+  overflow: hidden;
+  cursor: var(--cursor-default);
+}
+
+#interface {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  overflow: visible;
+  position: relative;
+}
+
+// Middle 60%, flex centered
+#ui-middle {
+  flex: none;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  pointer-events: none;
+  z-index: var(--z-index-app);
+
+  transform: scale(var(--ui-scale));
+  transform-origin: top center;
+  height: calc(100% / var(--ui-scale));
+
+  #ui-top {
+    width: 100%;
+    height: 50%;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  #ui-bottom {
+    width: 100%;
+    height: 50%;
+    justify-content: flex-end;
+    align-items: center;
+    > #camera-views {
+      justify-content: flex-start;
+    }
+  }
+}
+
+// Left column, variable width, absolute left
+#ui-left {
+  --control-columns: 2;
+  --control-size: 32px;
+  position: absolute;
+  left: 0;
+  width: 50%;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  padding: 16px; // 1rem
+  gap: 16px; // 1rem
+  pointer-events: none;
+  z-index: var(--z-index-app);
+
+  transform: scale(var(--ui-scale));
+  transform-origin: top left;
+  height: calc(100% / var(--ui-scale));
+
+  #ui-left-column-1 {
+    flex: none;
+    width: calc((var(--control-columns) * var(--control-size)) + ((var(--control-columns) - 1) * 8px));
+    height: 100%;
+    justify-content: space-between;
+    gap: 16px; // 1rem
+  }
+  #ui-left-column-2 {
+    flex: 0 0 200px;
+    height: 100%;
+  }
+}
+
+// Right column, fixed width, absolute right
+#ui-right {
+  position: absolute;
+  inset: 0 0 0 auto;
+  align-items: flex-start;
+  gap: 16px; // 1rem
+  pointer-events: none;
+  z-index: var(--z-index-app);
+
+  transform: scale(var(--ui-scale));
+  transform-origin: top right;
+  height: calc(100% / var(--ui-scale));
+
+  #ui-right-column-1 {
+    flex: 1;
+    height: 100%;
+    padding: 16px 0 14px;
+    gap: 16px; // 1rem
+  }
+}
+
+canvas#board {
+  z-index: var(--z-index-canvas);
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}

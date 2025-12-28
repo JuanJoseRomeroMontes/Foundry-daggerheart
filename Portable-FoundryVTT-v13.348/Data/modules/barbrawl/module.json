@@ -1,0 +1,42 @@
+{
+    "id": "barbrawl",
+    "title": "Bar Brawl",
+    "description": "Adds additional options for displaying multiple resource bars on a token.",
+    "authors": [
+        {
+            "name": "Adrian Haberecht",
+            "url": "https://gitlab.com/woodentavern",
+            "discord": "dj_addi"
+        }
+    ],
+    "version": "1.8.13",
+    "compatibility": {"minimum": "13.341", "verified": "13.350"},
+    "esmodules": ["barbrawl.js"],
+    "styles": ["styles/attributeHud.css"],
+    "languages": [
+        {"lang": "de", "name": "Deutsch", "path": "lang/de.json", "flags": {}},
+        {"lang": "en", "name": "English", "path": "lang/en.json", "flags": {}},
+        {"lang": "ja", "name": "日本語", "path": "lang/ja.json", "flags": {}},
+        {"lang": "ko", "name": "한국어", "path": "lang/ko.json", "flags": {}},
+        {
+            "lang": "pt-BR",
+            "name": "Português (Brasil)",
+            "path": "lang/pt-BR.json",
+            "flags": {}
+        },
+        {"lang": "pl", "name": "Polski", "path": "lang/pl.json", "flags": {}}
+    ],
+    "url": "https://gitlab.com/woodentavern/foundryvtt-bar-brawl",
+    "manifest": "https://gitlab.com/woodentavern/foundryvtt-bar-brawl/-/raw/master/src/module.json",
+    "download": "https://gitlab.com/api/v4/projects/22486994/packages/generic/barbrawl/1.8.13/barbrawl-v1.8.13.zip",
+    "license": "https://gitlab.com/woodentavern/foundryvtt-bar-brawl/-/blob/master/LICENSE",
+    "readme": "https://gitlab.com/woodentavern/foundryvtt-bar-brawl/-/blob/master/README.md",
+    "bugs": "https://gitlab.com/woodentavern/foundryvtt-bar-brawl/-/issues",
+    "changelog": "https://gitlab.com/woodentavern/foundryvtt-bar-brawl/-/blob/master/CHANGELOG.md",
+    "flags": {
+        "hotReload": {
+            "extensions": ["css", "hbs", "json"],
+            "paths": ["styles/attributeHud.css", "templates", "lang"]
+        }
+    }
+}

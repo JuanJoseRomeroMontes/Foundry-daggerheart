@@ -1,0 +1,84 @@
+{
+	"label": "Formas bestiales",
+	"folders": {
+		"Beastform Features": "Rasgos de forma bestial",
+		"Tier 1": "Rango 1",
+		"Tier 2": "Rango 2",
+		"Tier 3": "Rango 3",
+		"Tier 4": "Rango 4"
+	},
+	"entries": {
+		"Agile Scout": {
+			"name": "Explorador ágil"
+		},
+		"Aquatic Scout": {
+			"name": "Explorador acuático"
+		},
+		"Household Friend": {
+			"name": "Mascota doméstica"
+		},
+		"Nimble Grazer": {
+			"name": "Hervíboro veloz"
+		},
+		"Pack Predator": {
+			"name": "Depredador de manada"
+		},
+		"Stalking Arachnid": {
+			"name": "Arácnido acechador"
+		},
+		"Armored Sentry": {
+			"name": "Centinela acorazado"
+		},
+		"Mighty Strider": {
+			"name": "Poderoso trotador"
+		},
+		"Pouncing Predator": {
+			"name": "Depredador brincador"
+		},
+		"Powerful Beast": {
+			"name": "Bestia poderosa"
+		},
+		"Striking Serpent": {
+			"name": "Sierpe imponente"
+		},
+		"Winged Beast": {
+			"name": "Bestia alada"
+		},
+		"Aquatic Predator": {
+			"name": "Depredador acuático"
+		},
+		"Great Predator": {
+			"name": "Gran depredador"
+		},
+		"Great Winged Beast": {
+			"name": "Gran bestia alada"
+		},
+		"Legendary Beast": {
+			"name": "Bestia legendaria"
+		},
+		"Legendary Hybrid": {
+			"name": "Híbrido legendario"
+		},
+		"Mighty Lizard": {
+			"name": "Reptil poderoso"
+		},
+		"Epic Aquatic Beast": {
+			"name": "Bestia acuática épica"
+		},
+		"Massive Behemoth": {
+			"name": "Behemot enorme"
+		},
+		"Mythic Aerial Hunter": {
+			"name": "Cazador aéreo mítico"
+		},
+		"Mythic Beast": {
+			"name": "Bestia mítica"
+		},
+		"Mythic Hybrid": {
+			"name": "Híbrido mítico"
+		},
+		"Terrible Lizard": {
+			"name": "Reptil terrible"
+		},
+	}
+}

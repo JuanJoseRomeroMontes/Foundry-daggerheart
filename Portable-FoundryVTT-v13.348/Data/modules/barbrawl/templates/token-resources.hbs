@@ -1,0 +1,17 @@
+<fieldset class="token-resources">
+    <legend>{{localize "barbrawl.section"}}</legend>
+    <input type="hidden" name="bar1.attribute" value="{{bar1Attribute}}" />
+    <input type="hidden" name="bar2.attribute" value="{{bar2Attribute}}" />
+    <div class="bb-bar-container">
+        {{> modules/barbrawl/templates/bar-config.hbs this}}
+    </div>
+    <button type="button" class="brawlbar-add"><i class="far fa-plus-square"></i> {{localize "barbrawl.add"}}</button>
+    <div class="bar-controls form-footer">
+        {{#if canSaveDefaults}}
+        <button type="button" class="brawlbar-save"><i class="far fa-save"></i> {{localize "barbrawl.defaults.save"}}</button>
+        {{/if}}
+        {{#if canLoadDefaults}}
+        <button type="button" class="brawlbar-load"><i class="fas fa-undo-alt"></i> {{localize "barbrawl.defaults.load"}}</button>
+        {{/if}}
+    </div>
+</fieldset>

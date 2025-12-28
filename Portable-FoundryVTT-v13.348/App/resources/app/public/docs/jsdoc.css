@@ -1,0 +1,272 @@
+/* ----------------------------------------- */
+/*  Element Styles                           */
+/* ----------------------------------------- */
+/** Headers */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #e9e7d8;
+  text-shadow: 1px 1px 1px #000;
+}
+h1 {
+  font-size: 28px;
+}
+h2 {
+  font-size: 24px;
+}
+h3 {
+  font-size: 20px;
+}
+h4 {
+  font-size: 18px;
+}
+/** Lists */
+ul,
+ol {
+  margin: 0.5rem 0;
+  padding-left: 1.5rem;
+}
+ul ul,
+ol ul,
+ul ol,
+ol ol {
+  margin: 0;
+}
+/** Links */
+a {
+  cursor: pointer;
+  text-decoration: none;
+  color: #ff6400;
+}
+a:hover {
+  color: #ff6400;
+  text-shadow: 0 0 8px red;
+}
+a[href],
+a:active {
+  color: #ff6400;
+}
+article a {
+  border: none;
+}
+/** Dividers */
+hr {
+  clear: both;
+  border: 0;
+  height: 2px;
+  margin: 0.5em 0;
+  background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0), #e8e6d7, rgba(0, 0, 0, 0));
+  background-image: -moz-linear-gradient(left, rgba(0, 0, 0, 0), #e8e6d7, rgba(0, 0, 0, 0));
+  background-image: -ms-linear-gradient(left, rgba(0, 0, 0, 0), #e8e6d7, rgba(0, 0, 0, 0));
+  background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0), #e8e6d7, rgba(0, 0, 0, 0));
+}
+hr.orange {
+  background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0), #ff6400, rgba(0, 0, 0, 0));
+  background-image: -moz-linear-gradient(left, rgba(0, 0, 0, 0), #ff6400, rgba(0, 0, 0, 0));
+  background-image: -ms-linear-gradient(left, rgba(0, 0, 0, 0), #ff6400, rgba(0, 0, 0, 0));
+  background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0), #ff6400, rgba(0, 0, 0, 0));
+}
+hr.blue {
+  background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0), #5c87b9, rgba(0, 0, 0, 0));
+  background-image: -moz-linear-gradient(left, rgba(0, 0, 0, 0), #5c87b9, rgba(0, 0, 0, 0));
+  background-image: -ms-linear-gradient(left, rgba(0, 0, 0, 0), #5c87b9, rgba(0, 0, 0, 0));
+  background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0), #5c87b9, rgba(0, 0, 0, 0));
+}
+/** Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  box-shadow: 0 0 1px #999 inset;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb {
+  outline: none;
+  border-radius: 3px;
+  background: #782e22;
+  border: 1px solid #ff6400;
+}
+:root {
+  scrollbar-width: thin;
+  scrollbar-color: #782e22 #111;
+}
+/** Tables */
+table {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid #7a7971;
+  box-shadow: none;
+}
+table thead tr {
+  background-color: rgba(0, 0, 0, 0.25);
+}
+/** Inline Code */
+code {
+  background: rgba(255, 255, 255, 0.05);
+  color: #d9d7c8 !important;
+  padding: 0px 4px;
+  border: 1px solid #7a7971;
+  border-radius: 2px;
+}
+/* ----------------------------------------- */
+/*  Docdash Styles                           */
+/* ----------------------------------------- */
+body {
+  padding: 0;
+  background-color: #3c3c3c;
+  background-image: url("./assets/denim.png");
+  background-repeat: repeat;
+  color: #d9d7c8;
+}
+section {
+  padding: 0;
+  background: none;
+}
+nav {
+  padding: 0 1rem;
+  background: none;
+  box-shadow: 0 0 20px #000 inset;
+  overflow-x: hidden;
+}
+nav h3 {
+  color: inherit;
+}
+nav a {
+  color: inherit !important;
+}
+nav a:hover {
+  color: #ff6400 !important;
+}
+nav > h2 > a[href] {
+  color: #ff6400 !important;
+}
+nav ul ul a[href] {
+  color: #d9d7c8;
+  padding-left: 0.5rem;
+  border-left: 1px solid #7a7971;
+}
+nav [data-type="member"] a::before {
+  margin-left: 0;
+}
+footer {
+  color: inherit;
+}
+/* ----------------------------------------- */
+/*  Home README Page                         */
+/* ----------------------------------------- */
+.usertext {
+  font-family: "Signika", sans-serif !important;
+}
+.usertext p {
+  margin: 0.5rem 0;
+}
+.usertext h1 {
+  font-size: 28px;
+}
+.usertext h2 {
+  font-size: 24px;
+}
+.usertext h3 {
+  font-size: 20px;
+}
+.usertext h4 {
+  font-size: 18px;
+}
+.usertext h3,
+.usertext h4 {
+  clear: both;
+  margin: 0.25rem 0;
+  padding: 0.5rem 0 0;
+  border-top: 1px solid #4b4a44;
+}
+.usertext h2 + h3 {
+  padding-top: 0;
+  border-top: none;
+}
+/* ----------------------------------------- */
+/*  Individual Doc Pages                     */
+/* ----------------------------------------- */
+#main {
+  width: calc(100% - 250px);
+  padding: 0 2rem;
+}
+#main h1:first-child {
+  font-size: 36px;
+  line-height: 50px;
+  padding: 0 0 0 60px;
+  margin: 2rem 0;
+  background-image: url("./assets/fvtt.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+#main h1:not(:first-child),
+#main h2 {
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #7a7971;
+  clear: both;
+  margin: 1rem 0;
+  line-height: 2;
+}
+#main h1:not(:first-child):after,
+#main h2:after {
+  display: block;
+  content: '';
+  border-bottom: 1px solid #000;
+}
+#main h1:not(:first-child):before,
+#main h2:before {
+  display: block;
+  content: '';
+  border-top: 1px solid #7a7971;
+}
+#main h3.subsection-title {
+  margin: 0.5rem 0;
+}
+#main .class-description {
+  font-size: inherit;
+}
+#main h4.name {
+  margin: 0;
+  color: #e19c00;
+  background: rgba(0, 0, 0, 0.1);
+  border: 1px solid #7a7971;
+  border-radius: 4px;
+  box-shadow: none;
+}
+#main table.params thead tr,
+#main table.props thead tr {
+  border-bottom: 1px solid #7a7971;
+}
+#main table.params td,
+#main table.props td {
+  color: inherit;
+  line-height: 20px;
+  border-top: none;
+}
+#main table.params code,
+#main table.props code {
+  background: none;
+  border: none;
+}
+#main .param-type,
+#main .param-type dd {
+  color: #b5b3a4 !important;
+}
+#main .details {
+  border-left: 1px solid #7a7971;
+}
+#main .signature,
+#main .signature-attributes {
+  color: #b5b3a4;
+}
+#main h4.name a,
+#main .type-signature,
+#main .type-signature:last-child {
+  color: #cea1ce;
+}
+#main .prettyprint code {
+  background-color: #302f33;
+}

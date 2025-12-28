@@ -1,0 +1,224 @@
+{
+  "daggerheart.beastforms": {
+    "0ey4kM9ssj2otHvb": {
+      "__DOCUMENT_NAME__": "Takedown",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Takedown.webp"
+    },
+    "1XrZWGDttBAAUxR1": {
+      "__DOCUMENT_NAME__": "Striking Serpent",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Striking Serpent.webp"
+    },
+    "2KlTnfzO03vneVS8": {
+      "__DOCUMENT_NAME__": "Venomous Bite",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Venomous Bite.webp"
+    },
+    "33oFSZ1PwFqInHPe": {
+      "__DOCUMENT_NAME__": "Pouncing Predator",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Pouncing Predator.webp"
+    },
+    "5BABxRe2XVrYTj8N": {
+      "__DOCUMENT_NAME__": "Terrible Lizard",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Terrible Lizard.webp"
+    },
+    "8pUHJv3BYdjA4Qdf": {
+      "__DOCUMENT_NAME__": "Armored Sentry",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Armored Sentry.webp"
+    },
+    "8u0HkK3WgtU9lWYs": {
+      "__DOCUMENT_NAME__": "Hobbling Strike",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Hobbling Strike.webp"
+    },
+    "8upqfcZvi7b5hRLE": {
+      "__DOCUMENT_NAME__": "Rampage",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Rampage.webp"
+    },
+    "94tvcC3D5Kp4lzuN": {
+      "__DOCUMENT_NAME__": "Mighty Lizard",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Mighty Lizard.webp"
+    },
+    "9QkZSeuEKgXtlpHc": {
+      "__DOCUMENT_NAME__": "Massive Stride",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Massive Stride.webp"
+    },
+    "A0lgd6eVEfX6oqSB": {
+      "__DOCUMENT_NAME__": "Trample",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Trample.webp"
+    },
+    "A4TVRY0D5r9EiVwA": {
+      "__DOCUMENT_NAME__": "Stalking Arachnid",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Stalking Arachnid.webp"
+    },
+    "CItO8yX6amQaqyk7": {
+      "__DOCUMENT_NAME__": "Nimble Grazer",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Nimble Grazer.webp"
+    },
+    "D73fS1iM4SZPFimu": {
+      "__DOCUMENT_NAME__": "Webslinger",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Webslinger.webp"
+    },
+    "DfBXO8jTchwFG8dZ": {
+      "__DOCUMENT_NAME__": "Demolish",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Demolish.webp"
+    },
+    "EVOJTskJYf4rpuga": {
+      "__DOCUMENT_NAME__": "Carrier",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Carrier.webp"
+    },
+    "FNKQlWQcArSorMPK": {
+      "__DOCUMENT_NAME__": "Bird's-Eye View",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Bird's-Eye View.webp"
+    },
+    "GhHsSHOa509cwCvr": {
+      "__DOCUMENT_NAME__": "Fleet",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Fleet.webp"
+    },
+    "HJbQcKWcFZ9NoFxs": {
+      "__DOCUMENT_NAME__": "Devastating Strikes",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Devastating Strikes.webp"
+    },
+    "ItBVeCl2u5uetgy7": {
+      "__DOCUMENT_NAME__": "Aquatic Predator",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Aquatic Predator.webp"
+    },
+    "Ky3rZD3sJMXYZOBC": {
+      "__DOCUMENT_NAME__": "Snapping Strike",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Snapping Strike.webp"
+    },
+    "ODudjX88Te4vDP57": {
+      "__DOCUMENT_NAME__": "Undaunted",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Undaunted.webp"
+    },
+    "QFg1hNCEoKVDd9Zo": {
+      "__DOCUMENT_NAME__": "Fragile",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Fragile.webp"
+    },
+    "QQtQ77tos8ijTHag": {
+      "__DOCUMENT_NAME__": "Deadly Raptor",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Deadly Raptor.webp"
+    },
+    "StabkQ3BzWRZa8Tz": {
+      "__DOCUMENT_NAME__": "Physical Defense",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Physical Defense.webp"
+    },
+    "WAbxCf2An8qmxyJ1": {
+      "__DOCUMENT_NAME__": "Mythic Hybrid",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Mythic Hybrid.webp"
+    },
+    "YLisKYYhAGca50WM": {
+      "__DOCUMENT_NAME__": "Pack Predator",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Pack Predator.webp"
+    },
+    "ZYbdXaWVj2zdcmaK": {
+      "__DOCUMENT_NAME__": "Thick Hide",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Thick Hide.webp"
+    },
+    "a7Qvmm14nx9BCysA": {
+      "__DOCUMENT_NAME__": "Elusive Prey",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Elusive Prey.webp"
+    },
+    "a9UoCwtrbgKk02mK": {
+      "__DOCUMENT_NAME__": "Agile Scout",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Agile Scout.webp"
+    },
+    "afbMt4Ld6nY3mw0N": {
+      "__DOCUMENT_NAME__": "Great Predator",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Great Predator.webp"
+    },
+    "b4BMnTbJ3iPPidSb": {
+      "__DOCUMENT_NAME__": "Great Winged Beast",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Great Winged Beast.webp"
+    },
+    "cTlqpQZPy5TvdDAT": {
+      "__DOCUMENT_NAME__": "Warning Hiss",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Warning Hiss.webp"
+    },
+    "d3q8lfeiEMyTjusT": {
+      "__DOCUMENT_NAME__": "Pack Hunting",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Pack Hunting.webp"
+    },
+    "iDmOtiHJJ80AIAVT": {
+      "__DOCUMENT_NAME__": "Household Friend",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Household Friend.webp"
+    },
+    "jV6EuEacyQlHW4SN": {
+      "__DOCUMENT_NAME__": "Mythic Aerial Hunter",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Mythic Aerial Hunter.webp"
+    },
+    "jYUBi7yLHap5ljpa": {
+      "__DOCUMENT_NAME__": "Vicious Maul",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Vicious Maul.webp"
+    },
+    "jhWSC5bNZyYUAA5Q": {
+      "__DOCUMENT_NAME__": "Companion",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Companion.webp"
+    },
+    "jp5KpPRBFBOIs46Q": {
+      "__DOCUMENT_NAME__": "Cannonball",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Cannonball.webp"
+    },
+    "kObobka52JdpWBSu": {
+      "__DOCUMENT_NAME__": "Mythic Beast",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Mythic Beast.webp"
+    },
+    "kQWWx9P3fCyGSVOI": {
+      "__DOCUMENT_NAME__": "Aquatic",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Aquatic.webp"
+    },
+    "m8BVTuJI1wCvzTcf": {
+      "__DOCUMENT_NAME__": "Powerful Beast",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Powerful Beast.webp"
+    },
+    "mZ4Wlqtss2FlNNvL": {
+      "__DOCUMENT_NAME__": "Winged Beast",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Winged Beast.webp"
+    },
+    "mqP6z4Wg4K3oDAom": {
+      "__DOCUMENT_NAME__": "Legendary Beast",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Legendary Beast.webp"
+    },
+    "nDQZdIF2epKlhauX": {
+      "__DOCUMENT_NAME__": "Armored Shell",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Armored Shell.webp"
+    },
+    "qjwMzPn33aKZACkv": {
+      "__DOCUMENT_NAME__": "Massive Behemoth",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Massive Behemoth.webp"
+    },
+    "qqzdFCxyYupWZK23": {
+      "__DOCUMENT_NAME__": "Aquatic Scout",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Aquatic Scout.webp"
+    },
+    "rRUtgcUjimlpPhnn": {
+      "__DOCUMENT_NAME__": "Legendary Hybrid",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Legendary Hybrid.webp"
+    },
+    "tGDdEH40wyOCsFmH": {
+      "__DOCUMENT_NAME__": "Ocean Master",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Ocean Master.webp"
+    },
+    "uW3853pViM9VAfHb": {
+      "__DOCUMENT_NAME__": "Venomous Strike",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Venomous Strike.webp"
+    },
+    "vEAQ4cfsoPmOv2Gg": {
+      "__DOCUMENT_NAME__": "Unyielding",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Unyielding.webp"
+    },
+    "wT4xbF99I55yjKZV": {
+      "__DOCUMENT_NAME__": "Epic Aquatic Beast",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Epic Aquatic Beast.webp"
+    },
+    "xLS5YT1B6yeCiNTg": {
+      "__DOCUMENT_NAME__": "Agile",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Agile.webp"
+    },
+    "xVgmXhj2YgeqS1KK": {
+      "__DOCUMENT_NAME__": "Hollow Bones",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Hollow Bones.webp"
+    },
+    "zRLjqKx4Rn2TjivL": {
+      "__DOCUMENT_NAME__": "Mighty Strider",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Mighty Strider.webp"
+    }
+  }
+}

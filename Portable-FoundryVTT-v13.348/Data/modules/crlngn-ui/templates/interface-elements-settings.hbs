@@ -1,0 +1,120 @@
+<section
+  class="form-content tab {{#if tab.active}} active{{/if}}" data-group="{{tab.group}}" data-tab="{{tab.id}}"
+>
+  <h4>
+    <i class="fas fa-user"></i> {{localize "CRLNGN_UI.ui.clientSettingsLabel"}} 
+    <span class="toggle-hint">{{localize 'CRLNGN_UI.ui.toggleHints'}}</span>
+  </h4>
+  <hr/>
+
+  <div class="form-group interface-elements">
+    <header class="table-header flexrow">
+      <div>{{localize "CRLNGN_UI.settings.interfaceOptionsMenu.fields.elementColumn"}}</div>
+      <div>{{localize "CRLNGN_UI.settings.interfaceOptionsMenu.fields.fadeOutColumn"}}</div>
+      <div>{{localize "CRLNGN_UI.settings.interfaceOptionsMenu.fields.customLayoutColumn"}}</div>
+      <div>{{localize "CRLNGN_UI.settings.interfaceOptionsMenu.fields.hideColumn"}}</div>
+    </header>
+    <ul class="elements-list flexrow">
+      <li>
+        <label>{{localize "CRLNGN_UI.settings.interfaceOptionsMenu.fields.sceneControls"}}</label>
+        <input type="checkbox" name="sceneControlsFadeOut" {{#if sceneControlsFadeOut}}checked{{/if}} />
+        <input type="checkbox" name="enableSceneControls" {{#if enableSceneControls}}checked{{/if}} />
+        <input type="checkbox" name="sceneControlsHide" {{#if sceneControlsHide}}checked{{/if}} />
+      </li>
+      <li>
+        <label>{{localize "CRLNGN_UI.settings.interfaceOptionsMenu.fields.sidebarTabs"}}</label>
+          <input type="checkbox" name="sidebarTabsFadeOut" {{#if sidebarTabsFadeOut}}checked{{/if}} />
+          <input type="checkbox" name="enableSidebarTabs" {{#if enableSidebarTabs}}checked{{/if}} />
+          <input type="checkbox" name="sidebarTabsHide" {{#if sidebarTabsHide}}checked{{/if}} />
+      </li>
+      <li>
+        <label>{{localize "CRLNGN_UI.settings.interfaceOptionsMenu.fields.chatLogControls"}}</label>
+          <input type="checkbox" name="chatLogControlsFadeOut" {{#if chatLogControlsFadeOut}}checked{{/if}} />
+          <input type="checkbox" name="enableChatLogControls" {{#if enableChatLogControls}}checked{{/if}} />
+          <input type="checkbox" name="chatLogControlsHide" {{#if chatLogControlsHide}}checked{{/if}} />
+      </li>
+      <li>
+        <label>{{localize "CRLNGN_UI.settings.interfaceOptionsMenu.fields.playerList"}}</label>
+          <input type="checkbox" name="playerListFadeOut" {{#if playerListFadeOut}}checked{{/if}} />
+          <input type="checkbox" name="enablePlayerList" {{#if enablePlayerList}}checked{{/if}} />
+          <input type="checkbox" name="playerListHide" {{#if playerListHide}}checked{{/if}} />
+      </li>
+      <li>
+        <label>{{localize "CRLNGN_UI.settings.interfaceOptionsMenu.fields.cameraDock"}}</label>
+          <input type="checkbox" name="cameraDockFadeOut" {{#if cameraDockFadeOut}}checked{{/if}} />
+          <input type="checkbox" name="enableFloatingDock" {{#if enableFloatingDock}}checked{{/if}} />
+          <input type="checkbox" name="cameraDockHide" {{#if cameraDockHide}}checked{{/if}} />
+      </li>
+      <li>
+        <label>{{localize "CRLNGN_UI.settings.interfaceOptionsMenu.fields.macroHotbar"}}</label>
+          <input type="checkbox" name="macroHotbarFadeOut" {{#if macroHotbarFadeOut}}checked{{/if}} />
+          <input type="checkbox" name="enableMacroLayout" {{#if enableMacroLayout}}checked{{/if}} />
+          <input type="checkbox" name="macroHotbarHide" {{#if macroHotbarHide}}checked{{/if}} />
+      </li>
+      <li>
+        <label>{{localize "CRLNGN_UI.settings.interfaceOptionsMenu.fields.sceneNav"}}</label>
+          <input type="checkbox" name="sceneNavFadeOut" {{#if sceneNavFadeOut}}checked{{/if}} />
+          <input type="checkbox" name="sceneNavEnabled" {{#if sceneNavEnabled}}checked{{/if}} />
+          <input type="checkbox" name="sceneNavHide" {{#if sceneNavHide}}checked{{/if}} />
+      </li>
+    </ul>
+  </div>
+  <p class="hint">{{localize "CRLNGN_UI.settings.interfaceOptionsMenu.hint"}}</p>
+
+  <p>&nbsp;</p>
+  <hr/>
+
+  <div class="form-group">
+    <label for="controlsAutoHide">{{fields.controlsAutoHide.label}}</label>
+    <input type="checkbox" name="controlsAutoHide" {{#if controlsAutoHide}}checked{{/if}} />
+    <p class="hint">{{fields.controlsAutoHide.hint}}</p> 
+  </div>
+  
+  <div class="form-group">
+    <label for="collapseMacroBar">{{fields.collapseMacroBar.label}}</label>
+    <input type="checkbox" name="collapseMacroBar" {{#if collapseMacroBar}}checked{{/if}} />
+    <p class="hint">{{{fields.collapseMacroBar.hint}}}</p> 
+  </div>
+
+  <div class="form-group">
+    <label for="useFolderStyle">{{fields.useFolderStyle.label}}</label>
+    <input type="checkbox" name="useFolderStyle" {{#if useFolderStyle}}checked{{/if}} />
+    <p class="hint">{{{fields.useFolderStyle.hint}}}</p>
+  </div>
+
+  <div class="form-group">
+    <label for="hoverableSettingsHints">{{fields.hoverableSettingsHints.label}}</label>
+    <input type="checkbox" name="hoverableSettingsHints" {{#if hoverableSettingsHints}}checked{{/if}} />
+    <p class="hint">{{fields.hoverableSettingsHints.hint}}</p>
+  </div>
+
+  <div class="form-group">
+    <label for="preventMacroBarReposition">{{fields.preventMacroBarReposition.label}}</label>
+    <input type="checkbox" name="preventMacroBarReposition" {{#if preventMacroBarReposition}}checked{{/if}} />
+    <p class="hint">{{fields.preventMacroBarReposition.hint}}</p>
+  </div>
+
+  {{!-- <h4>
+    <i class="fas fa-user"></i> {{localize "CRLNGN_UI.ui.worldSettingsLabel"}} 
+    <span class="toggle-hint">{{localize 'CRLNGN_UI.ui.toggleHints'}}</span>
+  </h4>
+  <hr/>
+
+  <div class="form-group hide-tabs">
+    <header class="table-header flexrow">
+      <label>{{localize "CRLNGN_UI.settings.sidebarTabs.tabsColumn"}}</label>
+      <label>{{localize "CRLNGN_UI.settings.sidebarTabs.gmHideColumn"}}</label>
+      <label>{{localize "CRLNGN_UI.settings.sidebarTabs.playerHideColumn"}}</label>
+    </header>
+    <ul>
+      {{#each sidebarTabs}}
+      <li>
+        <label>{{localize this.localizedName}}</label>
+        <input type="checkbox" name="{{this.name}}-gm" {{#if this.hideForGM}} checked{{/if}} />
+        <input type="checkbox" name="{{this.name}}-player" {{#if this.hideForPlayer}} checked{{/if}} />
+      </li>
+      {{/each}}
+    </ul>
+  </div> --}}
+
+</section>

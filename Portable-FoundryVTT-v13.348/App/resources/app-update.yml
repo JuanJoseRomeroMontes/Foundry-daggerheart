@@ -1,0 +1,4 @@
+owner: foundryvtt
+repo: foundryvtt
+provider: github
+updaterCacheDirName: foundryvtt-updater

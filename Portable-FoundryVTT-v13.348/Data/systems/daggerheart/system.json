@@ -1,0 +1,327 @@
+{
+    "id": "daggerheart",
+    "title": "Daggerheart",
+    "description": "An unofficial implementation of the Daggerheart system",
+    "version": "1.1.2",
+    "compatibility": {
+        "minimum": "13",
+        "verified": "13.347",
+        "maximum": "13"
+    },
+    "authors": [
+        {
+            "name": "WBHarry"
+        },
+        {
+            "name": "cptn-cosmo",
+            "url": "https://github.com/cptn-cosmo",
+            "email": "cptncosmo@gmail.com",
+            "discord": "cptn_cosmo"
+        },
+        {
+            "name": "Ikraik"
+        },
+        {
+            "name": "IrkTheImp"
+        },
+        {
+            "name": "jacobwojoski"
+        },
+        {
+            "name": "moliloo",
+            "url": "https://github.com/moliloo",
+            "email": "molilofl@gmail.com",
+            "discord": "molilo"
+        },
+        {
+            "name": "Mysteryusy"
+        },
+        {
+            "name": "JimCanE"
+        },
+        {
+            "name": "Po0lp"
+        },
+        {
+            "name": "JoaquinP",
+            "url": "https://github.com/joaquinpereyra98",
+            "email": "joaquinpereyra98@gmail.com",
+            "discord": "joaquinp98"
+        },
+        {
+            "name": "chrisryan10",
+            "discord": "lazjen"
+        }
+    ],
+    "esmodules": [
+        "build/daggerheart.js"
+    ],
+    "styles": [
+        "styles/daggerheart.css"
+    ],
+    "packs": [
+        {
+            "name": "classes",
+            "label": "Classes",
+            "system": "daggerheart",
+            "path": "packs/classes.db",
+            "type": "Item",
+            "private": false,
+            "flags": {}
+        },
+        {
+            "name": "subclasses",
+            "label": "Subclasses",
+            "system": "daggerheart",
+            "path": "packs/subclasses.db",
+            "type": "Item",
+            "private": false,
+            "flags": {}
+        },
+        {
+            "name": "domains",
+            "label": "Domains",
+            "system": "daggerheart",
+            "path": "packs/domains.db",
+            "type": "Item",
+            "private": false,
+            "flags": {}
+        },
+        {
+            "name": "ancestries",
+            "label": "Ancestry",
+            "system": "daggerheart",
+            "path": "packs/ancestries.db",
+            "type": "Item",
+            "private": false,
+            "flags": {}
+        },
+        {
+            "name": "communities",
+            "label": "Communities",
+            "system": "daggerheart",
+            "path": "packs/communities.db",
+            "type": "Item",
+            "private": false,
+            "flags": {}
+        },
+        {
+            "name": "weapons",
+            "label": "Weapons",
+            "system": "daggerheart",
+            "path": "packs/items/weapons.db",
+            "type": "Item",
+            "private": false,
+            "flags": {}
+        },
+        {
+            "name": "armors",
+            "label": "Armors",
+            "system": "daggerheart",
+            "path": "packs/items/armors.db",
+            "type": "Item",
+            "private": false,
+            "flags": {}
+        },
+        {
+            "name": "consumables",
+            "label": "Consumables",
+            "system": "daggerheart",
+            "path": "packs/items/consumables.db",
+            "type": "Item",
+            "private": false,
+            "flags": {}
+        },
+        {
+            "name": "loot",
+            "label": "Loot",
+            "system": "daggerheart",
+            "path": "packs/items/loot.db",
+            "type": "Item",
+            "private": false,
+            "flags": {}
+        },
+        {
+            "name": "adversaries",
+            "label": "Adversaries",
+            "system": "daggerheart",
+            "path": "packs/adversaries.db",
+            "type": "Actor",
+            "private": false,
+            "flags": {}
+        },
+        {
+            "name": "environments",
+            "label": "Environments",
+            "system": "daggerheart",
+            "path": "packs/environments.db",
+            "type": "Actor",
+            "private": false,
+            "flags": {}
+        },
+        {
+            "name": "journals",
+            "label": "Journals",
+            "system": "daggerheart",
+            "path": "packs/journals.db",
+            "type": "JournalEntry",
+            "private": false,
+            "flags": {}
+        },
+        {
+            "name": "beastforms",
+            "label": "Beastforms",
+            "system": "daggerheart",
+            "path": "packs/beastforms.db",
+            "type": "Item",
+            "private": false,
+            "flags": {}
+        }
+    ],
+    "packFolders": [
+        {
+            "name": "Daggerheart SRD",
+            "sorting": "m",
+            "color": "#08718c",
+            "packs": [
+                "adversaries",
+                "environments",
+                "journals"
+            ],
+            "folders": [
+                {
+                    "name": "Character Options",
+                    "sorting": "m",
+                    "color": "#000000",
+                    "packs": [
+                        "ancestries",
+                        "communities",
+                        "classes",
+                        "subclasses",
+                        "domains",
+                        "beastforms"
+                    ]
+                },
+                {
+                    "name": "Items",
+                    "sorting": "m",
+                    "color": "#000000",
+                    "packs": [
+                        "armors",
+                        "weapons",
+                        "consumables",
+                        "loot"
+                    ]
+                }
+            ]
+        }
+    ],
+    "languages": [
+        {
+            "lang": "en",
+            "name": "English",
+            "path": "lang/en.json"
+        }
+    ],
+    "socket": true,
+    "initiative": "1d20",
+    "grid": {
+        "distance": 5,
+        "units": "feet"
+    },
+    "documentTypes": {
+        "Actor": {
+            "character": {
+                "htmlFields": [
+                    "biography.background",
+                    "biography.connections"
+                ]
+            },
+            "companion": {},
+            "adversary": {
+                "htmlFields": [
+                    "notes",
+                    "description"
+                ]
+            },
+            "environment": {
+                "htmlFields": [
+                    "notes",
+                    "description"
+                ]
+            }
+        },
+        "Item": {
+            "ancestry": {
+                "htmlFields": [
+                    "description"
+                ]
+            },
+            "community": {
+                "htmlFields": [
+                    "description"
+                ]
+            },
+            "class": {
+                "htmlFields": [
+                    "description"
+                ]
+            },
+            "subclass": {
+                "htmlFields": [
+                    "description"
+                ]
+            },
+            "feature": {
+                "htmlFields": [
+                    "description"
+                ]
+            },
+            "domainCard": {
+                "htmlFields": [
+                    "description"
+                ]
+            },
+            "loot": {
+                "htmlFields": [
+                    "description"
+                ]
+            },
+            "consumable": {
+                "htmlFields": [
+                    "description"
+                ]
+            },
+            "weapon": {
+                "htmlFields": [
+                    "description"
+                ]
+            },
+            "armor": {
+                "htmlFields": [
+                    "description"
+                ]
+            },
+            "beastform": {}
+        },
+        "ActiveEffect": {
+            "beastform": {},
+            "horde": {}
+        },
+        "Combat": {
+            "combat": {}
+        },
+        "ChatMessage": {
+            "dualityRoll": {},
+            "adversaryRoll": {},
+            "damageRoll": {},
+            "abilityUse": {}
+        }
+    },
+    "background": "systems/daggerheart/assets/logos/FoundrybornBackgroundLogo.png",
+    "primaryTokenAttribute": "resources.hitPoints",
+    "secondaryTokenAttribute": "resources.stress",
+    "url": "https://github.com/Foundryborne/daggerheart",
+    "manifest": "https://github.com/Foundryborne/daggerheart/releases/latest/download/system.json",
+    "download": "https://github.com/Foundryborne/daggerheart/releases/download/1.1.2/system.zip"
+}

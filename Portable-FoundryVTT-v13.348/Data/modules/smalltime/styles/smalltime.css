@@ -1,0 +1,602 @@
+:root {
+  --SMLTME-opacity: 0.8;
+  --SMLTME-height: 58px;
+  --SMLTME-ds-left: 3px;
+  --SMLTME-ds-width: 0px;
+  --SMLTME-phaseURL: url('../images/moon-phases/full.webp');
+  --SMLTME-darkness-min: 0;
+  --SMLTME-darkness-max: 1;
+  --SMLTME-sunrise-start: 20%;
+  --SMLTME-sunrise-middle-1: 30%;
+  --SMLTME-sunrise-middle-2: 35%;
+  --SMLTME-sunrise-end: 40%;
+  --SMLTME-sunset-start: 60%;
+  --SMLTME-sunset-middle-1: 70%;
+  --SMLTME-sunset-middle-2: 75%;
+  --SMLTME-sunset-end: 80%;
+  --SMLTME-scene-bg: '';
+  --SMLTME-darkness-r: 36;
+  --SMLTME-darkness-g: 36;
+  --SMLTME-darkness-b: 72;
+  --SMLTME-display-vis: flex;
+  --SMLTME-pointer-events: auto;
+  --SMLTME-darkness-container-width: 510px;
+}
+
+#smalltime-app {
+  flex-wrap: nowrap;
+  background: none;
+  height: var(--SMLTME-height);
+  max-width: 200px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  opacity: var(--SMLTME-opacity);
+  animation: fadeOut 3s ease-out;
+  transition: opacity 1s;
+  transition-delay: 2s;
+  border: 0;
+  border-image-source: '';
+  border-image-width: 0;
+  z-index: 20 !important;
+  pointer-events: all;
+}
+
+#smalltime-app.pinned {
+  position: relative;
+  left: inherit !important;
+  top: inherit !important;
+  margin-bottom: -8px;
+}
+
+#smalltime-app:hover {
+  opacity: 1;
+  transition: opacity 0.2s;
+}
+
+#smalltime-app .window-header {
+  display: none;
+}
+
+#smalltime-app.window-app:after {
+  content: none;
+}
+
+#smalltime-app .window-content {
+  border-radius: 5px;
+  padding: 0;
+  background: none;
+  margin: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  box-shadow: none;
+  border: none;
+  background-attachment: unset;
+}
+
+#smalltime-app .window-content > form {
+  padding: 0;
+  font-size: 0.8rem;
+}
+
+#smalltime-app input {
+  margin: 0;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+}
+
+.st-scene-config {
+  border: 1px solid #999;
+  border-radius: 8px;
+  margin: 8px 0;
+  padding: 0 15px 5px 15px;
+}
+
+.st-scene-config > legend {
+  padding: 0 5px;
+  margin-left: -7px;
+}
+
+.st-scene-config > legend > span {
+  position: relative;
+  top: 1px;
+  left: -2px;
+  //text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+}
+
+#smalltime-darkness-config {
+  height: 72px;
+  background: var(--SMLTME-scene-bg);
+  background-size: cover;
+  background-position: 0 50%;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px 0px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  flex: 0 1 auto;
+}
+
+#smalltime-darkness-config .handles {
+  position: relative;
+  height: 72px;
+  display: flex;
+  width: var(--SMLTME-darkness-container-width);
+  flex-flow: row nowrap;
+  z-index: 1;
+  background: linear-gradient(
+    to right,
+    rgba(18, 18, 36, var(--SMLTME-darkness-max)) 0%,
+    rgba(var(--SMLTME-darkness-r), var(--SMLTME-darkness-g), var(--SMLTME-darkness-b), var(--SMLTME-darkness-max)) var(--SMLTME-sunrise-start),
+    rgba(var(--SMLTME-darkness-r), var(--SMLTME-darkness-g), var(--SMLTME-darkness-b), var(--SMLTME-darkness-min)) var(--SMLTME-sunrise-end),
+    rgba(var(--SMLTME-darkness-r), var(--SMLTME-darkness-g), var(--SMLTME-darkness-b), var(--SMLTME-darkness-min)) var(--SMLTME-sunset-start),
+    rgba(var(--SMLTME-darkness-r), var(--SMLTME-darkness-g), var(--SMLTME-darkness-b), var(--SMLTME-darkness-max)) var(--SMLTME-sunset-end),
+    rgba(18, 18, 36, var(--SMLTME-darkness-max)) 100%
+  );
+  border-radius: 5px;
+  opacity: 0.9;
+}
+
+/* Constraint boxes for the sun/moon drag handles */
+.sunrise-start-bounds,
+.sunrise-end-bounds,
+.sunset-start-bounds,
+.sunset-end-bounds {
+  height: 70px;
+  position: relative;
+  top: -70px;
+  margin-bottom: -70px;
+  z-index: 0;
+}
+.sunrise-start-bounds {
+  // border: 1px solid red;
+  left: 8px;
+  width: 230px;
+}
+.sunrise-end-bounds {
+  // border: 1px solid green;
+  left: 28px;
+  width: 230px;
+}
+.sunset-start-bounds {
+  // border: 1px solid blue;
+  left: 242px;
+  width: 250px;
+}
+.sunset-end-bounds {
+  // border: 1px solid purple;
+  left: 262px;
+  width: 250px;
+}
+
+#smalltime-darkness-config .handle {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  cursor: -webkit-grab;
+  cursor: -moz-grab;
+  cursor: grab;
+}
+
+#smalltime-darkness-config .sunrise-start,
+#smalltime-darkness-config .sunset-end {
+  background: var(--SMLTME-phaseURL) no-repeat;
+  background-size: 16px;
+  background-position: 1px 1px;
+  -webkit-filter: drop-shadow(0px 0px 6px rgba(255, 255, 255, 0.9));
+  filter: drop-shadow(0px 0px 6px rgba(255, 255, 255, 0.9));
+}
+
+#smalltime-darkness-config .sunrise-end,
+#smalltime-darkness-config .sunset-start {
+  background: url('../images/sun-small.webp') no-repeat;
+  background-size: 18px;
+  background-position: 0px 0px;
+  -webkit-filter: drop-shadow(0px 0px 6px rgba(255, 203, 93, 0.9));
+  filter: drop-shadow(0px 0px 6px rgba(255, 203, 93, 0.9));
+}
+
+#smalltime-darkness-config .handle.is-dragging {
+  z-index: 100;
+  cursor: none;
+}
+
+.smalltime-threshold-override::-webkit-slider-thumb {
+  width: 20px !important;
+  height: 20px !important;
+  outline: 0 !important;
+  border: 0 !important;
+  background: var(--SMLTME-phaseURL) !important;
+  background-size: 20px !important;
+  position: relative !important;
+  top: -5px !important;
+  box-shadow: none !important;
+  -webkit-filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.8));
+  filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.8));
+}
+
+#smalltime-app #slideContainer {
+  width: 100%;
+  background: linear-gradient(
+    to bottom,
+    #000000 0%,
+    #351984 var(--SMLTME-sunrise-start),
+    #db5a23 var(--SMLTME-sunrise-middle-1),
+    #d19621 var(--SMLTME-sunrise-middle-2),
+    #25c5ed var(--SMLTME-sunrise-end),
+    #25c5ed var(--SMLTME-sunset-start),
+    #d19621 var(--SMLTME-sunset-middle-1),
+    #db5a23 var(--SMLTME-sunset-middle-2),
+    #351984 var(--SMLTME-sunset-end),
+    #000000 100%
+  );
+  background-size: 200px 2000px;
+  background-position: 0px 0px;
+  z-index: 0;
+  pointer-events: none;
+}
+
+#smalltime-app .slider::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+  height: 31px;
+  width: 100%;
+  background-color: transparent;
+  border-left: 0;
+  border-top: 0;
+  border-right: 0;
+  border-bottom: 0;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  box-shadow: none;
+}
+
+#smalltime-app .slider::-moz-range-track {
+  -webkit-appearance: none;
+  height: 31px;
+  width: 100%;
+  background-color: transparent;
+  border-left: 0;
+  border-top: 0;
+  border-right: 0;
+  border-bottom: 0;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  box-shadow: none;
+}
+
+#smalltime-app .slider:before {
+  display: none;
+}
+
+#smalltime-app .sun::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 24px;
+  height: 24px;
+  outline: 0;
+  border: 0;
+  cursor: ew-resize;
+  background: url('../images/sun.webp');
+  background-size: 24px;
+  position: relative;
+  top: 9px;
+  box-shadow: none;
+  -webkit-filter: drop-shadow(0px 0px 8px rgba(255, 203, 93, 0.9));
+  filter: drop-shadow(0px 0px 8px rgba(255, 203, 93, 0.9));
+  z-index: 10;
+  pointer-events: var(--SMLTME-pointer-events);
+}
+
+#smalltime-app .sun::-moz-range-thumb {
+  width: 24px;
+  height: 24px;
+  outline: 0;
+  border: 0;
+  cursor: ew-resize;
+  background: url('../images/sun.webp');
+  background-size: 24px;
+  background-position: 0px 3px;
+  transform: translateY(-1px);
+  box-shadow: none;
+  filter: drop-shadow(0px 0px 8px rgba(255, 203, 93, 0.9));
+  z-index: 10;
+  pointer-events: var(--SMLTME-pointer-events);
+}
+
+#smalltime-app .moon::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 17px;
+  height: 17px;
+  outline: 0;
+  border: 0;
+  cursor: ew-resize;
+  background: var(--SMLTME-phaseURL);
+  background-size: 17px;
+  position: relative;
+  top: 13px;
+  box-shadow: none;
+  -webkit-filter: drop-shadow(0px 0px 8px rgba(255, 255, 255, 0.9));
+  filter: drop-shadow(0px 0px 8px rgba(255, 255, 255, 0.9));
+  z-index: 10;
+  pointer-events: var(--SMLTME-pointer-events);
+}
+
+#smalltime-app .moon::-moz-range-thumb {
+  width: 17px;
+  height: 17px;
+  outline: 0;
+  border: 0;
+  cursor: ew-resize;
+  background: var(--SMLTME-phaseURL);
+  background-size: 17px;
+  background-position: 0px 0px;
+  transform: translateY(2px);
+  box-shadow: none;
+  filter: drop-shadow(0px 0px 8px rgba(255, 255, 255, 0.9));
+  z-index: 10;
+  pointer-events: var(--SMLTME-pointer-events);
+}
+
+#smalltime-app #displayContainer {
+  position: absolute;
+  top: 24px;
+  display: var(--SMLTME-display-vis);
+  justify-content: center;
+  margin: 0;
+  padding: 0 4px 0 4px;
+  border: 0;
+  outline: 0;
+  width: 100%;
+  background: #444;
+  height: 24px;
+  text-align: center;
+  font-size: 13px;
+  box-shadow: inset 0 6px 8px -6px rgba(0, 0, 0, 0.6), inset 0 -5px 8px -5px rgba(0, 0, 0, 0.5);
+}
+
+#smalltime-app .arrow,
+.arrow-left,
+.arrow-right {
+  width: auto;
+  cursor: pointer;
+  color: #efefe0;
+  font-size: 1.2em;
+  padding-top: 0px;
+  padding-left: 6px;
+  padding-right: 6px;
+  padding-bottom: 2px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  background: linear-gradient(180deg, #505050 0%, #434343 50%, #3e3e3e 51%, #434343 100%);
+  box-shadow: inset 0px 1px 1px rgba(255, 255, 255, 0.1), 0px 1px 3px rgba(0, 0, 0, 0.3);
+  border: 1px solid #434343;
+  border-width: 1px 1px 1px 1px;
+  border-radius: 3px;
+  text-shadow: 0px -1px 1px rgba(0, 0, 0, 0.7);
+}
+
+#smalltime-app .arrow-left {
+  padding-right: 8px;
+  margin-right: 4px;
+}
+
+#smalltime-app .arrow-right {
+  padding-left: 8px;
+  margin-left: 4px;
+}
+
+#smalltime-app .arrow:hover {
+  border: 1px solid rgba(100, 100, 100, 0.2);
+}
+
+#smalltime-app .arrow:active {
+  position: relative;
+  top: 1px;
+  box-shadow: inset 0px 1px 1px rgba(255, 255, 255, 0.1), 0px 0px 2px rgba(0, 0, 0, 0.2);
+}
+
+#smalltime-app #timeDisplay,
+#dateDisplay {
+  font-size: 13px;
+  font-family: Signika, sans-serif;
+  color: #efefe0;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  padding-top: 4px;
+  text-align: center;
+  background: none;
+  width: 100%;
+}
+
+#smalltime-app .timeSeparator {
+  position: relative;
+  top: -1px;
+  margin: 0 -2px 0 -2px;
+}
+
+#smalltime-app .blink {
+  animation: blinker 2s ease-out infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
+#smalltime-app #dateDisplay {
+  visibility: hidden;
+  position: absolute;
+  top: 48px;
+  font-size: 13px;
+  margin: 0;
+  padding: 3px 0px 2px 0px;
+  border: 0;
+  background: #444;
+  height: auto;
+  box-shadow: inset 0 6px 8px -6px rgba(0, 0, 0, 0.6), inset 0 -5px 8px -5px rgba(0, 0, 0, 0.5);
+  transition: transform 0.1s ease-out;
+  transform: scaleY(0);
+  transform-origin: top;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+#smalltime-app.show-date #dateDisplay {
+  visibility: visible;
+  transform: scaleY(1);
+  transition: transform 0.1s ease-out;
+}
+
+#smalltime-app #dragHandle {
+  background: url('../images/denim-dark-090.png') repeat;
+  background-blend-mode: screen;
+  background-color: rgba(0, 0, 0, 1);
+}
+
+#smalltime-config-icon {
+  flex: 0 1 auto;
+  float: left;
+  margin-left: auto;
+  margin-right: 7px;
+  position: relative;
+  top: -1px;
+  border: none;
+  width: 20px;
+  height: 20px;
+}
+
+#smalltime-app .hide-for-players {
+  visibility: hidden;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  60% {
+    opacity: 1;
+  }
+  to {
+    opacity: var(--SMLTME-opacity);
+  }
+}
+
+@keyframes jiggle {
+  0% {
+    transform-origin: center;
+    transform: rotate(-0.5deg);
+    animation-timing-function: ease-in;
+  }
+
+  50% {
+    transform-origin: center;
+    transform: rotate(1deg);
+    animation-timing-function: ease-out;
+  }
+}
+
+@keyframes close {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/* Darkness config tooltip styles. */
+
+div[aria-label][data-balloon-pos] {
+  overflow: visible;
+}
+[aria-label][data-balloon-pos] {
+  position: relative;
+}
+/* Main bubble */
+[aria-label][data-balloon-pos]:after {
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.1s ease-out 0.1s;
+  text-indent: 0;
+  font-size: 1em;
+  background: url('../images/denim-dark-090.png') repeat;
+  color: #efefe0;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  content: attr(aria-label);
+  padding: 5px 7px 4px 7px;
+  position: absolute;
+  white-space: nowrap;
+  z-index: 10;
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.4);
+}
+/* Triangle */
+[aria-label][data-balloon-pos]:before {
+  width: 0;
+  height: 0;
+  border: 5px solid transparent;
+  border-top-color: #444;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.1s ease-out 0.1s;
+  content: '';
+  position: absolute;
+  z-index: 10;
+}
+[aria-label][data-balloon-pos]:hover:before,
+[aria-label][data-balloon-pos]:hover:after {
+  opacity: 1;
+  pointer-events: none;
+}
+/* Position after appearing, bubble */
+[aria-label][data-balloon-pos][data-balloon-pos='up']:hover:after {
+  transform: translate(-55%, 0);
+}
+/* Position after appearing, triangle */
+[aria-label][data-balloon-pos][data-balloon-pos='up']:hover:before {
+  transform: translate(-85%, 0);
+}
+[aria-label][data-balloon-pos][data-balloon-pos^='up']:before,
+[aria-label][data-balloon-pos][data-balloon-pos^='up']:after {
+  bottom: 100%;
+  transform-origin: top;
+}
+[aria-label][data-balloon-pos][data-balloon-pos^='up']:after {
+  margin-bottom: 10px;
+}
+/* Position before appearing, bubble */
+[aria-label][data-balloon-pos][data-balloon-pos='up']:after {
+  left: 50%;
+  transform: translate(-55%, 4px);
+}
+/* Position before appearing, triangle */
+[aria-label][data-balloon-pos][data-balloon-pos='up']:before {
+  left: 50%;
+  transform: translate(-85%, 4px);
+}
+
+[aria-label][data-balloon-pos][data-balloon-pos*='-right']:after {
+  right: 0;
+}
+[aria-label][data-balloon-pos][data-balloon-pos*='-right']:before {
+  right: 5px;
+}
+[aria-label][data-balloon-pos][data-balloon-pos='right']:after,
+[aria-label][data-balloon-pos][data-balloon-pos='right']:before {
+  left: 100%;
+  top: 50%;
+  transform: translate(0, -55%);
+}
+[aria-label][data-balloon-pos][data-balloon-pos='right']:after {
+  margin-left: 10px;
+  padding: 0 7px 0 7px;
+  font-size: 0.9em;
+}
+[aria-label][data-balloon-pos][data-balloon-pos='right']:before {
+  border: 5px solid transparent;
+  border-right-color: #444;
+}

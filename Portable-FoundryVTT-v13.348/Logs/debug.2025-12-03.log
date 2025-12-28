@@ -1,0 +1,178 @@
+{"level":"info","message":"Running on Node.js - Version 20.18.3","timestamp":"2025-12-03 19:13:02"}
+{"level":"error","message":"The requested data path parent directory \"D:/Juegos/Foundry daggerheart\" does not exist.","timestamp":"2025-12-03 19:13:02"}
+{"level":"info","message":"Foundry Virtual Tabletop - Version 13 Build 348","timestamp":"2025-12-03 19:13:02"}
+{"level":"info","message":"User Data Directory - \"..\"","timestamp":"2025-12-03 19:13:02"}
+{"level":"info","message":"Application Options:\n{\n  \"compressStatic\": true,\n  \"fullscreen\": false,\n  \"hostname\": null,\n  \"language\": \"en.core\",\n  \"localHostname\": null,\n  \"port\": 30000,\n  \"proxyPort\": null,\n  \"proxySSL\": false,\n  \"routePrefix\": null,\n  \"updateChannel\": \"stable\",\n  \"upnp\": true,\n  \"awsConfig\": null,\n  \"compressSocket\": true,\n  \"cssTheme\": \"dark\",\n  \"deleteNEDB\": false,\n  \"hotReload\": false,\n  \"passwordSalt\": null,\n  \"sslCert\": null,\n  \"sslKey\": null,\n  \"world\": null,\n  \"serviceConfig\": null,\n  \"telemetry\": true,\n  \"adminPassword\": null,\n  \"noBackups\": false\n}","timestamp":"2025-12-03 19:13:02"}
+{"level":"error","message":"Software license verification failed. Please confirm your Foundry Virtual Tabletop software license","timestamp":"2025-12-03 19:13:02"}
+{"level":"info","message":"Requesting UPnP port forwarding to destination port 30000","timestamp":"2025-12-03 19:13:02"}
+{"level":"info","message":"Running Electron application with version 34.4.0 using Chromium 132.0.6834.210","timestamp":"2025-12-03 19:13:02"}
+{"level":"info","message":"Server started and listening on port 30000","timestamp":"2025-12-03 19:13:02"}
+{"level":"info","message":"Created client session 68e6ecd9e057cde4ee4c63ad","timestamp":"2025-12-03 19:13:04"}
+{"level":"info","message":"License signature successfully created. Thank you and please enjoy Foundry Virtual Tabletop.","timestamp":"2025-12-03 19:17:38"}
+{"level":"info","message":"Software license verification succeeded","timestamp":"2025-12-03 19:17:38"}
+{"level":"info","message":"Core software stable update 13.351 is available!","timestamp":"2025-12-03 19:17:38"}
+{"level":"info","message":"Connected to database \"actors\"","timestamp":"2025-12-03 19:17:43"}
+{"level":"info","message":"Launching World | Loading World Data - 7%","timestamp":"2025-12-03 19:17:43"}
+{"level":"info","message":"Connected to database \"cards\"","timestamp":"2025-12-03 19:17:43"}
+{"level":"info","message":"Launching World | Loading World Data - 14%","timestamp":"2025-12-03 19:17:43"}
+{"level":"info","message":"Connected to database \"messages\"","timestamp":"2025-12-03 19:17:43"}
+{"level":"info","message":"Launching World | Loading World Data - 21%","timestamp":"2025-12-03 19:17:43"}
+{"level":"info","message":"Connected to database \"combats\"","timestamp":"2025-12-03 19:17:43"}
+{"level":"info","message":"Launching World | Loading World Data - 29%","timestamp":"2025-12-03 19:17:43"}
+{"level":"info","message":"Connected to database \"fog\"","timestamp":"2025-12-03 19:17:43"}
+{"level":"info","message":"Launching World | Loading World Data - 36%","timestamp":"2025-12-03 19:17:43"}
+{"level":"info","message":"Connected to database \"folders\"","timestamp":"2025-12-03 19:17:43"}
+{"level":"info","message":"Launching World | Loading World Data - 43%","timestamp":"2025-12-03 19:17:43"}
+{"level":"info","message":"Connected to database \"items\"","timestamp":"2025-12-03 19:17:43"}
+{"level":"info","message":"Launching World | Loading World Data - 50%","timestamp":"2025-12-03 19:17:43"}
+{"level":"info","message":"Connected to database \"journal\"","timestamp":"2025-12-03 19:17:43"}
+{"level":"info","message":"Launching World | Loading World Data - 57%","timestamp":"2025-12-03 19:17:43"}
+{"level":"info","message":"Connected to database \"macros\"","timestamp":"2025-12-03 19:17:43"}
+{"level":"info","message":"Launching World | Loading World Data - 64%","timestamp":"2025-12-03 19:17:43"}
+{"level":"info","message":"Connected to database \"playlists\"","timestamp":"2025-12-03 19:17:43"}
+{"level":"info","message":"Launching World | Loading World Data - 71%","timestamp":"2025-12-03 19:17:43"}
+{"level":"info","message":"Connected to database \"tables\"","timestamp":"2025-12-03 19:17:43"}
+{"level":"info","message":"Launching World | Loading World Data - 79%","timestamp":"2025-12-03 19:17:43"}
+{"level":"info","message":"Connected to database \"scenes\"","timestamp":"2025-12-03 19:17:43"}
+{"level":"info","message":"Launching World | Loading World Data - 86%","timestamp":"2025-12-03 19:17:43"}
+{"level":"info","message":"Connected to database \"settings\"","timestamp":"2025-12-03 19:17:43"}
+{"level":"info","message":"Launching World | Loading World Data - 93%","timestamp":"2025-12-03 19:17:43"}
+{"level":"info","message":"Connected to database \"users\"","timestamp":"2025-12-03 19:17:43"}
+{"level":"info","message":"Launching World | Loading World Data - 100%","timestamp":"2025-12-03 19:17:43"}
+{"level":"info","message":"Launching World | Migrating World Data - 7%","timestamp":"2025-12-03 19:17:43"}
+{"level":"info","message":"Launching World | Migrating World Data - 14%","timestamp":"2025-12-03 19:17:43"}
+{"level":"info","message":"Launching World | Migrating World Data - 21%","timestamp":"2025-12-03 19:17:43"}
+{"level":"info","message":"Launching World | Migrating World Data - 29%","timestamp":"2025-12-03 19:17:43"}
+{"level":"info","message":"Launching World | Migrating World Data - 36%","timestamp":"2025-12-03 19:17:43"}
+{"level":"info","message":"Launching World | Migrating World Data - 43%","timestamp":"2025-12-03 19:17:43"}
+{"level":"info","message":"Launching World | Migrating World Data - 50%","timestamp":"2025-12-03 19:17:43"}
+{"level":"info","message":"Launching World | Migrating World Data - 57%","timestamp":"2025-12-03 19:17:43"}
+{"level":"info","message":"Launching World | Migrating World Data - 64%","timestamp":"2025-12-03 19:17:43"}
+{"level":"info","message":"Launching World | Migrating World Data - 71%","timestamp":"2025-12-03 19:17:43"}
+{"level":"info","message":"Launching World | Migrating World Data - 79%","timestamp":"2025-12-03 19:17:43"}
+{"level":"info","message":"Launching World | Migrating World Data - 86%","timestamp":"2025-12-03 19:17:43"}
+{"level":"info","message":"Launching World | Migrating World Data - 93%","timestamp":"2025-12-03 19:17:43"}
+{"level":"info","message":"Launching World | Migrating World Data - 100%","timestamp":"2025-12-03 19:17:43"}
+{"level":"info","message":"Connected to database \"daggerheart.classes\"","timestamp":"2025-12-03 19:17:43"}
+{"level":"info","message":"Launching World | Loading Package Data - 8%","timestamp":"2025-12-03 19:17:43"}
+{"level":"info","message":"Connected to database \"daggerheart.subclasses\"","timestamp":"2025-12-03 19:17:43"}
+{"level":"info","message":"Launching World | Loading Package Data - 15%","timestamp":"2025-12-03 19:17:43"}
+{"level":"info","message":"Connected to database \"daggerheart.domains\"","timestamp":"2025-12-03 19:17:43"}
+{"level":"info","message":"Launching World | Loading Package Data - 23%","timestamp":"2025-12-03 19:17:43"}
+{"level":"info","message":"Connected to database \"daggerheart.ancestries\"","timestamp":"2025-12-03 19:17:43"}
+{"level":"info","message":"Launching World | Loading Package Data - 31%","timestamp":"2025-12-03 19:17:43"}
+{"level":"info","message":"Connected to database \"daggerheart.communities\"","timestamp":"2025-12-03 19:17:43"}
+{"level":"info","message":"Launching World | Loading Package Data - 38%","timestamp":"2025-12-03 19:17:43"}
+{"level":"info","message":"Connected to database \"daggerheart.weapons\"","timestamp":"2025-12-03 19:17:43"}
+{"level":"info","message":"Launching World | Loading Package Data - 46%","timestamp":"2025-12-03 19:17:43"}
+{"level":"info","message":"Connected to database \"daggerheart.armors\"","timestamp":"2025-12-03 19:17:43"}
+{"level":"info","message":"Launching World | Loading Package Data - 54%","timestamp":"2025-12-03 19:17:43"}
+{"level":"info","message":"Connected to database \"daggerheart.consumables\"","timestamp":"2025-12-03 19:17:43"}
+{"level":"info","message":"Launching World | Loading Package Data - 62%","timestamp":"2025-12-03 19:17:43"}
+{"level":"info","message":"Connected to database \"daggerheart.loot\"","timestamp":"2025-12-03 19:17:43"}
+{"level":"info","message":"Launching World | Loading Package Data - 69%","timestamp":"2025-12-03 19:17:43"}
+{"level":"info","message":"Connected to database \"daggerheart.adversaries\"","timestamp":"2025-12-03 19:17:43"}
+{"level":"info","message":"Launching World | Loading Package Data - 77%","timestamp":"2025-12-03 19:17:43"}
+{"level":"info","message":"Connected to database \"daggerheart.environments\"","timestamp":"2025-12-03 19:17:43"}
+{"level":"info","message":"Launching World | Loading Package Data - 85%","timestamp":"2025-12-03 19:17:43"}
+{"level":"info","message":"Connected to database \"daggerheart.journals\"","timestamp":"2025-12-03 19:17:43"}
+{"level":"info","message":"Launching World | Loading Package Data - 92%","timestamp":"2025-12-03 19:17:43"}
+{"level":"info","message":"Connected to database \"daggerheart.beastforms\"","timestamp":"2025-12-03 19:17:43"}
+{"level":"info","message":"Launching World | Loading Package Data - 100%","timestamp":"2025-12-03 19:17:43"}
+{"level":"info","message":"Created 0 Folder documents with ids: []","timestamp":"2025-12-03 19:17:43"}
+{"level":"info","message":"Launching World | Migrating Package Data - 8%","timestamp":"2025-12-03 19:17:43"}
+{"level":"info","message":"Launching World | Migrating Package Data - 15%","timestamp":"2025-12-03 19:17:43"}
+{"level":"info","message":"Launching World | Migrating Package Data - 23%","timestamp":"2025-12-03 19:17:43"}
+{"level":"info","message":"Launching World | Migrating Package Data - 31%","timestamp":"2025-12-03 19:17:43"}
+{"level":"info","message":"Launching World | Migrating Package Data - 38%","timestamp":"2025-12-03 19:17:43"}
+{"level":"info","message":"Launching World | Migrating Package Data - 46%","timestamp":"2025-12-03 19:17:43"}
+{"level":"info","message":"Launching World | Migrating Package Data - 54%","timestamp":"2025-12-03 19:17:43"}
+{"level":"info","message":"Launching World | Migrating Package Data - 62%","timestamp":"2025-12-03 19:17:43"}
+{"level":"info","message":"Launching World | Migrating Package Data - 69%","timestamp":"2025-12-03 19:17:43"}
+{"level":"info","message":"Launching World | Migrating Package Data - 77%","timestamp":"2025-12-03 19:17:43"}
+{"level":"info","message":"Launching World | Migrating Package Data - 85%","timestamp":"2025-12-03 19:17:43"}
+{"level":"info","message":"Launching World | Migrating Package Data - 92%","timestamp":"2025-12-03 19:17:43"}
+{"level":"info","message":"Launching World | Migrating Package Data - 100%","timestamp":"2025-12-03 19:17:43"}
+{"level":"info","message":"Launching World | Complete","timestamp":"2025-12-03 19:17:43"}
+{"ip":"::1","level":"info","message":"User authentication successful for user Gamemaster","session":"68e6ecd9e057cde4ee4c63ad","timestamp":"2025-12-03 19:17:46"}
+{"level":"info","message":"Daggerheart update 1.2.7 is now available!","timestamp":"2025-12-03 19:17:47"}
+{"level":"info","message":"Vended World data to User [hY211JSU7BGHCKLb] in 783ms","timestamp":"2025-12-03 19:17:47"}
+{"level":"info","message":"Toggling game pause status to false","timestamp":"2025-12-03 19:17:50"}
+{"level":"info","message":"Shutting down Foundry Virtual Tabletop server","timestamp":"2025-12-03 19:21:25"}
+{"level":"info","message":"Shut-down success. Goodbye!","timestamp":"2025-12-03 19:21:25"}
+{"level":"info","message":"Running on Node.js - Version 20.18.3","timestamp":"2025-12-03 19:43:38"}
+{"level":"error","message":"The requested data path parent directory \"D:/Juegos/Foundry daggerheart\" does not exist.","timestamp":"2025-12-03 19:43:38"}
+{"level":"info","message":"Foundry Virtual Tabletop - Version 13 Build 348","timestamp":"2025-12-03 19:43:38"}
+{"level":"info","message":"User Data Directory - \"..\"","timestamp":"2025-12-03 19:43:38"}
+{"level":"info","message":"Application Options:\n{\n  \"compressStatic\": true,\n  \"fullscreen\": false,\n  \"hostname\": null,\n  \"language\": \"en.core\",\n  \"localHostname\": null,\n  \"port\": 30000,\n  \"proxyPort\": null,\n  \"proxySSL\": false,\n  \"routePrefix\": null,\n  \"updateChannel\": \"stable\",\n  \"upnp\": true,\n  \"awsConfig\": null,\n  \"compressSocket\": true,\n  \"cssTheme\": \"dark\",\n  \"deleteNEDB\": false,\n  \"hotReload\": false,\n  \"passwordSalt\": null,\n  \"sslCert\": null,\n  \"sslKey\": null,\n  \"world\": null,\n  \"serviceConfig\": null,\n  \"telemetry\": true,\n  \"adminPassword\": null,\n  \"noBackups\": false\n}","timestamp":"2025-12-03 19:43:38"}
+{"level":"info","message":"Software license verification succeeded","timestamp":"2025-12-03 19:43:38"}
+{"level":"info","message":"Requesting UPnP port forwarding to destination port 30000","timestamp":"2025-12-03 19:43:38"}
+{"level":"info","message":"Running Electron application with version 34.4.0 using Chromium 132.0.6834.210","timestamp":"2025-12-03 19:43:38"}
+{"level":"info","message":"Server started and listening on port 30000","timestamp":"2025-12-03 19:43:38"}
+{"level":"info","message":"Created client session b2d40047a0b547eacfcbc0e0","timestamp":"2025-12-03 19:43:40"}
+{"level":"info","message":"Core software stable update 13.351 is available!","timestamp":"2025-12-03 19:43:41"}
+{"level":"info","message":"Shutting down Foundry Virtual Tabletop server","timestamp":"2025-12-03 19:44:14"}
+{"level":"info","message":"Shut-down success. Goodbye!","timestamp":"2025-12-03 19:44:14"}
+{"level":"info","message":"Running on Node.js - Version 20.18.3","timestamp":"2025-12-03 19:47:10"}
+{"level":"error","message":"The requested data path parent directory \"D:/Juegos/Foundry daggerheart\" does not exist.","timestamp":"2025-12-03 19:47:10"}
+{"level":"info","message":"Foundry Virtual Tabletop - Version 13 Build 348","timestamp":"2025-12-03 19:47:10"}
+{"level":"info","message":"User Data Directory - \"..\"","timestamp":"2025-12-03 19:47:10"}
+{"level":"info","message":"Application Options:\n{\n  \"compressStatic\": true,\n  \"fullscreen\": false,\n  \"hostname\": null,\n  \"language\": \"en.core\",\n  \"localHostname\": null,\n  \"port\": 30000,\n  \"proxyPort\": null,\n  \"proxySSL\": false,\n  \"routePrefix\": null,\n  \"updateChannel\": \"stable\",\n  \"upnp\": true,\n  \"awsConfig\": null,\n  \"compressSocket\": true,\n  \"cssTheme\": \"dark\",\n  \"deleteNEDB\": false,\n  \"hotReload\": false,\n  \"passwordSalt\": null,\n  \"sslCert\": null,\n  \"sslKey\": null,\n  \"world\": null,\n  \"serviceConfig\": null,\n  \"telemetry\": true,\n  \"adminPassword\": null,\n  \"noBackups\": false\n}","timestamp":"2025-12-03 19:47:10"}
+{"level":"info","message":"Software license verification succeeded","timestamp":"2025-12-03 19:47:10"}
+{"level":"info","message":"Requesting UPnP port forwarding to destination port 30000","timestamp":"2025-12-03 19:47:10"}
+{"level":"info","message":"Running Electron application with version 34.4.0 using Chromium 132.0.6834.210","timestamp":"2025-12-03 19:47:10"}
+{"level":"info","message":"Server started and listening on port 30000","timestamp":"2025-12-03 19:47:10"}
+{"level":"info","message":"Created client session b72dcfe3885ce51bca4314e1","timestamp":"2025-12-03 19:47:13"}
+{"level":"info","message":"Core software stable update 13.351 is available!","timestamp":"2025-12-03 19:47:13"}
+{"level":"info","message":"Saved application configuration options to ../Config/options.json","timestamp":"2025-12-03 19:55:35"}
+{"level":"info","message":"Saved application configuration options to ..\\data\\Config\\options.json","timestamp":"2025-12-03 19:55:35"}
+{"level":"info","message":"Shutting down Foundry Virtual Tabletop server","timestamp":"2025-12-03 19:55:40"}
+{"level":"info","message":"Shut-down success. Goodbye!","timestamp":"2025-12-03 19:55:40"}
+{"level":"info","message":"Running on Node.js - Version 20.18.3","timestamp":"2025-12-03 19:58:49"}
+{"level":"info","message":"Foundry Virtual Tabletop - Version 13 Build 348","timestamp":"2025-12-03 19:58:49"}
+{"level":"info","message":"User Data Directory - \"../\"","timestamp":"2025-12-03 19:58:49"}
+{"level":"error","message":"A fatal error occurred while trying to start the Foundry Virtual Tabletop server: Foundry VTT cannot start in this directory which is already locked by another process.","stack":"Error: A fatal error occurred while trying to start the Foundry Virtual Tabletop server: Foundry VTT cannot start in this directory which is already locked by another process.\n    at acquireLockFile (file:///C:/Users/Juanjo/Desktop/Juegos/Foundry%20daggerheart/Portable%20FoundryVTT%20v13.348/App/resources/app/dist/init.mjs:1:5286)\n    at async initializeCriticalFunctions (file:///C:/Users/Juanjo/Desktop/Juegos/Foundry%20daggerheart/Portable%20FoundryVTT%20v13.348/App/resources/app/dist/init.mjs:1:2692)\n    at async Module.initialize (file:///C:/Users/Juanjo/Desktop/Juegos/Foundry%20daggerheart/Portable%20FoundryVTT%20v13.348/App/resources/app/dist/init.mjs:1:1624)","timestamp":"2025-12-03 19:58:49"}
+{"level":"info","message":"Running on Node.js - Version 20.18.3","timestamp":"2025-12-03 19:59:06"}
+{"level":"info","message":"Foundry Virtual Tabletop - Version 13 Build 348","timestamp":"2025-12-03 19:59:06"}
+{"level":"info","message":"User Data Directory - \"../\"","timestamp":"2025-12-03 19:59:06"}
+{"level":"info","message":"Application Options:\n{\n  \"compressStatic\": true,\n  \"fullscreen\": false,\n  \"hostname\": null,\n  \"language\": \"en.core\",\n  \"localHostname\": null,\n  \"port\": 30000,\n  \"proxyPort\": null,\n  \"proxySSL\": false,\n  \"routePrefix\": null,\n  \"updateChannel\": \"stable\",\n  \"upnp\": true,\n  \"awsConfig\": null,\n  \"compressSocket\": true,\n  \"cssTheme\": \"dark\",\n  \"deleteNEDB\": false,\n  \"hotReload\": false,\n  \"passwordSalt\": null,\n  \"sslCert\": null,\n  \"sslKey\": null,\n  \"world\": null,\n  \"serviceConfig\": null,\n  \"telemetry\": true,\n  \"adminPassword\": null,\n  \"noBackups\": false\n}","timestamp":"2025-12-03 19:59:06"}
+{"level":"info","message":"Software license verification succeeded","timestamp":"2025-12-03 19:59:06"}
+{"level":"info","message":"Requesting UPnP port forwarding to destination port 30000","timestamp":"2025-12-03 19:59:06"}
+{"level":"info","message":"Running Electron application with version 34.4.0 using Chromium 132.0.6834.210","timestamp":"2025-12-03 19:59:06"}
+{"level":"info","message":"Server started and listening on port 30000","timestamp":"2025-12-03 19:59:06"}
+{"level":"info","message":"Created client session 253c575f1eaea98954eee741","timestamp":"2025-12-03 19:59:09"}
+{"level":"info","message":"Core software stable update 13.351 is available!","timestamp":"2025-12-03 19:59:09"}
+{"level":"info","message":"Saved application configuration options to ../Config/options.json","timestamp":"2025-12-03 20:00:39"}
+{"level":"info","message":"Saved application configuration options to ..\\..\\data\\data\\Config\\options.json","timestamp":"2025-12-03 20:00:39"}
+{"level":"info","message":"Shutting down Foundry Virtual Tabletop server","timestamp":"2025-12-03 20:00:40"}
+{"level":"info","message":"Shut-down success. Goodbye!","timestamp":"2025-12-03 20:00:40"}
+{"level":"info","message":"Running on Node.js - Version 20.18.3","timestamp":"2025-12-03 20:01:13"}
+{"level":"info","message":"Foundry Virtual Tabletop - Version 13 Build 348","timestamp":"2025-12-03 20:01:13"}
+{"level":"info","message":"User Data Directory - \"../\"","timestamp":"2025-12-03 20:01:13"}
+{"level":"error","message":"A fatal error occurred while trying to start the Foundry Virtual Tabletop server: Foundry VTT cannot start in this directory which is already locked by another process.","stack":"Error: A fatal error occurred while trying to start the Foundry Virtual Tabletop server: Foundry VTT cannot start in this directory which is already locked by another process.\n    at acquireLockFile (file:///C:/Users/Juanjo/Desktop/Juegos/Foundry%20daggerheart/Portable%20FoundryVTT%20v13.348/App/resources/app/dist/init.mjs:1:5286)\n    at async initializeCriticalFunctions (file:///C:/Users/Juanjo/Desktop/Juegos/Foundry%20daggerheart/Portable%20FoundryVTT%20v13.348/App/resources/app/dist/init.mjs:1:2692)\n    at async Module.initialize (file:///C:/Users/Juanjo/Desktop/Juegos/Foundry%20daggerheart/Portable%20FoundryVTT%20v13.348/App/resources/app/dist/init.mjs:1:1624)","timestamp":"2025-12-03 20:01:13"}
+{"level":"info","message":"Running on Node.js - Version 20.18.3","timestamp":"2025-12-03 20:01:28"}
+{"level":"info","message":"Foundry Virtual Tabletop - Version 13 Build 348","timestamp":"2025-12-03 20:01:28"}
+{"level":"info","message":"User Data Directory - \"../\"","timestamp":"2025-12-03 20:01:28"}
+{"level":"info","message":"Application Options:\n{\n  \"compressStatic\": true,\n  \"fullscreen\": false,\n  \"hostname\": null,\n  \"language\": \"en.core\",\n  \"localHostname\": null,\n  \"port\": 30000,\n  \"proxyPort\": null,\n  \"proxySSL\": false,\n  \"routePrefix\": null,\n  \"updateChannel\": \"stable\",\n  \"upnp\": true,\n  \"awsConfig\": null,\n  \"compressSocket\": true,\n  \"cssTheme\": \"dark\",\n  \"deleteNEDB\": false,\n  \"hotReload\": false,\n  \"passwordSalt\": null,\n  \"sslCert\": null,\n  \"sslKey\": null,\n  \"world\": null,\n  \"serviceConfig\": null,\n  \"telemetry\": true,\n  \"adminPassword\": null,\n  \"noBackups\": false\n}","timestamp":"2025-12-03 20:01:28"}
+{"level":"info","message":"Software license verification succeeded","timestamp":"2025-12-03 20:01:28"}
+{"level":"info","message":"Requesting UPnP port forwarding to destination port 30000","timestamp":"2025-12-03 20:01:28"}
+{"level":"info","message":"Running Electron application with version 34.4.0 using Chromium 132.0.6834.210","timestamp":"2025-12-03 20:01:28"}
+{"level":"info","message":"Server started and listening on port 30000","timestamp":"2025-12-03 20:01:28"}
+{"level":"info","message":"Created client session bc8c3cd4ed17d93ad097f5dd","timestamp":"2025-12-03 20:01:30"}
+{"level":"info","message":"Core software stable update 13.351 is available!","timestamp":"2025-12-03 20:01:31"}
+{"level":"info","message":"Shutting down Foundry Virtual Tabletop server","timestamp":"2025-12-03 20:05:21"}
+{"level":"info","message":"Shut-down success. Goodbye!","timestamp":"2025-12-03 20:05:21"}
+{"level":"info","message":"Running on Node.js - Version 20.18.3","timestamp":"2025-12-03 20:05:24"}
+{"level":"info","message":"Foundry Virtual Tabletop - Version 13 Build 348","timestamp":"2025-12-03 20:05:24"}
+{"level":"info","message":"User Data Directory - \"../\"","timestamp":"2025-12-03 20:05:24"}
+{"level":"info","message":"Application Options:\n{\n  \"compressStatic\": true,\n  \"fullscreen\": false,\n  \"hostname\": null,\n  \"language\": \"en.core\",\n  \"localHostname\": null,\n  \"port\": 30000,\n  \"proxyPort\": null,\n  \"proxySSL\": false,\n  \"routePrefix\": null,\n  \"updateChannel\": \"stable\",\n  \"upnp\": true,\n  \"awsConfig\": null,\n  \"compressSocket\": true,\n  \"cssTheme\": \"dark\",\n  \"deleteNEDB\": false,\n  \"hotReload\": false,\n  \"passwordSalt\": null,\n  \"sslCert\": null,\n  \"sslKey\": null,\n  \"world\": null,\n  \"serviceConfig\": null,\n  \"telemetry\": true,\n  \"adminPassword\": null,\n  \"noBackups\": false\n}","timestamp":"2025-12-03 20:05:24"}
+{"level":"info","message":"Software license verification succeeded","timestamp":"2025-12-03 20:05:24"}
+{"level":"info","message":"Requesting UPnP port forwarding to destination port 30000","timestamp":"2025-12-03 20:05:24"}
+{"level":"info","message":"Running Electron application with version 34.4.0 using Chromium 132.0.6834.210","timestamp":"2025-12-03 20:05:24"}
+{"level":"info","message":"Server started and listening on port 30000","timestamp":"2025-12-03 20:05:24"}
+{"level":"info","message":"Created client session 73ad1475ab3b4337ba84b4d9","timestamp":"2025-12-03 20:05:26"}
+{"level":"info","message":"Core software stable update 13.351 is available!","timestamp":"2025-12-03 20:05:27"}
+{"level":"info","message":"Saved application configuration options to ../Config/options.json","timestamp":"2025-12-03 20:05:49"}
+{"level":"info","message":"Saved application configuration options to ..\\..\\data\\Config\\options.json","timestamp":"2025-12-03 20:05:49"}
+{"level":"info","message":"Shutting down Foundry Virtual Tabletop server","timestamp":"2025-12-03 20:05:51"}
+{"level":"info","message":"Shut-down success. Goodbye!","timestamp":"2025-12-03 20:05:51"}

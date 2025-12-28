@@ -1,0 +1,270 @@
+/* -------------------------------------------- */
+/*  Camera Views                                */
+/* -------------------------------------------- */
+
+#camera-views {
+  --av-width: 300px;
+  --av-height: calc(var(--av-width) * 3 / 4);
+  --av-minimized-icon-size: 64px;
+  z-index: calc(var(--z-index-app) - 1);
+  background: var(--av-background-color, var(--color-cool-5-90));
+  display: flex;
+  gap: 8px;
+
+  &.vertical {
+    width: var(--av-width);
+    flex-direction: column;
+    min-height: 100vh;
+
+    > .user-controls { padding-block: 8px; }
+    > .scrollable { margin-right: 2px; }
+    .video-container .user-avatar { width: 100%; }
+
+    .camera-container {
+      flex-direction: column;
+      justify-content: center;
+      padding-inline: 16px 2px;
+    }
+  }
+
+  &.horizontal {
+    height: var(--av-height);
+    min-width: 100vw;
+
+    > .user-controls {
+      flex-direction: column;
+      padding-inline: 8px;
+    }
+
+    > .scrollable {
+      scrollbar-gutter: auto;
+      overflow: auto hidden;
+    }
+
+    .camera-container {
+      align-items: center;
+
+      .video-container .user-avatar { width: calc(var(--av-width) * .9); }
+
+      /* We cannot use justify-content: center to center the camera views in the horizontal container, as it results
+         in camera views at the start being cut off and unable to be scrolled into view if the container overflows. */
+      > .camera-view:first-child { margin-left: auto; }
+      > .camera-view:last-child { margin-right: auto; }
+    }
+  }
+
+  &.left { border-right: 1px solid var(--av-border-color, var(--color-cool-4)); }
+  &.right { border-left: 1px solid var(--av-border-color, var(--color-cool-4)); }
+  &.top { border-bottom: 1px solid var(--av-border-color, var(--color-cool-4)); }
+  &.bottom { border-top: 1px solid var(--av-border-color, var(--color-cool-4)); }
+
+  > .scrollable {
+    flex: 1;
+    position: relative;
+    margin: unset;
+    padding: unset;
+  }
+
+  .camera-container {
+    display: flex;
+    gap: 16px;
+    min-height: 100%;
+  }
+
+  > .user-controls {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  /* Minimized */
+  &.minimized {
+
+    &.vertical {
+      width: calc(var(--av-minimized-icon-size) + 16px);
+      .camera-container { padding: 0 0 0 8px; }
+      > .scrollable { margin-right: -12px; }
+    }
+
+    &.horizontal {
+      height: calc(var(--av-minimized-icon-size) + 16px);
+      .camera-container { padding: 0; }
+      > .scrollable { margin: 0; }
+    }
+
+    .camera-view {
+      width: var(--av-minimized-icon-size);
+      height: var(--av-minimized-icon-size);
+      flex: 0 0 var(--av-minimized-icon-size);
+      border-radius: 100%;
+
+      &::after { border-radius: 100%; }
+      .player-name, .notification-bar, .user-camera { display: none; }
+      .user-avatar { aspect-ratio: 1; }
+    }
+
+    > .user-controls {
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+  }
+}
+
+.camera-view {
+  position: relative;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 4px 10px black;
+  overflow: hidden;
+  flex: none;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    border: 1px solid rgb(255 255 255 / 10%);
+    border-radius: 5px;
+  }
+
+  &:hover :is(.control-bar, .bottom .user-controls) { display: flex; }
+
+  &.speaking::after { border: 3px solid var(--av-border-color-speaking, #3ba55d);  }
+
+  .control-bar, .notification-bar {
+    position: absolute;
+    top: 0;
+  }
+
+  .bottom {
+    position: absolute;
+    inset: auto 0 0 0;
+    background: linear-gradient(to top, rgb(0 0 0 / 65%) 75%, transparent);
+    display: flex;
+    flex-direction: column;
+
+    .user-controls {
+      display: none;
+      justify-content: space-evenly;
+      position: relative;
+      top: 12px;
+    }
+  }
+
+  .player-name {
+    padding: 12px 8px 8px 20px;
+    text-align: center;
+    min-height: 40px;
+
+    &::before {
+      content: "";
+      width: 12px;
+      height: 12px;
+      display: block;
+      background: var(--player-color);
+      border: 1px solid var(--player-border);
+      border-radius: 100%;
+      position: absolute;
+      inset: auto auto 10px 8px;
+    }
+
+    strong {
+      line-height: 36px;
+      position: absolute;
+      inset: auto 0 0 0;
+    }
+
+    &:not(.noanimate) strong {
+      &:first-child {
+        opacity: 1;
+        animation: 16s infinite fadeoutin;
+      }
+
+      &:last-child {
+        opacity: 0;
+        animation: 16s infinite fadeinout;
+      }
+
+      @keyframes fadeoutin {
+        from { opacity: 1; }
+        30%  { opacity: 1; }
+        50%  { opacity: 0; }
+        80%  { opacity: 0; }
+        to   { opacity: 1; }
+      }
+
+      @keyframes fadeinout {
+        from { opacity: 0; }
+        30%  { opacity: 0; }
+        50%  { opacity: 1; }
+        80%  { opacity: 1; }
+        to   { opacity: 0; }
+      }
+    }
+  }
+
+  .video-container {
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      box-shadow: inset 0 0 20px rgb(0 0 0 / 25%);
+    }
+
+    .user-avatar {
+      aspect-ratio: 4 / 3;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .user-camera {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .notification-bar {
+    right: 0;
+    color: #ba2200;
+    gap: 8px;
+    padding: 8px;
+    font-size: 20px;
+    filter: drop-shadow(0 0 6px black);
+  }
+
+  .control-bar {
+    left: 0;
+    gap: 8px;
+    padding: 8px;
+    display: none;
+
+    > button {
+      --control-size: 24px;
+      font-size: var(--font-size-14);
+    }
+  }
+
+  .volume-bar {
+    flex: 1;
+    padding-inline: 8px;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+
+    i { font-size: var(--font-size-12); }
+    range-picker { flex: 1; }
+    input[type=number] { display: none; }
+  }
+
+  /* Popout */
+  &.popout {
+    position: fixed;
+    min-width: 240px;
+  }
+}

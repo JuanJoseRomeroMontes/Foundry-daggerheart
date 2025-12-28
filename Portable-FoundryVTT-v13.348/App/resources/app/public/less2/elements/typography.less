@@ -1,0 +1,352 @@
+
+/* ---------------------------------------- */
+/*  Headers                                 */
+/* ---------------------------------------- */
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 2rem 0 1rem;
+  line-height: 1;
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+h1 {
+  font-family: var(--font-h1);
+  font-size: var(--font-h1-size);
+  color: var(--color-text-emphatic);
+}
+
+h2 {
+  font-family: var(--font-h2);
+  font-size: var(--font-h2-size);
+  color: var(--color-text-emphatic);
+}
+
+h3 {
+  font-family: var(--font-h3);
+  font-size: var(--font-h3-size);
+  color: var(--color-text-primary);
+}
+
+h4 {
+  font-family: var(--font-h4);
+  font-size: var(--font-h4-size);
+  color: var(--color-text-primary);
+}
+
+h5 {
+  font-family: var(--font-h5);
+  font-size: var(--font-h5-size);
+  color: var(--color-text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+h6 {
+  font: 500 var(--font-h6-size) var(--font-h6);
+  color: var(--color-text-secondary);
+  margin-bottom: 0;
+}
+
+/** Bordered Header */
+h1.border,
+h2.border,
+h3.border,
+h4.border {
+  clear: both;
+  padding: 1rem 0 0.6rem;
+  position: relative;
+  text-indent: 0.5rem;
+
+  &::before {
+    position: absolute;
+    top: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    content: "";
+    border-top: 2px solid var(--color-warm-2);
+    border-bottom: 2px solid var(--color-warm-2);
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 50%, transparent 100%);
+    mask-image: linear-gradient(90deg, transparent 0%, black 50%, transparent 100%);
+  }
+}
+
+h3.border,
+h4.border {
+  &::before {
+    border-top: 2px solid var(--color-warm-3);
+    border-bottom: 2px solid var(--color-warm-3);
+  }
+}
+
+/** Divider Header */
+h1.divider,
+h2.divider,
+h3.divider,
+h4.divider {
+  clear: both;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  white-space: nowrap;
+  border: none;
+  &::before {
+    content: "";
+    width: 50%;
+    margin-right: 0.5rem;
+    border-top: 2px ridge var(--color-warm-1);
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 100%);
+    mask-image: linear-gradient(90deg, transparent 0%, black 100%);
+  }
+  &::after {
+    content: "";
+    width: 50%;
+    margin-left: 0.5rem;
+    border-top: 2px ridge var(--color-warm-1);
+    -webkit-mask-image: linear-gradient(270deg, transparent 0%, black 100%);
+    mask-image: linear-gradient(270deg, transparent 0%, black 100%);
+  }
+}
+
+/* ---------------------------------------- */
+/*  Text                                    */
+/* ---------------------------------------- */
+
+p {
+  margin: 0.5rem 0;
+}
+
+p.inactive {
+  color: var(--color-text-subtle);
+}
+
+span.highlight {
+  color: var(--color-text-accent);
+}
+
+// Text Selection
+::selection {
+  background: var(--color-text-selection-bg);
+  color: var(--color-text-selection);
+}
+
+// Overflow with Ellipsis
+.ellipsis {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+/* ---------------------------------------- */
+/*  Blockquotes                             */
+/* ---------------------------------------- */
+
+blockquote {
+  margin: 0;
+  padding: 0.5rem 1rem;
+  font-family: var(--font-blockquote);
+  font-style: italic;
+}
+
+/* ---------------------------------------- */
+/*  Lists                                   */
+/* ---------------------------------------- */
+
+ul, ol {
+  margin: 1rem 0;
+  padding: 0 0 0 1.25rem;
+  li {
+    margin-bottom: 0.25rem;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  ul, ol {
+    margin: 0.25rem 0 0;
+    li {
+      margin: 0;
+    }
+  }
+}
+
+/** Lists without list style */
+ul.plain, ol.plain {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+// Menu Lists
+menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+// Definition Lists
+dl {
+  dt {
+    display: inline-block;
+    color: var(--color-light-2);
+    text-shadow: 1px 1px #000;
+    margin: 0 0 0.25rem;
+  }
+  dd {
+    margin: 0 0 1rem 1rem;
+  }
+}
+
+/* ---------------------------------------- */
+/*  Links                                   */
+/* ---------------------------------------- */
+
+a {
+  cursor: var(--cursor-pointer);
+}
+a[href] {
+  overflow-wrap: break-word;
+  color: var(--color-text-accent);
+}
+a:hover {
+  text-shadow: 0 0 8px var(--color-shadow-primary);
+}
+a[disabled] {
+  pointer-events: none;
+  cursor: inherit;
+}
+
+// Control Buttons
+// TODO we should discontinue using this in favor of an actual <button> element
+a.control {
+  > i {
+    margin-right: 0.25rem;
+  }
+  &:hover {
+    color: var(--color-light-2);
+    text-shadow: 0 0 8px var(--color-warm-2);
+  }
+}
+
+/* ---------------------------------------- */
+/*  Tables                                  */
+/* ---------------------------------------- */
+
+table {
+  margin: 1rem 0;
+  background: var(--table-background-color);
+  border-spacing: 0;
+  overflow: hidden;
+  width: 100%;
+  border-collapse: collapse;
+
+  th, td {
+    padding: 0.5rem 1rem;
+  }
+
+  tbody tr {
+    &:nth-child(even) { background-color: var(--table-row-color-even); }
+    &:nth-child(odd) { background-color: var(--table-row-color-odd); }
+  }
+
+  thead, tfoot {
+    background: var(--table-header-bg-color);
+    border: 1px solid var(--table-header-border-color);
+    color: var(--table-header-text-color);
+    font-weight: bold;
+    td {
+      line-height: 1.5;
+    }
+  }
+  thead {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    text-align: left;
+  }
+  tfoot {
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }
+}
+
+/** Embedded Roll Tables */
+.roll-table-embed {
+  // Result range and roll button
+  th:first-child,
+  td:first-child {
+    padding: 0.5rem;
+    text-align: center;
+  }
+  // Result labels
+  td > h4 {
+    margin: 0.5rem 0;
+    font-weight: bold;
+    font-family: var(--font-body);
+    font-size: inherit;
+  }
+}
+
+/* ---------------------------------------- */
+/*  Dividers                                */
+/* ---------------------------------------- */
+
+hr {
+  clear: both;
+  border: 0;
+  height: 2px;
+  margin: 1rem 0;
+  color: var(--color-light-3);
+  background-image: linear-gradient(90deg, transparent 0%, rgb(231, 209, 177) 50%, transparent 100%);
+}
+
+
+/* ---------------------------------------- */
+/*  Inline Code and Code Blocks             */
+/* ---------------------------------------- */
+
+// Inline Code Snippets
+p code, li code, span code, code.inline {
+  display: inline-block;
+  padding: 1px 0.25rem;
+  margin: -1px 0;
+  word-break: keep-all;
+  white-space: nowrap;
+}
+
+// Inline code in heading elements {
+h1, h2, h3, h4, h5, h6 {
+  code {
+    display: inline;
+    font-size: 0.75em;
+    padding: 0.25em;
+  }
+}
+
+// Code Blocks
+code, code.block {
+  display: block;
+  padding: 0.5rem;
+  margin: initial;
+  color: var(--color-text-primary);
+  background: var(--color-code-bg);
+  border: 1px solid var(--color-code-border);
+  border-radius: 3px;
+  user-select: text;
+  cursor: var(--cursor-text);
+  word-break: normal;
+  white-space: pre-wrap;
+}
+
+// Button References
+span.reference {
+  flex: none;
+  display: inline-block;
+  padding: 1px 4px;
+  margin: -1px 0;
+  font-size: var(--font-size-14);
+  background: #282e33;
+  color: #c5dbe3;
+  border: 1px solid #def7ff;
+  border-radius: 3px;
+}

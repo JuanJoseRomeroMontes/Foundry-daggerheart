@@ -1,0 +1,17 @@
+@media print {
+  .journal-backlinks {
+    display: none;
+  }
+}
+
+.sheet.investigator.actor {
+	overflow:visible;
+}
+.sheet {
+	overflow:visible;
+}
+.backlinkBox .backlink {
+  background-color: transparent;
+  border: none;
+  color:#ffffff;
+}

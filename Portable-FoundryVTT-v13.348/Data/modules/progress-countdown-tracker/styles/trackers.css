@@ -1,0 +1,224 @@
+#progress-countdown-tracker:not(:hover):not(.minimized) .window-header, 
+#progress-countdown-tracker:not(:hover):not(.minimized) .controls,  
+#progress-countdown-tracker:not(:hover):not(.minimized) .window-resize-handle {
+  opacity: 0;
+}
+
+.progress-countdown-trackers-window {
+  background: rgba(0, 0, 0, 0);
+  box-shadow: none;
+  transition: background-color 0.5s ease-in-out, 
+      box-shadow 0.5s ease-in-out;
+  border: none;
+  padding: 0.1em;
+  border-radius: 8px;
+  color: white;
+  /*font-family: var(--font-primary);*/
+  font-family: var(--progress-countdown-tracker-font-family);
+  width: auto;
+  --header-height: 18px;
+}
+
+.progress-countdown-trackers-window:hover {
+  background: rgba(30, 30, 30, 0.95);
+  box-shadow: 0 0 10px #000;
+}
+
+#progress-countdown-tracker .window-content {
+  backdrop-filter: none;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 0.5rem;
+}
+
+#progress-countdown-tracker header.window-header {
+  display: none;
+}
+
+.progress-countdown-tracker-topbar {
+  text-align: center;
+  margin-top: 0;
+  margin-left: 2px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5em;
+}
+#progress-countdown-tracker .topbar-left {
+  display: flex;
+  gap: 0.5em;
+}
+#progress-countdown-tracker .topbar-right {
+  display: flex;
+  gap: 0.5em;
+  margin-left: auto;
+}
+.progress-countdown-tracker-add-tracker {
+  background: none;
+  border: none;
+  color: #4CAF50;
+  cursor: pointer;
+  font-size: 1em;
+  opacity: 0.3;
+}
+.progress-countdown-trackers-window:hover .progress-countdown-tracker-add-tracker {
+  opacity: 1;
+}
+#progress-countdown-tracker .topbar-controls {
+  display: flex;
+  gap: 0.5rem;
+}
+.progress-countdown-tracker-control-button {
+  font-size: 10px;
+  margin: 0;
+  opacity: 0.3;
+}
+.progress-countdown-trackers-window:hover .progress-countdown-tracker-control-button {
+  opacity: 1;
+}
+
+.progress-countdown-trackers-app-body.collapsed {
+  min-width: 400px;
+  height: auto;
+  overflow: hidden;
+}
+
+.progress-countdown-tracker-header {
+  display: flex;
+}
+.progress-countdown-tracker-header span {
+  margin-right: 10px;
+}
+.progress-countdown-tracker-header-last-span {
+  margin-left: auto;
+}
+
+.progress-countdown-tracker-toggle-collapse {
+  text-align: center;
+  cursor: pointer;
+  margin-bottom: 0.3em;
+}
+
+.progress-countdown-tracker-empty-add-button {
+  text-align: center;
+  margin-top: 1em;
+}
+
+.progress-countdown-tracker-empty-add-button button {
+  background: none;
+  border: none;
+  color: #aaaaaa;
+  font-size: 2em;
+  cursor: pointer;
+}
+
+.progress-countdown-tracker-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3em;
+  margin-top: 0.5em;
+  width: auto;
+  opacity: 0.3;
+  transition: opacity 0.5s ease-in-out;
+}
+.progress-countdown-trackers-window:hover .progress-countdown-tracker-list {
+  opacity: 1;
+}
+
+.progress-countdown-tracker-row {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.2em;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 0.1em;
+  width: auto;
+  margin-left: 2px;
+}
+
+.progress-countdown-tracker-pips-container {
+    display: grid;
+    grid-template-columns: repeat(var(--max-pips), 1fr);
+    gap: 2px;
+    --pip-size: 12px;
+    width: calc(var(--max-pips) * var(--pip-size)*1.2 + (var(--max-pips) - 1) * .5px);
+    flex-shrink: 0;
+    box-sizing: border-box;
+    margin-right: 10px;
+    margin-bottom: 0px;
+    margin-top: 1px;
+}
+
+.progress-countdown-tracker-drag-handle {
+  cursor: grab;
+  color: #888888;
+  margin-left: 0.2em;
+}
+
+.progress-countdown-tracker-edit-name {
+  /*flex-grow: 1;*/
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 1em;
+  width: auto;
+  min-width: 50px;
+}
+.progress-countdown-tracker-display-name {
+  /*flex-grow: 1;*/
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 1em;
+  width: auto;
+  min-width: 50px;
+  margin-left: .5em;
+}
+
+.progress-countdown-tracker-pips {
+  display: flex;
+  gap: 0.2em;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}
+
+.progress-countdown-tracker-pip {
+  width: var(--pip-size);
+  height: var(--pip-size);
+  border-radius: 50%;
+  background-color: transparent;
+  opacity: 0.3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Arial", sans-serif;
+  font-size: calc(var(--pip-size) * 1.2);
+}
+.progress-countdown-tracker-pip::before {
+  content: attr(data-pip-char);
+}
+.progress-countdown-tracker-pip.filled {
+  opacity: 1;
+  background-color: transparent;
+}
+.progress-countdown-tracker-pip.filled::before {
+
+}
+
+.progress-countdown-tracker-pip-controls, .progress-countdown-tracker-gm-controls {
+  display: flex;
+  gap: 0.01em;
+  padding: 0.01em;
+}
+
+.progress-countdown-tracker-pip-controls button, .progress-countdown-tracker-gm-controls button {
+  background: none;
+  border: none;
+  color: #cccccc;
+  font-size: 0.9em;
+  cursor: pointer;
+  gap: 1px;
+  padding: 0.2em;
+}
+
+

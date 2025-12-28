@@ -1,0 +1,672 @@
+/* --------------------------------------- */
+/*  Shared DocumentSheet Styling           */
+/* --------------------------------------- */
+
+.sheet .standard-form header.img-name {
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+  img {
+    height: 64px;
+    flex: 0 0 64px;
+    object-fit: contain;
+  }
+  input {
+    flex: 1;
+    font-size: var(--font-size-32);
+    height: initial;
+  }
+}
+
+/* --------------------------------------- */
+/*  Active Effect Configuration            */
+/* --------------------------------------- */
+
+.active-effect-config {
+  prose-mirror {
+    --min-height: 200px;
+  }
+  .tab.changes {
+    gap: 0.5rem;
+    overflow-y: hidden;
+    header, ol {
+      align-items: center;
+      display: grid;
+      gap: 0.25rem;
+      grid-template-columns: 12rem 7rem 7rem 4rem 1rem;
+      margin: 0;
+      padding: 2px;
+      position: relative;
+      .controls {
+        text-align: right;
+      }
+    }
+    header {
+      text-align: left;
+    }
+    ol li {
+      display: contents;
+    }
+  }
+}
+
+/* -------------------------------------------- */
+/*  Adventure Exporter                          */
+/* -------------------------------------------- */
+
+#adventure-exporter {
+  prose-mirror {
+    height: 300px;
+  }
+
+  .tab.contents {
+    // Control Icons
+    a.control {
+      color: var(--color-text-secondary);
+      font-size: var(--font-size-12);
+      height: 2rem;
+      width: 2rem;
+    }
+
+    // Section Header
+    .document-type {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      &.collapsed {
+        a.control.bullet {
+          transform: rotate(-90deg);
+          transition-duration: 0.25s;
+        }
+        .tree {
+          max-height: 0;
+          transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
+        }
+      }
+      header {
+        display: flex;
+        align-items: center;
+        line-height: 2rem;
+        border-top: 1px solid var(--color-border);
+        border-bottom: 1px solid var(--color-border);
+        > a.control {
+          text-align: center;
+          &.bullet {
+            transform-origin: 1rem 50%;
+            transition: 0.5s transform ease;
+            i {
+              margin: 0;
+            }
+          }
+        }
+        .name-count {
+          flex: 1;
+          text-align: center;
+        }
+      }
+      .tree {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        max-height: 9999px;
+        overflow-y: hidden;
+        transition: max-height 1s ease-in-out;
+      }
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      &.document-list {
+        flex-flow: row wrap;
+      }
+
+      > li > ul {
+        margin-left: 0.5rem;
+      }
+
+      li {
+        margin: 0;
+        &.document {
+          border: 1px solid var(--color-border);
+          border-radius: 3px;
+          font-size: var(--font-size-12);
+          padding: 2px 4px;
+          white-space: nowrap;
+          width: fit-content;
+          &.update {
+            background: rgba(255, 255, 255, 0.2);
+          }
+          &.add {
+            background: rgba(0, 255, 0, 0.1);
+          }
+          &.missing {
+            background: rgba(252, 173, 12, 0.2);
+          }
+          &.remove {
+            background: rgba(255, 0, 0, 0.1);
+          }
+          i.warning {
+            color: var(--color-warm-3);
+          }
+        }
+        a.control {
+          position: relative;
+          top: 1px;
+          margin-left: 4px;
+        }
+      }
+    }
+
+    .drop-zone {
+      line-height: 100px;
+      text-align: center;
+      border: 2px dashed var(--color-border);
+      border-radius: 5px;
+    }
+  }
+}
+
+/* --------------------------------------- */
+/*  Adventure Importer                     */
+/* --------------------------------------- */
+
+.adventure-importer {
+  .adventure-header {
+    h1 {
+      margin: 0;
+      text-align: center;
+    }
+  }
+
+  figure.adventure-banner {
+    margin: 0;
+    img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+  }
+
+  .adventure-contents {
+    gap: 2rem;
+    align-items: start;
+    h2 {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  .adventure-overview {
+    flex: 2;
+  }
+
+  .import-controls {
+    ul {
+      li i {
+        color: var(--color-text-subtle);
+        margin-right: 0.5rem;
+      }
+    }
+    label.checkbox {
+      --input-height: 1rem;
+      font-size: var(--font-size-14);
+      > i { color: var(--color-text-subtle); }
+    }
+  }
+}
+
+/* -------------------------------------------- */
+/*  Base Sheet                                  */
+/* -------------------------------------------- */
+
+.base-sheet {
+  .no-data {
+    h1 {
+      --size-h1: var(--font-size-36);
+      margin-bottom: 0;
+    }
+    .uuid {
+      color: var(--color-text-subtle);
+      font-size: var(--font-size-16);
+    }
+  }
+}
+
+/* --------------------------------------- */
+/*  Card Configuration                     */
+/* --------------------------------------- */
+
+.card-config {
+  .tab.faces, .faces-list {
+    height: 0;
+    flex: 1;
+  }
+  .faces-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  prose-mirror {
+    height: 200px;
+  }
+}
+
+/* --------------------------------------- */
+/*  Cards Configuration                    */
+/* --------------------------------------- */
+.cards-config {
+  --card-height: 48px;
+
+  &.deck {
+    .tab.cards {
+      flex: 1;
+      gap: 0;
+      height: 0;
+      .controls {
+        flex: 0 0 48px;
+      }
+    }
+  }
+  &.hand, &.pile {
+    header.sheet-header input {
+      font-size: var(--font-size-32);
+      height: initial;
+    }
+  }
+  img.face {
+    flex: 0 0 48px;
+    height: 48px;
+    object-fit: contain;
+  }
+  .cards-header {
+    background: rgba(0, 0, 0, 0.1);
+    border-top: 2px groove #444;
+    border-bottom: 2px groove #444;
+    padding: 3px 0.5rem 3px 0;
+    align-items: center;
+    text-align: left;
+    font-weight: bold;
+  }
+
+  ol.cards {
+    max-height: 600px;
+    list-style: none;
+    margin: 0 0 0.5rem;
+    padding: 0;
+    > li {
+      &:first-of-type {
+        margin-top: 0.5rem;
+      }
+      height: var(--card-height);
+      align-items: center;
+    }
+  }
+  .sort-mode {
+    flex: 0 0 48px;
+    text-align: center;
+    > i {
+      margin-right: 0;
+    }
+  }
+  .face {
+    flex: 0 0 calc(var(--card-height) * 2 / 3);
+    height: var(--card-height);
+    width: calc(var(--card-height) * 2 / 3);
+  }
+  .name {
+    flex: 3;
+    margin: 0 0 0 8px;
+    font-weight: bold;
+  }
+  .suit,
+  .value,
+  .faces {
+    text-align: center;
+  }
+  .drawn {
+    flex: 0 0 64px;
+    text-align: right;
+  }
+  .faces {
+    flex: 0 0 48px;
+  }
+  .controls {
+    flex: 0 0 24px;
+    text-align: right;
+    padding-right: 4px;
+    > a {
+      margin: 0 2px;
+      color: var(--color-text-secondary);
+      font-size: var(--font-size-12);
+      text-align: center;
+      &[disabled] {
+        color: var(--color-text-inactive);
+      }
+    }
+  }
+  .form-footer > button {
+    min-width: unset;
+  }
+}
+
+/* --------------------------------------- */
+/*  Macro Configuration                    */
+/* --------------------------------------- */
+
+.macro-config {
+  min-width: 460px;
+  min-height: 460px;
+}
+
+/* --------------------------------------- */
+/*  Measured Template Configuration        */
+/* --------------------------------------- */
+
+.template-config {
+  min-width: 420px;
+  min-height: 320px;
+}
+
+/* -------------------------------------------- */
+/*  Region Configuration                        */
+/* -------------------------------------------- */
+
+.region-config {
+  .tab {
+    gap: 0.5rem;
+    overflow: hidden;
+    header {
+      font-weight: bold;
+      font-size: var(--font-size-16);
+    }
+    .region-element-controls {
+      flex: none;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 0.25rem;
+    }
+    .scrollable {
+      --scroll-margin: 0.5rem;
+      width: 100%;
+      flex: 1;
+    }
+    &.inactive {
+      background: rgb(0 0 0 / 5%);
+      opacity: 0.8;
+      border-style: dotted;
+    }
+  }
+
+  fieldset.region-behavior > a.draggable { cursor: var(--cursor-pointer); }
+
+  input[name="elevation.bottom"],
+  input[name="elevation.top"] {
+    &::placeholder {
+      font-size: var(--font-size-12);
+    }
+  }
+}
+
+/* ---------------------------------------- */
+/* RollTable Sheet                          */
+/* ---------------------------------------- */
+
+.roll-table-sheet {
+  min-width: 360px;
+  &.edit-mode {
+    min-width: 480px;
+  }
+
+  table {
+    flex: 1;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    thead, tbody {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+    }
+    tbody {
+      flex: inherit;
+      height: inherit;
+    }
+    tr {
+      border: 1px solid transparent;
+      flex-wrap: nowrap;
+      gap: 2px;
+      &.drawn {
+        > td.details {
+          color: var(--color-text-subtle);
+        }
+      }
+      &.roulette {
+        background: var(--table-row-color-highlight);
+        border-color: var(--color-border);
+      }
+    }
+    th.controls {
+      margin-right: 0.5rem;
+    }
+    th, td {
+      justify-content: center;
+      padding: 4px 0;
+      &.image {
+        flex: 0 0 48px;
+        padding-left: 4px;
+      }
+      &.details {
+        justify-content: start;
+        text-align: left;
+      }
+    }
+    th {
+      font-weight: 600;
+    }
+    td {
+      &.image {
+        align-self: start;
+        > img {
+          flex: 0 0 32px;
+          height: 32px;
+          object-fit: contain;
+        }
+      }
+      &.details {
+        user-select: text;
+        > strong.name {
+          flex-basis: 100%;
+        }
+        > .description > p:last-of-type {
+          margin-bottom: 0;
+        }
+      }
+      &.controls {
+        gap: 1px;
+      }
+    }
+  }
+  &.edit-mode {
+    header.sheet-header button {
+      flex: 0;
+      margin-left: auto;
+    }
+    input[name=formula] {
+      flex: 0 0 200px;
+    }
+    section[data-tab=results] {
+      flex: 1;
+      height: 0;
+    }
+    table {
+      .details {
+        > .uuid {
+          color: var(--color-text-secondary);
+          font-size: var(--font-size-12);
+        }
+        > .description {
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 2;
+          line-clamp: 2;
+          overflow: hidden;
+        }
+      }
+      .weight {
+        flex: 0 0 64px;
+      }
+      .range {
+        flex: 0 0 120px;
+        gap: 2px;
+        .dash {
+          flex: none;
+        }
+      }
+      .controls {
+        flex: 0 0 80px;
+        padding-right: 0;
+      }
+      input {
+        flex: 0 0 48px;
+        text-align: center;
+      }
+    }
+  }
+  &.view-mode {
+    header.sheet-header {
+      display: grid;
+      gap: 0 1rem;
+      grid-template: "img title button" auto
+                     "img subtitle button" 2rem / 4rem auto min-content;
+      img {
+        align-self: start;
+        grid-area: img;
+      }
+      h1 {
+        align-self: baseline;
+        font-size: 2.5rem;
+        grid-area: title;
+        margin: 0;
+      }
+      h4 {
+        color: var(--color-text-subtle);
+        grid-area: subtitle;
+        margin: 0;
+      }
+      button {
+        grid-area: button;
+      }
+    }
+    table {
+      tbody {
+        width: 100%;
+        tr.drawn > .range {
+          color: var(--color-text-subtle);
+        }
+      }
+      th, td {
+        &.range, &.controls {
+          flex: 0 0 64px;
+        }
+      }
+    }
+  }
+}
+
+/* ---------------------------------------- */
+/* TableResult Config                       */
+/* ---------------------------------------- */
+
+.table-result-config {
+  .range .form-fields {
+    flex: 0;
+    flex-wrap: nowrap;
+  }
+  prose-mirror {
+    --min-height: 200px;
+  }
+}
+
+/* ---------------------------------------- */
+/* Scene Config                             */
+/* ---------------------------------------- */
+
+.scene-config {
+  .tab {
+    flex: 1;
+    height: 0; // CSS trick to support flex+scroll
+  }
+}
+
+/* ---------------------------------------- */
+/* Token Config                             */
+/* ---------------------------------------- */
+
+.token-config {
+  .bar-data {
+    .sep {
+      flex: 0 0 16px;
+      text-align: center;
+      font-size: 1.5em;
+      line-height: 24px;
+    }
+  }
+
+  input[name="sight.range"],
+  .detection-mode .range > input::placeholder {
+    font-size: var(--font-size-12);
+  }
+
+  .detection-mode {
+    display: grid;
+    grid-template-columns: 5fr 3fr 2fr 1fr;
+    align-items: center;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+    border: none;
+    .enabled {
+      justify-self: center;
+    }
+    .controls {
+      justify-self: end;
+    }
+  }
+}
+
+/* ---------------------------------------- */
+/* User Config                              */
+/* ---------------------------------------- */
+
+.user-config {
+  img.avatar {
+    flex: 0 0 64px;
+    height: 64px;
+    object-fit: contain;
+  }
+}
+
+/* ---------------------------------------- */
+/* Wall Config                              */
+/* ---------------------------------------- */
+
+.wall-config {
+  input.threshold {
+    flex: 0 0 3rem;
+  }
+  .form-group.door-sound .form-fields {
+    gap: 1rem;
+    a {
+      flex-grow: 0;
+      font-size: var(--font-size-16);
+    }
+  }
+}

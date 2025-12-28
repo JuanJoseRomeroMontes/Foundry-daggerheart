@@ -1,0 +1,8 @@
+2025/12/28-00:22:12.442 17278 Recovering log #735
+2025/12/28-00:22:12.444 17278 Delete type=0 #735
+2025/12/28-00:22:12.444 17278 Delete type=3 #734
+2025/12/28-00:22:26.111 172e0 Level-0 table #739: started
+2025/12/28-00:22:26.111 172e0 Level-0 table #739: 0 bytes OK
+2025/12/28-00:22:26.111 172e0 Delete type=0 #737
+2025/12/28-00:22:26.113 172e0 Manual compaction at level-0 from '!folders!Hz442cHCkERSfi2B' @ 72057594037927935 : 1 .. '!macros!zWi79s5QqaZnMMtX' @ 0 : 0; will stop at (end)
+2025/12/28-00:22:26.113 172e0 Manual compaction at level-1 from '!folders!Hz442cHCkERSfi2B' @ 72057594037927935 : 1 .. '!macros!zWi79s5QqaZnMMtX' @ 0 : 0; will stop at (end)

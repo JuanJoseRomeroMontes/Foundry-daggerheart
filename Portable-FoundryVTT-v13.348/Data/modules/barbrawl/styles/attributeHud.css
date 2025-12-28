@@ -1,0 +1,142 @@
+.resource-input {
+    display: flex;
+    flex-direction: column;
+    gap: 6px 0;
+    justify-content: center;
+    width: 100px;
+}
+
+.resource-input.compact {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0 6px;
+    width: 40px;
+}
+
+.col.middle .resource-input {
+    width: unset;
+}
+
+.resource-input.compact input {
+    width: 40%;
+    height: 30px;
+    font-size: 20px;
+    margin: 2px;
+    min-width: 40px;
+    padding-inline: 1px;
+}
+
+.resource-input.compact input.fs-s {
+    font-size: 14px;
+}
+
+.resource-input.compact input.fs-xs {
+    font-size: 10px;
+}
+
+.resource-input input:disabled {
+    color: #aaa;
+}
+
+#token-hud .attribute.left-bars {
+    position: absolute;
+    right: 100%;
+    z-index: -1;
+}
+
+#token-hud .attribute.right-bars {
+    position: absolute;
+    left: 100%;
+    z-index: -1;
+}
+
+#token-hud .attribute.bar1 {
+    position: absolute;
+    top: calc(100% - 44px);
+    height: fit-content;
+}
+
+#token-hud .attribute.bar2 {
+    position: absolute;
+    top: 44px;
+    height: fit-content;
+    transform: translateY(-100%);
+}
+
+input.indent-input {
+    text-align: right;
+    width: 32px;
+    margin-right: 1px;
+}
+
+div.indent-details {
+    margin-left: 15px;
+}
+
+.bar-modifiers {
+    visibility: hidden;
+}
+
+.bar-summary:hover .bar-modifiers {
+    visibility: visible;
+}
+
+.bar-modifiers a.disabled {
+    color: #999;
+    pointer-events: none;
+}
+
+.bar-modifiers span.bar-id {
+    color: #666;
+    font-size: smaller;
+}
+
+.token-resources {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+.token-resources .bb-bar-container {
+    min-height: 130px;
+    max-height: 700px;
+    overflow-y: auto;
+    overflow-x: visible;
+}
+
+.token-resources label {
+    white-space: nowrap;
+}
+
+.token-resources .sep {
+    margin: 0;
+    flex: 0;
+}
+
+.bb-form-field-col > label {
+    display: inline-block;
+    width: 100%;
+}
+
+button.brawlbar-add {
+    width: 80%;
+    align-self: center;
+    margin-bottom: calc(-16px + 0.5rem); /* Negative row gap + footer gap */
+}
+
+.bar-controls #context-menu {
+    text-align: left;
+    bottom: calc(100% + 2px);
+    top: unset;
+    pointer-events: all;
+}
+
+.bar-controls #context-menu .context-item {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.token-sheet nav.sheet-tabs {
+    flex-grow: 0;
+}

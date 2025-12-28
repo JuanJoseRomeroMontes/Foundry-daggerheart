@@ -1,0 +1,88 @@
+/* ---------------------------------------- */
+/*  Setup Authentication Views              */
+/* ---------------------------------------- */
+
+body.auth {
+  gap: 1rem;
+  justify-content: space-evenly;
+  align-items: center;
+
+  // Main Header
+  #main-header {
+    height: var(--header-size);
+    flex: none;
+    justify-content: center;
+    background: var(--main-logo) 50% 50% no-repeat;
+    background-size: var(--header-size) var(--header-size);
+    width: 100%;
+
+    h1 {
+      flex: none;
+      margin: 0;
+      font-size: var(--header-font-size);
+      text-align: center;
+      filter: drop-shadow(0 0 4px black);
+      text-shadow: 1px 1px 4px #000;
+    }
+  }
+
+  // Authentication
+  .application.framed {
+    position: relative;
+    width: 100%;
+    max-width: var(--max-width);
+    padding: var(--form-padding);
+    h2 {
+      text-align: center;
+      margin: 0;
+    }
+  }
+
+  // Footer
+  #watermark {
+    flex: none;
+    #software-version {
+      flex: none;
+      margin: 0;
+      font-family: var(--font-h2);
+      font-size: var(--font-size-24);
+      font-weight: bold;
+      color: var(--color-light-4);
+      text-align: center;
+      filter: drop-shadow(0 0 4px black);
+    }
+  }
+}
+
+/* ---------------------------------------- */
+/*  EULA Application                        */
+/* ---------------------------------------- */
+
+#eula {
+  max-height: 90vh;
+  z-index: calc(var(--z-index-notification) - 1);
+
+  #eula-content {
+    h1, h2 {
+      text-align: center;
+    }
+    .terms li {
+      margin: 1rem 0;
+    }
+    .copyright {
+      margin-top: 2rem;
+      font-size: var(--font-size-14);
+      color: var(--color-light-5);
+    }
+  }
+
+  #eula-form {
+    margin-top: 2rem;
+    h2 {
+      margin: 0;
+    }
+    button#sign {
+      flex: 2;
+    }
+  }
+}

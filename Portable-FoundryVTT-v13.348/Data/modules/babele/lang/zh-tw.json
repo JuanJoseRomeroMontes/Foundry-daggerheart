@@ -1,0 +1,17 @@
+{
+  "BABELE.CompendiumTranslations": "翻譯",
+  "BABELE.TranslateActorHeadBtn": "翻譯",
+  "BABELE.TranslateActorTitle": "翻譯角色",
+  "BABELE.TranslateActorHint": "當那裡有已翻譯的概要(compendium)時，自動翻譯角色的所有的物品",
+  "BABELE.TranslateActorBtn": "翻譯！",
+  "BABELE.ExportTranslationTitle": "導出翻譯文件",
+  "BABELE.ExportTranslationBtn": "導出！",
+  "BABELE.ExportTranslationNotes": "選擇用於導出翻譯文件的格式。原始原生格式選擇\"傳統\"，如果您打算通過其他平台本地化（例如Weblate、Transifex 等..)請選\"兼容\"",
+  "BABELE.ExportTranslationFormat": "格式",
+  "BABELE.ExportTranslationFormatLegacy": "傳統",
+  "BABELE.ExportTranslationFormatCompatible": "兼容",
+  "BABELE.TranslationDirTitle": "翻譯文件目錄的位置",
+  "BABELE.TranslationDirHint": "輸入本地翻譯文件概要(compendium)所在目錄的位置",
+  "BABELE.EnableTranslationExportTile": "啟用翻譯導出",
+  "BABELE.EnableTranslationExportHint": "如果你想在每個概要(compendium)上添加一個按鈕來生成翻譯文件，啟用這個選項。建立新的模板時非常有用"
+}

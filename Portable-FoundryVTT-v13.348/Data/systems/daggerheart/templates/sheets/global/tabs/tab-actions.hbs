@@ -1,0 +1,13 @@
+<section
+    class='tab {{tabs.actions.cssClass}} {{tabs.actions.id}}'
+    data-tab='{{tabs.actions.id}}'
+    data-group='{{tabs.actions.group}}'
+>
+
+{{> 'daggerheart.inventory-items'
+    title='DAGGERHEART.GENERAL.Action.plural'
+    collection=document.system.actions
+    type='action'
+    canCreate=true
+}}
+</section>

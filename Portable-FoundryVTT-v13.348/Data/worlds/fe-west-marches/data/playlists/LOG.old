@@ -1,0 +1,8 @@
+2025/12/28-00:22:12.114 a674 Recovering log #79
+2025/12/28-00:22:12.116 a674 Delete type=0 #79
+2025/12/28-00:22:12.116 a674 Delete type=3 #78
+2025/12/28-00:22:26.145 172e0 Level-0 table #83: started
+2025/12/28-00:22:26.145 172e0 Level-0 table #83: 0 bytes OK
+2025/12/28-00:22:26.146 172e0 Delete type=0 #81
+2025/12/28-00:22:26.148 172e0 Manual compaction at level-0 from '!playlists!JQ70CPuHfTWrxplv' @ 72057594037927935 : 1 .. '!playlists!JQ70CPuHfTWrxplv' @ 0 : 0; will stop at (end)
+2025/12/28-00:22:26.166 172e0 Manual compaction at level-1 from '!playlists!JQ70CPuHfTWrxplv' @ 72057594037927935 : 1 .. '!playlists!JQ70CPuHfTWrxplv' @ 0 : 0; will stop at (end)

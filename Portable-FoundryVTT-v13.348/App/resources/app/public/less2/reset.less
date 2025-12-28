@@ -1,0 +1,54 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box; // Box-sizing always
+}
+
+// Body sizing
+body {
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  text-rendering: optimizeSpeed;
+  line-height: 1.25;
+  user-select: none; // Prevent text selection except as opt-in
+}
+
+// Remove element margins
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+// No list style for lists with a "list" role
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+// Prefer smooth scrolling
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+// Image sizing
+img {
+  max-width: 100%;
+  display: block;
+}
+
+// Inputs and buttons should inherit font choices
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}

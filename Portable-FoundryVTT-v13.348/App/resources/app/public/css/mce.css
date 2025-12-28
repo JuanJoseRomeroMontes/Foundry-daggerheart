@@ -1,0 +1,317 @@
+/* ----------------------------------------- */
+/*  Root                                     */
+/* ----------------------------------------- */
+body.game .app {
+  --color-text-light-highlight: #f0f0e0;
+  --color-text-light-heading: #c9c7b8;
+  --color-text-light-primary: #b5b3a4;
+  --color-text-dark-primary: #191813;
+  --color-text-dark-secondary: #4b4a44;
+  --color-text-dark-header: #23221d;
+  --color-text-dark-inactive: #7a7971;
+  --color-text-hyperlink: #ff6400;
+  --color-text-selection: #f7f3e8;
+  --color-text-selection-bg: #777;
+  --color-text-primary: var(--color-text-dark-primary);
+  --color-text-emphatic: var(--color-text-dark-primary);
+  --color-text-light-0: #fff;
+  --color-text-light-1: #eee;
+  --color-text-light-2: #ddd;
+  --color-text-light-3: #ccc;
+  --color-text-light-4: #bbb;
+  --color-text-light-5: #aaa;
+  --color-text-light-6: #999;
+  --color-text-light-7: #888;
+  --color-text-dark-1: #111;
+  --color-text-dark-2: #222;
+  --color-text-dark-3: #444;
+  --color-text-dark-4: #555;
+  --color-text-dark-5: #666;
+  --color-text-dark-6: #777;
+  --color-border-light-1: #ddd;
+  --color-border-light-2: #999;
+  --color-border-dark-1: #111;
+  --color-border-dark-2: #222;
+  --color-border-dark-3: #333;
+  --color-border-dark-4: #444;
+  --color-border-dark-5: #666;
+  --color-shadow-primary: #ff0000;
+  --color-shadow-highlight: #ff6400;
+  --color-shadow-dark: #000;
+  --color-underline-inactive: #7a7971;
+  --color-underline-active: #44191A;
+  --color-underline-header: #782e22;
+  --color-border-light-highlight: #f0f0e0;
+  --color-border-light-primary: #b5b3a4;
+  --color-border-light-secondary: #c9c7b8;
+  --color-border-light-tertiary: #7a7971;
+  --color-border-dark: #000;
+  --color-border-dark-primary: #191813;
+  --color-border-dark-secondary: #23221d;
+  --color-border-dark-tertiary: #4b4a44;
+  --color-border-highlight: #ff6400;
+  --color-border-highlight-alt: #ff0000;
+  --color-bg-btn-minor-inactive: #c9c7b8;
+  --color-bg-btn-minor-active: #b5b3a4;
+  --color-select-option-bg: #dad8cc;
+  --color-checkbox-checked: #666;
+  --color-ownership-none: #5500ff;
+  --color-ownership-observer: #7a7971;
+  --color-ownership-owner: #b5b3a4;
+  --sidebar-width: 300px;
+  --sidebar-header-height: 32px;
+  --sidebar-item-height: 48px;
+  --hotbar-width: 578px;
+  --macro-size: 50px;
+  --color-blind-bg: #f5eaf5;
+  --color-blind-border: #6b476b;
+  --color-emote-bg: #f3edde;
+  --color-emote-border: #887c5d;
+  --color-whisper-bg: #e8e8ef;
+  --color-whisper-border: #545469;
+  --color-scrollbar: #782e22;
+  --color-scrollbar-track: transparent;
+  --form-field-height: 26px;
+  --font-primary: "Signika", sans-serif;
+  --line-height-12: 0.75rem;
+  --line-height-16: 1rem;
+  --line-height-20: 1.25rem;
+  --line-height-30: 1.875rem;
+  --background-parchment: url(../ui/parchment.jpg) repeat;
+}
+body.game .app {
+  /* ---------------------------------------- */
+  /*  Text                                    */
+  /* ---------------------------------------- */
+  /* Headers */
+  /* Links */
+  /* Paragraph */
+  /* Images */
+  /** Unstyled Lists */
+  /* Definition Lists */
+  /* HR separators */
+  /* Buttons */
+  /* Blockquote */
+  /* Info Tooltip Icons */
+  /* Reference */
+  /* ---------------------------------------- */
+  /* Tables                                   */
+  /* ---------------------------------------- */
+  /* ----------------------------------------- */
+  /* Images
+/* ----------------------------------------- */
+}
+body.game .app h1,
+body.game .app h2,
+body.game .app h3,
+body.game .app h4 {
+  margin: 0 0 0.5rem;
+  padding: 0;
+  font-weight: normal;
+}
+body.game .app h1 {
+  font-size: 2em;
+  border-bottom: 2px solid var(--color-underline-header);
+}
+body.game .app h2 {
+  font-size: 1.5em;
+  border-bottom: 1px solid var(--color-underline-header);
+}
+body.game .app h3 {
+  font-size: 1.25em;
+  border-bottom: 1px solid var(--color-underline-header);
+}
+body.game .app :is(h1, h2, h3, h4, h5, h6):is(.noborder, .divider) {
+  border: none;
+}
+body.game .app a {
+  cursor: var(--cursor-pointer);
+}
+body.game .app a[href] {
+  color: var(--color-text-hyperlink);
+}
+body.game .app a:hover {
+  text-shadow: 0 0 8px var(--color-shadow-primary);
+}
+body.game .app a[disabled] {
+  pointer-events: none;
+  cursor: inherit;
+}
+body.game .app a.content-link,
+body.game .app a.inline-roll {
+  background: #DDD;
+  padding: 1px 4px;
+  border: 1px solid var(--color-border-dark-tertiary);
+  border-radius: 2px;
+  white-space: nowrap;
+  word-break: break-all;
+}
+body.game .app a.content-link i,
+body.game .app a.inline-roll i {
+  color: var(--color-text-dark-inactive);
+  margin-right: 0.25em;
+}
+body.game .app a.content-link.playing i:before,
+body.game .app a.inline-roll.playing i:before {
+  content: "\f0c8";
+}
+body.game .app a.content-link.disabled,
+body.game .app a.inline-roll.disabled {
+  cursor: var(--cursor-default);
+  color: var(--color-text-dark-inactive);
+  border-color: var(--color-border-light-primary);
+}
+body.game .app a.content-link.disabled:hover,
+body.game .app a.inline-roll.disabled:hover {
+  text-shadow: unset;
+}
+body.game .app a.content-link.broken {
+  cursor: var(--cursor-default);
+  background: rgba(255, 0, 0, 0.05);
+  border: 1px dashed red;
+}
+body.game .app a.inline-roll.gmroll {
+  background: var(--color-whisper-bg);
+  border-color: var(--color-whisper-border);
+}
+body.game .app a.inline-roll.blindroll {
+  background: var(--color-blind-bg);
+  border-color: var(--color-blind-border);
+}
+body.game .app p {
+  margin: 0.5em 0;
+}
+body.game .app p:empty {
+  min-height: 1rem;
+}
+body.game .app img.centered {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+body.game .app ul.plain,
+body.game .app ol.plain {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+body.game .app dl {
+  margin: 0.5em 0;
+}
+body.game .app dt {
+  font-weight: bold;
+}
+body.game .app dd {
+  padding-left: 5px;
+  margin: 3px 0;
+}
+body.game .app menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+body.game .app hr {
+  border: none;
+  border-top: 1px solid var(--color-border-light-primary);
+  border-bottom: 1px solid var(--color-border-light-highlight);
+}
+body.game .app button[hidden] {
+  display: none;
+}
+body.game .app blockquote {
+  margin: 0.5em 0 0.5em 10px;
+  padding: 0 0 0 20px;
+  border-left: 3px solid var(--color-border-light-tertiary);
+  font-style: italic;
+}
+body.game .app blockquote em {
+  font-style: normal;
+}
+body.game .app i.tip {
+  font-size: var(--font-size-12);
+  color: var(--color-text-dark-5);
+}
+body.game .app span.reference {
+  display: inline-block;
+  padding: 0.25rem;
+  color: #c5dbe3;
+  border: 1px solid #def7ff;
+  border-radius: 3px;
+}
+body.game .app table {
+  width: 100%;
+  border-collapse: collapse;
+  background: rgba(0, 0, 0, 0.05);
+  border-top: 1px solid var(--color-border-light-tertiary);
+  border-bottom: 1px solid var(--color-border-light-tertiary);
+  margin: 0.5em 0;
+}
+body.game .app table thead {
+  background: rgba(0, 0, 0, 0.5);
+  color: var(--color-text-light-highlight);
+  text-shadow: 1px 1px var(--color-shadow-dark);
+  border-bottom: 1px solid var(--color-border-dark);
+}
+body.game .app table tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+body.game .app table td:first-child {
+  padding-left: 2px;
+}
+body.game .app table td,
+body.game .app table th {
+  padding: 0.25em 0;
+}
+body.game .app table.roll-table-rollable th button[data-action] {
+  display: inline-block;
+  background: none;
+  border: none;
+  width: 28px;
+  padding: 0;
+  color: var(--color-text-light-highlight);
+}
+body.game .app table.roll-table-rollable tr:not(.drawn) > td:first-child {
+  padding-left: 20px;
+}
+body.game .app table.roll-table-rollable tr.drawn {
+  background: rgba(0, 0, 0, 0.15);
+}
+body.game .app table.roll-table-rollable tr.drawn > td:first-child::before {
+  content: "\f023";
+  font-family: var(--font-awesome);
+  font-weight: bold;
+  font-size: var(--font-size-12);
+  padding-inline: 4px;
+}
+body.game .app img {
+  box-sizing: border-box;
+  border: 1px solid var(--color-border-dark);
+  border-radius: 2px;
+  max-width: 100%;
+}
+body.game .app img.noborder {
+  border: none;
+  box-shadow: none;
+  outline: none;
+}
+body.game .app figure {
+  margin: 1rem 0;
+}
+body.game .app figure img {
+  display: block;
+  margin: 0 auto;
+}
+body.game .app figure figcaption {
+  margin-top: 0.5rem;
+  padding: 0 1rem;
+  text-align: center;
+  font-weight: bold;
+}
+body {
+  height: calc(100vh - 16px);
+  margin: 0;
+  padding: 2px 4px 2px 2px;
+  overflow-y: auto;
+  font-family: var(--font-primary);
+  font-size: 0.875rem;
+}

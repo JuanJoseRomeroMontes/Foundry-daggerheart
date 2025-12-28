@@ -1,0 +1,15 @@
+<form id="item-action-select">
+    <header class="dialog-header">
+        <h1>{{itemName}}</h1>
+    </header>
+    <ul class="action-buttons-list">
+    {{#each actions}}
+        <li class="action-item">
+            <button type="button" class="list-button reverted" data-action-id="{{id}}" data-action="choose">
+                <img src="{{ img }}">
+                <span>{{ name }}</span>
+            </button>
+        </li>
+    {{/each}}
+    </ul>
+</form>

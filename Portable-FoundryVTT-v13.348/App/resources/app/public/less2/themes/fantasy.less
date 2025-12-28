@@ -1,0 +1,73 @@
+
+/* ---------------------------------------- */
+/*  Theme Variables                         */
+/* ---------------------------------------- */
+
+.mixin-theme-fantasy-variables {
+
+  /* ---------------------------------------- */
+  /*  Colors                                  */
+  /* ---------------------------------------- */
+
+  --color-warm-1: #ee9b3a;
+  --color-warm-2: #603032;
+  --color-warm-3: #372021;
+
+  --color-cool-3: #251a1c;
+  --color-cool-4: #0c0609;
+  --color-cool-5: #0b090a;
+
+  --color-cool-5-25: rgb(11 9 10 / 25%);
+  --color-cool-5-50: rgb(11 9 10 / 50%);
+  --color-cool-5-75: rgb(11 9 10 / 75%);
+  --color-cool-5-90: rgb(11 9 10 / 90%);
+
+  --color-text-emphatic: var(--color-light-1);
+  --color-text-primary: var(--color-light-2);
+  --color-text-secondary: var(--color-light-3);
+  --color-text-subtle: var(--color-light-5);
+  --color-text-selection: var(--color-light-1);
+  --color-text-selection-bg: var(--color-cool-3);
+
+
+  /* ---------------------------------------- */
+  /*  Forms and Form Elements                 */
+  /* ---------------------------------------- */
+
+  input,
+  select {
+    --input-background-color: var(--color-warm-3);
+  }
+
+  input[type="checkbox"],
+  input[type="radio"] {
+    --checkbox-background-color: var(--color-warm-3);
+  }
+
+  /* ---------------------------------------- */
+  /*  Packages                                */
+  /* ---------------------------------------- */
+
+  #setup-packages header.controls .filter input {
+    --input-background-color: var(--color-cool-3);
+  }
+}
+
+/* ---------------------------------------- */
+/*  Theme Layers                            */
+/* ---------------------------------------- */
+
+// General rules that apply when using this theme
+@layer general {
+  body.theme-fantasy {
+    .mixin-theme-fantasy-variables();
+  }
+}
+
+// Specific rules that take precedence for apps which override to this theme
+@layer specific {
+  .application.theme-fantasy,
+  .themed.theme-fantasy {
+    .mixin-theme-fantasy-variables();
+  }
+}

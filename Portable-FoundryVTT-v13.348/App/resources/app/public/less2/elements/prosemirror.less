@@ -1,0 +1,281 @@
+@import (inline) "../../../node_modules/prosemirror-view/style/prosemirror.css";
+@import (inline) "../../../node_modules/prosemirror-gapcursor/style/gapcursor.css";
+@import (inline) "../../../node_modules/prosemirror-tables/style/tables.css";
+
+.prosemirror, prose-mirror {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem 0; // Between menu and content
+  min-height: var(--min-height);
+  position: relative;
+
+  // Toggle control button
+  button.toggle {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1; // Above editor content
+    &[disabled] {
+      display: none;
+    }
+  }
+
+  &:hover button.toggle:enabled { display: block; }
+
+  // Active editors only
+  .editor-container {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+  }
+
+  // Applies to both active and toggled inactive editors
+  .editor-content {
+    position: absolute;
+    overflow: hidden auto; // Vertically scrolling
+    padding-right: 0.5rem; // Scrollbar
+    inset: 0;
+    outline: 0 solid transparent;
+    cursor: var(--cursor-text);
+    user-select: text;
+    &[contenteditable=""], &[contenteditable="true"] { cursor: auto; }
+  }
+
+  menu {
+    display: flex;
+    flex-wrap: wrap;
+    flex: none;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 8px;
+    gap: 4px;
+    background: var(--menu-background);
+    border-radius: 6px;
+
+    .source-code { margin-right: 4px; }
+
+    .concurrent-users {
+      display: none;
+      justify-content: center;
+      align-items: center;
+      padding: 0 6px;
+      background: var(--color-control-hover);
+      border: 1px solid var(--color-shadow-highlight);
+      border-radius: 3px;
+      box-shadow: 0 0 4px var(--color-shadow-highlight);
+      i { margin-right: 6px; }
+    }
+
+    button {
+      background: transparent;
+      cursor: var(--cursor-pointer);
+      border: none;
+      border-radius: 4px;
+      height: var(--menu-height);
+      line-height: var(--menu-height);
+      outline: none;
+      i { margin: 0; }
+      &.source-code-action { background: var(--color-control-hover); }
+      &:focus { outline: none; }
+      &:hover, &.active {
+        box-shadow: none;
+        background: var(--color-control-hover);
+        color: var(--color-form-label-hover);
+      }
+    }
+
+    .pm-dropdown {
+      width: min-content;
+      position: relative;
+      display: flex;
+      align-items: center;
+      border-radius: 4px;
+      > span {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-size: var(--font-size-12);
+      }
+      .html { display: none; }
+      i.fa-chevron-down {
+        font-size: var(--font-size-11);
+      }
+      ul { display: none; }
+    }
+  }
+
+  /* ----------------------------------------- */
+  /*  Collaborating                            */
+  /* ----------------------------------------- */
+
+  &.collaborating menu {
+    .source-code-edit { display: none; }
+
+    .concurrent-users {
+      display: flex;
+      height: var(--menu-height);
+
+      .scene-player {
+        width: 14px;
+        height: 15px;
+        border-radius: 50%;
+        margin-right: -3px;
+        line-height: var(--line-height-12);
+        font-size: .625rem;
+        text-align: center;
+        color: black;
+        font-weight: 700;
+
+        &:last-child { margin: 0; }
+      }
+    }
+  }
+
+  &.collaborating:has(code-mirror[disabled]) menu [data-action=save] { display: none; }
+
+  /* ----------------------------------------- */
+  /*  Source Code Editing                      */
+  /* ----------------------------------------- */
+
+  &.editing-source {
+    menu {
+      .text { display: none; }
+      .html { display: initial; }
+      .right { margin-left: auto; }
+      .right ~ .right { margin-left: unset; }
+    }
+
+    .editor-container { display: none }
+
+    code-mirror.source-editor {
+      border: 1px dashed var(--color-light-4);
+      border-radius: 4px;
+      margin: 2px;
+    }
+  }
+
+  /* ----------------------------------------- */
+  /*  Tables                                   */
+  /* ----------------------------------------- */
+
+  .tableWrapper {
+    th, td {
+      border-left: 1px solid black;
+      border-right: 1px solid black;
+    }
+  }
+
+  .ProseMirror .selectedCell::after {
+    // Prevent select cell highlight appearing above menu dropdowns.
+    z-index: unset;
+  }
+}
+
+prose-mirror.inactive { overflow: hidden auto; }
+
+/* ----------------------------------------- */
+/*  Drop-downs                               */
+/* ----------------------------------------- */
+
+#prosemirror-dropdown {
+  position: fixed;
+  z-index: var(--z-index-tooltip);
+  color: var(--button-text-color);
+
+  .html { display: none; }
+
+  ul {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    min-width: 90px;
+    padding: 6px;
+    margin: 0;
+    list-style: none;
+    background: var(--dropdown-background);
+    border-radius: 3px;
+    border: 1px solid var(--dropdown-border);
+    font-size: var(--font-size-12);
+    line-height: var(--font-size-24);
+    z-index: 1;
+    box-shadow: 0 3px 6px rgb(0 0 0 / 45%);
+  }
+
+  > ul {
+    display: block;
+
+    &:not(:has(> li > ul)) {
+      max-height: 400px;
+      overflow: hidden auto;
+    }
+  }
+
+  li {
+    padding: 1px 6px;
+    cursor: var(--cursor-pointer);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 3px;
+    position: relative;
+    white-space: nowrap;
+
+    i { font-size: var(--font-size-14); }
+
+    &.divider {
+      pointer-events: none;
+      margin-bottom: 4px;
+      border-bottom: 1px solid #999;
+    }
+
+    &.level1 { font-size: 2em; }
+    &.level2 { font-size: 1.5em; }
+    &.level3 { font-size: 1.25em; }
+
+    &.level5 {
+      font-size: .83em;
+      font-weight: bold;
+    }
+
+    &.level6 {
+      font-size: .67em;
+      font-weight: bold;
+    }
+
+    &:hover {
+      background: var(--color-control-hover);
+      ul { display: block; }
+      > :is(span, i) { color: var(--color-form-label-hover); }
+    }
+  }
+}
+
+/* ----------------------------------------- */
+/*  Insertion Dialogs                        */
+/* ----------------------------------------- */
+
+.prosemirror.menu-dialog {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+
+  form {
+    width: 460px;
+    position: fixed;
+    background: var(--dialog-background);
+    border: 1px solid var(--dialog-border);
+    border-radius: 4px;
+    padding: 8px;
+    box-shadow: 0 0 8px 0 var(--color-shadow-dark);
+    gap: 8px;
+  }
+}

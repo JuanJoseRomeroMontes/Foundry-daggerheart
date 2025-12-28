@@ -1,0 +1,45 @@
+
+/* ---------------------------------------- */
+/*  Flexbox                                 */
+/* ---------------------------------------- */
+
+.flexrow {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  > * {
+    flex: 1;
+  }
+}
+
+.flexcol {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  > * { flex: none }
+}
+
+.flexrow, .flexcol {
+  > .noflex { flex: none; }
+  > .flex0 { flex: 0; }
+  > .flex1 { flex: 1; }
+  > .flex2 { flex: 2; }
+  > .flex3 { flex: 3; }
+}
+
+
+/* ---------------------------------------- */
+/*  Draggable Containers                    */
+/* ---------------------------------------- */
+
+.draggable,
+.draggables { cursor: var(--cursor-grab); }
+
+#drag-preview {
+  position: absolute;
+  left: -1000px;
+  height: -1000px;
+  z-index: -1;
+  > img { object-fit: contain; }
+}

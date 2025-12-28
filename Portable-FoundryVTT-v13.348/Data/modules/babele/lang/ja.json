@@ -1,0 +1,22 @@
+{
+    "BABELE.CompendiumTranslations": "翻訳",
+    "BABELE.TranslateActorHeadBtn": "翻訳",
+    "BABELE.TranslateActorTitle": "キャラ翻訳",
+    "BABELE.TranslateActorHint": "キャラクターの所持しているアイテム・特徴の翻訳が存在していれば、それらを自動的に適用します。",
+    "BABELE.TranslateActorBtn": "翻訳開始",
+    "BABELE.ExportTranslationTitle": "翻訳ファイル摘出",
+    "BABELE.ExportTranslationBtn": "出力",
+    "BABELE.ExportTranslationNotes": "出力するファイルのフォーマットを選んでください。\"従来\"が従来のKey:ValueペアのJsonとして出力し、\"共同翻訳\"がTransifexやWeblateの共同翻訳ツールも読み込める形に出力します（読み込むときは向こうにもKey:Valueペアを指定すると上手く入ります）",
+    "BABELE.ExportTranslationFormat": "フォーマット",
+    "BABELE.ExportTranslationFormatLegacy": "従来",
+    "BABELE.ExportTranslationFormatCompatible": "共同翻訳",
+    "BABELE.TranslationDirTitle": "翻訳ファイルディレクトリ",
+    "BABELE.TranslationDirHint": "翻訳ファイルの入っているディレクトリを指定してください。日本語化Modなどを使っているときはModが裏でここを設定している場合がありますので、上級ユーザじゃない限りはなるべくここを手動で変えないでください。",
+    "BABELE.EnableTranslationExportTile": "翻訳出力を有効化",
+    "BABELE.EnableTranslationExportHint": "有効化されていると辞典の中身を翻訳ファイルとして出力するボタンを辞典のウィンドウに追加します。主に辞典の翻訳を1から始めるときのテンプレート作りに用いられる機能です。",
+    "BABELE.ShowOriginalName": "元の名前を表示",
+    "BABELE.ShowOriginalNameHint": "翻訳されたアイテムや辞典に元の名前も表示します。翻訳前・後のどちらの名称でも検索できるようになります。",
+    "BABELE.ShowTranslateOption": "翻訳ボタンを表示？",
+    "BABELE.ShowTranslateOptionHint": "キャラクターのシートに翻訳ボタンの表示を切り替えます。",
+    "BABELE.requireLibWrapperMessage": "Babeleを起動するには依存関係にある「libWrapper」が必要です。有効化してください。"
+  }

@@ -1,0 +1,238 @@
+.standard-form {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 1rem;
+
+  /** Tabs */
+  .tab {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 1rem;
+    &.active {
+      display: flex;
+    }
+  }
+
+  /** Fieldsets */
+  fieldset {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 1rem;
+    border-color: var(--color-fieldset-border);
+    border-radius: 8px;
+    legend {
+      font-size: var(--font-size-15);
+      font-weight: bold;
+    }
+    &:disabled {
+      .form-group {
+        pointer-events: none;
+      }
+    }
+  }
+  fieldset.flexrow {
+    flex-direction: row;
+  }
+  fieldset.input-grid {
+    --grid-cols: 2;
+    display: grid;
+    grid-template-columns: repeat(var(--grid-cols), 1fr);
+    gap: 0.5rem;
+  }
+
+  /** Buttons */
+  button {
+    --button-size: var(--input-height);
+  }
+
+  /** Editable Images */
+  img[data-edit] {
+    cursor: var(--cursor-pointer);
+  }
+
+  /* Icon Inputs */
+  label.icon:has(> input) {
+    background: var(--input-background-color);
+    border: 1px solid var(--input-border-color);
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.125rem 0.5rem;
+
+    &:has(> input:disabled) {
+      border: none;
+    }
+    &:focus-within {
+      outline: 2px solid var(--input-focus-outline-color);
+      outline-offset: -2px;
+    }
+
+    > input {
+      flex: 1;
+      border: none;
+      border-radius: 0;
+      width: unset;
+      padding: 0;
+      background: none;
+
+      &:focus {
+        box-shadow: none;
+        outline: none;
+      }
+    }
+
+    > i {
+      flex: none;
+    }
+  }
+
+  /** Form Groups */
+  .form-group {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 0;
+    gap: 0.5rem;
+
+    // Flex form inputs
+    > * {
+      flex: 2;
+    }
+    > input[type="checkbox"] {
+      flex: none;
+    }
+
+    // Labels
+    > label, > span.label {
+      flex: 1;
+      color: var(--color-form-label);
+      font-weight: bold;
+      line-height: var(--input-height);
+      > i {
+        margin-right: 0.25rem;
+      }
+      > input {
+        font-weight: initial;
+      }
+      > .units {
+        color: var(--color-text-subtle);
+        font-size: var(--font-size-12);
+      }
+      cursor: var(--cursor-default);
+    }
+
+    // Icon-Only Labels
+    > label.icon {
+      flex: 0 0 1rem;
+      > i {
+        margin: 0;
+      }
+    }
+
+    // Stacked form groups, label is on its own line
+    &.stacked {
+      > * {
+        flex: 0 0 100%;
+      }
+    }
+
+    // Inline form groups allow fields to take up as much (or as little) space as required
+    &.inline {
+      justify-content: space-between;
+      > label, > span.label {
+        flex: none;
+      }
+      > .form-fields {
+        flex: 1;
+      }
+    }
+
+    // Slim form groups have small input widths
+    &.slim .form-fields {
+      flex: 1;
+      > label, > span.label {
+        flex: none;
+        font-size: var(--font-size-12);
+        color: var(--color-text-secondary);
+        text-align: right;
+      }
+      > input[type="number"],
+      > input[type="text"] {
+        flex: 0 0 50px;
+        padding: 0;
+        text-align: center;
+      }
+    }
+
+    // Form group hover behavior
+    &:hover {
+      > label, > span.label {
+        color: var(--color-form-label-hover);
+      }
+    }
+  }
+
+  // The first child element that is also a .form-group of a .scrollable.standard-form block
+  &.scrollable > .form-group:first-child {
+    margin-top: 1rem;
+  }
+
+  .form-fields {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 0.5rem;
+    > * {
+      flex: 1;
+    }
+    > button,
+    > a.button {
+      flex: none;
+    }
+    > input[type="checkbox"],
+    > input[type="radio"],
+    > label {
+      flex: none;
+      color: var(--color-form-label);
+    }
+
+    &.flexcol {
+      flex-direction: column;
+    }
+  }
+
+  /** Hint Text */
+  .hint {
+    margin: 0;
+    font-size: var(--font-size-14);
+    color: var(--color-form-hint);
+  }
+  .form-group .hint {
+    flex: 0 0 100%;
+  }
+  .form-group:hover .hint {
+    color: var(--color-form-hint-hover);
+  }
+
+  /** Form Footers */
+  .form-footer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    > button,
+    a.button {
+      --button-size: calc(1.25 * var(--input-height));
+      flex: 1;
+    }
+  }
+}

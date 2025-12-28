@@ -1,0 +1,1 @@
+import BaseRegion from"../../../common/documents/region.mjs";import ServerDocumentMixin from"../backend/server-document.mjs";export default class Region extends(ServerDocumentMixin(BaseRegion)){static socketListeners(e){e.on("regionEvent",this.#e.bind(this))}static#e(e){global.express.io.emit("regionEvent",e)}}

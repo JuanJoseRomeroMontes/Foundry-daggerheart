@@ -1,0 +1,540 @@
+
+/* ---------------------------------------- */
+/*  Font Declarations                       */
+/* ---------------------------------------- */
+
+// Modesto
+@font-face {
+  font-family: 'Modesto Condensed';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/modesto-condensed/modesto-condensed.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Modesto Condensed';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/modesto-condensed/modesto-condensed-bold.woff2') format('woff2');
+}
+
+// Amiri
+@font-face {
+  font-family: 'Amiri';
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/amiri/amiri-regular.woff2") format('woff2');
+}
+@font-face {
+  font-family: 'Amiri';
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/amiri/amiri-bold.woff2") format('woff2');
+}
+
+// Signika
+@font-face {
+  font-family: 'Signika';
+  src: url('../fonts/signika/signika-regular.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'Signika';
+  src: url('../fonts/signika/signika-bold.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 700;
+}
+
+// Bruno Ace
+@font-face {
+  font-family: 'Bruno Ace';
+  src: url('../fonts/bruno-ace/bruno-ace.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 400;
+}
+
+// Bruno Ace SC
+@font-face {
+  font-family: 'Bruno Ace SC';
+  src: url('../fonts/bruno-ace/bruno-ace-sc.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 400;
+}
+
+/* ---------------------------------------- */
+/*  Colors                                  */
+/* ---------------------------------------- */
+
+body {
+  --color-scheme: dark;
+
+  // Warm Color Spectrum
+  --color-warm-1: #ee9b3a;
+  --color-warm-2: #c9593f;
+  --color-warm-3: #5d142b;
+
+  // Cool Color Spectrum
+  --color-cool-3: #584a75;
+  --color-cool-4: #302831;
+  --color-cool-5: #0b0a13;
+  --color-cool-5-25: rgb(11 10 19 / 25%);
+  --color-cool-5-50: rgb(11 10 19 / 50%);
+  --color-cool-5-75: rgb(11 10 19 / 75%);
+  --color-cool-5-90: rgb(11 10 19 / 90%);
+
+  // Light Color Spectrum
+  --color-light-1: #f7f3e8;
+  --color-light-2: #efe6d8;
+  --color-light-3: #e7d1b1;
+  --color-light-4: #d0b8a3;
+  --color-light-5: #9f8475;
+  --color-light-6: #816b66;
+
+  // Dark Color Spectrum
+  --color-dark-1: #111;
+  --color-dark-2: #222;
+  --color-dark-3: #333;
+  --color-dark-4: #444;
+  --color-dark-5: #555;
+  --color-dark-6: #666;
+
+  // Notification Levels
+  --color-level-error: #ce0707;
+  --color-level-error-bg: rgb(105 0 8 / 80%);
+  --color-level-error-border: #750003;
+
+  --color-level-info: #59a1f6;
+  --color-level-info-bg: rgb(47 80 132 / 80%);
+  --color-level-info-border: #5c87b9;
+
+  --color-level-success: #26b231;
+  --color-level-success-bg: rgb(26 107 34 / 80%);
+  --color-level-success-border: #1b8f23;
+
+  --color-level-warning: #ee9b3a;
+  --color-level-warning-bg: rgb(214 150 0 / 80%);
+  --color-level-warning-border: #b18404;
+
+  --color-scrollbar: #5d142b;
+  --color-scrollbar-track: transparent;
+
+  // Preferred Text Colors
+  --color-text-emphatic: var(--color-dark-1);
+  --color-text-primary:  var(--color-dark-2);
+  --color-text-secondary: var(--color-dark-3);
+  --color-text-subtle: var(--color-dark-4);
+  --color-text-accent: var(--color-warm-1);
+  --color-text-selection: var(--color-light-1);
+  --color-text-selection-bg: var(--color-dark-6);
+
+  // Text or Drop Shadow Colors
+  --color-shadow-dark: var(--color-dark-1);
+  --color-shadow-primary: var(--color-warm-2);
+  --color-shadow-highlight: var(--color-warm-1);
+}
+
+/* ---------------------------------------- */
+/*  Typography                              */
+/* ---------------------------------------- */
+
+body {
+
+  // Font Families
+  --font-sans: "Signika", "Palatino Linotype", sans-serif;
+  --font-serif: "Amiri", serif;
+  --font-body: var(--font-sans);
+  --font-awesome: "Font Awesome 6 Pro";
+  --font-awesome-duotone: "Font Awesome 6 Duotone";
+  --font-monospace: monospace;
+  --font-blockquote: "Signika", "Palatino Linotype", sans-serif;
+
+  // Font Sizing
+  --font-size-10: .625rem;    // 10px
+  --font-size-11: .6875rem;   // 11px
+  --font-size-12: .75rem;     // 12px
+  --font-size-13: .8125rem;   // 13px
+  --font-size-14: .875rem;    // 14px
+  --font-size-15: .9375rem;   // 15px
+  --font-size-16: 1rem;       // 16px
+  --font-size-18: 1.125rem;   // 18px
+  --font-size-20: 1.25rem;    // 20px
+  --font-size-24: 1.5rem;     // 24px
+  --font-size-28: 1.75rem;    // 28px
+  --font-size-32: 2rem;       // 32px
+  --font-size-36: 2.25rem;    // 36px
+  --font-size-40: 2.5rem;     // 40px
+  --font-size-48: 3rem;       // 48px
+  --font-size-64: 4rem;       // 64px
+  --font-size-80: 5rem;       // 80px
+
+  // Header Fonts
+  --font-h1: "Modesto Condensed", serif;
+  --font-h2: "Amiri", serif;
+  --font-h3: "Signika", "Palatino Linotype", sans-serif;
+  --font-h4: var(--font-h1);
+  --font-h5: var(--font-h2);
+  --font-h6: var(--font-h3);
+
+  // Header Sizing
+  --font-h1-size: var(--font-size-48);
+  --font-h2-size: var(--font-size-32);
+  --font-h3-size: var(--font-size-28);
+  --font-h4-size: var(--font-size-24);
+  --font-h5-size: var(--font-size-20);
+  --font-h6-size: var(--font-size-16);
+}
+
+section.secret {
+  --color-secret-bg: rgb(53 0 121 / 5%);
+  --color-revealed-bg: rgb(0 53 0 / 5%);
+  --color-secret-border: var(--color-dark-6);
+}
+
+code, code.block {
+  --color-code-bg: var(--color-cool-4);
+  --color-code-border: var(--color-cool-3);
+}
+
+/* ---------------------------------------- */
+/*  Layout                                  */
+/* ---------------------------------------- */
+
+body {
+  --input-height: 2rem;
+  --hotbar-height: 52px;
+  --sidebar-width: 300px;
+  --chat-input-height: 100px;
+
+  // UI Configuration
+  --ui-scale: 1.0;
+  --ui-fade-opacity: 0.4;
+  --ui-fade-duration: 0.5s;
+  --ui-fade-delay: 0.5s;
+
+  // Z-indices
+  --z-index-background: -1;
+  --z-index-main: 0;
+  --z-index-canvas: 0;
+  --z-index-app: 30;
+  --z-index-ui: 60;
+  --z-index-window: 100;
+  --z-index-tooltip: 9999;
+  --z-index-notification: 99999;
+}
+
+/* ---------------------------------------- */
+/*  Aesthetics                              */
+/* ---------------------------------------- */
+
+body {
+  --background-url: url("../ui/backgrounds/setup.webp");
+  --main-logo: url("../icons/vtt-512.png");
+}
+
+/* ---------------------------------------- */
+/*  Applications                            */
+/* ---------------------------------------- */
+
+// Application V1 and V2
+.window-app,
+.application {
+  --header-height: 36px;
+  --minimized-width: 200px;
+  --background: var(--color-cool-5-90);
+  --color-header-background: rgb(0 0 0 / 50%);
+  --color-border: var(--color-cool-4);
+  --color-tabs-border: var(--color-light-5);
+  --color-fieldset-border: var(--color-light-6);
+  --color-form-hint: var(--color-light-5);
+  --color-form-hint-hover: var(--color-light-4);
+  --color-form-label: var(--color-light-4);
+  --color-form-label-hover: var(--color-light-2);
+  --color-select-option-bg: transparent;
+}
+
+/* ----------------------------------------- */
+/*  Content Links and Inline Rolls           */
+/* ----------------------------------------- */
+
+body {
+  --content-link-background: rgb(0 0 0 / 10%);
+  --content-link-border-color: var(--color-light-6);
+  --content-link-icon-color: var(--color-light-3);
+  --content-link-text-color: var(--color-light-2);
+}
+
+/* ---------------------------------------- */
+/*  Forms and Form Elements                 */
+/* ---------------------------------------- */
+
+input,
+select,
+textarea,
+code-mirror {
+  --input-background-color: var(--color-cool-4);
+  --input-border-color: transparent;
+  --input-box-shadow: none;
+  --input-focus-outline-color: var(--color-cool-3);
+  &:disabled {
+    --input-background-color: var(--color-cool-5);
+    --input-border-color: var(--color-cool-4);
+    --input-text-color: var(--color-light-4);
+  }
+}
+
+input, select, textarea {
+  --input-text-color: var(--color-light-3);
+  --input-placeholder-color: var(--color-light-5);
+  &:focus {
+    --input-text-color: var(--color-light-1);
+  }
+}
+
+.standard-form label.icon {
+  --input-background-color: var(--color-cool-4);
+  --input-border-color: transparent;
+  --input-text-color: var(--color-light-3);
+  --input-focus-outline-color: var(--color-cool-3);
+
+  &:focus-within {
+    --input-text-color: var(--color-light-1);
+  }
+
+  &:has(> input:disabled) {
+    --input-background-color: var(--color-cool-5);
+    --input-border-color: var(--color-cool-4);
+    --input-text-color: var(--color-light-4);
+  }
+}
+
+// Readonly Text Input
+input[readonly] {
+  --input-background-color: var(--color-cool-5);
+  --input-border-color: var(--color-cool-4);
+  --input-text-color: var(--color-light-4);
+}
+
+// Checkboxes Specifically
+input[type="checkbox"] {
+  --checkbox-checked-color: var(--color-warm-1);
+  --checkbox-disabled-color: var(--color-cool-3);
+  --checkbox-background-color: var(--color-cool-4);
+  --checkbox-checkmark-color: transparent;
+  --checkbox-font-weight: bold;
+}
+
+// Range Inputs
+input[type=range] {
+  --range-track-color: var(--input-background-color);
+  --range-track-border-color: var(--input-border-color);
+  --range-thumb-background-color: rgb(11 10 19 / 90%);
+  --range-thumb-border-color: var(--color-warm-1);
+}
+
+// Buttons
+a.button, button, kbd {
+  --button-size: 2em;
+  --button-background-color: var(--color-cool-5-50);
+  --button-border-color: var(--color-light-5);
+  --button-text-color: var(--color-light-3);
+  --button-focus-outline-color: var(--color-warm-2);
+  --button-hover-background-color: var(--color-warm-2);
+  --button-hover-border-color: var(--color-light-3);
+  --button-hover-text-color: var(--color-light-1);
+  &[disabled] {
+    --button-background-color: var(--color-cool-5);
+    --button-border-color: transparent;
+    --button-text-color: var(--color-light-5);
+    --button-hover-background-color: var(--button-background-color);
+    --button-hover-border-color: var(--button-border-color);
+    --button-hover-text-color: var(--button-text-color);
+  }
+}
+
+// Bright buttons
+a.button.bright,
+button.bright {
+  --button-background-color: var(--color-warm-1);
+  --button-border-color: var(--color-cool-5);
+  --button-text-color: var(--color-cool-5);
+  --button-hover-background-color: #fda948;
+  --button-hover-border-color: var(--color-warm-3);;
+  --button-hover-text-color: #000000;
+
+  // Disabled Bright Buttons
+  &:disabled {
+    --button-background-color: var(--color-cool-4);
+  }
+}
+
+// ProseMirror
+.prosemirror, #prosemirror-dropdown, prose-mirror {
+  --menu-background: var(--color-cool-4);
+  --dropdown-background: var(--color-cool-4);
+  --dropdown-border: var(--color-cool-3);
+  --dialog-background: var(--color-cool-5);
+  --dialog-border: var(--color-cool-4);
+  --color-control-hover: rgb(0 0 0 / 25%);
+  --color-form-label-hover: var(--color-light-2);
+  --button-text-color: var(--color-light-3);
+  --menu-height: 26px;
+  --min-height: 150px;
+}
+
+/* ---------------------------------------- */
+/*  Chat Cards                              */
+/* ---------------------------------------- */
+
+.chat-message {
+  --color-blind-background: #f5eaf5;
+  --color-blind-border: #6b476b;
+  --color-emote-background: #f3edde;
+  --color-emote-border: #887c5d;
+  --color-whisper-background: #e8e8ef;
+  --color-whisper-border: #545469;
+  --chat-message-background: url(../ui/parchment.jpg) repeat;
+  --chat-message-border-color: #6f6c66;
+}
+
+/* ---------------------------------------- */
+/*  Setup Views Specifically                */
+/* ---------------------------------------- */
+
+body.auth {
+  --header-size: 160px;
+  --header-font-size: var(--font-size-80);
+  --form-padding: 1.5rem;
+  --max-width: 600px;
+}
+
+/* ---------------------------------------- */
+/*  Tables                                  */
+/* ---------------------------------------- */
+
+body {
+  --table-background-color: var(--color-cool-5-50);
+  --table-header-bg-color: var(--color-cool-4);
+  --table-header-border-color: var(--color-cool-4);
+  --table-header-text-color: inherit;
+  --table-row-color-even: rgb(255 255 255 / 10%);
+  --table-row-color-odd: transparent;
+  --table-row-color-highlight: var(--color-cool-3);
+}
+
+/* ---------------------------------------- */
+/*  UI                                      */
+/* ---------------------------------------- */
+
+#context-menu {
+  --background-color: var(--color-cool-5);
+  --border-color: var(--color-cool-3);
+  --text-color: var(--color-text-secondary);
+  --hover-text-color: var(--color-text-emphatic);
+  --group-separator: var(--color-cool-4);
+  --hover-entry-border: var(--color-cool-4);
+  --hover-entry-background: var(--color-dark-1);
+}
+
+.ui-control, .placeable-hud, #measurement .waypoint-label {
+  --control-size: 32px;
+  --control-bg-color: var(--color-cool-5-75);
+  --control-border-color: var(--color-cool-4);
+  --control-icon-color: var(--color-light-2);
+  --control-hover-bg-color: var(--color-cool-5);
+  --control-hover-border-color: var(--color-cool-3);
+  --control-hover-icon-color: var(--color-light-1);
+  --control-active-bg-color: var(--color-cool-5);
+  --control-active-border-color: var(--color-warm-2);
+  --control-active-icon-color: var(--color-light-1);
+  --control-button-border-color: var(--color-warm-1);
+  --control-button-hover-bg-color: var(--color-warm-2);
+  --control-button-hover-border-color: var(--color-light-1);
+  --toggle-bg-color: rgb(34 34 72 / 75%);
+  --toggle-border-color: #5252d7;
+  --toggle-active-bg-color: #5252d7;
+  --toggle-active-border-color: #8484ff;
+  &:disabled {
+    --control-hover-bg-color: var(--control-bg-color);
+    --control-hover-border-color: var(--control-border-color);
+    --control-hover-icon-color: var(--control-icon-color);
+  }
+}
+
+.placeable-hud {
+  --control-icon-color: rgba(255 255 255 / 70%);
+  --control-active-icon-color: rgba(255 255 255 / 70%);
+  --control-hover-icon-color: #FFF;
+  --control-active-icon-color: #FFF;
+  --control-icon-filter: none;
+}
+
+#players {
+  --background-color: var(--color-cool-5-75);
+  --border-color: var(--color-cool-4);
+  --text-color: var(--color-text-secondary);
+
+  --player-name-color: var(--color-text-primary);
+  --player-name-idle-color: #baaddc;
+  --player-name-self-color: #c0eddb;
+
+  --color-rating-good: #58e558;
+  --color-rating-fair: #e3e365;
+  --color-rating-poor: #e85555;
+
+  button {
+    --button-text-color: var(--color-text-emphatic);
+    --button-hover-text-color: var(--button-text-color);
+  }
+}
+
+/* ---------------------------------------- */
+/*  CodeMirror                              */
+/* ---------------------------------------- */
+
+code-mirror {
+  --active-line-color: #2f393c44;
+  --gutter-background-color: var(--color-dark-2);
+  --gutter-border-color: var(--color-dark-3);
+  --gutter-text-color: var(--color-light-2);
+  --tooltip-background-color: var(--color-light-1);
+  --tooltip-text-color: var(--color-dark-2);
+  &:disabled {
+    --gutter-background-color: var(--input-background-color);
+    --gutter-border-color: var(--input-text-color);
+    --gutter-text-color: var(--color-light-4);
+  }
+
+  // JS(ON)
+  --syntax-keyword-color: #c678dd;
+  --syntax-comment-color: var(--color-light-4);
+  --syntax-operator-color: #56b6c2;
+  --syntax-separator-color: var(--syntax-operator-color);
+  --syntax-brace-color: var(--input-text-color);
+  --syntax-parenthesis-color: var(--syntax-brace-color);
+  --syntax-square-bracket-color: var(--input-brace-color);
+  --syntax-var-name-color: #e06c75;
+  --syntax-func-name-color: #61afef;
+  --syntax-method-name-color: var(--syntax-func-name-color);
+  --syntax-local-var-color: #fff;
+  --syntax-class-name-color: #e5c07b;
+  --syntax-prop-def-color: #e06c75;
+  --syntax-prop-name-color: var(--input-text-color);
+  --syntax-boolean-color: #d19a66;
+  --syntax-number-color: #e5c07b;
+  --syntax-string-color: #98c379;
+  --syntax-regexp-color: #56b6c2;
+
+  // HTML
+  --syntax-angle-bracket-color: var(--input-text-color);
+  --syntax-tag-color: var(--syntax-class-name-color);
+  --syntax-attr-name-color: var(--syntax-prop-def-color);
+  --syntax-attr-value-color: var(--syntax-string-color);
+
+  // Markdown
+  --syntax-meta-color: var(--syntax-tag-color);
+  --syntax-separator-color: var(--syntax-meta-color);
+  --syntax-link-color: var(--input-text-color);
+  --syntax-link-url-color: var(--syntax-string-color);
+  --syntax-blockquote-color: var(--syntax-string-color);
+  --syntax-code-bg-color: var(--syntax-code-bg-color);
+}

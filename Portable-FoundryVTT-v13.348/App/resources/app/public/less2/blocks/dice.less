@@ -1,0 +1,168 @@
+/* ----------------------------------------- */
+/*  Roll Message                             */
+/* ----------------------------------------- */
+
+.dice-roll {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  cursor: var(--cursor-pointer);
+
+  .dice-result,
+  .dice-tooltip {
+    flex: 0 0 100%;
+  }
+
+  .dice-tooltip {
+    display: grid;
+    grid-template-rows: 0fr;
+    order: 1;
+    transition: grid-template-rows 250ms ease;
+    > .wrapper { overflow: hidden; }
+  }
+
+  &.expanded .dice-tooltip { grid-template-rows: 1fr; }
+
+  .dice-result {
+    order: 2;
+  }
+
+  .dice-formula,
+  .dice-total {
+    flex: 0 0 100%;
+    position: relative;
+    margin: 0;
+    line-height: 24px;
+    text-align: center;
+    background: rgb(0 0 0 / 10%);
+    border: 1px solid #999;
+    border-radius: 3px;
+    box-shadow: 0 0 2px #FFF inset;
+    word-break: break-all;
+  }
+
+  .dice-formula {
+    margin-bottom: 5px;
+  }
+
+  .dice-total {
+    flex: 0;
+    font-size: var(--font-size-20);
+    font-weight: bold;
+    &.success { color: green; }
+    &.failure { color: red; }
+  }
+
+  +.dice-roll {
+    margin-top: 5px;
+  }
+}
+
+/* ----------------------------------------- */
+/*  Dice Tooltip                             */
+/* ----------------------------------------- */
+
+.dice-tooltip {
+  .part-header {
+    margin: 0;
+    line-height: 24px;
+    border-bottom: 1px solid #999;
+
+    .part-method {
+      flex: none;
+      margin-right: 4px;
+    }
+
+    .part-formula {
+      font-weight: bold;
+      flex: 1;
+    }
+
+    .part-flavor {
+      flex: none;
+      margin-right: 5px;
+      font-size: var(--font-size-12);
+      color: var(--color-dark-5);
+    }
+
+    .part-total {
+      flex: none;
+      font-size: var(--font-size-16);
+      font-weight: bold;
+      padding: 0 5px;
+      background: rgb(0 0 0 / 10%);
+      border: 1px solid #999;
+      border-bottom: none;
+      border-radius: 3px 3px 0 0;
+    }
+  }
+
+  .dice-rolls {
+    list-style: none;
+    margin: 5px 0;
+    padding: 0;
+    overflow: hidden;
+
+    .roll {
+      position: relative;
+      min-width: 24px;
+      line-height: 24px;
+      float: left;
+      margin-right: 1px;
+      background-image: url("../icons/svg/d6-grey.svg");
+      background-repeat: no-repeat;
+      background-size: 24px 24px;
+      font-size: var(--font-size-16);
+      color: #000;
+      font-weight: bold;
+      text-align: center;
+
+      &.d4 { background-image: url("../icons/svg/d4-grey.svg"); }
+      &.d6 { background-image: url("../icons/svg/d6-grey.svg"); }
+      &.d8 { background-image: url("../icons/svg/d8-grey.svg"); }
+      &.d10 { background-image: url("../icons/svg/d10-grey.svg"); }
+      &.d12 { background-image: url("../icons/svg/d12-grey.svg"); }
+      &.d20 { background-image: url("../icons/svg/d20-grey.svg"); }
+
+      &.success,
+      &.max {
+        color: #18520b;
+        filter: sepia(0.5) hue-rotate(60deg);
+      }
+      &.failure,
+      &.min {
+        color: #aa0200;
+        filter: sepia(0.5) hue-rotate(-60deg);
+      }
+      &.discarded,
+      &.rerolled {
+        color: inherit;
+        filter: sepia(0.5) contrast(0.75) opacity(0.4);
+      }
+      &.exploded:before {
+        font-size: .5rem; // 8px
+        font-family: var(--font-awesome);
+        content: "\f666";
+        position: absolute;
+        top: -8px;
+        right: 0;
+      }
+    }
+  }
+}
+
+.inline-roll {
+  .dice-tooltip {
+    width: 280px;
+    background: url(../ui/parchment.jpg) repeat;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px 5px 0;
+    box-shadow: 0 0 10px black;
+    margin: 0;
+
+    &:not(:popover-open) { position: absolute; }
+  }
+
+  &:hover .dice-tooltip { text-shadow: none; }
+}

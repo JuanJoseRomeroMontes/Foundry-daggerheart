@@ -1,0 +1,22 @@
+{
+  "BABELE.CompendiumTranslations": "Tłumaczenia",
+  "BABELE.TranslateActorHeadBtn": "Przetłumacz",
+  "BABELE.TranslateActorTitle": "Przetłumacz aktora",
+  "BABELE.TranslateActorHint": "Automatycznie tłumaczy wszystkie przedmioty należące do aktora, dla których istnieje przetłumaczone kompendium.",
+  "BABELE.TranslateActorBtn": "Przetłumacz!",
+  "BABELE.ExportTranslationTitle": "Eksportuj plik tłumaczenia",
+  "BABELE.ExportTranslationBtn": "Eksportuj!",
+  "BABELE.ExportTranslationNotes": "Wybierz format używany dla eksportowanego pliku tłumaczenia. Wybierz \"Starszy\" dla oryginalnego formatu natywnego lub \"Kompatybilny\", jeśli zamierzasz zarządzać tłumaczeniem za pośrednictwem zewnętrznej platformy lokalizacyjnej (np. Weblate, Transifex itp.).",
+  "BABELE.ExportTranslationFormat": "Format",
+  "BABELE.ExportTranslationFormatLegacy": "Starszy",
+  "BABELE.ExportTranslationFormatCompatible": "Kompatybilny",
+  "BABELE.TranslationDirTitle": "Katalog plików tłumaczeń",
+  "BABELE.TranslationDirHint": "Podaj katalog, w którym znajdują się lokalne pliki tłumaczeń kompendium.",
+  "BABELE.EnableTranslationExportTile": "Włącz eksport tłumaczeń",
+  "BABELE.EnableTranslationExportHint": "Włącz tę opcję, jeśli chcesz dodać przycisk do każdego kompendium, aby wygenerować plik tłumaczenia, przydatny jako szablon startowy.",
+  "BABELE.ShowOriginalName": "Wyświetl oryginalną nazwę",
+  "BABELE.ShowOriginalNameHint": "Wyświetla nieprzetłumaczoną nazwę elementu kompendium oprócz przetłumaczonej. Umożliwi to również filtrowanie według oryginalnej nazwy wraz z przetłumaczoną w widżecie wyszukiwania.",
+  "BABELE.ShowTranslateOption": "Pokaż opcję tłumaczenia",
+  "BABELE.ShowTranslateOptionHint": "Włącza opcję tłumaczenia w kartach aktorów.",
+  "BABELE.requireLibWrapperMessage": "Babele wymaga modułu „libWrapper”. Należy go zainstalować i aktywować."
+}

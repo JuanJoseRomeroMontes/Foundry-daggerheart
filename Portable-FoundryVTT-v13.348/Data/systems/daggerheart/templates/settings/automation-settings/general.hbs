@@ -1,0 +1,20 @@
+<section
+    class="tab {{tabs.general.cssClass}} {{tabs.general.id}}"
+    data-tab="{{tabs.general.id}}"
+    data-group="{{tabs.general.group}}"
+>
+    <div class="form-group">
+        <label>{{localize "DAGGERHEART.SETTINGS.Automation.FIELDS.hopeFear.label"}}</label>
+        {{formGroup settingFields.schema.fields.hopeFear.fields.gm value=settingFields._source.hopeFear.gm localize=true}}
+        {{formGroup settingFields.schema.fields.hopeFear.fields.players value=settingFields._source.hopeFear.players localize=true}}
+
+    </div>
+    {{formGroup settingFields.schema.fields.actionPoints value=settingFields._source.actionPoints localize=true}}
+    {{formGroup settingFields.schema.fields.hordeDamage value=settingFields._source.hordeDamage localize=true}}
+    {{formGroup settingFields.schema.fields.effects.fields.rangeDependent value=settingFields._source.effects.rangeDependent localize=true}}
+    {{formGroup settingFields.schema.fields.levelupAuto value=settingFields._source.levelupAuto localize=true}}
+    {{formGroup settingFields.schema.fields.playerCanEditSheet value=settingFields._source.playerCanEditSheet localize=true}}
+    {{formGroup settingFields.schema.fields.damageReductionRulesDefault value=settingFields._source.damageReductionRulesDefault localize=true}}
+    {{formGroup settingFields.schema.fields.resourceScrollTexts value=settingFields._source.resourceScrollTexts localize=true}}
+</section>
+  

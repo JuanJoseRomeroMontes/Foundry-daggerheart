@@ -1,0 +1,10 @@
+<section
+    class='tab {{tabs.description.cssClass}} {{tabs.description.id}}'
+    data-tab='{{tabs.description.id}}'
+    data-group='{{tabs.description.group}}'
+>
+    <fieldset>
+        <legend>{{localize "DAGGERHEART.GENERAL.description"}}</legend>
+        {{formInput systemFields.description value=document.system.description enriched=enrichedDescription toggled=true}}
+    </fieldset>
+</section>

@@ -1,0 +1,520 @@
+{
+  "daggerheart.adversaries": {
+    "0NxCSugvKQ4W8OYZ": {
+      "__DOCUMENT_NAME__": "Cult Adept",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Cult Adept.webp"
+    },
+    "0ts6CGd93lLqGZI5": {
+      "__DOCUMENT_NAME__": "Archer Squadron",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Archer Squadron.webp"
+    },
+    "10YIQl0lvCJXZLfX": {
+      "__DOCUMENT_NAME__": "Skeleton Warrior",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Skeleton Warrior.webp"
+    },
+    "1fkLQXVtmILqfJ44": {
+      "__DOCUMENT_NAME__": "Tiny Red Ooze",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Tiny Red Ooze.webp"
+    },
+    "1zuyof1XuIfi3aMG": {
+      "__DOCUMENT_NAME__": "Jagged Knife Sniper",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Jagged Knife Sniper.webp"
+    },
+    "2UeZ0tEe7AzgSJNd": {
+      "__DOCUMENT_NAME__": "Brawny Zombie",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Brawny Zombie.webp"
+    },
+    "2VN3BftageoTTIzu": {
+      "__DOCUMENT_NAME__": "Demon of Hubris",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Demon of Hubris.webp"
+    },
+    "2nXz4ilAY4xuhKLm": {
+      "__DOCUMENT_NAME__": "Shambling Zombie",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Shambling Zombie.webp"
+    },
+    "3aAS2Qm3R6cgaYfE": {
+      "__DOCUMENT_NAME__": "Stonewraith",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Stonewraith.webp"
+    },
+    "3tqCjDwJAQ7JKqMb": {
+      "__DOCUMENT_NAME__": "Minor Demon",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Minor Demon.webp"
+    },
+    "4PfLnaCrOcMdb4dK": {
+      "__DOCUMENT_NAME__": "Giant Rat",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Giant Rat.webp"
+    },
+    "4nqv3ZwJGjnmic8j": {
+      "__DOCUMENT_NAME__": "Kraken",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Kraken.webp"
+    },
+    "5Lh1T0zaT8Pkr2U2": {
+      "__DOCUMENT_NAME__": "Jagged Knife Bandit",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Jagged Knife Bandit.webp"
+    },
+    "5YgEajn0wa4i85kC": {
+      "__DOCUMENT_NAME__": "Pirate Raiders",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Pirate Raiders.webp"
+    },
+    "5lphJAgzoqZI3VoG": {
+      "__DOCUMENT_NAME__": "Demon of Wrath",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Demon of Wrath.webp"
+    },
+    "5s8wSvpyC5rxY5aD": {
+      "__DOCUMENT_NAME__": "Giant Recruit",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Giant Recruit.webp"
+    },
+    "5tCkhnBByUIN5UdG": {
+      "__DOCUMENT_NAME__": "Spectral Archer",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Spectral Archer.webp"
+    },
+    "65cSO3EQEh6ZH6Xk": {
+      "__DOCUMENT_NAME__": "Spectral Captain",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Spectral Captain.webp"
+    },
+    "6hbqmxDXFOzZJDk4": {
+      "__DOCUMENT_NAME__": "Huge Green Ooze",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Huge Green Ooze.webp"
+    },
+    "6l1a3Fazq8BoKIcc": {
+      "__DOCUMENT_NAME__": "Skeleton Dredge",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Skeleton Dredge.webp"
+    },
+    "71qKDLKO3CsrNkdy": {
+      "__DOCUMENT_NAME__": "Bear",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Bear.webp"
+    },
+    "7X5q7a6ueeHs5oA9": {
+      "__DOCUMENT_NAME__": "Skeleton Archer",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Skeleton Archer.webp"
+    },
+    "7ai2opemrclQe3VF": {
+      "__DOCUMENT_NAME__": "Knight of the Realm",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Knight of the Realm.webp"
+    },
+    "89yAh30vaNQOALlz": {
+      "__DOCUMENT_NAME__": "Acid Burrower",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Acid Burrower.webp"
+    },
+    "8KWVLWXFhlY2kYx0": {
+      "__DOCUMENT_NAME__": "Glass Snake",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Glass Snake.webp"
+    },
+    "8VZIgU12cB3cvlyH": {
+      "__DOCUMENT_NAME__": "Giant Beastmaster",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Giant Beastmaster.webp"
+    },
+    "8Zkqk1jU09nKL2fy": {
+      "__DOCUMENT_NAME__": "Cave Ogre",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Cave Ogre.webp"
+    },
+    "8mJYMpbLTb8qIOrr": {
+      "__DOCUMENT_NAME__": "Gorgon",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Gorgon.webp"
+    },
+    "8yUj2Mzvnifhxegm": {
+      "__DOCUMENT_NAME__": "Young Dryad",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Young Dryad.webp"
+    },
+    "8zlynOhnVA59KpKT": {
+      "__DOCUMENT_NAME__": "Spy",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Spy.webp"
+    },
+    "99TqczuQipBmaB8i": {
+      "__DOCUMENT_NAME__": "Conscript",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Conscript.webp"
+    },
+    "9rVlbJVrDNn1x7PS": {
+      "__DOCUMENT_NAME__": "Red Ooze",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Red Ooze.webp"
+    },
+    "9x2xY9zwc3xzbXo5": {
+      "__DOCUMENT_NAME__": "Deeproot Defender",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Deeproot Defender.webp"
+    },
+    "A0SeeDzwjvqOsyof": {
+      "__DOCUMENT_NAME__": "Outer Realms Abomination",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Outer Realms Abomination.webp"
+    },
+    "Al3w2CgjfdT3p9ma": {
+      "__DOCUMENT_NAME__": "Merchant",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Merchant.webp"
+    },
+    "B4LZcGuBAHzyVdzy": {
+      "__DOCUMENT_NAME__": "Bladed Guard",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Bladed Guard.webp"
+    },
+    "BK4jwyXSRx7IOQiO": {
+      "__DOCUMENT_NAME__": "Siren",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Siren.webp"
+    },
+    "C0OMQqV7pN6t7ouR": {
+      "__DOCUMENT_NAME__": "Jagged Knife Lackey",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Jagged Knife Lackey.webp"
+    },
+    "CBBuEXAlLKFMJdjg": {
+      "__DOCUMENT_NAME__": "Courtier",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Courtier.webp"
+    },
+    "CBKixLH3yhivZZuL": {
+      "__DOCUMENT_NAME__": "Jagged Knife Kneebreaker",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Jagged Knife Kneebreaker.webp"
+    },
+    "CP6iRfHdyFWniTHY": {
+      "__DOCUMENT_NAME__": "Perfected Zombie",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Perfected Zombie.webp"
+    },
+    "ChwwVqowFw8hJQwT": {
+      "__DOCUMENT_NAME__": "Failed Experiment",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Failed Experiment.webp"
+    },
+    "DscWkNVoHak6P4hh": {
+      "__DOCUMENT_NAME__": "Minor Fire Elemental",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Minor Fire Elemental.webp"
+    },
+    "EQTOAOUrkIvS2z88": {
+      "__DOCUMENT_NAME__": "Patchwork Zombie Hulk",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Patchwork Zombie Hulk.webp"
+    },
+    "EtLJiTsilPPZvLUX": {
+      "__DOCUMENT_NAME__": "Royal Advisor",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Royal Advisor.webp"
+    },
+    "FVgYb28fhxlVcGwA": {
+      "__DOCUMENT_NAME__": "Vault Guardian Sentinel",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Vault Guardian Sentinel.webp"
+    },
+    "G62k4oSkhkoXEs2D": {
+      "__DOCUMENT_NAME__": "Minor Treant",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Minor Treant.webp"
+    },
+    "G7jiltRjgvVhZewm": {
+      "__DOCUMENT_NAME__": "Adult Flickerfly",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Adult Flickerfly.webp"
+    },
+    "IIWV4ysJPFPnTP7W": {
+      "__DOCUMENT_NAME__": "Giant Mosquitoes",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Giant Mosquitoes.webp"
+    },
+    "JRhrrEg5UroURiAD": {
+      "__DOCUMENT_NAME__": "Archer Guard",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Archer Guard.webp"
+    },
+    "JqYraOqNmmhHk4Yy": {
+      "__DOCUMENT_NAME__": "Vault Guardian Gaoler",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Vault Guardian Gaoler.webp"
+    },
+    "KGVwnLq85ywP9xvB": {
+      "__DOCUMENT_NAME__": "Stag Knight",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Stag Knight.webp"
+    },
+    "MI126iMOOobQ1Obn": {
+      "__DOCUMENT_NAME__": "Hydra",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Hydra.webp"
+    },
+    "MYXmTx2FHcIjdfYZ": {
+      "__DOCUMENT_NAME__": "Juvenile Flickerfly",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Juvenile Flickerfly.webp"
+    },
+    "MbBPIOxaxXYNApXz": {
+      "__DOCUMENT_NAME__": "Jagged Knife Hexer",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Jagged Knife Hexer.webp"
+    },
+    "Nf0v43rtflV56V2T": {
+      "__DOCUMENT_NAME__": "Zombie Pack",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Zombie Pack.webp"
+    },
+    "NoRZ1PqB8N5wcIw0": {
+      "__DOCUMENT_NAME__": "Demonic Hound Pack",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Demonic Hound Pack.webp"
+    },
+    "OMQ0v6PE8s1mSU0K": {
+      "__DOCUMENT_NAME__": "Giant Eagle",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Giant Eagle.webp"
+    },
+    "OROJbjsqagVh7ECV": {
+      "__DOCUMENT_NAME__": "Pirate Captain",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Pirate Captain.webp"
+    },
+    "OsLG2BjaEdTZUJU9": {
+      "__DOCUMENT_NAME__": "Fallen Shock Troop",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Fallen Shock Troop.webp"
+    },
+    "P7h54ZePFPHpYwvB": {
+      "__DOCUMENT_NAME__": "Elemental Spark",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Elemental Spark.webp"
+    },
+    "PELRry1vqjBzSAlr": {
+      "__DOCUMENT_NAME__": "Fallen Sorcerer",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Fallen Sorcerer.webp"
+    },
+    "PKSXFuaIHUCoH63A": {
+      "__DOCUMENT_NAME__": "Tangle Bramble Swarm",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Tangle Bramble Swarm.webp"
+    },
+    "Q9LaVTyXF9NF12C7": {
+      "__DOCUMENT_NAME__": "Skeleton Knight",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Skeleton Knight.webp"
+    },
+    "RXkZTwBRi4dJ3JE5": {
+      "__DOCUMENT_NAME__": "Fallen Warlord Undefeated Champion",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Fallen Warlord Undefeated Champion.webp"
+    },
+    "SHXedd9zZPVfUgUa": {
+      "__DOCUMENT_NAME__": "Green Ooze",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Green Ooze.webp"
+    },
+    "SxSOkM4bcVOFyjbo": {
+      "__DOCUMENT_NAME__": "Demon of Jealousy",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Demon of Jealousy.webp"
+    },
+    "TLzY1nDw0Bu9Ud40": {
+      "__DOCUMENT_NAME__": "Electric Eels",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Electric Eels.webp"
+    },
+    "UFVGl1osOsJTneLf": {
+      "__DOCUMENT_NAME__": "Spectral Guardian",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Spectral Guardian.webp"
+    },
+    "UGPiPLJsPvMTSKEF": {
+      "__DOCUMENT_NAME__": "Young Ice Dragon",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Young Ice Dragon.webp"
+    },
+    "VENwg7xEFcYObjmT": {
+      "__DOCUMENT_NAME__": "Hallowed Soldier",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Hallowed Soldier.webp"
+    },
+    "VtFBt9XBE0WrGGxP": {
+      "__DOCUMENT_NAME__": "Sylvan Soldier",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Sylvan Soldier.webp"
+    },
+    "Vy02IhGhkJLuezu4": {
+      "__DOCUMENT_NAME__": "Merchant Baron",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Merchant Baron.webp"
+    },
+    "WPEOIGfclNJxWb87": {
+      "__DOCUMENT_NAME__": "Arch-Necromancer",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Arch-Necromancer.webp"
+    },
+    "WWyUp6Mxl1S3KYUG": {
+      "__DOCUMENT_NAME__": "Vampire",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Vampire.webp"
+    },
+    "XF4tYTq9nPJAy2ox": {
+      "__DOCUMENT_NAME__": "Jagged Knife Shadow",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Jagged Knife Shadow.webp"
+    },
+    "XK78QUfY8c8Go8Uv": {
+      "__DOCUMENT_NAME__": "Oak Treant",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Oak Treant.webp"
+    },
+    "XcAGOSmtCFLT1unN": {
+      "__DOCUMENT_NAME__": "Tangle Bramble",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Tangle Bramble.webp"
+    },
+    "YhJrP7rTBiRdX5Fp": {
+      "__DOCUMENT_NAME__": "Zombie Legion",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Zombie Legion.webp"
+    },
+    "YmVAkdNsyuXWTtYp": {
+      "__DOCUMENT_NAME__": "Shark",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Shark.webp"
+    },
+    "YnObCleGjPT7yqEc": {
+      "__DOCUMENT_NAME__": "Giant Brawler",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Giant Brawler.webp"
+    },
+    "ZNbQ2jg35LG4t9eH": {
+      "__DOCUMENT_NAME__": "Weaponmaster",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Weaponmaster.webp"
+    },
+    "ZxWaWPdzFIUPNC62": {
+      "__DOCUMENT_NAME__": "Courtesan",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Courtesan.webp"
+    },
+    "aLkLFuVoKz2NLoBK": {
+      "__DOCUMENT_NAME__": "Tiny Green Ooze",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Tiny Green Ooze.webp"
+    },
+    "aTljstqteGoLpCBq": {
+      "__DOCUMENT_NAME__": "Jagged Knife Lieutenant",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Jagged Knife Lieutenant.webp"
+    },
+    "befIqd5IYKg6eUz2": {
+      "__DOCUMENT_NAME__": "Oracle of Doom",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Oracle of Doom.webp"
+    },
+    "bfhVWMBUh61b9J6n": {
+      "__DOCUMENT_NAME__": "Elite Soldier",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Elite Soldier.webp"
+    },
+    "bgreCaQ6ap2DVpCr": {
+      "__DOCUMENT_NAME__": "Sellsword",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Sellsword.webp"
+    },
+    "c5hGdvY5UnSjlHws": {
+      "__DOCUMENT_NAME__": "Vault Guardian Turret",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Vault Guardian Turret.webp"
+    },
+    "dNta0cUzr96xcFhf": {
+      "__DOCUMENT_NAME__": "Master Assassin",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Master Assassin.webp"
+    },
+    "dgH3fW9FTYLaIDvS": {
+      "__DOCUMENT_NAME__": "Battle Box",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Battle Box.webp"
+    },
+    "dsfB3YhoL5SudvS2": {
+      "__DOCUMENT_NAME__": "Greater Earth Elemental",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Greater Earth Elemental.webp"
+    },
+    "eArAPuB38CNR0ZIM": {
+      "__DOCUMENT_NAME__": "Volcanic Dragon Molten Scourge",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Volcanic Dragon Molten Scourge.webp"
+    },
+    "fmfntuJ8mHRCAktP": {
+      "__DOCUMENT_NAME__": "Giant Scorpion",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Giant Scorpion.webp"
+    },
+    "gP3fWTLzSFnpA8EJ": {
+      "__DOCUMENT_NAME__": "Rotted Zombie",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Rotted Zombie.webp"
+    },
+    "h5RuhzGL17dW5FBT": {
+      "__DOCUMENT_NAME__": "Assassin Poisoner",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Assassin Poisoner.webp"
+    },
+    "hxZ0sgoFJubh5aj6": {
+      "__DOCUMENT_NAME__": "Fallen Warlord Realm Breaker",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Fallen Warlord Realm Breaker.webp"
+    },
+    "i2UNbRvgyoSs07M6": {
+      "__DOCUMENT_NAME__": "Head Vampire",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Head Vampire.webp"
+    },
+    "jDmHqGvzg5wjgmxE": {
+      "__DOCUMENT_NAME__": "Chaos Skull",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Chaos Skull.webp"
+    },
+    "kE4dfhqmIQpNd44e": {
+      "__DOCUMENT_NAME__": "Demon of Despair",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Demon of Despair.webp"
+    },
+    "kabueAo6BALApWqp": {
+      "__DOCUMENT_NAME__": "Hallowed Archer",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Hallowed Archer.webp"
+    },
+    "ladm7wykhZczYzrQ": {
+      "__DOCUMENT_NAME__": "Volcanic Dragon Obsidian Predator",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Volcanic Dragon Obsidian Predator.webp"
+    },
+    "ldbWEL7uZs84vyrR": {
+      "__DOCUMENT_NAME__": "Spellblade",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Spellblade.webp"
+    },
+    "mK3A5FTx6k8iPU3F": {
+      "__DOCUMENT_NAME__": "Head Guard",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Head Guard.webp"
+    },
+    "mVV7a7KQAORoPMgZ": {
+      "__DOCUMENT_NAME__": "Mortal Hunter",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Mortal Hunter.webp"
+    },
+    "mhcVkVFrzIJ18FDm": {
+      "__DOCUMENT_NAME__": "Pirate Tough",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Pirate Tough.webp"
+    },
+    "moJhHgKqTKPS2WYS": {
+      "__DOCUMENT_NAME__": "Outer Realms Thrall",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Outer Realms Thrall.webp"
+    },
+    "ms6nuOl3NFkhPj1k": {
+      "__DOCUMENT_NAME__": "Outer Realms Corrupter",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Outer Realms Corrupter.webp"
+    },
+    "niBpVU7yeo5ccskE": {
+      "__DOCUMENT_NAME__": "Masked Thief",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Masked Thief.webp"
+    },
+    "noDdT0tsN6FXSmC8": {
+      "__DOCUMENT_NAME__": "War Wizard",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/War Wizard.webp"
+    },
+    "o63nS0k3wHu6EgKP": {
+      "__DOCUMENT_NAME__": "Treant Sapling",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Treant Sapling.webp"
+    },
+    "pMuXGCSOQaxpi5tb": {
+      "__DOCUMENT_NAME__": "Volcanic Dragon Ashen Tyrant",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Volcanic Dragon Ashen Tyrant.webp"
+    },
+    "pnyjIGxxvurcWmTv": {
+      "__DOCUMENT_NAME__": "Demon of Avarice",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Demon of Avarice.webp"
+    },
+    "qNgs3AbLyJrY19nt": {
+      "__DOCUMENT_NAME__": "Swarm of Rats",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Swarm of Rats.webp"
+    },
+    "r1mbfSSwKWdcFdAU": {
+      "__DOCUMENT_NAME__": "High Seraph",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/High Seraph.webp"
+    },
+    "rM9qCIYeWg9I0B4l": {
+      "__DOCUMENT_NAME__": "Minotaur Wrecker",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Minotaur Wrecker.webp"
+    },
+    "sLAccjvCWfeedbpI": {
+      "__DOCUMENT_NAME__": "Secret-Keeper",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Secret-Keeper.webp"
+    },
+    "sRn4bqerfARvhgSV": {
+      "__DOCUMENT_NAME__": "Minor Chaos Elemental",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Minor Chaos Elemental.webp"
+    },
+    "tBWHW00epmMnkawe": {
+      "__DOCUMENT_NAME__": "Dire Bat",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Dire Bat.webp"
+    },
+    "tyBOpLfigAhI9bU3": {
+      "__DOCUMENT_NAME__": "Cult Fang",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Cult Fang.webp"
+    },
+    "uOP5oT9QzXPlnf3p": {
+      "__DOCUMENT_NAME__": "Construct",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Construct.webp"
+    },
+    "uRtghKE9mHlII4rs": {
+      "__DOCUMENT_NAME__": "Harrier",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Harrier.webp"
+    },
+    "vNIbYQ4YSzNf0WPE": {
+      "__DOCUMENT_NAME__": "Apprentice Assassin",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Apprentice Assassin.webp"
+    },
+    "wNzeuQLfLUMvgHlQ": {
+      "__DOCUMENT_NAME__": "Dire Wolf",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Dire Wolf.webp"
+    },
+    "wR7cFKrHvRzbzhBT": {
+      "__DOCUMENT_NAME__": "Dryad",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Dryad.webp"
+    },
+    "wycLpvebWdUqRhpP": {
+      "__DOCUMENT_NAME__": "Petty Noble",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Petty Noble.webp"
+    },
+    "xIICT6tEdnA7dKDV": {
+      "__DOCUMENT_NAME__": "Greater Water Elemental",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Greater Water Elemental.webp"
+    },
+    "yx0vK2yfNVZKWUUi": {
+      "__DOCUMENT_NAME__": "Monarch",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Monarch.webp"
+    },
+    "zx99sOGTXicP4SSD": {
+      "__DOCUMENT_NAME__": "Cult Initiate",
+      "actor": "modules/art-for-daggerheart/adversaries/portraits/Cult Initiate.webp"
+    }
+  }
+}

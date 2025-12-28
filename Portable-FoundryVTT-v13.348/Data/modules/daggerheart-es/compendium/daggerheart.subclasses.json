@@ -1,0 +1,71 @@
+{
+	"label": "Subclases",
+	"folders": {
+		"Subclass Features": "Rasgos de subclase",
+		"Seraph": "Serafín",
+		"Bard": "Bardo",
+		"Druid": "Druida",
+		"Guardian": "Guardián",
+		"Ranger": "Explorador",
+		"Rogue": "Pícaro",
+		"Warrior": "Guerrero",
+		"Wizard": "Mago",
+		"Sorcerer": "Hechicero"
+	},
+	"entries": {
+		"Troubadour": {
+			"name": "Trobador"
+		},
+		"Wordsmith": {
+			"name": "Forjapalabras"
+		},
+		"Warden of the Elements": {
+			"name": "Custodio de los elementos"
+		},
+		"Warden of Renewal": {
+			"name": "Custodio de la renovación"
+		},
+		"Vengeance": {
+			"name": "Vengador"
+		},
+		"Stalwart": {
+			"name": "Baluarte"
+		},
+		"Beastbound": {
+			"name": "Vinculabestias"
+		},
+		"Wayfinder": {
+			"name": "Guía"
+		},
+		"Syndicate": {
+			"name": "Sindicato"
+		},
+		"Nightwalker": {
+			"name": "Caminante sombrío"
+		},
+		"Divine Wielder": {
+			"name": "Portador divino"
+		},
+		"Winged Sentinel": {
+			"name": "Centinela alado"
+		},
+		"Elemental Origin": {
+			"name": "Origen elemental"
+		},
+		"Primal Origin": {
+			"name": "Origen primordial"
+		},
+		"Call Of The Brave": {
+			"name": "Llamado del valor"
+		},
+		"Call Of The Slayer": {
+			"name": "Llamado del verdugo"
+		},
+		"School Of Knowledge": {
+			"name": "Escuela del conocimiento"
+		},
+		"School of War": {
+			"name": "Escuela de la guerra"
+		}
+	}
+}

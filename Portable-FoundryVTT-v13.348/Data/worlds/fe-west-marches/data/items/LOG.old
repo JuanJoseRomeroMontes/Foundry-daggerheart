@@ -1,0 +1,8 @@
+2025/12/28-00:22:12.071 1a250 Recovering log #76
+2025/12/28-00:22:12.073 1a250 Delete type=0 #76
+2025/12/28-00:22:12.073 1a250 Delete type=3 #75
+2025/12/28-00:22:26.140 172e0 Level-0 table #80: started
+2025/12/28-00:22:26.140 172e0 Level-0 table #80: 0 bytes OK
+2025/12/28-00:22:26.141 172e0 Delete type=0 #78
+2025/12/28-00:22:26.143 172e0 Manual compaction at level-0 from '!items!HN4nKW1tOw2Sfw6s' @ 72057594037927935 : 1 .. '!items!HN4nKW1tOw2Sfw6s' @ 0 : 0; will stop at (end)
+2025/12/28-00:22:26.143 172e0 Manual compaction at level-1 from '!items!HN4nKW1tOw2Sfw6s' @ 72057594037927935 : 1 .. '!items!HN4nKW1tOw2Sfw6s' @ 0 : 0; will stop at (end)

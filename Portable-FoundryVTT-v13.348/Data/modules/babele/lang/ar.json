@@ -1,0 +1,17 @@
+{
+  "BABELE.CompendiumTranslations": "ترجمات",
+  "BABELE.TranslateActorHeadBtn": "ترجمة",
+  "BABELE.TranslateActorTitle": "ترجمة الممثل",
+  "BABELE.TranslateActorHint": "تلقائياً ترجمة جميع القطع المملوكة لهذا الممثل التي يوجد لها جامع مترجم",
+  "BABELE.TranslateActorBtn": "ترجم!",
+  "BABELE.ExportTranslationTitle": "تصدير ملف الترجمة",
+  "BABELE.ExportTranslationBtn": "تصدير!",
+  "BABELE.ExportTranslationNotes": "إختر الضيغة المستخدمة لملف الترجمة الصادر. إختر \"قديم\" للصيغة الأصلية، أو \"متوافق\" إذا كنت تنوي إدارة الترجمة عبر منصة ترجمة خارجية (مثلاُ Weblate أو Transifex أو غيرها)",
+  "BABELE.ExportTranslationFormat": "الصيغة",
+  "BABELE.ExportTranslationFormatLegacy": "قديم",
+  "BABELE.ExportTranslationFormatCompatible": "متوافق",
+  "BABELE.TranslationDirTitle": "سجل ملفات الترجمة",
+  "BABELE.TranslationDirHint": "أدخل السجل حيث فيه ملقات ترجمات الجامع المحلية",
+  "BABELE.EnableTranslationExportTile": "تفعيل تصدير الترجمة",
+  "BABELE.EnableTranslationExportHint": "تفعيل هذا الخيار إذا كنت تريد إضافة زر لكل جامع لصنع ملف ترجمة، مفيد كقالب ابتدائي"
+}

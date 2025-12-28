@@ -1,0 +1,195 @@
+<header class="character-header-modern" {{#if document.system.class.subclass.system.spellcastingTrait}}data-spellcasting-trait="{{document.system.class.subclass.system.spellcastingTrait}}"{{/if}}>
+    <div class="header-main-section">
+        <div class="header-top-portrait">
+            <img src="{{document.img}}" alt="{{document.name}}" data-action='editImage' data-edit="img" class="{{#if isDeath}}death-tint{{/if}}">
+            {{#if document.system.class.subclass.system.spellcastingTrait}}
+                <div
+                    class="spellcast-indicator"
+                    data-action="rollAttribute"
+                    data-attribute="{{document.system.class.subclass.system.spellcastingTrait}}"
+                    role="button"
+                    tabindex="0"
+                >
+                    <i class="fa-solid fa-wand-sparkles"></i>
+                </div>
+            {{/if}}
+            {{#if isDeath}}
+                <div class="death-overlay" data-tooltip="DAGGERHEART.UI.Tooltip.makeDeathMove" data-action="makeDeathMove">
+                    <i class="fa-solid fa-skull"></i>
+                </div>
+            {{/if}}
+            <div class="quick-actions">
+                <button type="button" data-action="useDowntime" data-type="shortRest" data-tooltip="{{localize "DAGGERHEART.APPLICATIONS.Downtime.shortRest.title"}}">
+                    <i class="fa-solid fa-utensils"></i>
+                </button>
+                <button type="button" data-action="useDowntime" data-type="longRest" data-tooltip="{{localize "DAGGERHEART.APPLICATIONS.Downtime.longRest.title"}}">
+                    <i class="fa-solid fa-bed"></i>
+                </button>
+            </div>
+        </div>
+        
+        <div class="header-top-column">
+            <div class="header-top-row">
+                <div class="character-info">
+                    <div class="character-name">
+                        <input
+                            type='text'
+                            name='name'
+                            value='{{document.name}}'
+                            placeholder='Character Name'
+                        />
+                    </div>
+                    
+                    <div class="character-classes">
+                        {{#if document.system.class.value}}
+                            <span class="class-name" data-action="editDoc" data-item-uuid="{{document.system.class.value.uuid}}">{{document.system.class.value.name}}</span>
+                        {{else}}
+                            <span class="missing-class" data-action="openPack" data-key="classes">{{localize 'TYPES.Item.class'}}</span>
+                        {{/if}}
+                        {{#if document.system.class.subclass}}
+                            <span class="subclass-name" data-action="editDoc" data-item-uuid="{{document.system.class.subclass.uuid}}">{{document.system.class.subclass.name}}</span>
+                        {{/if}}
+                        {{#if document.system.multiclass.value}}
+                            <span class="multiclass-name" data-action="editDoc" data-item-uuid="{{document.system.multiclass.value.uuid}}">/ {{document.system.multiclass.value.name}}</span>
+                            {{#if document.system.multiclass.subclass}}
+                                <span class="multiclass-subclass" data-action="editDoc" data-item-uuid="{{document.system.multiclass.subclass.uuid}}">{{document.system.multiclass.subclass.name}}</span>
+                            {{/if}}
+                        {{/if}}
+                    </div>
+                    
+                    <div class="character-heritage">
+                        {{#if document.system.ancestry}}
+                            <span data-action="editDoc" data-item-uuid="{{document.system.ancestry.uuid}}">{{document.system.ancestry.name}}</span>
+                        {{else}}
+                            <span class="missing-heritage" data-action="openPack" data-key="ancestries">{{localize 'TYPES.Item.ancestry'}}</span>
+                        {{/if}}
+                        {{#if document.system.community}}
+                            <span data-action="editDoc" data-item-uuid="{{document.system.community.uuid}}">{{document.system.community.name}}</span>
+                        {{/if}}
+                    </div>
+                </div>
+
+                <div class="character-details">
+                
+                    {{#if document.system.class.value}}
+                        <div class="domains-display">
+                            {{#each document.system.domainData as |data|}}
+                                <div class="domain-icon">
+                                    <img src="{{data.src}}" alt="" data-tooltip="{{data.label}}" />
+                                </div>
+                            {{/each}}
+                        </div>
+                    {{/if}}
+
+                    <div class="character-level-section">
+                        {{#if (or document.system.needsCharacterSetup document.system.levelData.canLevelUp)}}
+                            <button
+                                type="button"
+                                class="level-up-btn" data-tooltip="{{#if document.system.needsCharacterSetup}}{{localize "DAGGERHEART.APPLICATIONS.CharacterCreation.buttonTitle"}}{{else}}{{localize "DAGGERHEART.ACTORS.Character.levelUp"}}{{/if}}"
+                                data-action="levelManagement"
+                            >
+                                <i class="fa-solid fa-angles-up"></i>
+                            </button>
+                        {{/if}}
+                        <div class="level-display">
+                            <span class="level-label">Level</span>
+                            <input type="text" data-dtype="Number" class="level-value" value={{#if document.system.needsCharacterSetup}}0{{else}}{{document.system.levelData.level.changed}}{{/if}} {{#if document.system.needsCharacterSetup}}disabled{{/if}} />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stats-row">
+                <div class="core-stats">
+                    <div class="threshold-values">
+                        <span class="threshold-text threshold-clickable" data-action="mark-hp" data-hp-amount="1">
+                            {{localize "DAGGERHEART.GENERAL.DamageThresholds.mark1HP"}}
+                        </span>
+                        <div class="resource-group">
+                            <div class="attribute-value-display threshold-value-display"
+                                data-field="system.damageThresholds.major" 
+                                data-label="Major Threshold"
+                                data-has-modifiers="true" 
+                                data-min="0">
+                                {{document.system.damageThresholds.major}}
+                            </div>
+                            <!--<a class="trait-effects">{{localize "DAGGERHEART.GENERAL.DamageThresholds.major"}}</a>-->
+                        </div>
+                        <span class="threshold-text threshold-clickable" data-action="mark-hp" data-hp-amount="2">
+                            {{localize "DAGGERHEART.GENERAL.DamageThresholds.mark2HP"}}
+                        </span>
+                        <div class="resource-group">
+                            <div class="attribute-value-display threshold-value-display"
+                                data-field="system.damageThresholds.severe" 
+                                data-label="Severe Threshold"
+                                data-has-modifiers="true" 
+                                data-min="0">
+                                {{document.system.damageThresholds.severe}}
+                            </div>
+                             <!--<a class="trait-effects">{{localize "DAGGERHEART.GENERAL.DamageThresholds.severe"}}</a>-->
+                        </div>
+                        <span class="threshold-text threshold-clickable" data-action="mark-hp" data-hp-amount="3">
+                            {{localize "DAGGERHEART.GENERAL.DamageThresholds.mark3HP"}}
+                        </span>
+                    </div>
+                    <div class="stat-item hope-stat">
+                        <div class="hope-diamonds">
+                            {{#times document.system.resources.hope.max}}
+                                <span class='hope-diamond' data-action='toggleHope' data-value="{{add this 1}}">
+                                    {{#if (gte ../document.system.resources.hope.value (add this 1))}}
+                                        <i class='fa-solid fa-diamond'></i>
+                                    {{else}}
+                                        <i class='fa-regular fa-circle'></i>
+                                    {{/if}}
+                                </span>
+                            {{/times}}
+                        </div>
+                        <div class="stat-label">{{localize 'DAGGERHEART.GENERAL.hope'}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="attributes-row">
+        {{#each this.attributes as |attribute key|}} 
+            <div class="attribute-container {{#if (eq key document.system.class.subclass.system.spellcastingTrait)}}spellcasting-trait{{/if}}" data-tooltip="<b>{{localize (concat 'DAGGERHEART.CONFIG.Traits.' key '.name') }}:</b><br>{{#each attribute.verbs}}{{this}}<br>{{/each}}" data-action="rollAttribute" data-attribute="{{key}}" data-value="{{attribute.value}}">
+                <div class="attribute-bg">
+                    <div class="attribute-content">
+                        <!-- <div class="attribute-icon">
+                            {{#if (eq key 'agility')}}<i class="fa-solid fa-person-running"></i>{{/if}}
+                            {{#if (eq key 'strength')}}<i class="fa-solid fa-dumbbell"></i>{{/if}}
+                            {{#if (eq key 'finesse')}}<i class="fa-solid fa-hand-sparkles"></i>{{/if}}
+                            {{#if (eq key 'instinct')}}<i class="fa-solid fa-eye"></i>{{/if}}
+                            {{#if (eq key 'presence')}}<i class="fa-solid fa-heart"></i>{{/if}}
+                            {{#if (eq key 'knowledge')}}<i class="fa-solid fa-brain"></i>{{/if}}
+                        </div>-->
+                        <div class="attribute-value">
+                            {{#if (gt attribute.value 0)}}+{{attribute.value}}{{else}}{{attribute.value}}{{/if}}
+                        </div>
+                        <div class="attribute-name">{{localize (concat 'DAGGERHEART.CONFIG.Traits.' key '.name')}}</div>
+                        <div class="attribute-tier">
+                            {{#if attribute.tierMarked}}
+                                <i class='fa-solid fa-circle'></i>
+                            {{else}}
+                                <i class='fa-regular fa-circle'></i>
+                            {{/if}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+
+
+    {{!-- Hide navigation if DH+ sidebars (rails) are enabled --}}
+    {{#unless enableCharacterSheetSidebars}}
+        {{#> 'systems/daggerheart/templates/sheets/global/tabs/tab-navigation.hbs' showSettings=showSettings }}
+            {{#if ../showSettings}}
+                <button type="button" data-action="openSettings" data-tooltip-text="{{localize "DAGGERHEART.UI.Tooltip.openSheetSettings"}}"><i class="fa-solid fa-wrench"></i></button>
+            {{/if}}
+        {{/'systems/daggerheart/templates/sheets/global/tabs/tab-navigation.hbs'}}
+    {{/unless}}
+
+    <!-- Removed DH+ right-side tabs part placeholder -->
+</header>

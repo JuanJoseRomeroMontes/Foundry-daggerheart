@@ -1,0 +1,157 @@
+/* ---------------------------------------- */
+/* Cascade Layers Declaration               */
+/* Reference https://css-tricks.com/css-cascade-layers/
+/* ---------------------------------------- */
+
+@layer reset,           /* 1. Browser reset styles */
+       variables,       /* 2. Declare framework variables */
+       elements,        /* 3. HTML elements and typography */
+       blocks,          /* 4. Block styles which are used across applications */
+       applications,    /* 5. Application-specific rules */
+       compatibility,   /* 6. V1 compatibility layer */
+       layouts,         /* 7. Page layouts */
+       system,          /* 8. Default game system styles */
+       modules,         /* 9. Default module styles */
+       exceptions;      /* 10. Special exceptions */
+
+/* ---------------------------------------- */
+/*  Browser Reset                           */
+/* ---------------------------------------- */
+
+@layer reset {
+  @import "reset.less";
+}
+
+/* ---------------------------------------- */
+/*  Variable Declaration                    */
+/* ---------------------------------------- */
+
+@layer variables.base {
+  @import "../less/variables.less";
+  @import "variables.less";
+}
+
+@layer variables.themes {
+  @import "themes/dark.less";
+  @import "themes/fantasy.less";
+  @import "themes/scifi.less";
+  @import "themes/light.less";
+}
+
+/* ---------------------------------------- */
+/*  Typography                              */
+/* ---------------------------------------- */
+
+@layer elements.typography {
+  @import "elements/typography.less";
+}
+
+/* ---------------------------------------- */
+/*  Media Elements                          */
+/* ---------------------------------------- */
+
+@layer elements.media {
+  @import "elements/media.less";
+}
+
+/* ---------------------------------------- */
+/*  Forms and Form Elements                 */
+/* ---------------------------------------- */
+
+@layer elements.forms {
+  @import "elements/forms.less";
+}
+
+/* ---------------------------------------- */
+/*  Custom Elements                         */
+/* ---------------------------------------- */
+
+@layer elements.custom {
+  @import "elements/codemirror.less";
+  @import "elements/custom.less";
+}
+
+/* ---------------------------------------- */
+/*  Block-Specific Rules                    */
+/* ---------------------------------------- */
+
+@layer blocks.base {
+  @import "blocks/basic.less";
+  @import "blocks/forms.less";
+  @import "blocks/dialog.less";
+  @import "blocks/dice.less";
+  @import "blocks/special.less";
+}
+
+@layer blocks.ui {
+  @import "blocks/ui.less";
+}
+
+/* ---------------------------------------- */
+/*  Application-Specific Rules              */
+/* ---------------------------------------- */
+
+@layer applications {
+  @import "applications/apps.less"; // Application v1
+  @import "applications/applications.less"; // ApplicationV2
+  @import "applications/sheets.less"; // DocumentSheetV2
+  @import "applications/interface.less"; // UI Elements
+  @import "applications/hud.less"; // Canvas HUD
+  @import "applications/sidebar.less"; // Sidebar
+  @import "applications/settings.less"; // SettingsConfig and its menus
+  @import "applications/journal.less"; // Journal
+  @import "applications/webrtc.less"; // AV
+}
+
+/* ---------------------------------------- */
+/*  Compatibility                           */
+/* ---------------------------------------- */
+
+@layer compatibility {
+  @import "../less/apps.less"; // Unconverted v1 apps
+  @import "../less/sheets.less"; // Document Sheets v1
+  @import "../less/hud.less"; // Canvas HUD
+  @import "../less/sidebar.less"; // Sidebar
+  @import "../less/journal.less"; // Journal
+
+  @layer base {
+    @import "../less/elements.less";
+    @import "../less/forms.less";
+    @import "compatibility/v1-compat.less";
+  }
+
+  @import "elements/prosemirror.less"; // TODO: Move into elements layer when compatibility layer removed.
+}
+
+/* ---------------------------------------- */
+/*  Page Layouts                            */
+/* ---------------------------------------- */
+
+@layer layouts.full {
+  @import "layouts/full.less";
+}
+
+@layer layouts.views {
+  @import "views/auth.less";
+  @import "views/setup.less";
+  @import "views/join.less";
+  @import "views/players.less";
+  @import "views/game.less";
+  @import "views/stream.less";
+}
+
+@layer layouts.responsive {
+  @import "layouts/1440.less";
+  @import "layouts/960.less";
+  @import "layouts/720.less";
+  @import "layouts/480.less";
+}
+
+/* ---------------------------------------- */
+/*  Special Exceptions                      */
+/* ---------------------------------------- */
+
+@layer exceptions {
+  @import "exceptions/applications.less";
+  @import "exceptions/sidebar.less";
+}

@@ -1,0 +1,36 @@
+<div>
+    <header class="dialog-header">
+        <h1>{{localize 'DAGGERHEART.SETTINGS.Menu.variantRules.name'}}</h1>
+    </header>
+
+    <fieldset>
+        <legend>{{localize 'DAGGERHEART.SETTINGS.Menu.range.name'}}</legend>
+
+        {{formGroup settingFields.schema.fields.rangeMeasurement.fields.enabled value=settingFields._source.rangeMeasurement.enabled localize=true}}
+        {{formGroup settingFields.schema.fields.rangeMeasurement.fields.melee value=settingFields._source.rangeMeasurement.melee localize=true}}
+        {{formGroup settingFields.schema.fields.rangeMeasurement.fields.veryClose value=settingFields._source.rangeMeasurement.veryClose localize=true}}
+        {{formGroup settingFields.schema.fields.rangeMeasurement.fields.close value=settingFields._source.rangeMeasurement.close localize=true}}
+        {{formGroup settingFields.schema.fields.rangeMeasurement.fields.far value=settingFields._source.rangeMeasurement.far localize=true}}
+    </fieldset>
+
+    <div class="form-group">
+        <label>{{localize "DAGGERHEART.SETTINGS.Menu.variantRules.actionTokens"}}</label>
+
+        <div class="form-fields">
+            {{formGroup settingFields.schema.fields.actionTokens.fields.enabled value=settingFields._source.actionTokens.enabled localize=true}}
+            {{formGroup settingFields.schema.fields.actionTokens.fields.tokens value=settingFields._source.actionTokens.tokens disabled=(not settingFields._source.actionTokens.enabled) localize=true}}
+        </div>
+    </div>
+
+    <footer class="form-footer">
+        <button data-action="reset">
+            <i class="fa-solid fa-arrow-rotate-left"></i>
+            <span>{{localize "Reset"}}</span>
+        </button>
+        <button data-action="save" >
+            <i class="fa-solid fa-floppy-disk"></i>
+            <span>{{localize "Save Changes"}}</span>
+        </button>
+    </footer>
+</div>
+  

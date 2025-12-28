@@ -1,0 +1,222 @@
+{
+  "id": "daggerheart-extra-content",
+  "title": "Daggerheart - Extra Content",
+  "description": "Resources for Daggerheart",
+  "version": "1.3.9",
+  "compatibility": {
+    "minimum": "13",
+    "verified": "13"
+  },
+  "relationships": {
+    "systems": [
+      {
+        "id": "daggerheart",
+        "type": "system",
+        "compatibility": {}
+      }
+    ]
+  },
+  "authors": [
+    {
+      "name": "Mestre Digital",
+      "url": "https://www.youtube.com/c/MestreDigital",
+      "flags": {}
+    }
+  ],
+  "packs": [
+    {
+      "label": "Motherboard (Items)",
+      "type": "Item",
+      "name": "motherboard-items",
+      "path": "packs/motherboard-items",
+      "system": "daggerheart",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
+      "label": "Macros",
+      "type": "Macro",
+      "name": "macros",
+      "path": "packs/macros",
+      "system": "daggerheart",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
+      "label": "Motherboard (Tables)",
+      "type": "RollTable",
+      "name": "motherboard-tables",
+      "path": "packs/motherboard-tables",
+      "system": "daggerheart",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
+      "label": "Adversaries Features",
+      "type": "Item",
+      "name": "adversaries-features",
+      "path": "packs/adversaries-features",
+      "system": "daggerheart",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
+      "label": "Useful Journals",
+      "type": "JournalEntry",
+      "name": "useful-journals",
+      "path": "packs/useful-journals",
+      "system": "daggerheart",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
+      "label": "Loot and Consumable Tables",
+      "type": "RollTable",
+      "name": "loot-and-consumable-tables",
+      "path": "packs/loot-and-consumable-tables",
+      "system": "daggerheart",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
+      "label": "More Adversaries",
+      "type": "Actor",
+      "name": "more-adversaries",
+      "path": "packs/more-adversaries",
+      "system": "daggerheart",
+      "ownership": {
+        "PLAYER": "NONE",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
+      "label": "More Items",
+      "type": "Item",
+      "name": "more-items",
+      "path": "packs/more-items",
+      "system": "daggerheart",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
+      "label": "Curses",
+      "type": "Item",
+      "name": "curses",
+      "path": "packs/curses",
+      "system": "daggerheart",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "label": "Ancestries",
+      "type": "Item",
+      "name": "ancestry",
+      "path": "packs/ancestry",
+      "system": "daggerheart",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "label": "House Rules",
+      "type": "Item",
+      "name": "house-rules",
+      "path": "packs/house-rules",
+      "system": "daggerheart",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "label": "Classes",
+      "type": "Item",
+      "name": "classes",
+      "path": "packs/classes",
+      "system": "daggerheart",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "label": "Subclasses",
+      "type": "Item",
+      "name": "subclasses",
+      "path": "packs/subclasses",
+      "system": "daggerheart",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    }    
+  ],  
+  "packFolders": [
+    {
+      "name": "Daggerheart - Extra Content",
+      "sorting": "a",
+      "color": "#ad0000",
+      "packs": [        
+        "macros",        
+        "useful-journals",
+        "adversaries-features",
+        "loot-and-consumable-tables",
+        "more-adversaries",
+        "house-rules"
+      ],
+      "folders": [
+        {
+          "name": "Frames",
+          "sorting": "m",
+          "color": "#000000",
+          "packs": [
+              "motherboard-tables",
+              "motherboard-items"
+          ]
+        },
+        {
+          "name": "Character Options",
+          "sorting": "m",
+          "color": "#000000",
+          "packs": [
+            "more-items",
+            "curses",
+            "ancestry",
+            "classes",
+            "subclasses"
+          ]
+        }         
+      ]
+    }
+  ],  
+  "esmodules": [],
+  "languages": [],
+  "url": "https://github.com/brunocalado/daggerheart-extra-content",
+  "manifest": "https://raw.githubusercontent.com/brunocalado/daggerheart-extra-content/main/module.json",
+  "download": "https://codeload.github.com/brunocalado/daggerheart-extra-content/zip/main"
+}

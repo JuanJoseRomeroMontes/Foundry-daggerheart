@@ -1,0 +1,115 @@
+{
+    "barbrawl": {
+        "translatedBy": "flattenstream",
+        "barStyle": {
+            "name": "바 스타일",
+            "hint": "바가 표시되는 방식을 설정합니다.",
+            "minimal": "미니멀리스틱(얇음, 테두리 없음)",
+            "default": "파운드리 기본",
+            "large": "라지(넓음, 얇은 테두리)",
+            "legacy": "레거시(두꺼운 테두리)"
+        },
+        "textStyle": {
+            "name": "바 표기",
+            "hint": "바에 표시되는 숫자 표기를 설정합니다.",
+            "user": "사용자 기본",
+            "none": "숫자 없음",
+            "fraction": "분수(현재값/최대값)",
+            "percent": "퍼센트(%)"
+        },
+        "compactHud": {
+            "name": "Compact HUD",
+            "hint": "Reduces the size of the resource input fields in the token HUD."
+        },
+        "hideHostile": {
+            "name": "Hide all hostile bars",
+            "hint": "Prevents the display of bars for hostile tokens that players don't own. Be aware that this may override resource specific visibility settings."
+        },
+        "heightMultiplier": {
+            "name": "Bar height multiplier",
+            "hint": "Multiplies the bar height by the configured value to increase readability. This will affect the label, but not the background or foreground image of a bar."
+        },
+        "cacheBitmaps": {
+            "name": "Cache rendered bars",
+            "hint": "Enables bitmap caching for bars on the canvas, which may improve performance at the cost of readability (especially for labels)."
+        },
+        "config": {
+            "attribute": "어트리뷰트",
+            "ownerVisibility": "소유자만 보임",
+            "otherVisibility": "모두에게 보임",
+            "gmVisibility": "Visibility (GM)",
+            "hide": "Hide bar",
+            "hideHint": "Don't display the bar when any of the checked conditions are met.",
+            "hideFull": "Full",
+            "hideEmpty": "Empty",
+            "hideCombat": "In combat",
+            "hideNoCombat": "Out of combat",
+            "hideHud": "Hide HUD",
+            "value": "수치(현재값/최대값)",
+            "color": "색상(현재값/최대값)",
+            "position": "위치",
+            "advanced": "고급 설정",
+            "indent": "넓이",
+            "indentHint": "토큰 너비 안쪽의 바 넓이 퍼센트를 설정합니다.",
+            "indentLeft": "왼쪽",
+            "indentRight": "오른쪽",
+            "shareHeight": "Share height",
+            "shareHeightHint": "Prevents the bar from reserving any vertical space, which moves the following bar to the same line.",
+            "style": "라벨",
+            "ignoreLimits": "제한 무시",
+            "ignoreLimitsHint": "0(하한)과 최대(상한) 사이의 고정 값을 초과/미만으로 입력할 수 있도록 합니다. 다른 바 속성값은 시스템에 의해 제어되므로 커스텀한 바에만 적용됩니다.",
+            "ignoreMin": "최소값",
+            "ignoreMax": "최대값",
+            "invert": "수치 반전",
+            "invertDirection": "반전 방향",
+            "invertHint": "0을 꽉 찬 바로 표시하고 최대값을 빈 바로 표시합니다.",
+            "invertDirectionHint": "このバーが塗りつぶされる方向を反転します。",
+            "label": "텍스트 표기 고정",
+            "labelHint": "바에 입력한 텍스트를 표기합니다.",
+            "approximate": "근사치",
+            "approximateHint": "바와 해당 표기 텍스트에 대략적인 값을 표시합니다. 표시되는 분할 수를 설정합니다.",
+            "approximateOwner": "소유자도 근사치로 보기",
+            "approximateOwnerHint": "토큰 소유자에게도 근사치로 보이게 할지 설정합니다.",
+            "fgImage": "전경 이미지",
+            "fgImageHint": "바를 퍼센티지를 따라서 잘리는 이미지로 설정합니다.",
+            "bgImage": "배경 이미지",
+            "bgImageHint": "일반적인 바 배경을 이미지로 바꿉니다. 두 이미지의 너비가 장면의 격자 크기와 동일한 것이 좋습니다.",
+            "hideBg": "Hide background",
+            "opacity": "Opacity"
+        },
+        "attribute": {
+            "none": "없음(제거)",
+            "custom": "커스텀(아래에서 설정)"
+        },
+        "visibility": {
+            "inheritFromOwner": "Inherit from owner",
+            "inheritFromOther": "Inherit from everyone",
+            "none": "보이지 않음",
+            "always": "항상 보임",
+            "hover": "마우스를 올리면 보임",
+            "control": "선택시 보임",
+            "hoverOrControl": "마우스를 올리거나 선택시 보임"
+        },
+        "position": {
+            "top-inner": "위(안쪽)",
+            "top-outer": "위(바깥쪽)",
+            "bottom-inner": "아래(안쪽)",
+            "bottom-outer": "아래(바깥쪽)",
+            "left-inner": "왼쪽(안쪽)",
+            "left-outer": "왼쪽(바깥쪽)",
+            "right-inner": "오른쪽(안쪽)",
+            "right-outer": "오른쪽(바깥쪽)"
+        },
+        "section": "Resource Bars",
+        "add": "자원 추가",
+        "defaults": {
+            "save": "Save to...",
+            "saveConfirmation": "Saved resources in {target}.",
+            "load": "Load from...",
+            "defaultToken": "Default token",
+            "typeDefaults": "{type} default",
+            "prototypeToken": "{name}'s prototype token",
+            "activeTokens": "{name}'s active tokens"
+        }
+    }
+}

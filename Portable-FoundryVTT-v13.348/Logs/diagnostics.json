@@ -1,0 +1,52 @@
+{
+  "timestamp": 1764788726877,
+  "os": {
+    "platform": "win32",
+    "version": "10.0.19045",
+    "node": "20.18.3",
+    "electron": "34.4.0"
+  },
+  "foundry": {
+    "generation": 13,
+    "build": 348,
+    "channel": "stable",
+    "hosting": null
+  },
+  "modules": {
+    "dice-calculator": {
+      "version": "3.4.7"
+    },
+    "dice-so-nice": {
+      "version": "5.2.3"
+    },
+    "foundryvtt-simple-calendar": {
+      "version": "2.4.18"
+    },
+    "fxmaster": {
+      "version": "6.0.11"
+    },
+    "hourglass": {
+      "version": "1.9.0"
+    },
+    "journal-backlinks": {
+      "version": "0.11.1"
+    },
+    "simple-weather": {
+      "version": "2.0.2"
+    },
+    "smalltime": {
+      "version": "1.25.2"
+    }
+  },
+  "systems": {
+    "daggerheart": {
+      "version": "1.1.2",
+      "playtime": 132
+    }
+  },
+  "worlds": {},
+  "playtime": {
+    "total": 132,
+    "max": 132
+  }
+}

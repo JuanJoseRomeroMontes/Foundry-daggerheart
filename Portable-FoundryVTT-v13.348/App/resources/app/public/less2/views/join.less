@@ -1,0 +1,63 @@
+/* ---------------------------------------- */
+/*  Join Game View                          */
+/* ---------------------------------------- */
+
+// Note that this view also uses body.auth
+body.join {
+  --max-width: 1040px;
+
+  // Background.
+  #main-background { background-position: center; }
+
+  // Outer form
+  #join-game {
+    width: 100%;
+    max-width: var(--max-width);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: min-content min-content 1fr;
+    gap: 1rem;
+  }
+
+  #join-game-details {
+    .form-group > label {
+      flex: 2;
+    }
+    .form-fields > span {
+      flex: none;
+    }
+  }
+
+  #join-game-world {
+    grid-row: 1 / span 3;
+    grid-column: 2;
+  }
+
+  #world-description {
+    max-height: 500px;
+  }
+}
+
+// Minimal Join Theme
+body.join.join-theme-minimal {
+  --max-width: 460px;
+
+  #main-header {
+    background: none;
+    flex: 1;
+  }
+
+  #join-game {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    h2 {
+      display: none;
+    }
+    #join-game-setup {
+      p { display: none; }
+    }
+  }
+
+  #watermark { display: none; }
+}

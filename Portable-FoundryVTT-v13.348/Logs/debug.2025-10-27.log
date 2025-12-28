@@ -1,0 +1,142 @@
+{"level":"info","message":"Running on Node.js - Version 20.18.3","timestamp":"2025-10-27 13:25:01"}
+{"level":"info","message":"Foundry Virtual Tabletop - Version 13 Build 348","timestamp":"2025-10-27 13:25:01"}
+{"level":"info","message":"User Data Directory - \"..\"","timestamp":"2025-10-27 13:25:01"}
+{"level":"info","message":"Application Options:\n{\n  \"compressStatic\": true,\n  \"fullscreen\": false,\n  \"hostname\": null,\n  \"language\": \"en.core\",\n  \"localHostname\": null,\n  \"port\": 30000,\n  \"proxyPort\": null,\n  \"proxySSL\": false,\n  \"routePrefix\": null,\n  \"updateChannel\": \"stable\",\n  \"upnp\": true,\n  \"awsConfig\": null,\n  \"compressSocket\": true,\n  \"cssTheme\": \"dark\",\n  \"deleteNEDB\": false,\n  \"hotReload\": false,\n  \"passwordSalt\": null,\n  \"sslCert\": null,\n  \"sslKey\": null,\n  \"world\": null,\n  \"serviceConfig\": null,\n  \"telemetry\": true,\n  \"adminPassword\": null,\n  \"noBackups\": false\n}","timestamp":"2025-10-27 13:25:01"}
+{"level":"info","message":"Software license verification succeeded","timestamp":"2025-10-27 13:25:01"}
+{"level":"info","message":"Requesting UPnP port forwarding to destination port 30000","timestamp":"2025-10-27 13:25:01"}
+{"level":"info","message":"Running Electron application with version 34.4.0 using Chromium 132.0.6834.210","timestamp":"2025-10-27 13:25:01"}
+{"level":"info","message":"Server started and listening on port 30000","timestamp":"2025-10-27 13:25:03"}
+{"level":"info","message":"Created client session 8a195501c8ecce5796903337","timestamp":"2025-10-27 13:25:07"}
+{"level":"info","message":"Core software stable update 13.350 is available!","timestamp":"2025-10-27 13:25:13"}
+{"level":"info","message":"Uninstalled world official-daggerheart","timestamp":"2025-10-27 13:26:03"}
+{"level":"info","message":"Shutting down Foundry Virtual Tabletop server","timestamp":"2025-10-27 13:30:39"}
+{"level":"info","message":"Shut-down success. Goodbye!","timestamp":"2025-10-27 13:30:39"}
+{"level":"info","message":"Running on Node.js - Version 20.18.3","timestamp":"2025-10-27 13:32:10"}
+{"level":"info","message":"Foundry Virtual Tabletop - Version 13 Build 348","timestamp":"2025-10-27 13:32:10"}
+{"level":"info","message":"User Data Directory - \"..\"","timestamp":"2025-10-27 13:32:10"}
+{"level":"info","message":"Application Options:\n{\n  \"compressStatic\": true,\n  \"fullscreen\": false,\n  \"hostname\": null,\n  \"language\": \"en.core\",\n  \"localHostname\": null,\n  \"port\": 30000,\n  \"proxyPort\": null,\n  \"proxySSL\": false,\n  \"routePrefix\": null,\n  \"updateChannel\": \"stable\",\n  \"upnp\": true,\n  \"awsConfig\": null,\n  \"compressSocket\": true,\n  \"cssTheme\": \"dark\",\n  \"deleteNEDB\": false,\n  \"hotReload\": false,\n  \"passwordSalt\": null,\n  \"sslCert\": null,\n  \"sslKey\": null,\n  \"world\": null,\n  \"serviceConfig\": null,\n  \"telemetry\": true,\n  \"adminPassword\": null,\n  \"noBackups\": false\n}","timestamp":"2025-10-27 13:32:11"}
+{"level":"info","message":"Software license verification succeeded","timestamp":"2025-10-27 13:32:11"}
+{"level":"info","message":"Requesting UPnP port forwarding to destination port 30000","timestamp":"2025-10-27 13:32:11"}
+{"level":"info","message":"Running Electron application with version 34.4.0 using Chromium 132.0.6834.210","timestamp":"2025-10-27 13:32:11"}
+{"level":"info","message":"Server started and listening on port 30000","timestamp":"2025-10-27 13:32:11"}
+{"level":"info","message":"Created client session 1469ffed002a91eaf555f352","timestamp":"2025-10-27 13:32:12"}
+{"level":"info","message":"Core software stable update 13.350 is available!","timestamp":"2025-10-27 13:32:13"}
+{"level":"warn","message":"Received invalid Package data from website repository for package id \"owb-ponteville-bridge\"","timestamp":"2025-10-27 13:36:28"}
+{"level":"warn","message":"Received invalid Package data from website repository for package id \"liminal\"","timestamp":"2025-10-27 13:36:28"}
+{"level":"warn","message":"Received invalid Package data from website repository for package id \"trophy-dark-srd\"","timestamp":"2025-10-27 13:36:28"}
+{"level":"warn","message":"Received invalid Package data from website repository for package id \"brancalonia-bigat\"","timestamp":"2025-10-27 13:36:28"}
+{"level":"info","message":"Created World \"fe-west-marches\"","timestamp":"2025-10-27 13:36:43"}
+{"level":"info","message":"Connected to database \"actors\"","timestamp":"2025-10-27 13:36:47"}
+{"level":"info","message":"Launching World | Loading World Data - 7%","timestamp":"2025-10-27 13:36:47"}
+{"level":"info","message":"Connected to database \"cards\"","timestamp":"2025-10-27 13:36:47"}
+{"level":"info","message":"Launching World | Loading World Data - 14%","timestamp":"2025-10-27 13:36:47"}
+{"level":"info","message":"Connected to database \"messages\"","timestamp":"2025-10-27 13:36:47"}
+{"level":"info","message":"Launching World | Loading World Data - 21%","timestamp":"2025-10-27 13:36:47"}
+{"level":"info","message":"Connected to database \"combats\"","timestamp":"2025-10-27 13:36:47"}
+{"level":"info","message":"Launching World | Loading World Data - 29%","timestamp":"2025-10-27 13:36:47"}
+{"level":"info","message":"Connected to database \"fog\"","timestamp":"2025-10-27 13:36:48"}
+{"level":"info","message":"Launching World | Loading World Data - 36%","timestamp":"2025-10-27 13:36:48"}
+{"level":"info","message":"Connected to database \"folders\"","timestamp":"2025-10-27 13:36:48"}
+{"level":"info","message":"Launching World | Loading World Data - 43%","timestamp":"2025-10-27 13:36:48"}
+{"level":"info","message":"Connected to database \"items\"","timestamp":"2025-10-27 13:36:48"}
+{"level":"info","message":"Launching World | Loading World Data - 50%","timestamp":"2025-10-27 13:36:48"}
+{"level":"info","message":"Connected to database \"journal\"","timestamp":"2025-10-27 13:36:48"}
+{"level":"info","message":"Launching World | Loading World Data - 57%","timestamp":"2025-10-27 13:36:48"}
+{"level":"info","message":"Connected to database \"macros\"","timestamp":"2025-10-27 13:36:49"}
+{"level":"info","message":"Launching World | Loading World Data - 64%","timestamp":"2025-10-27 13:36:49"}
+{"level":"info","message":"Connected to database \"playlists\"","timestamp":"2025-10-27 13:36:49"}
+{"level":"info","message":"Launching World | Loading World Data - 71%","timestamp":"2025-10-27 13:36:49"}
+{"level":"info","message":"Connected to database \"tables\"","timestamp":"2025-10-27 13:36:49"}
+{"level":"info","message":"Launching World | Loading World Data - 79%","timestamp":"2025-10-27 13:36:49"}
+{"level":"info","message":"Connected to database \"scenes\"","timestamp":"2025-10-27 13:36:49"}
+{"level":"info","message":"Launching World | Loading World Data - 86%","timestamp":"2025-10-27 13:36:49"}
+{"level":"info","message":"Connected to database \"settings\"","timestamp":"2025-10-27 13:36:49"}
+{"level":"info","message":"Launching World | Loading World Data - 93%","timestamp":"2025-10-27 13:36:49"}
+{"level":"info","message":"Connected to database \"users\"","timestamp":"2025-10-27 13:36:49"}
+{"level":"info","message":"Launching World | Loading World Data - 100%","timestamp":"2025-10-27 13:36:49"}
+{"level":"info","message":"Launching World | Migrating World Data - 7%","timestamp":"2025-10-27 13:36:49"}
+{"level":"info","message":"Launching World | Migrating World Data - 14%","timestamp":"2025-10-27 13:36:49"}
+{"level":"info","message":"Launching World | Migrating World Data - 21%","timestamp":"2025-10-27 13:36:49"}
+{"level":"info","message":"Launching World | Migrating World Data - 29%","timestamp":"2025-10-27 13:36:49"}
+{"level":"info","message":"Launching World | Migrating World Data - 36%","timestamp":"2025-10-27 13:36:49"}
+{"level":"info","message":"Launching World | Migrating World Data - 43%","timestamp":"2025-10-27 13:36:49"}
+{"level":"info","message":"Launching World | Migrating World Data - 50%","timestamp":"2025-10-27 13:36:49"}
+{"level":"info","message":"Launching World | Migrating World Data - 57%","timestamp":"2025-10-27 13:36:49"}
+{"level":"info","message":"Launching World | Migrating World Data - 64%","timestamp":"2025-10-27 13:36:49"}
+{"level":"info","message":"Launching World | Migrating World Data - 71%","timestamp":"2025-10-27 13:36:49"}
+{"level":"info","message":"Launching World | Migrating World Data - 79%","timestamp":"2025-10-27 13:36:49"}
+{"level":"info","message":"Launching World | Migrating World Data - 86%","timestamp":"2025-10-27 13:36:49"}
+{"level":"info","message":"Launching World | Migrating World Data - 93%","timestamp":"2025-10-27 13:36:49"}
+{"level":"info","message":"Launching World | Migrating World Data - 100%","timestamp":"2025-10-27 13:36:49"}
+{"level":"info","message":"Created Setting with id [PiyqtZtYR1imMobG]","timestamp":"2025-10-27 13:36:49"}
+{"level":"info","message":"Created Setting with id [GV0qLTtNA7ScWBWz]","timestamp":"2025-10-27 13:36:49"}
+{"level":"info","message":"Created User with id [hY211JSU7BGHCKLb]","timestamp":"2025-10-27 13:36:49"}
+{"level":"info","message":"Created Setting with id [pSrKecGRJ0ryk1P9]","timestamp":"2025-10-27 13:36:49"}
+{"level":"info","message":"Connected to database \"daggerheart.classes\"","timestamp":"2025-10-27 13:36:50"}
+{"level":"info","message":"Launching World | Loading Package Data - 8%","timestamp":"2025-10-27 13:36:50"}
+{"level":"info","message":"Connected to database \"daggerheart.subclasses\"","timestamp":"2025-10-27 13:36:50"}
+{"level":"info","message":"Launching World | Loading Package Data - 15%","timestamp":"2025-10-27 13:36:50"}
+{"level":"info","message":"Connected to database \"daggerheart.domains\"","timestamp":"2025-10-27 13:36:50"}
+{"level":"info","message":"Launching World | Loading Package Data - 23%","timestamp":"2025-10-27 13:36:50"}
+{"level":"info","message":"Connected to database \"daggerheart.ancestries\"","timestamp":"2025-10-27 13:36:50"}
+{"level":"info","message":"Launching World | Loading Package Data - 31%","timestamp":"2025-10-27 13:36:50"}
+{"level":"info","message":"Connected to database \"daggerheart.communities\"","timestamp":"2025-10-27 13:36:50"}
+{"level":"info","message":"Launching World | Loading Package Data - 38%","timestamp":"2025-10-27 13:36:50"}
+{"level":"info","message":"Connected to database \"daggerheart.weapons\"","timestamp":"2025-10-27 13:36:50"}
+{"level":"info","message":"Launching World | Loading Package Data - 46%","timestamp":"2025-10-27 13:36:50"}
+{"level":"info","message":"Connected to database \"daggerheart.armors\"","timestamp":"2025-10-27 13:36:50"}
+{"level":"info","message":"Launching World | Loading Package Data - 54%","timestamp":"2025-10-27 13:36:50"}
+{"level":"info","message":"Connected to database \"daggerheart.consumables\"","timestamp":"2025-10-27 13:36:50"}
+{"level":"info","message":"Launching World | Loading Package Data - 62%","timestamp":"2025-10-27 13:36:50"}
+{"level":"info","message":"Connected to database \"daggerheart.loot\"","timestamp":"2025-10-27 13:36:50"}
+{"level":"info","message":"Launching World | Loading Package Data - 69%","timestamp":"2025-10-27 13:36:50"}
+{"level":"info","message":"Connected to database \"daggerheart.adversaries\"","timestamp":"2025-10-27 13:36:50"}
+{"level":"info","message":"Launching World | Loading Package Data - 77%","timestamp":"2025-10-27 13:36:50"}
+{"level":"info","message":"Connected to database \"daggerheart.environments\"","timestamp":"2025-10-27 13:36:51"}
+{"level":"info","message":"Launching World | Loading Package Data - 85%","timestamp":"2025-10-27 13:36:51"}
+{"level":"info","message":"Connected to database \"daggerheart.journals\"","timestamp":"2025-10-27 13:36:51"}
+{"level":"info","message":"Launching World | Loading Package Data - 92%","timestamp":"2025-10-27 13:36:51"}
+{"level":"info","message":"Connected to database \"daggerheart.beastforms\"","timestamp":"2025-10-27 13:36:51"}
+{"level":"info","message":"Launching World | Loading Package Data - 100%","timestamp":"2025-10-27 13:36:51"}
+{"level":"info","message":"Created 3 Folder documents with ids: [2HG21AjdBWJMQMkP,IzdIIisgrBANv0SA,ifIRievTuaHD2m7T]","timestamp":"2025-10-27 13:36:51"}
+{"level":"info","message":"Created Setting with id [OHpk8ZD9q8VHEeQl]","timestamp":"2025-10-27 13:36:51"}
+{"level":"info","message":"Launching World | Migrating Package Data - 8%","timestamp":"2025-10-27 13:36:51"}
+{"level":"info","message":"Launching World | Migrating Package Data - 15%","timestamp":"2025-10-27 13:36:51"}
+{"level":"info","message":"Launching World | Migrating Package Data - 23%","timestamp":"2025-10-27 13:36:51"}
+{"level":"info","message":"Launching World | Migrating Package Data - 31%","timestamp":"2025-10-27 13:36:51"}
+{"level":"info","message":"Launching World | Migrating Package Data - 38%","timestamp":"2025-10-27 13:36:51"}
+{"level":"info","message":"Launching World | Migrating Package Data - 46%","timestamp":"2025-10-27 13:36:51"}
+{"level":"info","message":"Launching World | Migrating Package Data - 54%","timestamp":"2025-10-27 13:36:51"}
+{"level":"info","message":"Launching World | Migrating Package Data - 62%","timestamp":"2025-10-27 13:36:51"}
+{"level":"info","message":"Launching World | Migrating Package Data - 69%","timestamp":"2025-10-27 13:36:51"}
+{"level":"info","message":"Launching World | Migrating Package Data - 77%","timestamp":"2025-10-27 13:36:51"}
+{"level":"info","message":"Launching World | Migrating Package Data - 85%","timestamp":"2025-10-27 13:36:51"}
+{"level":"info","message":"Launching World | Migrating Package Data - 92%","timestamp":"2025-10-27 13:36:51"}
+{"level":"info","message":"Launching World | Migrating Package Data - 100%","timestamp":"2025-10-27 13:36:51"}
+{"level":"info","message":"Launching World | Complete","timestamp":"2025-10-27 13:36:51"}
+{"ip":"::1","level":"info","message":"User authentication successful for user Gamemaster","session":"1469ffed002a91eaf555f352","timestamp":"2025-10-27 13:36:54"}
+{"level":"info","message":"No system update for Daggerheart is currently available.","timestamp":"2025-10-27 13:36:56"}
+{"level":"info","message":"Vended World data to User [hY211JSU7BGHCKLb] in 833ms","timestamp":"2025-10-27 13:36:56"}
+{"level":"info","message":"Created Setting with id [O0LR9RHCgMwDzzee]","timestamp":"2025-10-27 13:36:57"}
+{"level":"info","message":"Created 2 ChatMessage documents with ids: [DINq3r9kSav5dn6G,F1VtUCcrdOZjrpWs]","timestamp":"2025-10-27 13:36:57"}
+{"level":"info","message":"Toggling game pause status to false","timestamp":"2025-10-27 13:37:01"}
+{"level":"info","message":"Created Setting with id [z2YY1ZXOW1T9S4XG]","timestamp":"2025-10-27 13:37:02"}
+{"level":"info","message":"Created Setting with id [OaOVsy8QcAb7ekB2]","timestamp":"2025-10-27 13:37:10"}
+{"level":"info","message":"Created Scene with id [SKm0RlEj4brwJ8TZ]","timestamp":"2025-10-27 13:37:29"}
+{"level":"info","message":"Created FogExploration with id [UldUvqsoWAxfkbiN]","timestamp":"2025-10-27 13:39:05"}
+{"level":"info","message":"Shutting down Foundry Virtual Tabletop server","timestamp":"2025-10-27 13:40:01"}
+{"level":"info","message":"Shut-down success. Goodbye!","timestamp":"2025-10-27 13:40:01"}
+{"level":"info","message":"Running on Node.js - Version 20.18.3","timestamp":"2025-10-27 13:40:18"}
+{"level":"info","message":"Foundry Virtual Tabletop - Version 13 Build 348","timestamp":"2025-10-27 13:40:18"}
+{"level":"info","message":"User Data Directory - \"..\"","timestamp":"2025-10-27 13:40:18"}
+{"level":"info","message":"Application Options:\n{\n  \"compressStatic\": true,\n  \"fullscreen\": false,\n  \"hostname\": null,\n  \"language\": \"en.core\",\n  \"localHostname\": null,\n  \"port\": 30000,\n  \"proxyPort\": null,\n  \"proxySSL\": false,\n  \"routePrefix\": null,\n  \"updateChannel\": \"stable\",\n  \"upnp\": true,\n  \"awsConfig\": null,\n  \"compressSocket\": true,\n  \"cssTheme\": \"dark\",\n  \"deleteNEDB\": false,\n  \"hotReload\": false,\n  \"passwordSalt\": null,\n  \"sslCert\": null,\n  \"sslKey\": null,\n  \"world\": null,\n  \"serviceConfig\": null,\n  \"telemetry\": true,\n  \"adminPassword\": null,\n  \"noBackups\": false\n}","timestamp":"2025-10-27 13:40:18"}
+{"level":"info","message":"Software license verification succeeded","timestamp":"2025-10-27 13:40:18"}
+{"level":"info","message":"Requesting UPnP port forwarding to destination port 30000","timestamp":"2025-10-27 13:40:18"}
+{"level":"info","message":"Running Electron application with version 34.4.0 using Chromium 132.0.6834.210","timestamp":"2025-10-27 13:40:18"}
+{"level":"info","message":"Server started and listening on port 30000","timestamp":"2025-10-27 13:40:18"}
+{"level":"info","message":"Created client session 3ac0b97596f75a9b2f638599","timestamp":"2025-10-27 13:40:21"}
+{"level":"info","message":"Core software stable update 13.350 is available!","timestamp":"2025-10-27 13:40:22"}
+{"level":"info","message":"Saved application configuration options to ../Config/options.json","timestamp":"2025-10-27 13:40:40"}
+{"level":"info","message":"Saved application configuration options to D:\\Juegos\\Foundry daggerheart\\data\\Config\\options.json","timestamp":"2025-10-27 13:40:40"}
+{"level":"info","message":"Shutting down Foundry Virtual Tabletop server","timestamp":"2025-10-27 13:40:46"}
+{"level":"info","message":"Shut-down success. Goodbye!","timestamp":"2025-10-27 13:40:46"}

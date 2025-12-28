@@ -1,0 +1,1 @@
+import View from"./view.mjs";import sessions from"../../sessions.mjs";export default class QuitView extends View{route="/quit";_methods=["post"];async handlePost(s,e){const{config:t}=global;if(!sessions.authenticateAdmin(s,e).success)return e.send({status:"failed"});e.send({status:"failed"}),t.app?t.app.quit():process.exit()}}

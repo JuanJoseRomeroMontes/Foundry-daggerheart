@@ -1,0 +1,337 @@
+
+/* ---------------------------------------- */
+/*  Theme Variables                         */
+/* ---------------------------------------- */
+
+.mixin-theme-light-variables {
+  --color-scheme: light;
+  --color-text-emphatic: var(--color-dark-1);
+  --color-text-primary: var(--color-dark-2);
+  --color-text-secondary: var(--color-dark-3);
+  --color-text-subtle: var(--color-dark-5);
+  --color-text-selection: var(--color-light-1);
+  --color-text-selection-bg: var(--color-dark-6);
+
+  /* Context Menu */
+  #context-menu, &#context-menu {
+    --background-color: #d9d8c8;
+    --border-color: #999;
+    --text-color: var(--color-text-secondary);
+    --hover-text-color: var(--color-text-emphatic);
+    --group-separator: #999;
+    --hover-entry-border: #999;
+    --hover-entry-background: #f0f0e0;
+  }
+
+  // Content Links & Inline Rolls
+  --content-link-background: #ddd;
+  --content-link-border-color: var(--color-dark-4);
+  --content-link-icon-color: var(--color-dark-6);
+  --content-link-text-color: var(--color-dark-2);
+
+  /* UI */
+  --sidebar-background: url("../ui/parchment.jpg");
+  --sidebar-separator: 2px groove var(--color-light-2);
+  --sidebar-entry-hover-bg: rgb(255 255 255 / 25%);
+  --sidebar-folder-color: #a19e78;
+
+  &.compendium-directory, .compendium-directory {
+    --header-mask: none;
+    --header-border: 2px groove var(--color-light-2);
+  }
+
+  .ui-control, .placeable-hud, #measurement .waypoint-label {
+    --control-bg-color: rgb(255 255 255 / 60%);
+    --control-border-color: rgb(255 255 255 / 80%);
+    --control-icon-color: var(--color-dark-2);
+    --control-hover-bg-color: rgb(255 255 255 / 85%);
+    --control-hover-border-color: rgb(255 255 255 / 90%);
+    --control-hover-icon-color: var(--color-dark-1);
+    --control-active-bg-color: rgb(255 255 255 / 85%);
+    --control-active-border-color: var(--color-warm-2);
+    --control-active-icon-color: var(--color-dark-1);
+    --control-button-border-color: var(--color-warm-1);
+    --control-button-hover-bg-color: var(--color-warm-2);
+    --control-button-hover-border-color: var(--color-light-1);
+    --toggle-bg-color: rgb(255 255 255 / 60%);
+    --toggle-border-color: #5252d7;
+    --toggle-active-bg-color: #5252d7;
+    --toggle-active-border-color: #8484ff;
+    &:disabled {
+      --control-hover-bg-color: var(--control-bg-color);
+      --control-hover-border-color: var(--control-border-color);
+      --control-hover-icon-color: var(--control-icon-color);
+    }
+  }
+
+  .placeable-hud, #measurement .waypoint-label {
+    --control-icon-color: rgba(0 0 0 / 70%);
+    --control-active-icon-color: rgba(0 0 0 / 70%);
+    --control-hover-icon-color: #000;
+    --control-active-icon-color: #000;
+    --control-icon-filter: invert(1);
+  }
+
+  #hotbar {
+    --slot-color: rgb(255 255 255 / 60%);
+    --key-bg-color-empty: transparent;
+    --key-bg-color-full: rgb(255 255 255 / 60%);
+    --key-text-color: var(--color-dark-1);
+    --page-control-color: rgb(255 255 255 / 80%);
+  }
+
+  #chat-message {
+    --text-color: var(--color-dark-2);
+    --placeholder-color: var(--color-dark-4);
+    --background-color: rgb(255 255 255 / 60%);
+    --border-color: rgb(255 255 255 / 80%);
+  }
+
+  #players {
+    --background-color: rgb(255 255 255 / 60%);
+    --border-color: rgb(255 255 255 / 80%);
+
+    --player-name-idle-color: var(--color-text-subtle);
+    --player-name-self-color: var(--color-text-emphatic);
+
+    --color-rating-good: #1e7e34;
+    --color-rating-fair: #cc9a06;
+    --color-rating-poor: #a72a35;
+
+    button {
+      --button-text-color: var(--color-text-emphatic);
+      --button-hover-text-color: var(--button-text-color);
+    }
+  }
+
+  .combat-tracker {
+    --active-input-bg-color: rgb(0 0 0 / 5%);
+    --entry-hover-bg: rgb(255 255 255 / 25%);
+    --entry-active-bg: rgb(255 255 255 / 35%);
+    --token-effect-filter: invert(1);
+  }
+
+  #token-hud, #measurement { --hud-icon-filter: invert(1); }
+
+  /* AV */
+  #camera-views, &#camera-views {
+    --av-background-color: rgb(255 255 255 / 20%);
+    --av-border-color: rgb(255 255 255 / 10%);
+  }
+}
+
+/* ---------------------------------------- */
+/*  Applications                            */
+/* ---------------------------------------- */
+
+.mixin-theme-light-application {
+  --background: url("../ui/parchment.jpg") repeat;
+  --color-header-background: var(--color-dark-3);
+  --color-border: var(--color-cool-4);
+  --color-tabs-border: var(--color-dark-5);
+  --color-fieldset-border: var(--color-light-2);
+  --color-form-label: var(--color-dark-2);
+  --color-form-label-hover: var(--color-dark-1);
+  --color-form-hint: var(--color-dark-4);
+  --color-form-hint-hover: var(--color-dark-2);
+  --color-select-option-bg: var(--color-light-1);
+}
+
+/* ---------------------------------------- */
+/*  Forms and Form Elements                 */
+/* ---------------------------------------- */
+
+.mixin-theme-light-forms {
+  input,
+  select,
+  textarea,
+  code-mirror {
+    --input-border-color: var(--color-dark-6);
+    --input-box-shadow: inset 0 0 6px var(--input-background-color);
+    --input-text-color: var(--color-dark-2);
+    --input-focus-outline-color: var(--color-warm-2);
+    &:disabled {
+      --input-background-color: rgb(0 0 0 / 20%);
+      --input-border-color: transparent;
+      --input-box-shadow: none;
+      --input-text-color: var(--color-dark-3);
+    }
+  }
+
+  input,
+  select,
+  textarea {
+    --input-background-color: rgb(0 0 0 / 10%);
+    --input-placeholder-color: var(--color-dark-4);
+    &:focus {
+      --input-text-color: var(--color-dark-1);
+    }
+  }
+
+  code-mirror {
+    --input-background-color: var(--color-light-1);
+    --input-focus-text-color: var(--color-dark-1);
+    --gutter-background-color: #f5f5f5;
+    --gutter-border-color: #ddd;
+    --gutter-text-color: var(--color-dark-5);
+    --active-line-color: #cceeff44;
+    &:disabled {
+      --gutter-background-color: rgb(0 0 0 / 10%);
+      --gutter-border-color: var(--input-border-color);
+      --gutter-text-color: var(--color-dark-4);
+    }
+
+    // JS(ON)
+    --syntax-keyword-color: #708;
+    --syntax-comment-color: var(--color-dark-3);
+    --syntax-operator-color: var(--input-text-color);
+    --syntax-var-name-color: #00f;
+    --syntax-func-name-color: var(--syntax-var-name-color);
+    --syntax-method-name-color: var(--syntax-func-name-color);
+    --syntax-local-var-color: #30a;
+    --syntax-class-name-color: #167;
+    --syntax-prop-def-color: #00c;
+    --syntax-prop-name-color: var(--input-text-color);
+    --syntax-boolean-color: #219;
+    --syntax-number-color: #164;
+    --syntax-string-color: #a11;
+    --syntax-regexp-color: #e40;
+    --syntax-invalid-color: #f00;
+
+    // HTML
+    --syntax-angle-bracket-color: var(--syntax-separator-color);
+    --syntax-tag-color: #085;
+    --syntax-attr-name-color: var(--syntax-prop-name-color);
+    --syntax-attr-value-color: var(--syntax-string-color);
+
+    // Markdown
+    --syntax-meta-color: var(--syntax-tag-color);
+    --syntax-separator-color: #00f;
+  }
+
+  code, code.block {
+    --color-code-bg: #cceeff44;
+    --color-code-border: var(--color-dark-6);
+  }
+
+  // Checkboxes and Radio Buttons
+  input[type=checkbox],
+  input[type=radio] {
+    --checkbox-font-weight: unset;
+    --checkbox-background-color: var(--color-dark-6);
+    --checkbox-checked-color: var(--color-warm-1);
+    --checkbox-checkmark-color: var(--color-dark-1);
+
+    &:disabled,
+    &[readonly] {
+      --checkbox-font-weight: bold;
+      --checkbox-checkmark-color: transparent;
+      --checkbox-disabled-color: var(--color-dark-6);
+    }
+  }
+
+  label.icon {
+    --input-background-color: rgb(0 0 0 / 10%);
+    --input-border-color: var(--color-dark-6);
+    --input-text-color: var(--color-dark-2);
+    --input-focus-outline-color: var(--color-warm-2);
+
+    &:focus-within {
+      --input-text-color: var(--color-dark-1);
+    }
+
+    &:has(> input:disabled) {
+      --input-background-color: rgb(0 0 0 / 20%);
+      --input-border-color: transparent;
+      --input-text-color: var(--color-dark-3);
+    }
+  }
+
+  // Readonly Text Input
+  input[readonly] {
+    --input-background-color: rgb(0 0 0 / 20%);
+    --input-border-color: transparent;
+    --input-text-color: var(--color-dark-3);
+  }
+
+  // Buttons
+  a.button, button, kbd {
+    --button-background-color: rgba(0 0 0 / 10%);
+    --button-border-color: var(--color-dark-5);
+    --button-text-color: var(--color-dark-1);
+    --button-focus-outline-color: var(--color-warm-2);
+    --button-hover-background-color: var(--color-warm-2);
+    --button-hover-text-color: var(--color-light-1);
+    &[disabled] {
+      --button-background-color: rgba(0 0 0 / 20%);
+      --button-border-color: transparent;
+      --button-text-color: var(--color-dark-3);
+      --button-hover-background-color: var(--button-background-color);
+      --button-hover-border-color: var(--button-border-color);
+      --button-hover-text-color: var(--button-text-color);
+    }
+  }
+
+  // Tables
+  --table-background-color: none;
+  --table-header-bg-color: rgb(0 0 0 / 10%);
+  --table-header-border-color: var(--color-dark-1);
+  --table-header-text-color: inherit;
+  --table-row-color-even: rgb(0 0 0 / 10%);
+  --table-row-color-odd: transparent;
+  --table-row-color-highlight: var(--color-cool-5-75);
+
+  // ProseMirror
+  .prosemirror, prose-mirror,
+  #prosemirror-dropdown, .menu-dialog.prosemirror,
+  &#prosemirror-dropdown, &.menu-dialog.prosemirror {
+    --color-control-hover: #f0f0e0;
+    --menu-background: rgb(0 0 0 / 10%);
+    --dropdown-background: #d9d8c8;
+    --dropdown-border: #999;
+    --dialog-background: var(--dropdown-background);
+    --dialog-border: transparent;
+    --color-form-label-hover: var(--color-dark-1);
+    --button-text-color: var(--color-text-primary);
+  }
+}
+
+/* ---------------------------------------- */
+/*  Theme Layers                            */
+/* ---------------------------------------- */
+
+// General rules that apply when using this theme
+@layer general {
+
+  // The overall theme body
+  body.theme-light {
+    .mixin-theme-light-variables();
+    .mixin-theme-light-forms();
+  }
+
+  // An application within the theme
+  body.theme-light .application {
+    .mixin-theme-light-application();
+  }
+}
+
+// Specific rules that take precedence for apps which override to this theme
+@layer specific {
+
+  // An application that is overridden to explicitly use the theme
+  .themed.theme-light {
+    .mixin-theme-light-variables();
+    .mixin-theme-light-forms();
+  }
+  .application.theme-light {
+    .mixin-theme-light-application();
+  }
+
+  // A V1 application that is overridden to explicitly use the theme
+  // @deprecated since v13 until v15
+  .app.theme-light .standard-form {
+    .mixin-theme-light-variables();
+    .mixin-theme-light-application();
+    .mixin-theme-light-forms();
+  }
+}

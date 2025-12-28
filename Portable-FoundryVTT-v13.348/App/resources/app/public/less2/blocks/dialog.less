@@ -1,0 +1,32 @@
+/* ---------------------------------- */
+/*  Dialog V2                         */
+/* ---------------------------------- */
+
+.application.dialog {
+  padding: 0;
+  margin: 0;
+  &:not([open]) { display: none; }
+}
+
+/* ----------------------------------------- */
+/* Dialog Windows                            */
+/* ----------------------------------------- */
+
+.dialog {
+  .dialog-content {
+    font-size: var(--font-size-14);
+  }
+  .dialog-buttons {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+    button {
+      --button-size: var(--input-height);
+      flex: 2;
+      &.default {
+        flex: 3;
+      }
+    }
+  }
+}

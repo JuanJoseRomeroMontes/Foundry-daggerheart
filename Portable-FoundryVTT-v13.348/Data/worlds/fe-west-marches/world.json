@@ -1,0 +1,16 @@
+{
+  "title": "West marches Garreg Mach",
+  "id": "fe-west-marches",
+  "system": "daggerheart",
+  "background": "assets/Fullscreen_images/Garreg%20Mach.webp",
+  "coreVersion": "13.348",
+  "compatibility": {
+    "minimum": "13",
+    "verified": "13"
+  },
+  "systemVersion": "1.1.2",
+  "lastPlayed": "Sun Dec 28 2025 00:26:09 GMT+0100 (hora estándar de Europa central)",
+  "playtime": 35948,
+  "description": "",
+  "flags": {}
+}

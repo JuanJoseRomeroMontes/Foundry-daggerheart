@@ -1,0 +1,21 @@
+2025/12/28-00:22:12.145 a674 Recovering log #93
+2025/12/28-00:22:12.148 a674 Delete type=0 #93
+2025/12/28-00:22:12.148 a674 Delete type=3 #91
+2025/12/28-00:22:26.145 172e0 Level-0 table #97: started
+2025/12/28-00:22:26.145 172e0 Level-0 table #97: 0 bytes OK
+2025/12/28-00:22:26.145 172e0 Delete type=0 #95
+2025/12/28-00:22:26.146 172e0 Manual compaction at level-0 from '!scenes!Xu5HbCrkGrO3llR2' @ 72057594037927935 : 1 .. '!scenes.tokens.delta.items!uP31PHLwOt37jhAq.FoZUOL6sqEcjmj6E.Hz8shqHZQYZ5MOFW.nuN5JxdpyFH7TRsw' @ 0 : 0; will stop at '!scenes.tokens.delta!Xu5HbCrkGrO3llR2.5SR1ZcbCa0Ix63Fm.5SR1ZcbCa0Ix63Fm' @ 2101 : 0
+2025/12/28-00:22:26.146 172e0 Compacting 1@0 + 0@1 files
+2025/12/28-00:22:26.147 172e0 Generated table #98@0: 3 keys, 1388 bytes
+2025/12/28-00:22:26.148 172e0 Compacted 1@0 + 0@1 files => 1388 bytes
+2025/12/28-00:22:26.148 172e0 compacted to: files[ 0 1 1 0 0 0 0 ]
+2025/12/28-00:22:26.148 172e0 Delete type=2 #92
+2025/12/28-00:22:26.166 172e0 Manual compaction at level-0 from '!scenes.tokens.delta!Xu5HbCrkGrO3llR2.5SR1ZcbCa0Ix63Fm.5SR1ZcbCa0Ix63Fm' @ 2101 : 0 .. '!scenes.tokens.delta.items!uP31PHLwOt37jhAq.FoZUOL6sqEcjmj6E.Hz8shqHZQYZ5MOFW.nuN5JxdpyFH7TRsw' @ 0 : 0; will stop at (end)
+2025/12/28-00:22:26.173 172e0 Manual compaction at level-1 from '!scenes!Xu5HbCrkGrO3llR2' @ 72057594037927935 : 1 .. '!scenes.tokens.delta.items!uP31PHLwOt37jhAq.FoZUOL6sqEcjmj6E.Hz8shqHZQYZ5MOFW.nuN5JxdpyFH7TRsw' @ 0 : 0; will stop at '!scenes.tokens.delta!Xu5HbCrkGrO3llR2.5SR1ZcbCa0Ix63Fm.5SR1ZcbCa0Ix63Fm' @ 2101 : 0
+2025/12/28-00:22:26.173 172e0 Compacting 1@1 + 1@2 files
+2025/12/28-00:22:26.176 172e0 Generated table #99@1: 33 keys, 15191 bytes
+2025/12/28-00:22:26.177 172e0 Compacted 1@1 + 1@2 files => 15191 bytes
+2025/12/28-00:22:26.177 172e0 compacted to: files[ 0 0 1 0 0 0 0 ]
+2025/12/28-00:22:26.177 172e0 Delete type=2 #88
+2025/12/28-00:22:26.177 172e0 Delete type=2 #98
+2025/12/28-00:22:26.178 172e0 Manual compaction at level-1 from '!scenes.tokens.delta!Xu5HbCrkGrO3llR2.5SR1ZcbCa0Ix63Fm.5SR1ZcbCa0Ix63Fm' @ 2101 : 0 .. '!scenes.tokens.delta.items!uP31PHLwOt37jhAq.FoZUOL6sqEcjmj6E.Hz8shqHZQYZ5MOFW.nuN5JxdpyFH7TRsw' @ 0 : 0; will stop at (end)

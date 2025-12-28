@@ -1,0 +1,93 @@
+{
+	"label": "Linajes",
+	"folders": {
+		"Ancestry Features": "Rasgos de linaje"
+	},
+	"mapping": {
+    	"description": "system.description",
+
+		"adaptability_action": "system.actions.D7EE2L2Y96nfrfTW.name"
+	},
+	"entries": {
+		"Clank": {
+			"description": "<p>Los Clanks son seres mecánicos hechos a partir de una gran variedad de materiales como metal, madera o piedra.<br><br><p class=\"green Body-Styles_Body\" chunk_id=\"cf73a44a-bad6-493d-9d72-4007c4b803e7\">Pueden tener aspecto humanoide, animal o incluso de objetos inanimados. Al igual que los seres orgánicos, sus cuerpos vienen en una gran cantidad de tamaños. Debido a su construcción, muchos Clanks tienen configuraciones físicas muy especilizadas, por ejemplo, manos con garras para agarrarse, ruedas para moverse o armas integradas.</p>\n<p class=\"green Body-Styles_Body\" chunk_id=\"89241f41-6ba6-40db-a272-c23b400e26e8\">Muchos Clanks modifican su cuerpo por estética y funcionalidad y miembros de otros linajes suelen recurrir a otros artesanos clanks para construir ayudas personalizadas de mobilidad y adornos físicos. Otros linajes pueden crear clanks, incluso usando sus propias características como inspiración, pero también es común que los clanks se construyan entre ellos. La esperanza de vida de un clank se extiende siempre que consigan nuevas partes, haciendo su forma física efectivamente inmortal. Dicho esto, sus mentes están sujetas a los efectos del tiempo y se deterioran a medida que los poderes mágicos que los hace funcionar pierde potencia.</p></p>"
+		},
+		"Drakona": {
+			"description": "<p>Los drakonas se asemejan a dragones sin alas con forma humanoide y poseen un poderoso aliento elemental.<br><br><p>Todos los drakonas tienen escamas gruesas que les proporcionan una excelente armadura natural contra ataques y fuerzas de la naturaleza. Son grandes, de un promedio de 1,5 a 2,1 metros, con dientes largos y afilados. A lo largo de sus aproximadamente 350 años de vida, los drakonas desarrollan dientes nuevos, por lo que nunca corren el riesgo de perder un incisivo permanentemente. A diferencia de sus ancestros dragones, los drakonas no tienen alas y no pueden volar sin ayuda mágica. Los miembros de este linaje transmiten el elemento de su aliento de generación en generación, aunque en raras ocasiones, el poder elemental de un drakona difiere del del resto de su familia.</p></p>"
+		},
+		"Dwarf": {
+			"name": "Enano",
+			"description": "<p>Los enanos se reconocen fácilmente como humanoides bajos, de complexión cuadrada, musculatura densa y cabello espeso.<br><br><p>Su altura promedio oscila entre 1,20 y 1,65 metros, y suelen ser anchos en proporción a su estatura. Su piel y uñas contienen una gran cantidad de queratina, lo que los hace naturalmente resistentes. Esto les permite incrustarse gemas en el cuerpo y decorarse con tatuajes o piercings. Su cabello crece abundantemente, generalmente en la cabeza, pero algunos enanos también lo tienen en todo el cuerpo. Los enanos de todos los géneros pueden tener vello facial, que a menudo peinan de forma elaborada. Normalmente, los enanos viven hasta 250 años, manteniendo su masa muscular hasta bien entrada la edad avanzada.</p></p>"
+		},
+		"Elf": {
+			"name": "Elfo",
+			"description": "<p>Los elfos suelen ser humanoides altos con orejas puntiagudas y sentidos muy agudizados.<br><br><p class=\"green Body-Styles_Body\" chunk_id=\"977fe91c-fa57-4a66-83e1-1f62a922f018\">Sus orejas varían de tamaño y forma puntiaguda, y a medida que envejecen, las puntas comienzan a caer. Si bien los elfos presentan una amplia gama de tipos de cuerpo, todos son bastante altos, con estaturas que oscilan entre los 1,80 y los 1,90 metros. Todos los elfos tienen la capacidad de entrar en un trance celestial, en lugar de dormirse. Esto les permite descansar eficazmente en poco tiempo.</p>\n<p class=\"green Body-Styles_Body\" chunk_id=\"95498747-ff6e-4842-8706-a912c907bab6\">Algunos elfos poseen lo que se conoce como \"forma mística\", que se da cuando un elfo se ha dedicado al estudio o la protección del mundo natural tan profundamente que su forma física cambia. Estas características pueden incluir pecas celestiales, la presencia de hojas, enredaderas o flores en el cabello, ojos que centellean como el fuego y más. A veces, estos rasgos se heredan de los padres, pero si un elfo cambia de entorno o de enfoque mágico, su apariencia cambia con el tiempo. Dado que los elfos viven unos 350 años, estos rasgos pueden cambiar más de una vez a lo largo de su vida.</p><</p>"
+		},
+		"Faerie": {
+			"name": "Hada",
+			"description": "<p>Las hadas son criaturas humanoides aladas con rasgos insectoides.<br><br><p>Estas características abarcan un amplio espectro, desde humanoides hasta insectoides; algunas poseen brazos adicionales, ojos compuestos, órganos de linterna, exoesqueletos quitinosos o aguijones. Debido a su estrecha conexión con el mundo natural, también suelen poseer atributos que les permiten mimetizarse con diversas plantas. La altura promedio de un hada oscila entre 60 y 1,50 metros, pero algunas alcanzan los 2,10 metros. Todas las hadas poseen alas membranosas y pasan por un proceso de metamorfosis. El proceso y los cambios varían de una hada a otra, pero durante esta transformación cada individuo manifiesta la apariencia única que conservará durante el resto de sus aproximadamente 50 años de vida.</p></p>"
+		},
+		"Faun": {
+			"name": "Fauno",
+			"description": "<p>Los faunos se asemejan a cabras humanoides con cuernos curvos, pupilas cuadradas y pezuñas hendidas.<br><br><p>Aunque su apariencia puede variar, la mayoría de los faunos tienen un torso humanoide y una parte inferior del cuerpo similar a la de una cabra, cubierta de un denso pelaje. Sus rostros pueden ser más bien caprinos o humanos, y presentan una amplia variedad de formas de orejas y cuernos. Los cuernos de los faunos varían desde cortos con una mínima curvatura hasta mucho más grandes con una curvatura distintiva. El fauno promedio mide entre 1,20 y 1,90 metros de altura, pero su altura puede variar drásticamente de un momento a otro según su postura. La mayoría de los faunos tienen extremidades proporcionalmente largas, independientemente de su tamaño o forma, y ​​son conocidos por su capacidad para asestar potentes golpes con sus pezuñas hendidas. Los faunos viven aproximadamente 225 años y, a medida que envejecen, su apariencia puede volverse cada vez más parecida a la de una cabra.</p></p>"
+		},
+		"Firbolg": {
+			"description": "<p>Los firbolgs son humanoides bovinos que se reconocen típicamente por sus narices anchas y orejas largas y caídas.<br><br><p>Algunos tienen rostros que combinan humanoide con bisonte, buey, vaca u otras criaturas bovinas. Otros, a menudo llamados minotauros, tienen cabezas que se asemejan por completo a las del ganado. Son criaturas altas y musculosas, con alturas que oscilan entre 1,5 y 2,1 metros, y poseen una fuerza notable sin importar su edad. Se sabe que algunos firbolgs usan esta fuerza para cargar contra sus adversarios, una acción particularmente efectiva para quienes poseen alguna de las muchas variedades de cuernos comunes en este linaje. Aunque sus características únicas pueden variar, todos los firbolgs están cubiertos de pelaje, que puede ser de tonos tierra o pastel, como rosas y azules suaves. En promedio, los firbolgs viven unos 150 años.</p></p>"
+		},
+		"Fungril": {
+			"description": "<p>Los fungril se asemejan a los hongos humanoides.<br><br><p>Pueden tener una apariencia más humanoide o fúngica, y se presentan en una variedad de colores, desde tonos tierra hasta rojos, amarillos, morados y azules brillantes. Los fungril presentan una increíble variedad de cuerpos, caras y extremidades, ya que no tienen una forma común. Incluso su altura varía desde apenas 60 cm hasta la asombrosa cifra de 2,13 metros. Si bien la esperanza de vida promedio de un hongo es de unos 300 años, se ha reportado que algunos viven mucho más. Pueden comunicarse de forma no verbal, y muchos miembros de este linaje utilizan una matriz micelial para intercambiar información química con otros hongos a largas distancias.</p></p>"
+		},
+		"Galapa": {
+			"description": "<p>Los galapas se asemejan a tortugas antropomórficas con grandes caparazones abovedados en los que pueden retraerse.<br><br><p>En promedio, miden entre 1,20 y 1,80 metros de altura, y la forma de su cabeza y cuerpo puede asemejarse a la de cualquier tipo de tortuga. Los galapas se presentan en una variedad de tonos tierra, generalmente verdes y marrones, y poseen patrones únicos en sus caparazones. Los miembros de este linaje pueden retraer la cabeza, los brazos y las piernas dentro de su caparazón para protegerse y usarlo como escudo natural cuando necesitan medidas defensivas. Algunos complementan la resistencia o la apariencia de su caparazón adhiriéndose armaduras o tallando diseños únicos, pero el proceso es extremadamente doloroso. La mayoría de los galapas se mueven lentamente sin importar su edad, y pueden vivir aproximadamente 150 años.</p></p>"
+		},
+		"Giant": {
+			"name": "Gigante",
+			"description": "<p>Los gigantes son humanoides enormes con hombros anchos, brazos largos y de uno a tres ojos.<br><br><p>Los gigantes adultos miden entre 1,90 y 2,50 metros de altura y son musculosos por naturaleza, independientemente de su complexión. Se reconocen fácilmente por su complexión ancha y brazos y cuellos alargados. Aunque pueden tener hasta tres ojos, todos los gigantes nacen sin ninguno y permanecen ciegos durante su primer año de vida. Hasta que un gigante alcanza los 10 años y sus rasgos se desarrollan por completo, la formación de sus ojos puede variar. Aquellos con un solo ojo se conocen comúnmente como cíclopes. La esperanza de vida promedio de un gigante es de unos 75 años.</p></p>"
+		},
+		"Goblin": {
+			"description": "<p>Los goblins son pequeños humanoides fácilmente reconocibles por sus grandes ojos y enormes orejas membranosas.<br><br><p>Con un oído agudo y una vista aguda, perciben detalles tanto a grandes distancias como en la oscuridad, lo que les permite moverse con facilidad en entornos menos favorables. El color de su piel y ojos es increíblemente variado, sin un tono, ni vibrante ni apagado, más dominante que otro. Un goblin típico mide entre 90 y 120 cm de altura, y cada oreja tiene aproximadamente el tamaño de su cabeza. Se sabe que los goblins usan la posición de sus orejas con efectos muy específicos al comunicarse de forma no verbal. La vida de un goblin es de aproximadamente 100 años, y muchos mantienen su oído y vista agudos hasta una edad avanzada.</p></p>"
+		},
+		"Halfling": {
+			"name": "Mediano",
+			"description": "<p>Los medianos son humanoides pequeños con grandes pies peludos y orejas prominentes y redondeadas.<br><br><p>En promedio, los medianos miden entre 90 y 120 cm de altura, y sus orejas, nariz y pies son más grandes en proporción al resto de su cuerpo. Los miembros de este linaje viven alrededor de 150 años, y su apariencia suele mantenerse juvenil incluso al pasar de la edad adulta a la vejez. Los medianos están naturalmente en sintonía con los campos magnéticos del Reino Mortal, lo que les otorga una potente brújula interna. También poseen agudos sentidos del oído y el olfato, y a menudo pueden detectar a quienes les resultan familiares por el sonido de sus movimientos.</p></p>"
+		},
+		"Human": {
+			"name": "Humano",
+			"description": "<p>Los humanos se reconocen fácilmente por sus manos diestras, orejas redondeadas y cuerpos resistentes.<br><br><p>Su altura promedio oscila entre poco menos de 1,5 metros y aproximadamente 1,95 metros. Presentan una amplia variedad de complexiones: algunas son bastante anchas, otras ágiles, y muchas se encuentran en un rango intermedio. Los humanos son físicamente adaptables y se adaptan a climas rigurosos con relativa facilidad. En general, viven hasta los 100 años, con cambios físicos drásticos entre la juventud y la vejez.</p></p>"
+		},
+		"Infernis": {
+			"description": "<p>Los infernis son humanoides con colmillos afilados, orejas puntiagudas y cuernos. Son descendientes de demonios de los Círculos Inferiores.<br><br><p class=\"green Body-Styles_Body\" chunk_id=\"2472bb3d-27fb-4638-a3e6-210e0f852235\">En promedio, los infernis miden entre 1,5 y 2,1 metros de altura y se caracterizan por tener dedos largos y uñas puntiagudas. Algunos tienen colas largas, delgadas y lisas que terminan en puntas, horquillas o puntas de flecha. Es común que los infernis tengan dos o cuatro cuernos, aunque algunos tienen coronas de varios cuernos o solo uno. Estos cuernos también pueden crecer asimétricamente, formando formas únicas, a menudo curvas, que los infernis realzan con tallados y ornamentación. Su piel, cabello y cuernos presentan una variedad de colores que pueden incluir pasteles suaves, tonos intensos o vibrantes, como el escarlata rosado, el morado oscuro y el negro intenso.</p>\n<p class=\"green Body-Styles_Body\" chunk_id=\"d470cbaf-01bb-42ad-bb35-ac20f32b4825\">Los Infernis poseen un \"rostro aterrador\" que se manifiesta tanto involuntariamente, como cuando experimentan miedo u otras emociones fuertes, como intencionadamente, como cuando desean intimidar a un adversario. Este rostro puede modificar brevemente su apariencia de diversas maneras, como alargar sus dientes y uñas, cambiar el color de sus ojos, torcer sus cuernos o aumentar su altura. En promedio, los infernis viven hasta 350 años, y algunos atribuyen esta esperanza de vida a su linaje demoníaco.</p></p>"
+		},
+		"Katari": {
+			"description": "<p>Los katari son humanoides felinos con garras retráctiles, pupilas verticales y orejas altas y triangulares.<br><br><p>También pueden tener colmillos pequeños y puntiagudos, pelaje suave y bigotes largos que les facilitan la percepción y la orientación. Sus orejas pueden girar casi 180 grados para detectar sonidos, lo que aumenta sus sentidos. Los katari pueden parecer más o menos felinos o humanoides, con atributos felinos como el pelo, los bigotes y el hocico. Aproximadamente la mitad de la población katari tiene cola. Su piel y pelaje presentan una amplia gama de tonos y patrones, incluyendo colores sólidos, rayas atigradas y una variedad de manchas, parches, jaspeado o bandas. Su altura oscila entre 90 y 1.95 metros, y viven unos 150 años.</p></p>"
+		},
+		"Orc": {
+			"name": "Orco",
+			"description": "<p>Los orcos son humanoides que se reconocen fácilmente por sus rasgos cuadrados y colmillos similares a los de un jabalí que sobresalen de su mandíbula inferior.<br><br><p>Los colmillos vienen en varios tamaños, y aunque se extienden desde la boca, no se usan para consumir alimentos. En cambio, muchos orcos optan por decorarlos con abundante ornamentación. Los orcos suelen vivir 125 años y, a menos que se alteren, sus colmillos continúan creciendo a lo largo de su vida. Sus orejas son puntiagudas, y su pelo y piel suelen tener tonos verdes, azules, rosados ​​o grises. Los orcos tienden a ser musculosos, y su altura promedio oscila entre 1,5 y 1,9 metros.</p></p>"
+		},
+		"Ribbet": {
+			"description": "<p>Los ribbet se asemejan a ranas antropomórficas con ojos saltones y manos y pies con membranas.<br><br><p>Tienen piel lisa (aunque a veces verrugosa) y húmeda, y ojos ubicados a ambos lados de la cabeza. Algunos tienen patas traseras que miden más del doble de la longitud de su torso, mientras que otros tienen extremidades cortas. Independientemente de su tamaño (que varía entre 90 y 135 cm), los ribbet se mueven principalmente a saltos. Todos tienen apéndices con membranas, lo que les permite nadar con facilidad. Algunos poseen un camuflaje natural verde y marrón, mientras que otros presentan colores vibrantes con patrones llamativos. Independientemente de su apariencia, todos los ribbet nacen de huevos puestos en el agua, eclosionan en renacuajos y, después de unos 6 o 7 años, se convierten en anfibios que pueden desplazarse por la tierra. Viven aproximadamente 100 años.</p></p>"
+		},
+		"Simiah": {
+			"description": "<p>Los simiah se asemejan a monos y simios antropomórficos, con extremidades largas y patas prensiles.<br><br><p>Si bien su apariencia refleja la de todos los simios, desde el gorila más grande hasta el tití más pequeño, su tamaño no se corresponde con el de sus contrapartes animales, y pueden medir entre 60 y 1,80 metros de altura. Todos los simios pueden usar sus diestros pies para la comunicación no verbal, el trabajo y el combate. Además, algunos también tienen colas prensiles que les permiten agarrar objetos o mantener el equilibrio durante maniobras difíciles. Estos rasgos otorgan a los miembros de este linaje una agilidad única que les facilita diversas tareas físicas. En particular, los simiah son hábiles trepadores y pueden pasar fácilmente de moverse a dos patas a caminar con los nudillos y trepar, y viceversa. En promedio, los simiah viven unos 100 años.</p></p>"
+		},
+
+		"Adaptability": {
+			"name": "Adaptabilidad",
+			"description": "<p>Cuando fallas una tirada en la que usaste una de tus Experiencias, puedes <strong>marcar un Estrés</strong> para volver a tirar.</p></p>",
+			"adaptability_action": "Marcar Estrés"
+		},
+		"Amphibious": {
+			"name": "Anfibio",
+			"description": "<p>Puedes respirar y moverte de forma normal bajo el agua.</p>"
+		},
+		"Caprine Leap": {
+			"name": "Salto Caprino",
+			"description": "<p>Puedes saltar a cualquier lugar dentro del alcance cercano como si estuvieras usando un movimiento normal, lo que te permite superar obstáculos, saltar a través de huecos o escalar barreras con facilidad.</p>"
+		},
+		"Celestial Trance": {
+			"name": "Trance Celestial",
+			"description": "<p>Durante un descanso, puedes entrar en trance para elegir un movimiento adicional.</p>"
+		}
+	}
+}

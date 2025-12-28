@@ -1,0 +1,1 @@
+import BaseItem from"../../../common/documents/item.mjs";import ServerDocumentMixin from"../backend/server-document.mjs";export default class Item extends(ServerDocumentMixin(BaseItem)){static _migrationRegistry=[...super._migrationRegistry,{fn:migrateV10Fields,version:12}]}function migrateV10Fields(e){return Item._addDataFieldMigration(e,"data","system")}

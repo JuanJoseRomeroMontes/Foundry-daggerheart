@@ -1,0 +1,1 @@
+For additional guidance, please visit https://foundryvtt.com/article/installation/#build-types

@@ -1,0 +1,1 @@
+import GameView from"./game.mjs";export default class StreamView extends GameView{route="/stream";_template="stream"}

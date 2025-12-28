@@ -1,0 +1,34 @@
+@media (max-width: 1440px) {
+  body {
+    &.setup { height: unset; }
+    &.auth { min-height: 100vh; }
+  }
+
+  #setup {
+    display: unset;
+    overflow: unset;
+    margin: 2rem 0;
+  }
+
+  #setup-packages {
+    max-width: unset;
+  }
+
+  #setup-sidebar {
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    margin: 1rem auto 0;
+    container: unset;
+
+    #setup-sidebar-news,
+    #setup-sidebar-featured {
+      flex: 0 0 400px;
+    }
+
+    #news-articles {
+      position: unset;
+      .news { flex: 0 0 100px; }
+    }
+  }
+}

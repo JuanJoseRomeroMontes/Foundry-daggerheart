@@ -1,0 +1,85 @@
+/* ---------------------------------------- */
+/*  User Management View                    */
+/* ---------------------------------------- */
+
+// Note that this view also uses body.auth
+body.players {
+  --max-width: 720px;
+
+  // User Management App
+  #manage-players {
+    width: 100%;
+    max-width: var(--max-width);
+
+    header.player {
+      margin-bottom: -0.5rem;
+    }
+
+    #player-list {
+      display: flex;
+      max-height: calc(100vh - 450px);
+      overflow-y: auto;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin: -0.75rem;
+      padding: 0.75rem;
+      li {
+        margin: 0;
+      }
+    }
+
+    .show {
+      flex: 0 0 32px;
+      text-align: center;
+      > i {
+        margin: 0;
+      }
+    }
+
+    .controls {
+      flex: 0 0 24px;
+      justify-content: flex-end;
+      text-align: center;
+    }
+  }
+
+  /* ----------------------------------------- */
+  /*  Permissions Config                       */
+  /* ----------------------------------------- */
+
+  #permissions-config {
+    header.table-header {
+      background: var(--color-cool-4);
+      padding: 0.5rem;
+      color: var(--color-text-light-highlight);
+      border: 1px solid var(--color-cool-4);
+      text-align: center;
+      font-weight: bold;
+    }
+    ul.permissions-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      max-height: 600px;
+      overflow: hidden auto;
+    }
+    li.permission {
+      padding: 0.25rem 0.5rem;
+      border-bottom: 1px solid var(--color-border-dark-4);
+      .form-fields {
+        justify-content: space-around;
+      }
+    }
+    .index {
+      flex: 0 0 200px;
+      font-weight: bold;
+      text-align: left;
+    }
+
+    // TODO: Only needed until we can unify styles between in-game permissions dialog and user management permissions
+    //       dialog.
+    button {
+      --button-size: calc(1.25 * var(--input-height));
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "extends": ["../tsconfig.json"],
+  "include": ["primitives/global.d.mts", "**/*.mjs"],
+  "compilerOptions": {
+    "lib": ["ES2023", "DOM", "DOM.Iterable", "DOM.AsyncIterable"],
+    "paths": {
+      "@common/*": ["./*"]
+    }
+  }
+}

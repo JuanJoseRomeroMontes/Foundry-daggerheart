@@ -1,0 +1,45 @@
+{
+	"label": "Clases",
+	"folders": {
+		"Class Features": "Rasgos de clase",
+		"Class Items": "Objetos de clase",
+		"Seraph": "Serafín",
+		"Bard": "Bardo",
+		"Druid": "Druida",
+		"Guardian": "Guardián",
+		"Ranger": "Explorador",
+		"Rogue": "Pícaro",
+		"Warrior": "Guerrero",
+		"Wizard": "Mago",
+		"Sorcerer": "Hechicero"
+	},
+	"entries": {
+		"Seraph": {
+			"name": "Serafín"
+		},
+		"Bard": {
+			"name": "Bardo"
+		},
+		"Druid": {
+			"name": "Druida"
+		},
+		"Guardian": {
+			"name": "Guardián"
+		},
+		"Ranger": {
+			"name": "Explorador"
+		},
+		"Rogue": {
+			"name": "Pícaro"
+		},
+		"Warrior": {
+			"name": "Guerrero"
+		},
+		"Wizard": {
+			"name": "Mago"
+		},
+		"Sorcerer": {
+			"name": "Hechicero"
+		},
+	}
+}

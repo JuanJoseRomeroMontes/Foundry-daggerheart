@@ -1,0 +1,403 @@
+/* ----------------------------------------- */
+/*  Common Sub-Elements                      */
+/* ----------------------------------------- */
+
+.tags.input-element-tags {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.25rem;
+  .tag {
+    display: flex;
+    gap: 0.25rem;
+    align-items: center;
+    padding: 1px 0.25rem;
+    font-size: var(--font-size-12);
+    border: 1px solid var(--color-dark-3);
+    border-radius: 4px;
+
+    :is(document-tags, string-tags, multi-select):is(:disabled, [readonly]) & .remove { display: none; }
+  }
+  &:empty {
+    display: none;
+  }
+}
+
+/* ----------------------------------------- */
+/*  CodeMirror Element                       */
+/* ----------------------------------------- */
+
+code-mirror {
+  background: var(--input-background-color);
+  border-radius: 4px;
+  height: 100%;
+  min-height: 150px;
+  outline: 1px solid transparent;
+  overflow: hidden;
+  transition: outline-color 0.5s;
+  &:disabled {
+    .cm-editor {
+      --color-scrollbar-track: var(--input-background-color);
+      background-color: transparent;
+      cursor: var(--cursor-default);
+      .cm-content {
+        background-color: var(--input-background-color);
+      }
+      .cm-activeLineGutter, .cm-activeLine {
+        background-color: transparent;
+      }
+    }
+  }
+  &:has(.cm-content:focus) {
+    --input-text-color: var(--input-focus-text-color);
+    &::after {
+      display: block;
+      position: relative;
+      width: 100%;
+      height: 100%;
+      top: -100%;
+      margin-bottom: -100%;
+      z-index: 999999;
+      pointer-events: none;
+      content: "";
+      outline: 2px solid var(--input-focus-outline-color);
+      outline-offset: -2px;
+    }
+  }
+  .cm-editor {
+    background: var(--input-background-color);
+    height: inherit;
+    cursor: var(--cursor-text);
+    .cm-scroller {
+      border: 1px solid var(--input-border-color);
+      border-radius: 4px;
+      overflow-y: auto;
+    }
+    .cm-gutters {
+      color: var(--gutter-text-color);
+      background-color: var(--gutter-background-color);
+      border-color: var(--gutter-border-color);
+    }
+    .cm-content {
+      color: var(--input-text-color);
+    }
+    .cm-line::selection, .cm-line ::selection {
+      --color-text-selection: initial;
+    }
+    .cm-activeLineGutter, .cm-activeLine {
+      background-color: var(--active-line-color);
+    }
+    .cm-cursor {
+      border-left: 2px solid var(--input-text-color);
+    }
+    > .cm-scroller > .cm-selectionLayer .cm-selectionBackground {
+      background-color: var(--color-text-selection-bg);
+    }
+    &.cm-focused {
+      .cm-line {
+        color: var(--input-focus-text-color);
+      }
+      > .cm-scroller > .cm-selectionLayer .cm-selectionBackground {
+        background-color: var(--color-text-selection-bg);
+      }
+    }
+    .cm-tooltip {
+      color: var(--tooltip-text-color);
+      background: var(--tooltip-background-color);
+    }
+  }
+
+  // Syntax highlighting
+  .stx {
+    &-keyword { color: var(--syntax-keyword-color) }
+    &-comment { color: var(--syntax-comment-color) }
+    &-operator { color: var(--syntax-operator-color) }
+    &-brace { color: var(--syntax-brace-color) }
+    &-parenthesis { color: var(--syntax-parenthesis-color) }
+    &-square-bracket { color: var(--syntax-square-bracket-color) }
+    &-separator { color: var(--syntax-separator-color) }
+    &-literal { color: var(--syntax-literal-color) }
+    &-var-name { color: var(--syntax-var-name-color) }
+    &-local-var { color: var(--syntax-local-var-color) }
+    &-func-name { color: var(--syntax-func-name-color) }
+    &-method-name { color: var(--syntax-method-name-color) }
+    &-class-name { color: var(--syntax-class-name-color) }
+    &-prop-name { color: var(--syntax-prop-name-color) }
+    &-prop-def { color: var(--syntax-prop-def-color) }
+    &-boolean { color: var(--syntax-boolean-color) }
+    &-number { color: var(--syntax-number-color) }
+    &-string { color: var(--syntax-string-color) }
+    &-regexp { color: var(--syntax-regexp-color) }
+
+    // HTML
+    &-angle-bracket { color: var(--syntax-angle-bracket-color) }
+    &-tag-name { color: var(--syntax-tag-color) }
+    &-attr-name { color: var(--syntax-prop-def-color) }
+    &-attr-value { color: var(--syntax-string-color) }
+  }
+
+  // Only highlight non-declaration property names in JSON
+  &[language=json] .stx-prop-name {
+    color: var(--syntax-prop-name-color);
+  }
+
+  // Markdown
+  // formatting instructions (#, **, etc.)
+  &[language=markdown] .stx-meta { color: var(--syntax-meta-color) }
+  :not(.stx-meta).stx {
+    &-heading {
+      font-weight: 900;
+      text-decoration: underline;
+    }
+    &-link {
+      color: var(--syntax-link-color);
+      text-decoration: underline;
+      &.stx-url {
+        color: var(--syntax-link-url-color);
+      }
+    }
+    &-emphasis { font-style: italic }
+    &-strong { font-weight: 600 }
+    &-strikethrough { text-decoration: line-through }
+    &-separator {
+      color: var(--syntax-separator-color);
+      font-weight: 700;
+    }
+    &-list.stx-processing-instruction:first-of-type {
+      font-weight: 700;
+      padding-left: 0.5em
+    }
+    &-blockquote {
+      color: var(--syntax-blockquote-color);
+      font-style: italic;
+    }
+    &-codeblock { background-color: var(--stx-code-bg-color) }
+  }
+}
+
+/* ----------------------------------------- */
+/*  ColorPicker Element                      */
+/* ----------------------------------------- */
+
+color-picker {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  > input[type=text] {
+    flex: 1;
+  }
+  > input[type=color] {
+    flex: 0 0 40px;
+    height: 40px;
+    margin: -4px; // overcome browser-added padding
+    background: transparent;
+    border: none;
+    cursor: var(--cursor-pointer);
+    &:disabled {
+      cursor: var(--cursor-default);
+    }
+  }
+}
+
+/* ----------------------------------------- */
+/* Hue Slider                                */
+/* ----------------------------------------- */
+
+hue-slider > input, hue-slider > input:focus {
+  --color-thumb: #ffffff;
+  --range-thumb-border-color: var(--input-border-color);
+  --gradient: linear-gradient(to right,
+  #ff0000 0%,
+  #ffff00 16.667%,
+  #00ff00 33.333%,
+  #00ffff 50%,
+  #0000ff 66.667%,
+  #ff00ff 83.333%,
+  #ff0000 100%);
+
+  height: 1.6em;
+  width: 100%;
+  padding: 0;
+  border: none;
+  outline: none;
+
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    cursor: var(--cursor-pointer);
+    height: 18px;
+    width: 18px;
+    margin-top: -4px;
+    background: var(--color-thumb);
+    border-radius: 15%;
+    &:hover {
+      height: 24px;
+      width: 24px;
+      margin-top: -7px;
+    }
+  }
+  &::-moz-range-thumb {
+    cursor: var(--cursor-pointer);
+    height: 18px;
+    width: 18px;
+    background: var(--color-thumb);
+    border-radius: 15%;
+    &:hover {
+      height: 24px;
+      width: 24px;
+    }
+  }
+  &::-webkit-slider-runnable-track {
+    height: 12px;
+    width: 100%;
+    background: var(--gradient);
+    border-radius: 6px;
+  }
+  &::-moz-range-track {
+    height: 12px;
+    width: 100%;
+    background: var(--gradient);
+    border-radius: 6px;
+  }
+  &:disabled {
+    --gradient: linear-gradient(to right, #454545 0%, #bbbbbb 50%, #454545 100%);
+    &::-webkit-slider-thumb {
+      cursor: var(--cursor-default);
+      opacity: 0;
+    }
+    &::-moz-range-thumb {
+      cursor: var(--cursor-default);
+      opacity: 0;
+    }
+    &::-webkit-slider-runnable-track {
+      cursor: var(--cursor-default);
+      opacity: 0.5;
+    }
+    &::-moz-range-track {
+      cursor: var(--cursor-default);
+      opacity: 0.5;
+    }
+  }
+}
+
+/* ----------------------------------------- */
+/*  Enriched Content                         */
+/* ----------------------------------------- */
+
+enriched-content {
+  display: inline-block;
+}
+
+document-embed {
+  display: block;
+}
+
+/* ----------------------------------------- */
+/*  MultiSelect Element                      */
+/* ----------------------------------------- */
+
+multi-select {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  select {
+    width: 100%;
+  }
+}
+
+multi-checkbox {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+}
+
+/* ----------------------------------------- */
+/*  RangePicker Element                      */
+/* ----------------------------------------- */
+
+range-picker {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  > input[type=range] {
+    flex: 1;
+  }
+  > input[type=number] {
+    flex: 0 0 40px;
+    text-align: center;
+    padding: 0;
+    font-size: 0.8em;
+  }
+}
+
+/* ----------------------------------------- */
+/*  Tags Elements                            */
+/* ----------------------------------------- */
+
+document-tags,
+string-tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.25rem;
+  margin: 0;
+  > input {
+    flex: 1;
+  }
+}
+
+/* ----------------------------------------- */
+/*  FilePicker Element                       */
+/* ----------------------------------------- */
+
+file-picker {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin: 0;
+}
+
+/* ----------------------------------------- */
+/*  Content Links and Inline Rolls           */
+/* ----------------------------------------- */
+
+.content-link,
+.inline-roll {
+  background: var(--content-link-background);
+  border: 1px solid var(--content-link-border-color);
+  border-radius: 2px;
+  color: var(--content-link-text-color);
+  margin: -1px 0;
+  padding: 1px 4px 0;
+  white-space: nowrap;
+  word-break: break-all;
+  > i {
+    color: var(--content-link-icon-color);
+    font-size: 0.8em;
+    margin-right: 0.25em;
+  }
+}
+
+/* ---------------------------------------- */
+/*  Secrets                                 */
+/* ---------------------------------------- */
+
+section.secret {
+  padding: 0 6px;
+  background: var(--color-secret-bg);
+  border: solid var(--color-secret-border);
+  border-width: 1px 0;
+
+  &.revealed { background: var(--color-revealed-bg); }
+
+  > button.reveal {
+    width: unset;
+    height: unset;
+    line-height: unset;
+    padding: 0 16px;
+    margin-top: 8px;
+    font-size: var(--font-size-13);
+    border-style: dashed;
+  }
+}

@@ -1,0 +1,94 @@
+
+/* ---------------------------------------- */
+/*  Display States                          */
+/* ---------------------------------------- */
+
+.disabled {
+  cursor: var(--cursor-default);
+  pointer-events: none;
+}
+
+.hidden,
+[hidden]:not([hidden="until-found"]) {
+  display: none !important;
+}
+
+/** Scrollable Containers */
+.scrollable {
+  --scroll-margin: 0.75rem;
+  margin-right: calc(-1 * var(--scroll-margin));
+  padding-right: var(--scroll-margin);
+  overflow: hidden auto;
+  scrollbar-gutter: stable;
+}
+
+/** Ellipsis Font */
+.ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  word-break: break-all;
+  text-overflow: ellipsis;
+}
+
+/* ---------------------------------------- */
+/*  Tabbed Navigation                       */
+/* ---------------------------------------- */
+
+nav.tabs {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 1rem;
+  line-height: 2.5;
+  border-top: 1px solid var(--color-tabs-border);
+  border-bottom: 1px solid var(--color-tabs-border);
+
+  &.vertical {
+    align-items: start;
+    border: none;
+    flex: 1;
+    flex-direction: column;
+    gap: 0.25rem;
+    height: 0;
+    justify-content: start;
+    line-height: normal;
+    [data-tab] {
+      border-color: var(--color-tabs-border);
+      border-width: 0 0 1px 0;
+      flex: none;
+      font-size: var(--font-size-12);
+      outline: none;
+      padding: 0.5rem 0;
+      text-align: left;
+      width: 100%;
+      &:first-of-type {
+        padding-top: 0;
+      }
+      &:hover {
+        border-bottom-color: var(--color-tabs-border);
+      }
+      &.active {
+        border-bottom-color: var(--color-shadow-primary);
+      }
+    }
+  }
+
+  [data-tab] {
+    color: var(--color-text-secondary);
+    text-align: center;
+    cursor: var(--cursor-pointer);
+    > * { pointer-events: none; }
+    &.active, &:hover { text-shadow: 0 0 10px var(--color-shadow-primary); }
+    &.active { color: var(--color-text-emphatic); }
+    &:hover { color: var(--color-text-primary); }
+  }
+}
+
+.tab[data-tab] {
+  &:not(.active) { display: none; }
+  > nav.tabs {
+    border-top-color: var(--color-cool-5-25);
+    border-bottom-color: var(--color-cool-5-25);
+  }
+}

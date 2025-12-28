@@ -1,0 +1,328 @@
+
+/* ---------------------------------------- */
+/*  Theme Variables                         */
+/* ---------------------------------------- */
+
+.mixin-theme-dark-variables {
+  --color-scheme: dark;
+  --color-text-emphatic: var(--color-light-1);
+  --color-text-primary: var(--color-light-2);
+  --color-text-secondary: var(--color-light-3);
+  --color-text-subtle: var(--color-light-5);
+  --color-text-selection: var(--color-light-1);
+  --color-text-selection-bg: var(--color-cool-3);
+
+  /* Applications */
+  .application, &.application {
+    --background: var(--color-cool-5-90);
+    --color-header-background: rgb(0 0 0 / 50%);
+    --color-border: var(--color-cool-4);
+    --color-tabs-border: var(--color-light-5);
+    --color-fieldset-border: var(--color-light-6);
+    --color-form-hint: var(--color-light-5);
+    --color-form-hint-hover: var(--color-light-4);
+    --color-form-label: var(--color-light-4);
+    --color-form-label-hover: var(--color-light-2);
+    --color-select-option-bg: transparent;
+
+    .window-content {
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+    }
+
+    .window-resize-handle { filter: invert(1); }
+
+    @media (prefers-reduced-transparency) {
+      --background: var(--color-cool-5);
+    }
+  }
+
+  /* Forms */
+  input,
+  select,
+  textarea,
+  code-mirror {
+    --input-background-color: var(--color-cool-4);
+    --input-border-color: transparent;
+    --input-text-color: var(--color-light-3);
+    --input-focus-outline-color: var(--color-cool-3);
+    &:disabled {
+      --input-background-color: var(--color-cool-5);
+      --input-border-color: var(--color-cool-4);
+      --input-text-color: var(--color-light-4);
+    }
+  }
+
+  input,
+  select,
+  textarea {
+    --input-placeholder-color: var(--color-light-5);
+    &:focus { --input-text-color: var(--color-light-1); }
+  }
+
+  code-mirror {
+    --input-focus-text-color: var(--color-light-2);
+    --gutter-background-color: var(--color-dark-2);
+    --gutter-border-color: var(--color-dark-3);
+    --gutter-text-color: var(--color-light-4);
+    --active-line-color: #2f393c44;
+    --input-background-color: var(--color-cool-4);
+    --input-border-color: transparent;
+    --tooltip-background-color: var(--color-light-1);
+    --tooltip-text-color: var(--color-dark-2);
+    &:disabled {
+      --gutter-background-color: var(--color-dark-1);
+      --gutter-border-color: var(--input-border-color);
+      --gutter-text-color: var(--color-light-4);
+    }
+
+    // JS(ON)
+    --syntax-keyword-color: #c678dd;
+    --syntax-comment-color: #7d8799;
+    --syntax-operator-color: #56b6c2;
+    --syntax-separator-color: var(--syntax-operator-color);
+    --syntax-var-name-color: #e06c75;
+    --syntax-func-name-color: #61afef;
+    --syntax-local-var-color: #fff;
+    --syntax-class-name-color: #e5c07b;
+    --syntax-prop-def-color: #e06c75;
+    --syntax-prop-name-color: var(--input-text-color);
+    --syntax-boolean-color: #d19a66;
+    --syntax-number-color: #e5c07b;
+    --syntax-string-color: #98c379;
+    --syntax-regexp-color: #56b6c2;
+
+    // HTML
+    --syntax-angle-bracket-color: var(--syntax-separator-color);
+    --syntax-tag-color: var(--syntax-class-name-color);
+    --syntax-code-bg-color: var(--color-cool-5-25);
+  }
+
+  code, code.block {
+    --color-code-bg: var(--color-cool-4);
+    --color-code-border: var(--color-cool-3);
+  }
+
+  // Checkboxes and Radio Buttons
+  input[type=checkbox],
+  input[type=radio] {
+    --checkbox-checked-color: var(--color-warm-1);
+    --checkbox-disabled-color: var(--color-cool-3);
+    --checkbox-background-color: var(--color-cool-4);
+    --checkbox-checkmark-color: transparent;
+    --checkbox-font-weight: bold;
+  }
+
+  label.icon {
+    --input-background-color: var(--color-cool-4);
+    --input-border-color: transparent;
+    --input-text-color: var(--color-light-3);
+    --input-focus-outline-color: var(--color-cool-3);
+
+    &:focus-within { --input-text-color: var(--color-light-1); }
+
+    &:has(> input:disabled) {
+      --input-background-color: var(--color-cool-5);
+      --input-border-color: var(--color-cool-4);
+      --input-text-color: var(--color-light-4);
+    }
+  }
+
+  // Readonly Text Input
+  input[readonly] {
+    --input-background-color: var(--color-cool-5);
+    --input-border-color: var(--color-cool-4);
+    --input-text-color: var(--color-light-4);
+  }
+
+  // Buttons
+  a.button, button, kbd {
+    --button-background-color: var(--color-cool-5-50);
+    --button-border-color: var(--color-light-5);
+    --button-text-color: var(--color-light-3);
+    --button-focus-outline-color: var(--color-warm-2);
+    --button-hover-background-color: var(--color-warm-2);
+    --button-hover-border-color: var(--color-light-3);
+    --button-hover-text-color: var(--color-light-1);
+    &[disabled] {
+      --button-background-color: var(--color-cool-5);
+      --button-border-color: transparent;
+      --button-text-color: var(--color-light-5);
+      --button-hover-background-color: var(--button-background-color);
+      --button-hover-border-color: var(--button-border-color);
+      --button-hover-text-color: var(--button-text-color);
+    }
+  }
+
+  // Bright buttons
+  a.button.bright,
+  button.bright {
+    --button-background-color: var(--color-warm-1);
+    --button-border-color: var(--color-cool-5);
+    --button-text-color: var(--color-cool-5);
+    --button-hover-background-color: #fda948;
+    --button-hover-border-color: var(--color-warm-3);
+    --button-hover-text-color: #000000;
+
+    // Disabled Bright Buttons
+    &:disabled {
+      --button-background-color: var(--color-cool-4);
+      --button-text-color: var(--color-text-subtle);
+      --button-hover-background-color: var(--button-background-color);
+      --button-hover-border-color: var(--button-border-color);
+      --button-hover-text-color: var(--button-text-color);
+    }
+  }
+
+  // Tables
+  --table-background-color: var(--color-cool-5-50);
+  --table-header-bg-color: var(--color-cool-4);
+  --table-header-border-color: var(--color-cool-4);
+  --table-header-text-color: inherit;
+  --table-row-color-even: rgb(255 255 255 / 10%);
+  --table-row-color-odd: transparent;
+  --table-row-color-highlight: var(--color-cool-3);
+
+  // ProseMirror
+  .prosemirror, prose-mirror,
+  #prosemirror-dropdown, .menu-dialog.prosemirror,
+  &#prosemirror-dropdown, &.menu-dialog.prosemirror {
+    --menu-background: var(--color-cool-4);
+    --dropdown-background: var(--color-cool-4);
+    --dropdown-border: var(--color-cool-3);
+    --dialog-background: var(--color-cool-5);
+    --dialog-border: var(--color-cool-4);
+    --color-control-hover: rgb(0 0 0 / 25%);
+    --color-form-label-hover: var(--color-light-2);
+    --button-text-color: var(--color-light-3);
+  }
+
+  /* Context Menu */
+  #context-menu, &#context-menu {
+    --background-color: var(--color-cool-5);
+    --border-color: var(--color-cool-3);
+    --text-color: var(--color-text-secondary);
+    --hover-text-color: var(--color-text-emphatic);
+    --group-separator: var(--color-cool-4);
+    --hover-entry-border: var(--color-cool-4);
+    --hover-entry-background: var(--color-dark-1);
+  }
+
+  // Content Links & Inline Rolls
+  --content-link-background: var(--color-cool-5-90);
+  --content-link-border-color: var(--color-light-6);
+  --content-link-icon-color: var(--color-light-4);
+  --content-link-text-color: var(--color-light-2);
+
+  /* UI */
+  --sidebar-background: var(--color-cool-5-90);
+  --sidebar-separator: 1px solid var(--color-cool-4);
+  --sidebar-entry-hover-bg: rgb(255 255 255 / 10%);
+  --sidebar-folder-color: var(--color-dark-1);
+
+  &.compendium-directory, .compendium-directory {
+    --header-mask: linear-gradient(black, transparent);
+    --header-border: none;
+  }
+
+  .ui-control, .placeable-hud, #measurement .waypoint-label {
+    --control-bg-color: var(--color-cool-5-75);
+    --control-border-color: var(--color-cool-4);
+    --control-icon-color: var(--color-light-2);
+    --control-hover-bg-color: var(--color-cool-5);
+    --control-hover-border-color: var(--color-cool-3);
+    --control-hover-icon-color: var(--color-light-1);
+    --control-active-bg-color: var(--color-cool-5);
+    --control-active-border-color: var(--color-warm-2);
+    --control-active-icon-color: var(--color-light-1);
+    --control-button-border-color: var(--color-warm-1);
+    --control-button-hover-bg-color: var(--color-warm-2);
+    --control-button-hover-border-color: var(--color-light-1);
+    --toggle-bg-color: rgb(34 34 72 / 75%);
+    --toggle-border-color: #5252d7;
+    --toggle-active-bg-color: #5252d7;
+    --toggle-active-border-color: #8484ff;
+    &:disabled {
+      --control-hover-bg-color: var(--control-bg-color);
+      --control-hover-border-color: var(--control-border-color);
+      --control-hover-icon-color: var(--control-icon-color);
+    }
+  }
+
+  .placeable-hud, #measurement .waypoint-label {
+    --control-icon-color: rgba(255 255 255 / 70%);
+    --control-active-icon-color: rgba(255 255 255 / 70%);
+    --control-hover-icon-color: #FFF;
+    --control-active-icon-color: #FFF;
+    --control-icon-filter: none;
+  }
+
+  #hotbar {
+    --slot-color: var(--color-cool-5-90);
+    --key-bg-color-empty: var(--color-cool-5);
+    --key-bg-color-full: var(--color-cool-5);
+    --key-text-color: var(--color-light-1);
+    --page-control-color: var(--color-cool-5);
+  }
+
+  #chat-message {
+    --text-color: var(--color-light-2);
+    --placeholder-color: var(--color-light-5);
+    --background-color: var(--color-cool-5);
+    --border-color: var(--color-cool-4);
+  }
+
+  #players {
+    --background-color: var(--color-cool-5-75);
+    --border-color: var(--color-cool-4);
+
+    --player-name-idle-color: #baaddc;
+    --player-name-self-color: #c0eddb;
+
+    --color-rating-good: #58e558;
+    --color-rating-fair: #e3e365;
+    --color-rating-poor: #e85555;
+
+    button {
+      --button-text-color: var(--color-text-emphatic);
+      --button-hover-text-color: var(--button-text-color);
+    }
+  }
+
+  .combat-tracker {
+    --active-input-bg-color: var(--color-cool-5);
+    --entry-hover-bg: rgb(255 255 255 / 10%);
+    --entry-active-bg: rgb(255 255 255 / 15%);
+    --token-effect-filter: none;
+  }
+
+  #token-hud, #measurement { --hud-icon-filter: none; }
+
+  /* AV */
+  #camera-views, &#camera-views {
+    --av-background-color: var(--color-cool-5-90);
+    --av-border-color: var(--color-cool-4);
+  }
+}
+
+/* ---------------------------------------- */
+/*  Theme Layers                            */
+/* ---------------------------------------- */
+
+// General rules that apply when using this theme
+@layer general {
+
+  // The overall theme body
+  body.theme-dark {
+    .mixin-theme-dark-variables();
+  }
+}
+
+// Specific rules that take precedence for apps which override to this theme
+@layer specific {
+
+  // An application that is overridden to explicitly use the theme
+  .themed.theme-dark {
+    .mixin-theme-dark-variables();
+  }
+}

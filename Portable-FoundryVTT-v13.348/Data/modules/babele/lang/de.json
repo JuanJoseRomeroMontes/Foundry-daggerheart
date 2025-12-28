@@ -1,0 +1,23 @@
+{
+  "BABELE.CompendiumTranslations": "Übersetzungen",
+  "BABELE.TranslateActorHeadBtn": "Übersetzen",
+  "BABELE.TranslateActorTitle": "Aktor übersetzen",
+  "BABELE.TranslateActorHint": "Übersetzt automatisch alle Gegenstände dieses Aktors für die ein übersetztes Kompendium existiert",
+  "BABELE.TranslateActorBtn": "Übersetzen!",
+  
+  "BABELE.ExportTranslationTitle": "Exportiere Übersetzungs Dateien",
+  "BABELE.ExportTranslationBtn": "Exportieren!",
+  "BABELE.ExportTranslationNotes": "Wähle ein Format das für die exportierte Datei verwendet werden soll. Wähle \"Alt\" für das orginale, native Format oder \"Kompatibel\" wenn du vor hast, die Übersetzungen über eine externe Lokalisierungs-Platform zu verwalten (z.B. Weblate, Transifex, etc...)",
+  "BABELE.ExportTranslationFormat": "Formatieren",
+  "BABELE.ExportTranslationFormatLegacy": "Alt",
+  "BABELE.ExportTranslationFormatCompatible": "Kompatibel",
+  "BABELE.TranslationDirTitle": "Übersetzungsdateiverzeichnis",
+  "BABELE.TranslationDirHint": "Trage das Verzeichnis ein, in dem die lokalen Übersetzungsdateien der Kompendien liegen.",
+  "BABELE.EnableTranslationExportTile": "Aktiviere Übersetzungs Export",
+  "BABELE.EnableTranslationExportHint": "Aktiviere diese Option wenn du bei jedem Kompendium eine Schaltfläche einfügen möchtest, welche die Übersetzungsdatei generiert, nützlich für eine Einstiegsvorlage.",
+  "BABELE.ShowOriginalName": "Zeige ursprünglichen Namen",
+  "BABELE.ShowOriginalNameHint": "Zeige zusätzlich zum übersetzten Namen den unübersetzten Namen des Kompendium Eintrags. Dadurch kannst du sowohl nach dem übersetzten, als auch nach dem originalen Namen filtern, wenn du die Suche verwendest.",
+  "BABELE.ShowTranslateOption": "Zeige Übersetzen Option",
+  "BABELE.ShowTranslateOptionHint": "Zeige die Übersetzen Option in der Titel Leiste des Akteur Bogens.",
+  "BABELE.requireLibWrapperMessage": "Babele erfordert das 'libWrapper' modul. Bitte installiere und aktiviere es."
+}

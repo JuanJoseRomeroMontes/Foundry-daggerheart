@@ -1,0 +1,1 @@
+export default class PackageWarnings extends Map{add(r,{type:e,level:t="error",message:n=""}={}){this.has(r)||this.set(r,{id:r,type:e,warning:new Set,error:new Set});const s=this.get(r);e&&!s.type&&(s.type=e),s[t].add(n)}toJSON(){const r={};for(const[e,t]of this.entries())r[e]={...t,warning:Array.from(t.warning),error:Array.from(t.error)};return r}}

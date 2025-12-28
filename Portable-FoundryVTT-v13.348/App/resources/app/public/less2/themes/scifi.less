@@ -1,0 +1,112 @@
+
+/* ---------------------------------------- */
+/*  Theme Variables                         */
+/* ---------------------------------------- */
+
+.mixin-theme-scifi-variables {
+
+  /* ---------------------------------------- */
+  /*  Backgrounds                              */
+  /* ---------------------------------------- */
+
+  --background-url: url("../ui/backgrounds/setup-scifi.webp");
+  --main-logo: url("../icons/logo-scifi-blank.png");
+
+  /* ---------------------------------------- */
+  /*  Colors                                  */
+  /* ---------------------------------------- */
+
+  --color-warm-1: #3a9bee;
+  --color-warm-2: #303260;
+  --color-warm-3: #202137;
+
+  --color-cool-3: #202137;
+  --color-cool-4: #15151e;
+  --color-cool-5: #0b090a;
+
+  --color-cool-5-25: rgb(11 9 10 / 25%);
+  --color-cool-5-50: rgb(11 9 10 / 50%);
+  --color-cool-5-75: rgb(11 9 10 / 75%);
+  --color-cool-5-90: rgb(11 9 10 / 90%);
+
+  --color-light-1: #f3f7f7;
+  --color-light-2: #dee9ed;
+  --color-light-3: #c2daea;
+  --color-light-4: #899fad;
+  --color-light-5: #79849b;
+  --color-light-6: #6c7288;
+
+  --color-scrollbar: #303260;
+
+  --color-text-emphatic: #f3f7f7;
+  --color-text-primary: #dee9ed;
+  --color-text-secondary: #c2daea;
+  --color-text-subtle: #899fad;
+  --color-text-selection: #f3f7f7;
+  --color-text-selection-bg: #202137;
+
+  --color-border: #3a9bee;
+
+  /* ---------------------------------------- */
+  /*  Typography                              */
+  /* ---------------------------------------- */
+
+  --font-h1: "Bruno Ace SC", serif;
+  --font-h2: "Bruno Ace", serif;
+  --font-h3: "Bruno Ace", serif;
+  --font-h4: "Bruno Ace", serif;
+  --font-h5: "Bruno Ace", serif;
+  --font-h6: "Bruno Ace", serif;
+  --font-h1-size: var(--font-size-64);
+  --font-h3-size: var(--font-size-20);
+  --font-h4-size: var(--font-size-20);
+  --font-h6-size: var(--font-size-18);
+
+  /* ---------------------------------------- */
+  /*  Applications                            */
+  /* ---------------------------------------- */
+
+  .app,
+  .application {
+    --color-border: #303260;
+  }
+
+  /* ---------------------------------------- */
+  /*  Forms and Form Elements                 */
+  /* ---------------------------------------- */
+
+  input, select {
+    --input-background-color: #202137;
+    --input-focus-outline-color: #3a9bee;
+  }
+
+  // Checkboxes and Radio Buttons
+  input[type="checkbox"],
+  input[type="radio"] {
+    --checkbox-checked-color: #3a9bee;
+    --checkbox-background-color: #202137;
+  }
+
+  button.bright {
+    --button-hover-background-color: #42a5fc;
+  }
+}
+
+/* ---------------------------------------- */
+/*  Theme Layers                            */
+/* ---------------------------------------- */
+
+// General rules that apply when using this theme
+@layer general {
+  body.theme-scifi {
+    .mixin-theme-scifi-variables();
+  }
+}
+
+// Specific rules that take precedence for apps which override to this theme
+@layer specific {
+  .application.theme-scifi,
+  .themed.theme-scifi {
+    .mixin-theme-scifi-variables();
+  }
+}

@@ -19,7 +19,7 @@
   "passwordSalt": null,
   "sslCert": null,
   "sslKey": null,
-  "world": null,
+  "world": "fe-west-marches",
   "serviceConfig": null,
   "telemetry": true
 }

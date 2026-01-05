@@ -1,0 +1,68 @@
+#token-mold-overlay {
+  color: #f1f1f1;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-auto-rows: auto;
+  align-content: center;
+  justify-content: flex-end;
+  padding: 3px 0;
+  width: 100%;
+}
+#token-mold-overlay span {
+  padding: 0 3px;
+}
+#token-mold-overlay .value {
+  background-color: rgba(0, 0, 0, 0.6);
+  grid-column: 0.5;
+}
+#token-mold-overlay .icon {
+  background-color: rgba(0, 0, 0, 0.6);
+  grid-column: 0.66666667;
+}
+.fa-solid {
+  font-family: "Font Awesome 6 Pro";
+}
+.token-mold .inp-small {
+  flex: 0 1 30px;
+}
+.token-mold header.table-header {
+  gap: 0.5rem;
+  background: var(--color-text-dark-inactive);
+  padding: 0.5rem;
+  color: var(--color-text-light-highlight);
+  border: 1px solid var(--color-border-dark-4);
+  text-align: left;
+  font-weight: bold;
+  text-shadow: 1px 1px var(--color-shadow-dark);
+}
+.token-mold label.overlay-index {
+  flex: 0 1 65px;
+}
+.token-mold select.overlay-icon {
+  flex: 0 1 65px;
+  max-width: 65px;
+}
+.token-mold select.overlay-value {
+  flex: 6 1 0%;
+}
+.token-mold h3 {
+  margin: 3px 0px;
+}
+.token-mold .language-attribute-group {
+  align-items: flex-start;
+}
+.token-mold .language-attribute {
+  flex: 0 1 35%;
+  max-width: 35%;
+  min-width: 35%;
+}
+.token-mold .language-attribute.default {
+  padding: 0 0.5rem;
+}
+.token-mold .name-value.default {
+  padding: 0 0.5rem;
+}
+.token-mold .reset-lang,
+.token-mold .remove-lang {
+  flex: 0 1 15px;
+}

@@ -1,5 +1,5 @@
 {
-  "timestamp": 1766929927275,
+  "timestamp": 1767621752588,
   "os": {
     "platform": "win32",
     "version": "10.0.19045",
@@ -61,6 +61,9 @@
     "the-void-unofficial": {
       "version": "1.1.1"
     },
+    "token-mold": {
+      "version": "2.23.1"
+    },
     "vtta-tokenizer": {
       "version": "4.5.6"
     }
@@ -68,12 +71,12 @@
   "systems": {
     "daggerheart": {
       "version": "1.1.2",
-      "playtime": 35948
+      "playtime": 40020
     }
   },
   "worlds": {},
   "playtime": {
-    "total": 35948,
-    "max": 35948
+    "total": 40020,
+    "max": 40020
   }
 }

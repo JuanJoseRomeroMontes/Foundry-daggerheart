@@ -9,8 +9,34 @@
     "verified": "13"
   },
   "systemVersion": "1.1.2",
-  "lastPlayed": "Sun Dec 28 2025 14:51:09 GMT+0100 (hora estándar de Europa central)",
-  "playtime": 35948,
+  "lastPlayed": "Mon Jan 05 2026 15:02:21 GMT+0100 (hora estándar de Europa central)",
+  "playtime": 40020,
+  "packs": [
+    {
+      "label": "Homebrew Adversaries",
+      "type": "Actor",
+      "name": "homebrew-adversaries",
+      "path": "packs/homebrew-adversaries",
+      "system": "daggerheart",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
+      "label": "Homebrew Adversaries Features",
+      "type": "Item",
+      "name": "homebrew-adversaries-features",
+      "path": "packs/homebrew-adversaries-features",
+      "system": "daggerheart",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    }
+  ],
   "description": "",
   "flags": {}
 }

@@ -1,0 +1,73 @@
+<section class='tab {{tabs.inventory.cssClass}} {{tabs.inventory.id}}' data-tab='{{tabs.inventory.id}}'
+    data-group='{{tabs.inventory.group}}'>
+    <div class="search-section">
+        <div class="search-bar">
+            <div class="icon">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <input type="search" name="search" class="search-inventory" placeholder="Search...">
+        </div>
+        <a class="filter-button">
+            <i class="fa-solid fa-filter"></i>
+        </a>
+        <a data-tooltip="{{localize 'DAGGERHEART.UI.Tooltip.compendiumBrowser'}}" data-action="tempBrowser">
+            <i class="fa-solid fa-book-atlas"></i>
+        </a>
+    </div>
+
+    {{#if inventory.hasCurrency}}
+        <div class="currency-section">
+            {{#each this.inventory.currencies as |currency key|}}
+                {{#if currency.enabled}}
+                    <div class="input currency" data-currency="{{key}}">
+                        <span class="drag-handle">
+                            <i class="{{currency.icon}}" inert></i> {{localize currency.label}}
+                        </span>
+                        <input type="text" name="{{currency.field.fieldPath}}" data-allow-delta value="{{currency.value}}" data-dtype="Number" min="0" step="1" />
+                    </div>
+                {{/if}}
+            {{/each}}
+        </div>
+    {{/if}}
+
+    <div class="items-section">
+        {{> 'daggerheart.inventory-items'
+        title='TYPES.Item.weapon'
+        type='weapon'
+        actorType='party'
+        collection=@root.inventory.weapons
+        isGlassy=true
+        canCreate=true
+        hideResources=true
+        hideContextMenu=true
+        }}
+        {{> 'daggerheart.inventory-items'
+        title='TYPES.Item.armor'
+        type='armor'
+        actorType='party'
+        collection=@root.inventory.armor
+        isGlassy=true
+        canCreate=true
+        hideResources=true
+        hideContextMenu=true
+        }}
+        {{> 'daggerheart.inventory-items'
+        title='TYPES.Item.consumable'
+        type='consumable'
+        actorType='party'
+        collection=@root.inventory.consumables
+        isGlassy=true
+        canCreate=true
+        hideContextMenu=true
+        }}
+        {{> 'daggerheart.inventory-items'
+        title='TYPES.Item.loot'
+        type='loot'
+        actorType='party'
+        collection=@root.inventory.loot
+        isGlassy=true
+        canCreate=true
+        hideContextMenu=true
+        }}
+    </div>
+</section>

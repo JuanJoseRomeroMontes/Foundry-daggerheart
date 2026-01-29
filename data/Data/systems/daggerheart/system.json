@@ -2,10 +2,10 @@
     "id": "daggerheart",
     "title": "Daggerheart",
     "description": "An unofficial implementation of the Daggerheart system",
-    "version": "1.1.2",
+    "version": "1.6.1",
     "compatibility": {
-        "minimum": "13",
-        "verified": "13.347",
+        "minimum": "13.346",
+        "verified": "13.351",
         "maximum": "13"
     },
     "authors": [
@@ -19,7 +19,10 @@
             "discord": "cptn_cosmo"
         },
         {
-            "name": "Ikraik"
+            "name": "Ikraik",
+            "url": "https://github.com/ikraik",
+            "email": "ikraik0.0gaming@gmail.com",
+            "discord": "ikraik"
         },
         {
             "name": "IrkTheImp"
@@ -51,6 +54,12 @@
         {
             "name": "chrisryan10",
             "discord": "lazjen"
+        },
+        {
+            "name": "nsalyzyn",
+            "url": "https://github.com/nsalyzyn",
+            "email": "nsalyzyn@gmail.com",
+            "discord": "nsalyzyn"
         }
     ],
     "esmodules": [
@@ -169,6 +178,15 @@
             "flags": {}
         },
         {
+            "name": "rolltables",
+            "label": "Rolltables",
+            "system": "daggerheart",
+            "path": "packs/rolltables.db",
+            "type": "RollTable",
+            "private": false,
+            "flags": {}
+        },
+        {
             "name": "beastforms",
             "label": "Beastforms",
             "system": "daggerheart",
@@ -186,7 +204,8 @@
             "packs": [
                 "adversaries",
                 "environments",
-                "journals"
+                "journals",
+                "rolltables"
             ],
             "folders": [
                 {
@@ -248,6 +267,11 @@
                 "htmlFields": [
                     "notes",
                     "description"
+                ]
+            },
+            "party": {
+                "htmlFields": [
+                    "notes"
                 ]
             }
         },
@@ -313,9 +337,13 @@
         },
         "ChatMessage": {
             "dualityRoll": {},
+            "fateRoll": {},
             "adversaryRoll": {},
             "damageRoll": {},
-            "abilityUse": {}
+            "abilityUse": {},
+            "tagTeam": {},
+            "groupRoll": {},
+            "systemMessage": {}
         }
     },
     "background": "systems/daggerheart/assets/logos/FoundrybornBackgroundLogo.png",
@@ -323,5 +351,5 @@
     "secondaryTokenAttribute": "resources.stress",
     "url": "https://github.com/Foundryborne/daggerheart",
     "manifest": "https://github.com/Foundryborne/daggerheart/releases/latest/download/system.json",
-    "download": "https://github.com/Foundryborne/daggerheart/releases/download/1.1.2/system.zip"
+    "download": "https://github.com/Foundryborne/daggerheart/releases/download/1.6.1/system.zip"
 }

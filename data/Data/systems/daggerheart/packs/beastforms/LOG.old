@@ -1,5 +1,5 @@
-2025/12/28-20:41:09.085 33f4 Log #87: 0 ops saved to Table #88 OK
-2025/12/28-20:41:09.086 33f4 Archiving ..\..\Data\Data\systems\daggerheart\packs\beastforms/000087.log: OK
-2025/12/28-20:41:09.087 33f4 Table #5: 100 entries OK
-2025/12/28-20:41:09.092 33f4 Archiving ..\..\Data\Data\systems\daggerheart\packs\beastforms/MANIFEST-000086: OK
-2025/12/28-20:41:09.097 33f4 **** Repaired leveldb ..\..\Data\Data\systems\daggerheart\packs\beastforms; recovered 1 files; 46833 bytes. Some data may have been lost. ****
+2026/01/28-11:58:44.455507 7fa93ffbf6c0 Delete type=3 #1
+2026/01/28-11:58:44.456643 7fa93dbff6c0 Level-0 table #5: started
+2026/01/28-11:58:44.457833 7fa93dbff6c0 Level-0 table #5: 43791 bytes OK
+2026/01/28-11:58:44.458293 7fa93dbff6c0 Delete type=0 #3
+2026/01/28-11:58:44.458368 7fa93dbff6c0 Manual compaction at level-0 from '!folders!9uPPuDAUXrVYquTw' @ 72057594037927935 : 1 .. '!items.effects!zRLjqKx4Rn2TjivL.IWg2cWUdvucUOLAL' @ 0 : 0; will stop at (end)

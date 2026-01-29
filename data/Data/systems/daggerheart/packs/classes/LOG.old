@@ -1,5 +1,5 @@
-2025/12/28-20:41:08.510 4cc0 Log #87: 0 ops saved to Table #88 OK
-2025/12/28-20:41:08.512 4cc0 Archiving ..\..\Data\Data\systems\daggerheart\packs\classes/000087.log: OK
-2025/12/28-20:41:08.515 4cc0 Table #5: 83 entries OK
-2025/12/28-20:41:08.520 4cc0 Archiving ..\..\Data\Data\systems\daggerheart\packs\classes/MANIFEST-000086: OK
-2025/12/28-20:41:08.526 4cc0 **** Repaired leveldb ..\..\Data\Data\systems\daggerheart\packs\classes; recovered 1 files; 40022 bytes. Some data may have been lost. ****
+2026/01/28-11:58:44.467228 7fa93ffbf6c0 Delete type=3 #1
+2026/01/28-11:58:44.468387 7fa93dbff6c0 Level-0 table #5: started
+2026/01/28-11:58:44.469566 7fa93dbff6c0 Level-0 table #5: 51012 bytes OK
+2026/01/28-11:58:44.470147 7fa93dbff6c0 Delete type=0 #3
+2026/01/28-11:58:44.470231 7fa93dbff6c0 Manual compaction at level-0 from '!folders!07ZMng4a2Z1kdqMq' @ 72057594037927935 : 1 .. '!items.effects!njj2C3tMDeCHHOoh.XK4cCcz9sRGDJr0q' @ 0 : 0; will stop at (end)

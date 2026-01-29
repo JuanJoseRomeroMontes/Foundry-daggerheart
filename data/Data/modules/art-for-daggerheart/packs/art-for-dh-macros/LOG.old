@@ -1,5 +1,3 @@
-2025/12/28-20:41:09.129 33f4 Log #273: 0 ops saved to Table #274 OK
-2025/12/28-20:41:09.132 33f4 Archiving ..\..\Data\Data\modules\art-for-daggerheart\packs\art-for-dh-macros/000273.log: OK
-2025/12/28-20:41:09.132 33f4 Table #101: 1 entries OK
-2025/12/28-20:41:09.136 33f4 Archiving ..\..\Data\Data\modules\art-for-daggerheart\packs\art-for-dh-macros/MANIFEST-000272: OK
-2025/12/28-20:41:09.141 33f4 **** Repaired leveldb ..\..\Data\Data\modules\art-for-daggerheart\packs\art-for-dh-macros; recovered 1 files; 2309 bytes. Some data may have been lost. ****
+2026/01/28-16:06:10.095 21f4 Recovering log #283
+2026/01/28-16:06:10.104 21f4 Delete type=0 #283
+2026/01/28-16:06:10.104 21f4 Delete type=3 #282

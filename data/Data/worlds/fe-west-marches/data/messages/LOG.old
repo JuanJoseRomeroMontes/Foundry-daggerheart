@@ -1,11 +1,5 @@
-2025/12/28-20:41:07.725 33f4 Log #103: 1 ops saved to Table #104 OK
-2025/12/28-20:41:07.728 33f4 Archiving ../../Data/Data/worlds/fe-west-marches/data/messages/000103.log: OK
-2025/12/28-20:41:07.728 33f4 Table #19: 4 entries OK
-2025/12/28-20:41:07.730 33f4 Table #86: 2 entries OK
-2025/12/28-20:41:07.731 33f4 Table #90: 2 entries OK
-2025/12/28-20:41:07.731 33f4 Table #95: 2 entries OK
-2025/12/28-20:41:07.732 33f4 Table #99: 1 entries OK
-2025/12/28-20:41:07.732 33f4 Table #102: 1 entries OK
-2025/12/28-20:41:07.732 33f4 Table #104: 1 entries OK
-2025/12/28-20:41:07.737 33f4 Archiving ../../Data/Data/worlds/fe-west-marches/data/messages/MANIFEST-000101: OK
-2025/12/28-20:41:07.744 33f4 **** Repaired leveldb ../../Data/Data/worlds/fe-west-marches/data/messages; recovered 7 files; 10399 bytes. Some data may have been lost. ****
+2026/01/28-16:06:07.275 5d34 Recovering log #115
+2026/01/28-16:06:07.275 5d34 Level-0 table #117: started
+2026/01/28-16:06:07.314 5d34 Level-0 table #117: 2440 bytes OK
+2026/01/28-16:06:07.646 5d34 Delete type=0 #115
+2026/01/28-16:06:07.647 5d34 Delete type=3 #114

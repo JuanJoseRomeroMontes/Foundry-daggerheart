@@ -1,4 +1,3 @@
-2025/12/28-20:41:08.046 4cc0 Log #83: 0 ops saved to Table #84 OK
-2025/12/28-20:41:08.048 4cc0 Archiving ../../Data/Data/worlds/fe-west-marches/data/macros/000083.log: OK
-2025/12/28-20:41:08.054 4cc0 Archiving ../../Data/Data/worlds/fe-west-marches/data/macros/MANIFEST-000082: OK
-2025/12/28-20:41:08.059 4cc0 **** Repaired leveldb ../../Data/Data/worlds/fe-west-marches/data/macros; recovered 0 files; 0 bytes. Some data may have been lost. ****
+2026/01/28-16:06:08.509 21f4 Recovering log #92
+2026/01/28-16:06:08.535 21f4 Delete type=0 #92
+2026/01/28-16:06:08.535 21f4 Delete type=3 #91

@@ -1,0 +1,25 @@
+{
+  "title": "West marches Garreg Mach",
+  "id": "world.fe-west-marches.2026-01-29.1769686822104",
+  "system": "daggerheart",
+  "compatibility": {
+    "minimum": "13",
+    "verified": "13"
+  },
+  "description": "",
+  "version": "0",
+  "relationships": {
+    "systems": [],
+    "requires": [],
+    "recommends": [],
+    "conflicts": [],
+    "flags": {}
+  },
+  "size": 436296,
+  "note": "",
+  "snapshotId": null,
+  "originalSize": 785511,
+  "createdAt": 1769686822115,
+  "packageId": "fe-west-marches",
+  "type": "world"
+}

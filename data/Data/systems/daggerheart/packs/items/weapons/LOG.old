@@ -1,5 +1,5 @@
-2025/12/28-20:41:08.736 4cc0 Log #87: 0 ops saved to Table #88 OK
-2025/12/28-20:41:08.738 4cc0 Archiving ..\..\Data\Data\systems\daggerheart\packs\items\weapons/000087.log: OK
-2025/12/28-20:41:08.740 4cc0 Table #5: 301 entries OK
-2025/12/28-20:41:08.745 4cc0 Archiving ..\..\Data\Data\systems\daggerheart\packs\items\weapons/MANIFEST-000086: OK
-2025/12/28-20:41:08.751 4cc0 **** Repaired leveldb ..\..\Data\Data\systems\daggerheart\packs\items\weapons; recovered 1 files; 162455 bytes. Some data may have been lost. ****
+2026/01/28-11:58:44.606424 7fa93ffbf6c0 Delete type=3 #1
+2026/01/28-11:58:44.608548 7fa93dbff6c0 Level-0 table #5: started
+2026/01/28-11:58:44.610298 7fa93dbff6c0 Level-0 table #5: 144633 bytes OK
+2026/01/28-11:58:44.610721 7fa93dbff6c0 Delete type=0 #3
+2026/01/28-11:58:44.610856 7fa93dbff6c0 Manual compaction at level-0 from '!folders!6nJ3reb1jx83CtRy' @ 72057594037927935 : 1 .. '!items.effects!zMZ46F9VR7zdTxb9.oRCiXSElN5xufUfn' @ 0 : 0; will stop at (end)

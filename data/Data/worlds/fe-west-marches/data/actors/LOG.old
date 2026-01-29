@@ -1,5 +1,11 @@
-2025/12/28-20:41:07.587 33f4 Log #103: 0 ops saved to Table #104 OK
-2025/12/28-20:41:07.590 33f4 Archiving ../../Data/Data/worlds/fe-west-marches/data/actors/000103.log: OK
-2025/12/28-20:41:07.592 33f4 Table #89: 240 entries OK
-2025/12/28-20:41:07.599 33f4 Archiving ../../Data/Data/worlds/fe-west-marches/data/actors/MANIFEST-000102: OK
-2025/12/28-20:41:07.606 33f4 **** Repaired leveldb ../../Data/Data/worlds/fe-west-marches/data/actors; recovered 1 files; 206233 bytes. Some data may have been lost. ****
+2026/01/28-16:06:07.078 21f4 Recovering log #113
+2026/01/28-16:06:07.080 21f4 Level-0 table #115: started
+2026/01/28-16:06:07.087 21f4 Level-0 table #115: 51427 bytes OK
+2026/01/28-16:06:07.099 21f4 Delete type=0 #113
+2026/01/28-16:06:07.100 21f4 Delete type=3 #112
+2026/01/28-16:06:09.104 c60 Compacting 1@0 + 1@1 files
+2026/01/28-16:06:09.136 c60 Generated table #117@0: 243 keys, 211167 bytes
+2026/01/28-16:06:09.136 c60 Compacted 1@0 + 1@1 files => 211167 bytes
+2026/01/28-16:06:09.138 c60 compacted to: files[ 0 1 0 0 0 0 0 ]
+2026/01/28-16:06:09.140 c60 Delete type=2 #111
+2026/01/28-16:06:09.141 c60 Delete type=2 #115

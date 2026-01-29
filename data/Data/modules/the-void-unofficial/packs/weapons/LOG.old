@@ -1,6 +1,3 @@
-2025/12/28-20:41:10.160 4cc0 Log #585: 0 ops saved to Table #586 OK
-2025/12/28-20:41:10.163 4cc0 Archiving ..\..\Data\Data\modules\the-void-unofficial\packs\weapons/000585.log: OK
-2025/12/28-20:41:10.163 4cc0 Table #55: 3 entries OK
-2025/12/28-20:41:10.164 4cc0 Table #463: 2 entries OK
-2025/12/28-20:41:10.169 4cc0 Archiving ..\..\Data\Data\modules\the-void-unofficial\packs\weapons/MANIFEST-000584: OK
-2025/12/28-20:41:10.174 4cc0 **** Repaired leveldb ..\..\Data\Data\modules\the-void-unofficial\packs\weapons; recovered 2 files; 7258 bytes. Some data may have been lost. ****
+2026/01/28-16:06:11.913 5d34 Recovering log #595
+2026/01/28-16:06:11.921 5d34 Delete type=0 #595
+2026/01/28-16:06:11.922 5d34 Delete type=3 #594

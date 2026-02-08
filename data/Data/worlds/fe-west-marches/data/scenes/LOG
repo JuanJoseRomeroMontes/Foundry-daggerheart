@@ -1,5 +1,22 @@
-2026/01/29-12:40:24.909 5d10 Recovering log #118
-2026/01/29-12:40:24.910 5d10 Level-0 table #120: started
-2026/01/29-12:40:24.916 5d10 Level-0 table #120: 29086 bytes OK
-2026/01/29-12:40:24.925 5d10 Delete type=0 #118
-2026/01/29-12:40:24.925 5d10 Delete type=3 #116
+2026/02/05-20:19:17.105 4cc8 Recovering log #124
+2026/02/05-20:19:17.112 4cc8 Delete type=0 #124
+2026/02/05-20:19:17.113 4cc8 Delete type=3 #122
+2026/02/05-20:28:50.353 4fec Compacting 3@0 + 1@1 files
+2026/02/05-20:28:50.364 4fec Generated table #127@0: 34 keys, 14610 bytes
+2026/02/05-20:28:50.365 4fec Compacted 3@0 + 1@1 files => 14610 bytes
+2026/02/05-20:28:50.366 4fec compacted to: files[ 0 1 0 0 0 0 0 ]
+2026/02/05-20:28:50.367 4fec Delete type=2 #113
+2026/02/05-20:28:50.369 4fec Delete type=2 #117
+2026/02/05-20:28:50.370 4fec Delete type=2 #120
+2026/02/05-20:28:50.371 4fec Delete type=2 #123
+2026/02/05-23:17:20.503 4fec Level-0 table #129: started
+2026/02/05-23:17:20.543 4fec Level-0 table #129: 728574 bytes OK
+2026/02/05-23:17:20.547 4fec Delete type=0 #126
+2026/02/05-23:17:20.571 4fec Manual compaction at level-0 from '!scenes!Xu5HbCrkGrO3llR2' @ 72057594037927935 : 1 .. '!scenes.tokens.delta.items!uP31PHLwOt37jhAq.FoZUOL6sqEcjmj6E.Hz8shqHZQYZ5MOFW.nuN5JxdpyFH7TRsw' @ 0 : 0; will stop at '!scenes.tokens.delta.effects!flEEJCHXVLOXXvub.wRyX80HdDBZmeFJ6.PIITq4CAUEqjbsKG.8CZQOBkP9QVLf8uA' @ 3247 : 1
+2026/02/05-23:17:20.571 4fec Compacting 1@0 + 1@1 files
+2026/02/05-23:17:20.584 4fec Generated table #130@0: 69 keys, 31428 bytes
+2026/02/05-23:17:20.584 4fec Compacted 1@0 + 1@1 files => 31428 bytes
+2026/02/05-23:17:20.585 4fec compacted to: files[ 0 1 0 0 0 0 0 ]
+2026/02/05-23:17:20.585 4fec Delete type=2 #127
+2026/02/05-23:17:20.586 4fec Delete type=2 #129
+2026/02/05-23:17:20.617 4fec Manual compaction at level-0 from '!scenes.tokens.delta.effects!flEEJCHXVLOXXvub.wRyX80HdDBZmeFJ6.PIITq4CAUEqjbsKG.8CZQOBkP9QVLf8uA' @ 3247 : 1 .. '!scenes.tokens.delta.items!uP31PHLwOt37jhAq.FoZUOL6sqEcjmj6E.Hz8shqHZQYZ5MOFW.nuN5JxdpyFH7TRsw' @ 0 : 0; will stop at (end)

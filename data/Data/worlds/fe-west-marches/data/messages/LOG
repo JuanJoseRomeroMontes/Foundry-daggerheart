@@ -1,5 +1,26 @@
-2026/01/29-12:40:24.461 8b4c Recovering log #118
-2026/01/29-12:40:24.462 8b4c Level-0 table #120: started
-2026/01/29-12:40:24.482 8b4c Level-0 table #120: 1596 bytes OK
-2026/01/29-12:40:24.489 8b4c Delete type=0 #118
-2026/01/29-12:40:24.489 8b4c Delete type=3 #116
+2026/02/05-20:19:16.409 4cc8 Recovering log #124
+2026/02/05-20:19:16.409 4cc8 Level-0 table #126: started
+2026/02/05-20:19:16.432 4cc8 Level-0 table #126: 1449 bytes OK
+2026/02/05-20:19:16.439 4cc8 Delete type=0 #124
+2026/02/05-20:19:16.439 4cc8 Delete type=3 #122
+2026/02/05-20:19:16.440 4fec Compacting 4@0 + 1@1 files
+2026/02/05-20:19:16.485 4fec Generated table #128@0: 17 keys, 16584 bytes
+2026/02/05-20:19:16.485 4fec Compacted 4@0 + 1@1 files => 16584 bytes
+2026/02/05-20:19:16.487 4fec compacted to: files[ 0 2 0 0 0 0 0 ]
+2026/02/05-23:17:20.284 4fec Level-0 table #130: started
+2026/02/05-23:17:20.326 4fec Level-0 table #130: 1267698 bytes OK
+2026/02/05-23:17:20.329 4fec Delete type=2 #113
+2026/02/05-23:17:20.330 4fec Delete type=2 #117
+2026/02/05-23:17:20.331 4fec Delete type=2 #120
+2026/02/05-23:17:20.333 4fec Delete type=2 #123
+2026/02/05-23:17:20.334 4fec Delete type=2 #126
+2026/02/05-23:17:20.334 4fec Delete type=0 #127
+2026/02/05-23:17:20.401 4fec Manual compaction at level-0 from '!messages!09qcWQWngpBzJALc' @ 72057594037927935 : 1 .. '!messages!z5CL2mIPAijFUvA0' @ 0 : 0; will stop at '!messages!z5CL2mIPAijFUvA0' @ 1347 : 1
+2026/02/05-23:17:20.401 4fec Compacting 1@0 + 2@1 files
+2026/02/05-23:17:20.424 4fec Generated table #131@0: 144 keys, 270699 bytes
+2026/02/05-23:17:20.424 4fec Compacted 1@0 + 2@1 files => 270699 bytes
+2026/02/05-23:17:20.425 4fec compacted to: files[ 0 1 0 0 0 0 0 ]
+2026/02/05-23:17:20.425 4fec Delete type=2 #19
+2026/02/05-23:17:20.426 4fec Delete type=2 #128
+2026/02/05-23:17:20.427 4fec Delete type=2 #130
+2026/02/05-23:17:20.431 4fec Manual compaction at level-0 from '!messages!z5CL2mIPAijFUvA0' @ 1347 : 1 .. '!messages!z5CL2mIPAijFUvA0' @ 0 : 0; will stop at (end)

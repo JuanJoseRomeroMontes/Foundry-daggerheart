@@ -1,3 +1,18 @@
-2026/01/29-12:40:24.583 8b4c Recovering log #103
-2026/01/29-12:40:24.593 8b4c Delete type=0 #103
-2026/01/29-12:40:24.595 8b4c Delete type=3 #101
+2026/02/05-20:19:16.690 7858 Recovering log #108
+2026/02/05-20:19:16.691 7858 Level-0 table #110: started
+2026/02/05-20:19:16.711 7858 Level-0 table #110: 623 bytes OK
+2026/02/05-20:19:16.720 7858 Delete type=0 #108
+2026/02/05-20:19:16.720 7858 Delete type=3 #106
+2026/02/05-23:17:20.278 4fec Level-0 table #113: started
+2026/02/05-23:17:20.278 4fec Level-0 table #113: 0 bytes OK
+2026/02/05-23:17:20.280 4fec Delete type=0 #111
+2026/02/05-23:17:20.335 4fec Manual compaction at level-0 from '!folders!5E5b1m38Anhuws9C' @ 72057594037927935 : 1 .. '!folders!x80OcLHQyeHhO9Jd' @ 0 : 0; will stop at '!folders!b6FMRoyZWLYa4H49' @ 52 : 0
+2026/02/05-23:17:20.335 4fec Compacting 3@0 + 1@1 files
+2026/02/05-23:17:20.362 4fec Generated table #114@0: 23 keys, 3262 bytes
+2026/02/05-23:17:20.363 4fec Compacted 3@0 + 1@1 files => 3262 bytes
+2026/02/05-23:17:20.364 4fec compacted to: files[ 0 1 0 0 0 0 0 ]
+2026/02/05-23:17:20.365 4fec Delete type=2 #98
+2026/02/05-23:17:20.366 4fec Delete type=2 #102
+2026/02/05-23:17:20.367 4fec Delete type=2 #107
+2026/02/05-23:17:20.368 4fec Delete type=2 #110
+2026/02/05-23:17:20.431 4fec Manual compaction at level-0 from '!folders!b6FMRoyZWLYa4H49' @ 52 : 0 .. '!folders!x80OcLHQyeHhO9Jd' @ 0 : 0; will stop at (end)

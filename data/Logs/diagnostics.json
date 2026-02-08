@@ -1,5 +1,5 @@
 {
-  "timestamp": 1769686737450,
+  "timestamp": 1770319144587,
   "os": {
     "platform": "win32",
     "version": "10.0.26200",
@@ -30,6 +30,9 @@
     },
     "crlngn-ui": {
       "version": "2.14.11"
+    },
+    "daggerheart-advmanager": {
+      "version": "0.2.2"
     },
     "daggerheart-es": {
       "version": "0.1.0"
@@ -67,7 +70,7 @@
   },
   "systems": {
     "daggerheart": {
-      "version": "1.1.2",
+      "version": "1.6.1",
       "playtime": 36012
     }
   },

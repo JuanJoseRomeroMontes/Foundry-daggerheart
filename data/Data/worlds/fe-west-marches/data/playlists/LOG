@@ -1,3 +1,7 @@
-2026/01/29-12:40:24.822 5d10 Recovering log #101
-2026/01/29-12:40:24.834 5d10 Delete type=0 #101
-2026/01/29-12:40:24.835 5d10 Delete type=3 #100
+2026/02/05-20:19:16.991 4cc8 Recovering log #105
+2026/02/05-20:19:17.000 4cc8 Delete type=0 #105
+2026/02/05-20:19:17.000 4cc8 Delete type=3 #104
+2026/02/05-23:17:20.459 4fec Level-0 table #109: started
+2026/02/05-23:17:20.459 4fec Level-0 table #109: 0 bytes OK
+2026/02/05-23:17:20.463 4fec Delete type=0 #107
+2026/02/05-23:17:20.478 4fec Manual compaction at level-0 from '!playlists!JQ70CPuHfTWrxplv' @ 72057594037927935 : 1 .. '!playlists!JQ70CPuHfTWrxplv' @ 0 : 0; will stop at (end)

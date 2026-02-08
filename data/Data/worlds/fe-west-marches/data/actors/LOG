@@ -1,3 +1,23 @@
-2026/01/29-12:40:24.406 5b2c Recovering log #116
-2026/01/29-12:40:24.413 5b2c Delete type=0 #116
-2026/01/29-12:40:24.415 5b2c Delete type=3 #114
+2026/02/05-20:19:16.236 66c8 Recovering log #122
+2026/02/05-20:19:16.237 66c8 Level-0 table #124: started
+2026/02/05-20:19:16.244 66c8 Level-0 table #124: 33958 bytes OK
+2026/02/05-20:19:16.251 66c8 Delete type=0 #122
+2026/02/05-20:19:16.251 66c8 Delete type=3 #120
+2026/02/05-20:19:17.388 4fec Compacting 2@0 + 1@1 files
+2026/02/05-20:19:17.437 4fec Generated table #126@0: 288 keys, 250235 bytes
+2026/02/05-20:19:17.437 4fec Compacted 2@0 + 1@1 files => 250235 bytes
+2026/02/05-20:19:17.440 4fec compacted to: files[ 0 1 0 0 0 0 0 ]
+2026/02/05-20:19:17.441 4fec Delete type=2 #117
+2026/02/05-20:19:17.442 4fec Delete type=2 #121
+2026/02/05-20:19:17.444 4fec Delete type=2 #124
+2026/02/05-23:17:20.205 4fec Level-0 table #128: started
+2026/02/05-23:17:20.239 4fec Level-0 table #128: 985548 bytes OK
+2026/02/05-23:17:20.242 4fec Delete type=0 #125
+2026/02/05-23:17:20.244 4fec Manual compaction at level-0 from '!actors!6hYJVTEktJASmtp1' @ 72057594037927935 : 1 .. '!actors.items.effects!t03GngBBppBhI5MA.ILIogeKbYioPutRw.w5VTwlHmUjl8XCQ4' @ 0 : 0; will stop at '!actors.items.effects!q1EACWYmXUK2bzrO.ouvJweENF1kLYcOT.zTepuF1Z5OObQdSi' @ 2517 : 0
+2026/02/05-23:17:20.244 4fec Compacting 1@0 + 1@1 files
+2026/02/05-23:17:20.275 4fec Generated table #129@0: 289 keys, 256473 bytes
+2026/02/05-23:17:20.275 4fec Compacted 1@0 + 1@1 files => 256473 bytes
+2026/02/05-23:17:20.276 4fec compacted to: files[ 0 1 0 0 0 0 0 ]
+2026/02/05-23:17:20.276 4fec Delete type=2 #126
+2026/02/05-23:17:20.277 4fec Delete type=2 #128
+2026/02/05-23:17:20.335 4fec Manual compaction at level-0 from '!actors.items.effects!q1EACWYmXUK2bzrO.ouvJweENF1kLYcOT.zTepuF1Z5OObQdSi' @ 2517 : 0 .. '!actors.items.effects!t03GngBBppBhI5MA.ILIogeKbYioPutRw.w5VTwlHmUjl8XCQ4' @ 0 : 0; will stop at (end)

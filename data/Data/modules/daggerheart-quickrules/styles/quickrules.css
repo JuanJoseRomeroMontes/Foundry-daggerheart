@@ -1,0 +1,1117 @@
+/* --- Daggerheart Quick Rules Theme --- */
+/* ISOLATION MODE: All styles are strictly scoped to the window classes */
+
+/* =========================================================================
+   MAIN QUICK RULES WINDOW (.daggerheart-quickrules-window)
+   ========================================================================= */
+
+/* Main Layout */
+.daggerheart-quickrules-window .window-content {
+    padding: 0;
+    overflow: hidden;
+    background: #100f0f; /* Default Dark Background */
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+}
+
+.daggerheart-quickrules-window .dh-quickrules-container {
+    display: flex;
+    flex-direction: row; 
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* --- LIGHT MODE / WHITE MODE OVERRIDES --- */
+.daggerheart-quickrules-window .dh-quickrules-container.light {
+    background: #fdfdfd; /* Pure White/Off-white Background */
+    color: #1a1a1a; /* Dark Text for High Contrast */
+}
+
+/* --- Sidebar (Dark Theme Default) --- */
+.daggerheart-quickrules-window .dh-quickrules-sidebar {
+    flex: 0 0 320px;
+    width: 320px;
+    min-width: 320px;
+    max-width: 320px;
+    
+    display: flex;
+    flex-direction: column;
+    background: url('../../../ui/denim075.png') repeat;
+    background-color: #1a1a1a;
+    border-right: 1px solid #444; 
+    box-shadow: 2px 0 10px rgba(0,0,0,0.8);
+    z-index: 10;
+    height: 100%;
+}
+
+/* Sidebar Light Mode */
+.daggerheart-quickrules-window .dh-quickrules-container.light .dh-quickrules-sidebar {
+    background: #eeeeee; /* Light Gray Sidebar */
+    border-right: 1px solid #ccc;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+}
+
+/* Sidebar Header */
+.daggerheart-quickrules-window .dh-sidebar-header {
+    background: rgba(0, 0, 0, 0.6);
+    border-bottom: 1px solid #444;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+/* Header Light Mode */
+.daggerheart-quickrules-window .dh-quickrules-container.light .dh-sidebar-header {
+    background: #e0e0e0;
+    border-bottom: 1px solid #ccc;
+}
+
+/* Buttons */
+.daggerheart-quickrules-window .dh-mode-btn {
+    background: #333;
+    border: 1px solid #555;
+    color: #ddd;
+    padding: 4px 8px;
+    cursor: pointer;
+    border-radius: 4px;
+    flex: 1;
+    text-align: center;
+    font-family: "Signika", sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    transition: all 0.2s;
+    /* Ensure box model consistency */
+    box-sizing: border-box;
+}
+
+.daggerheart-quickrules-window .dh-mode-btn.square-btn {
+    flex: 0 0 30px;
+    padding: 4px 0;
+}
+
+.daggerheart-quickrules-window .dh-mode-btn:hover {
+    background: #444;
+    color: #fff;
+    border-color: #888;
+}
+
+/* Buttons Light Mode */
+.daggerheart-quickrules-window .dh-quickrules-container.light .dh-mode-btn {
+    background: #fdfdfd;
+    border: 1px solid #bbb;
+    color: #333;
+}
+
+.daggerheart-quickrules-window .dh-quickrules-container.light .dh-mode-btn:hover {
+    background: #fff;
+    border-color: #999;
+}
+
+/* Active Button (Default/Dark Mode) */
+.daggerheart-quickrules-window .dh-mode-btn.active {
+    background: #5e4b2a; 
+    border-color: #dcb15d;
+    color: #ffffff;
+    box-shadow: 0 0 5px rgba(220, 177, 93, 0.4);
+}
+
+/* Active Button (Light Mode) - Beige/Parchment */
+.daggerheart-quickrules-window .dh-quickrules-container.light .dh-mode-btn.active {
+    background: #f2deb8; /* Light Beige Color */
+    border-color: #c9a060; /* Darker Gold Border */
+    color: #111111; /* Black Text for Contrast */
+    box-shadow: 0 0 5px rgba(201, 160, 96, 0.4);
+    font-weight: bold;
+}
+
+/* Search Input Container */
+.daggerheart-quickrules-window .dh-search-container {
+    position: relative;
+    width: 100%;
+    margin-top: 4px;
+    display: flex;
+    gap: 4px; /* Space between input and button */
+    height: 30px; /* Enforce uniform row height */
+}
+
+.daggerheart-quickrules-window .dh-search-input {
+    flex: 1; /* Take remaining space */
+    background: rgba(0,0,0,0.3);
+    border: 1px solid #444;
+    color: #fff;
+    padding: 0 10px; /* Vertical padding removed to let height/line-height handle it */
+    border-radius: 4px;
+    font-family: "Signika", sans-serif;
+    height: 100%; /* Match container height */
+    box-sizing: border-box;
+    line-height: 28px; /* Vertically center text approx */
+}
+
+.daggerheart-quickrules-window .dh-search-input:focus {
+    border-color: #dcb15d;
+    box-shadow: 0 0 5px rgba(220, 177, 93, 0.5);
+}
+
+/* Search Buttons (Clear + Deep Search) */
+.daggerheart-quickrules-window .dh-search-container .dh-mode-btn {
+    flex: 0 0 30px; /* Fixed Width */
+    width: 30px;
+    height: 100%;   /* Match container height (30px) */
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    margin: 0;
+}
+
+/* Search Input Light Mode */
+.daggerheart-quickrules-window .dh-quickrules-container.light .dh-search-input {
+    background: #ffffff;
+    border: 1px solid #ccc;
+    color: #111;
+}
+
+/* Page List */
+.daggerheart-quickrules-window .dh-page-list {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    scrollbar-width: thin;
+    scrollbar-color: #dcb15d #1a1a1a;
+}
+
+.daggerheart-quickrules-window .dh-quickrules-container.light .dh-page-list {
+    scrollbar-color: #dcb15d #eee;
+}
+
+.daggerheart-quickrules-window .dh-letter-group {
+    border-bottom: 1px solid #333;
+}
+.daggerheart-quickrules-window .dh-quickrules-container.light .dh-letter-group {
+    border-bottom: 1px solid #ccc;
+}
+
+.daggerheart-quickrules-window .dh-letter-header {
+    background: #252525;
+    color: #aaa;
+    font-weight: bold;
+    padding: 2px 10px;
+    font-size: 0.85em;
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
+    text-transform: uppercase;
+}
+.daggerheart-quickrules-window .dh-quickrules-container.light .dh-letter-header {
+    background: #ddd;
+    color: #444;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
+.daggerheart-quickrules-window .dh-sub-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.daggerheart-quickrules-window .dh-page-item {
+    display: flex;
+    align-items: center;
+    padding: 6px 8px;
+    border-bottom: 1px solid #2a2a2a;
+    transition: background 0.15s;
+    width: 100%;
+    box-sizing: border-box;
+}
+.daggerheart-quickrules-window .dh-quickrules-container.light .dh-page-item {
+    border-bottom: 1px solid #ddd;
+}
+
+.daggerheart-quickrules-window .dh-page-item:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+.daggerheart-quickrules-window .dh-quickrules-container.light .dh-page-item:hover {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.daggerheart-quickrules-window .dh-page-item.hidden {
+    display: none;
+}
+
+/* Favorite Star */
+.daggerheart-quickrules-window .dh-fav-btn {
+    background: none;
+    border: none;
+    color: #666;
+    cursor: pointer;
+    padding: 0 6px 0 0;
+    font-size: 14px;
+    flex: 0 0 20px;
+}
+.daggerheart-quickrules-window .dh-quickrules-container.light .dh-fav-btn {
+    color: #999;
+}
+
+.daggerheart-quickrules-window .dh-fav-btn:hover {
+    color: #dcb15d;
+    text-shadow: 0 0 3px #dcb15d;
+}
+
+.daggerheart-quickrules-window .dh-fav-btn.is-fav {
+    color: #dcb15d;
+}
+
+/* Page Link Button */
+.daggerheart-quickrules-window .dh-page-btn {
+    background: none;
+    border: none;
+    color: #d0d0d0;
+    text-align: left;
+    cursor: pointer;
+    font-family: "Signika", sans-serif;
+    font-size: 14px;
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+}
+.daggerheart-quickrules-window .dh-quickrules-container.light .dh-page-btn {
+    color: #333;
+}
+
+.daggerheart-quickrules-window .dh-page-btn:hover {
+    color: #fff;
+    text-shadow: 0 0 2px #fff;
+}
+.daggerheart-quickrules-window .dh-quickrules-container.light .dh-page-btn:hover {
+    color: #000;
+    text-shadow: none;
+}
+
+.daggerheart-quickrules-window .dh-page-btn.active {
+    color: #dcb15d;
+    font-weight: bold;
+}
+/* In Light Mode, active link is dark gold/brown for contrast */
+.daggerheart-quickrules-window .dh-quickrules-container.light .dh-page-btn.active {
+    color: #8B6914; 
+}
+
+/* Tag Styles */
+.daggerheart-quickrules-window .dh-tag {
+    font-size: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 3px;
+    padding: 1px 4px;
+    margin-left: 6px;
+    color: #e5c377; /* Gold accent to match theme */
+    white-space: nowrap;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* Tag Light Mode */
+.daggerheart-quickrules-window .dh-quickrules-container.light .dh-tag {
+    background-color: rgba(0, 0, 0, 0.05);
+    border-color: rgba(0, 0, 0, 0.1);
+    color: #8B6914;
+}
+
+/* --- Content Area --- */
+.daggerheart-quickrules-window .dh-content-area {
+    flex: 1;
+    width: calc(100% - 320px); 
+    display: flex;
+    flex-direction: column;
+    background: #141414;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.daggerheart-quickrules-window .dh-quickrules-container.light .dh-content-area {
+    background: #ffffff;
+}
+
+.daggerheart-quickrules-window .dh-content-controls {
+    background: #1f1f1f;
+    border-bottom: 1px solid #dcb15d;
+    padding: 8px 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+    z-index: 5;
+    flex-wrap: wrap;
+}
+.daggerheart-quickrules-window .dh-quickrules-container.light .dh-content-controls {
+    background: #f0f0f0;
+    border-bottom: 1px solid #c9a060;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.daggerheart-quickrules-window .dh-control-btn {
+    background: #333;
+    border: 1px solid #555;
+    color: #eee;
+    border-radius: 4px;
+    padding: 4px 10px;
+    cursor: pointer;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: all 0.2s;
+}
+.daggerheart-quickrules-window .dh-quickrules-container.light .dh-control-btn {
+    background: #fff;
+    border: 1px solid #ccc;
+    color: #333;
+}
+
+.daggerheart-quickrules-window .dh-control-btn:hover:not(:disabled) {
+    background: #444;
+    color: #fff;
+    border-color: #dcb15d;
+}
+.daggerheart-quickrules-window .dh-quickrules-container.light .dh-control-btn:hover:not(:disabled) {
+    background: #eee;
+    color: #000;
+}
+
+.daggerheart-quickrules-window .dh-control-btn.disabled {
+    opacity: 0.5;
+    cursor: default;
+    background: #222;
+    border-color: #333;
+}
+.daggerheart-quickrules-window .dh-quickrules-container.light .dh-control-btn.disabled {
+    background: #eee;
+    border-color: #ddd;
+    color: #999;
+}
+
+.daggerheart-quickrules-window .dh-font-label {
+    font-size: 12px;
+    color: #aaa;
+    text-transform: uppercase;
+    margin: 0 5px;
+    user-select: none;
+}
+.daggerheart-quickrules-window .dh-quickrules-container.light .dh-font-label {
+    color: #666;
+}
+
+/* Journal Content Rendering - SCOPED TO AVOID LEAKS */
+.daggerheart-quickrules-window .dh-quickrules-container .journal-entry-page {
+    flex: 1;
+    padding: 30px 40px;
+    overflow-y: auto;
+    font-family: "Signika", sans-serif;
+    line-height: 1.6;
+    color: #ffffff;
+    scrollbar-width: thin;
+    scrollbar-color: #dcb15d #141414;
+    
+    /* Enable text selection */
+    user-select: text; 
+}
+
+/* Light mode scoping logic is already specific (starts with .dh-quickrules-container) */
+.daggerheart-quickrules-window .dh-quickrules-container.light .journal-entry-page {
+    color: #111111; /* High Contrast Black */
+    scrollbar-color: #dcb15d #fff;
+}
+
+/* Typography inside content - SCOPED */
+.daggerheart-quickrules-window .dh-quickrules-container .journal-entry-page h1 {
+    border-bottom: 2px solid #dcb15d;
+    color: #dcb15d;
+    font-family: "Modesto Condensed", "Aleo", serif;
+    font-size: 2.2em;
+    margin-bottom: 20px;
+}
+.daggerheart-quickrules-window .dh-quickrules-container.light .journal-entry-page h1 {
+    color: #8B6914; /* Darker gold for white bg */
+    border-bottom: 2px solid #8B6914;
+}
+
+.daggerheart-quickrules-window .dh-quickrules-container .journal-entry-page h2 {
+    color: #e5c377;
+    border-bottom: 1px solid #5e4b2a;
+    font-family: "Modesto Condensed", serif;
+    margin-top: 20px;
+}
+/* Unified H2 color for light mode */
+.daggerheart-quickrules-window .dh-quickrules-container.light .journal-entry-page h2 {
+    color: #8B6914; 
+    border-bottom: 1px solid #dcb15d;
+}
+
+.daggerheart-quickrules-window .dh-quickrules-container .journal-entry-page h3, 
+.daggerheart-quickrules-window .dh-quickrules-container .journal-entry-page h4 {
+    color: #C9A060;
+    margin-top: 15px;
+}
+/* Unified H3/H4 color for light mode */
+.daggerheart-quickrules-window .dh-quickrules-container.light .journal-entry-page h3, 
+.daggerheart-quickrules-window .dh-quickrules-container.light .journal-entry-page h4 {
+    color: #8B6914;
+}
+
+.daggerheart-quickrules-window .dh-quickrules-container .journal-entry-page strong, 
+.daggerheart-quickrules-window .dh-quickrules-container .journal-entry-page b {
+    color: #ffffff;
+    font-weight: 700;
+}
+.daggerheart-quickrules-window .dh-quickrules-container.light .journal-entry-page strong, 
+.daggerheart-quickrules-window .dh-quickrules-container.light .journal-entry-page b {
+    color: #000;
+}
+
+.daggerheart-quickrules-window .dh-quickrules-container .journal-entry-page p {
+    margin-bottom: 1em;
+}
+
+/* --- ADVERSARY STATS STYLING --- */
+/* Kept somewhat generic for Chat Cards, but scoped for the window */
+.daggerheart-quickrules-window .dh-adversary-stats,
+.chat-card .dh-adversary-stats {
+    font-family: 'Signika', sans-serif; 
+    font-size: 1.1em; 
+    color: #e5c377; /* Default Gold */
+    margin-bottom: 15px; 
+    border-bottom: 1px solid #444; 
+    padding-bottom: 8px;
+}
+
+.daggerheart-quickrules-window .dh-stat-value,
+.chat-card .dh-stat-value {
+    color: #fff; /* Default White */
+}
+
+/* Light Mode Overrides for Stats */
+.daggerheart-quickrules-window .dh-quickrules-container.light .dh-adversary-stats {
+    color: #8B6914; /* Darker Gold for Contrast */
+    border-bottom: 1px solid #ccc;
+}
+
+.daggerheart-quickrules-window .dh-quickrules-container.light .dh-stat-value {
+    color: #111; /* Dark Text for Contrast */
+}
+
+/* --- FOUNDRY ENTITY LINKS IN LIGHT MODE --- */
+.daggerheart-quickrules-window .dh-quickrules-container.light .journal-entry-page .content-link {
+    background: #f0f0f0; /* Light gray background */
+    border: 1px solid #ccc;
+    color: #1a1a1a; /* Dark text */
+    padding: 1px 4px;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+.daggerheart-quickrules-window .dh-quickrules-container.light .journal-entry-page .content-link i {
+    color: #444; /* Dark icon */
+    margin-right: 3px;
+}
+
+/* Hover state for entity links */
+.daggerheart-quickrules-window .dh-quickrules-container.light .journal-entry-page .content-link:hover {
+    text-shadow: none;
+    background: #e5e5e5;
+    border-color: #8B6914; /* Theme accent */
+    color: #000;
+}
+
+/* --- TABLE STYLING FOR LIGHT MODE --- */
+.daggerheart-quickrules-window .dh-quickrules-container.light .journal-entry-page table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 1em;
+    background: #fff; /* Ensure white background for tables */
+    border: 1px solid #ccc; /* Subtle border */
+    color: #222; /* Dark text inside tables */
+}
+
+.daggerheart-quickrules-window .dh-quickrules-container.light .journal-entry-page th,
+.daggerheart-quickrules-window .dh-quickrules-container.light .journal-entry-page td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    color: #111; /* Enforce dark text */
+}
+
+.daggerheart-quickrules-window .dh-quickrules-container.light .journal-entry-page th {
+    background-color: #f2f2f2; /* Light gray header background */
+    font-weight: bold;
+    color: #000;
+}
+
+.daggerheart-quickrules-window .dh-quickrules-container.light .journal-entry-page tr:nth-child(even) {
+    background-color: #f9f9f9; /* Zebra striping for readability */
+}
+
+/* Ensure paragraph tags inside tables don't inherit weird colors */
+.daggerheart-quickrules-window .dh-quickrules-container.light .journal-entry-page td p {
+    color: #111; 
+    margin: 0;
+}
+
+/* --- SIMPLE TABLE STYLES (Used for Loot Tables) --- */
+.daggerheart-quickrules-window .dh-simple-table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 10px;
+    font-size: 0.95em;
+    border: 1px solid #555;
+}
+
+.daggerheart-quickrules-window .dh-simple-table th {
+    background: #222;
+    color: #dcb15d;
+    padding: 8px;
+    text-align: left;
+    border-bottom: 2px solid #5e4b2a;
+}
+
+.daggerheart-quickrules-window .dh-simple-table td {
+    padding: 8px;
+    border-bottom: 1px solid #333;
+    color: #e0e0e0;
+}
+
+.daggerheart-quickrules-window .dh-simple-table tr:nth-child(even) {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* Light Mode Overrides for Simple Table */
+.daggerheart-quickrules-window .dh-quickrules-container.light .dh-simple-table {
+    border: 1px solid #ccc;
+}
+
+.daggerheart-quickrules-window .dh-quickrules-container.light .dh-simple-table th {
+    background: #e0e0e0;
+    color: #8B6914;
+    border-bottom: 2px solid #C9A060;
+}
+
+.daggerheart-quickrules-window .dh-quickrules-container.light .dh-simple-table td {
+    border-bottom: 1px solid #ddd;
+    color: #111;
+}
+
+.daggerheart-quickrules-window .dh-quickrules-container.light .dh-simple-table tr:nth-child(even) {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+/* Context/Details Box */
+.daggerheart-quickrules-window .dh-context-details {
+    background: #1a1a1a;
+    border: 1px solid #444;
+    border-left: 3px solid #dcb15d;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+}
+.daggerheart-quickrules-window .dh-quickrules-container.light .dh-context-details {
+    background: #f9f9f9;
+    border: 1px solid #ccc;
+    border-left: 3px solid #8B6914;
+}
+
+.daggerheart-quickrules-window .dh-context-details summary {
+    cursor: pointer;
+    font-weight: bold;
+    color: #ccc;
+    outline: none;
+}
+.daggerheart-quickrules-window .dh-quickrules-container.light .dh-context-details summary {
+    color: #444;
+}
+.daggerheart-quickrules-window .dh-quickrules-container.light .dh-context-details summary:hover {
+    color: #000;
+}
+
+.daggerheart-quickrules-window .dh-context-group {
+    margin-top: 10px;
+    padding-left: 10px;
+    border-left: 2px solid #444;
+    opacity: 0.9;
+}
+.daggerheart-quickrules-window .dh-quickrules-container.light .dh-context-group {
+    border-left: 2px solid #ccc;
+}
+
+/* Item Images in Content Container */
+.daggerheart-quickrules-window .dh-img-container,
+.chat-card .dh-img-container {
+    display: block;
+    text-align: center;
+    margin: 15px 0;
+    width: 100%;
+}
+
+.daggerheart-quickrules-window .dh-item-img,
+.chat-card .dh-item-img {
+    max-width: 150px;
+    border: 1px solid #555;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    /* Respect parent alignment */
+    display: inline-block; 
+}
+.daggerheart-quickrules-window .dh-quickrules-container.light .dh-item-img {
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+/* Empty State Styles */
+.daggerheart-quickrules-window .dh-empty-state-container {
+    text-align: center; 
+    color: #ddd; /* Better Contrast for Dark Mode */
+    margin-top: 5%; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+    padding: 20px;
+}
+.daggerheart-quickrules-window .dh-quickrules-container.light .dh-empty-state-container {
+    color: #333;
+}
+
+.daggerheart-quickrules-window .dh-empty-title {
+    color: #dcb15d; /* Bright Gold */
+    font-family: 'Modesto Condensed', serif; 
+    font-size: 4em;
+    margin-bottom: 0;
+    line-height: 1;
+}
+.daggerheart-quickrules-window .dh-quickrules-container.light .dh-empty-title {
+    color: #8B6914; /* Darker Gold */
+}
+
+.daggerheart-quickrules-window .dh-empty-subtitle {
+    color: #e5c377;
+    text-transform: uppercase; 
+    letter-spacing: 3px; 
+    font-weight: bold;
+    margin-top: 0;
+}
+.daggerheart-quickrules-window .dh-quickrules-container.light .dh-empty-subtitle {
+    color: #a07a22;
+}
+
+.daggerheart-quickrules-window .dh-empty-text {
+    font-size: 1.2em;
+    opacity: 0.8;
+}
+
+/* No borders and background for empty state image */
+.daggerheart-quickrules-window .dh-empty-state-img {
+    max-width: 80%; /* Takes up window width nicely */
+    opacity: 0.9; 
+    margin-top: 30px;
+    height: auto;
+    border: none;
+    background: transparent;
+    box-shadow: none; /* No shadow */
+}
+
+/* Feature List Styles */
+.daggerheart-quickrules-window .dh-feature-row,
+.chat-card .dh-feature-row {
+    display: flex;
+    align-items: baseline; 
+    margin-bottom: 8px;
+    font-size: 0.95em;
+    line-height: 1.4;
+}
+
+.daggerheart-quickrules-window .dh-feature-text,
+.chat-card .dh-feature-text {
+    color: #fff; /* Default text color */
+}
+
+.daggerheart-quickrules-window .dh-feature-text strong,
+.chat-card .dh-feature-text strong {
+    color: #e5c377; /* Feature Name in Gold */
+}
+
+/* Light Mode Overrides */
+.daggerheart-quickrules-window .dh-quickrules-container.light .dh-feature-text {
+    color: #111;
+}
+
+.daggerheart-quickrules-window .dh-quickrules-container.light .dh-feature-text strong {
+    color: #8B6914; /* Darker Gold for Light Mode */
+}
+
+/* --- Floating Button (Same for both modes) --- */
+/* GLOBAL because it is attached to body */
+@keyframes dh-pulse-glow {
+    0% { box-shadow: 0 0 10px rgba(229, 195, 119, 0.4); }
+    50% { box-shadow: 0 0 25px rgba(229, 195, 119, 0.9), 0 0 10px rgba(229, 195, 119, 0.6) inset; }
+    100% { box-shadow: 0 0 10px rgba(229, 195, 119, 0.4); }
+}
+
+#dh-quickrules-trigger {
+    position: fixed;
+    width: 54px;
+    height: 54px;
+    background: #1a1a1a;
+    border: 2px solid #E5C377;
+    border-radius: 50%;
+    color: #E5C377;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    cursor: grab;
+    z-index: 9999;
+    box-shadow: 0 0 10px rgba(0,0,0,0.8);
+    transition: transform 0.2s, box-shadow 0.2s;
+    /* REMOVED: Default Animation */
+}
+
+/* ADDED: Only animate if has .pulse class */
+#dh-quickrules-trigger.pulse {
+    animation: dh-pulse-glow 3s infinite;
+}
+
+#dh-quickrules-trigger:hover {
+    transform: scale(1.1);
+    color: #fff;
+    border-color: #fff;
+}
+
+#dh-quickrules-trigger.size-small { width: 40px; height: 40px; font-size: 18px; }
+#dh-quickrules-trigger.size-large { width: 70px; height: 70px; font-size: 34px; }
+
+/* --- Search Highlighting --- */
+.daggerheart-quickrules-window .dh-highlight {
+    background-color: #ffe066; /* Bright yellow/gold */
+    color: #000 !important;    /* Black text for contrast */
+    border-radius: 2px;
+    padding: 0 2px;
+    box-shadow: 0 0 3px rgba(0,0,0,0.5);
+    font-weight: bold;
+    display: inline;
+}
+
+/* Ensure highlight stands out in Light Mode too */
+.daggerheart-quickrules-window .dh-quickrules-container.light .dh-highlight {
+    background-color: #ffeb3b;
+    border: 1px solid #e6c200;
+}
+
+/* =========================================================================
+   AI ASSISTANT STYLES
+   ========================================================================= */
+
+/* AI Button in Search Bar */
+.daggerheart-quickrules-window .dh-ai-btn {
+    background: #5e4b2a !important;
+    border-color: #dcb15d !important;
+    color: #dcb15d !important;
+}
+
+.daggerheart-quickrules-window .dh-ai-btn:hover {
+    background: #7a6238 !important;
+    color: #fff !important;
+    border-color: #fff !important;
+    box-shadow: 0 0 6px rgba(220, 177, 93, 0.5);
+}
+
+.daggerheart-quickrules-window .dh-ai-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Light Mode AI Button */
+.daggerheart-quickrules-window .dh-quickrules-container.light .dh-ai-btn {
+    background: #f2deb8 !important;
+    border-color: #c9a060 !important;
+    color: #8B6914 !important;
+}
+
+.daggerheart-quickrules-window .dh-quickrules-container.light .dh-ai-btn:hover {
+    background: #e5d0a0 !important;
+    color: #5a4510 !important;
+    border-color: #8B6914 !important;
+}
+
+/* AI Response Container */
+.daggerheart-quickrules-window .dh-ai-response-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+}
+
+.daggerheart-quickrules-window .dh-ai-header {
+    background: #1f1f1f;
+    border-bottom: 1px solid #dcb15d;
+    padding: 10px 15px;
+    color: #dcb15d;
+    font-family: "Modesto Condensed", "Aleo", serif;
+    font-size: 1.4em;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.daggerheart-quickrules-window .dh-quickrules-container.light .dh-ai-header {
+    background: #f0f0f0;
+    border-bottom: 1px solid #c9a060;
+    color: #8B6914;
+}
+
+.daggerheart-quickrules-window .dh-ai-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px 30px;
+    font-family: "Signika", sans-serif;
+    line-height: 1.7;
+    scrollbar-width: thin;
+    scrollbar-color: #dcb15d #141414;
+}
+
+.daggerheart-quickrules-window .dh-quickrules-container.light .dh-ai-body {
+    scrollbar-color: #dcb15d #fff;
+}
+
+.daggerheart-quickrules-window .dh-ai-question {
+    color: #e5c377;
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+.daggerheart-quickrules-window .dh-quickrules-container.light .dh-ai-question {
+    color: #8B6914;
+}
+
+.daggerheart-quickrules-window .dh-ai-body hr {
+    border: none;
+    border-top: 1px solid #444;
+    margin: 10px 0;
+}
+
+.daggerheart-quickrules-window .dh-quickrules-container.light .dh-ai-body hr {
+    border-top: 1px solid #ccc;
+}
+
+.daggerheart-quickrules-window .dh-ai-answer {
+    color: #e0e0e0;
+}
+
+.daggerheart-quickrules-window .dh-quickrules-container.light .dh-ai-answer {
+    color: #222;
+}
+
+.daggerheart-quickrules-window .dh-ai-thinking {
+    color: #aaa;
+    font-style: italic;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 1.1em;
+}
+
+.daggerheart-quickrules-window .dh-quickrules-container.light .dh-ai-thinking {
+    color: #666;
+}
+
+.daggerheart-quickrules-window .dh-ai-error {
+    color: #ff6b6b;
+    padding: 10px;
+    background: rgba(255, 50, 50, 0.1);
+    border: 1px solid rgba(255, 50, 50, 0.3);
+    border-radius: 4px;
+}
+
+.daggerheart-quickrules-window .dh-quickrules-container.light .dh-ai-error {
+    color: #cc0000;
+    background: rgba(255, 50, 50, 0.05);
+    border: 1px solid rgba(204, 0, 0, 0.2);
+}
+
+/* =========================================================================
+   ADD MY CONTENT - CUSTOM STYLES
+   ========================================================================= */
+/* SCOPED TO .dh-add-mycontent-window (This class is added to the app window) */
+
+/* Use 'flex' on the form so the container expands to full height */
+.dh-add-mycontent-window {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    height: 100%;
+}
+
+.dh-add-mycontent-window .dh-add-mycontent-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden; /* Prevent parent scroll */
+}
+
+.dh-add-mycontent-window .dh-mycontent-header {
+    background: #1f1f1f;
+    padding: 10px 15px;
+    border-bottom: 1px solid #dcb15d;
+    text-align: center;
+    color: #ccc;
+    font-size: 0.9em;
+    flex-shrink: 0; /* Do not shrink header */
+}
+
+.dh-add-mycontent-window .dh-tabs {
+    display: flex;
+    background: #1a1a1a;
+    border-bottom: 1px solid #444;
+    flex-shrink: 0;
+}
+
+.dh-add-mycontent-window .dh-tab-btn {
+    flex: 1;
+    background: none;
+    border: none;
+    color: #888;
+    padding: 10px;
+    font-family: "Signika", sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.2s;
+    border-bottom: 3px solid transparent;
+}
+
+.dh-add-mycontent-window .dh-tab-btn:hover {
+    color: #ddd;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.dh-add-mycontent-window .dh-tab-btn.active {
+    color: #dcb15d;
+    background: rgba(220, 177, 93, 0.1);
+    border-bottom-color: #dcb15d;
+    font-weight: bold;
+}
+
+/* The list must take remaining space and scroll */
+.dh-add-mycontent-window .dh-folder-list {
+    flex: 1; 
+    overflow-y: auto; 
+    padding: 10px;
+    background: #111;
+    scrollbar-width: thin;
+    scrollbar-color: #dcb15d #111;
+    min-height: 0; /* Important for flex container scrolling */
+}
+
+.dh-add-mycontent-window .dh-folder-row {
+    margin-bottom: 2px;
+}
+
+.dh-add-mycontent-window .dh-checkbox-label {
+    display: flex;
+    align-items: center;
+    padding: 6px 8px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.1s;
+}
+
+.dh-add-mycontent-window .dh-checkbox-label:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.dh-add-mycontent-window .dh-checkbox-label input {
+    margin-right: 8px;
+    accent-color: #dcb15d;
+}
+
+.dh-add-mycontent-window .dh-count {
+    margin-left: auto;
+    color: #555;
+    font-size: 0.85em;
+}
+
+.dh-add-mycontent-window .dh-footer {
+    padding: 10px;
+    background: #1f1f1f;
+    border-top: 1px solid #444;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.dh-add-mycontent-window .dh-build-btn {
+    background: #dcb15d;
+    color: #1a1a1a;
+    border: none;
+    padding: 8px 20px;
+    font-family: "Signika", sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.2s;
+}
+
+.dh-add-mycontent-window .dh-build-btn:hover:not(:disabled) {
+    background: #e5c377;
+    box-shadow: 0 0 10px rgba(220, 177, 93, 0.4);
+}
+
+.dh-add-mycontent-window .dh-build-btn:disabled {
+    background: #444;
+    color: #777;
+    cursor: not-allowed;
+}
+
+.dh-add-mycontent-window .dh-empty-folders {
+    text-align: center;
+    padding: 20px;
+    color: #666;
+    font-style: italic;
+}
+
+/* =========================================================================
+   JOURNAL DIRECTORY SIDEBAR BUTTON
+   ========================================================================= */
+#dh-journal-quickrules-btn {
+    width: 100%;
+    background: linear-gradient(to bottom, #5e4b2a, #3d3018);
+    border: 1px solid #dcb15d;
+    color: #dcb15d;
+    font-family: "Signika", sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 5px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    transition: all 0.2s;
+    margin-bottom: 4px;
+}
+
+#dh-journal-quickrules-btn:hover {
+    background: linear-gradient(to bottom, #7a6238, #5e4b2a);
+    color: #fff;
+    border-color: #fff;
+    box-shadow: 0 0 6px rgba(220, 177, 93, 0.5);
+}

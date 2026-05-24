@@ -1,0 +1,54 @@
+<div class="dh-adv-manager-content feature-updater-container">
+
+    <div class="form-group" style="margin-bottom: 15px;">
+        <label class="drop-label">1. Drop Feature Here</label>
+        <div class="drop-zone {{#if item}}has-item{{/if}}">
+            {{#if item}}
+                <div class="dropped-item-content">
+                    <img src="{{item.img}}" class="item-icon">
+                    <span class="item-name">{{item.name}}</span>
+                </div>
+            {{else}}
+                <div class="drop-placeholder">
+                    <i class="fas fa-box-open drop-icon-placeholder"></i>
+                    <span>Drag a Feature from the World</span>
+                </div>
+            {{/if}}
+        </div>
+    </div>
+
+    <hr class="updater-divider">
+
+    <div class="form-group">
+        <label>2. Configure Flags</label>
+
+        <div class="form-field">
+            <label>Target Tier</label>
+            <select name="tier" class="updater-input">
+                {{#each tierOptions}}
+                <option value="{{this.value}}" {{#if this.selected}}selected{{/if}}>{{this.label}}</option>
+                {{/each}}
+            </select>
+        </div>
+
+        <div class="form-field">
+            <label>Adversary Type</label>
+            <select name="type" class="updater-input">
+                {{#each typeOptions}}
+                <option value="{{this.value}}" {{#if this.selected}}selected{{/if}}>{{this.label}}</option>
+                {{/each}}
+            </select>
+        </div>
+
+        <div class="form-field">
+            <label>Custom Tag</label>
+            <input type="text" name="customTag" value="{{customTagValue}}" class="updater-input" placeholder="e.g. Core, Homebrew">
+        </div>
+    </div>
+
+    <footer class="sheet-footer updater-footer">
+        <button type="submit" class="apply-btn" {{#unless item}}disabled{{/unless}}>
+            <i class="fas fa-save"></i> Update Feature Flags
+        </button>
+    </footer>
+</div>

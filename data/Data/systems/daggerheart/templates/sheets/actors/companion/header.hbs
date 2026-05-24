@@ -8,7 +8,12 @@
             placeholder='{{localize "DAGGERHEART.GENERAL.actorName"}}'
         />
     </h1>
-    <div class="status-section">
+    {{#if useResourcePips}}
+        <div class="resource-section">
+            {{> "systems/daggerheart/templates/sheets/global/partials/resource-bar.hbs" resource=document.system.resources.stress label="DAGGERHEART.GENERAL.stress" key="system.resources.stress.value" action="toggleStress" largePips=true }}
+        </div>
+    {{/if}}
+    <div class="status-section {{#if useResourcePips}}pip-display{{/if}}">
         <div class="status-number">
             <div class='status-value'>
                 <p>{{document.system.evasion}}</p>
@@ -17,26 +22,16 @@
                 <h4>{{localize "DAGGERHEART.GENERAL.evasion"}}</h4>
             </div>
         </div>
-        <div class="status-bar">
-            <div class='status-value'>
-                <p><input class="bar-input" name="system.resources.stress.value" value="{{document.system.resources.stress.value}}" min="0" max='{{document.system.resources.stress.max}}' type="number"></p>
-                <p>/</p>
-                <p class="bar-label">{{document.system.resources.stress.max}}</p>
+        {{#unless useResourcePips}}
+            <div class="resource-section">
+                {{> "systems/daggerheart/templates/sheets/global/partials/resource-bar.hbs" resource=document.system.resources.stress label="DAGGERHEART.GENERAL.stress" key="system.resources.stress.value" action="toggleStress" }}
             </div>
-            <progress
-                class='progress-bar stress-color'
-                value='{{document.system.resources.stress.value}}'
-                max='{{document.system.resources.stress.max}}'
-            ></progress>
-            <div class="status-label">
-                <h4>{{localize "DAGGERHEART.GENERAL.stress"}}</h4>
-            </div>
-        </div>
+        {{/unless}}
         <div class='level-div'>
             <h3 class='label'>
                 {{localize 'DAGGERHEART.GENERAL.level'}}
                 <div class="input-section">
-                    {{#if document.system.levelData.canLevelUp}}
+                    {{#if document.system.canLevelUp}}
                         <button
                             type="button"
                             class="level-button glow" data-tooltip="{{localize "DAGGERHEART.ACTORS.Character.levelUp"}}"
@@ -46,7 +41,7 @@
                         </button>
                     {{/if}}
                     <span {{#unless document.system.partner}}data-tooltip="{{localize "DAGGERHEART.UI.Tooltip.companionPartnerLevelBlock"}}"{{/unless}}>
-                        <input type="text" data-dtype="Number" class="level-value" value={{document.system.levelData.level.changed}} {{#if document.system.needsCharacterSetup}}disabled{{/if}} {{disabled (not document.system.partner)}} />
+                        {{document.system.levelData.level.changed}}
                     </span>
                 </div>
             </h3>

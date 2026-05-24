@@ -64,10 +64,15 @@
             {{/if}}
         </strong>
 
+        {{#if (and combats.length user.isGM)}}
+            <div class="encounter-battlepoints" data-tooltip="#battlepoints#" data-combat-id="{{combat.id}}">
+                {{battlepoints.current}}/{{battlepoints.max}} BP{{#if battlepoints.hasModifierBP}}*{{/if}}
+            </div>
+        {{/if}}
+
         {{!-- Combat Controls --}}
         <div class="inner-controls">
             {{#if hasCombat}}
-                <button data-action="openCountdowns">{{localize "DAGGERHEART.APPLICATIONS.CombatTracker.openCountdowns"}}</button>
                 <div class="control-buttons right flexrow">
                     <div class="spacer"></div>
                     <button type="button" class="encounter-context-menu inline-control combat-control icon fa-solid fa-ellipsis-vertical"

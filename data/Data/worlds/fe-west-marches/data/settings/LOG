@@ -1,5 +1,5 @@
-2026/01/05-15:02:21.323 21e84 Recovering log #140
-2026/01/05-15:02:21.323 21e84 Level-0 table #142: started
-2026/01/05-15:02:21.323 21e84 Level-0 table #142: 4529 bytes OK
-2026/01/05-15:02:21.338 21e84 Delete type=0 #140
-2026/01/05-15:02:21.338 21e84 Delete type=3 #139
+2026/05/24-17:01:03.209 1fbc Recovering log #162
+2026/05/24-17:01:03.240 1fbc Level-0 table #164: started
+2026/05/24-17:01:03.284 1fbc Level-0 table #164: 2290 bytes OK
+2026/05/24-17:01:03.363 1fbc Delete type=0 #162
+2026/05/24-17:01:03.363 1fbc Delete type=3 #161

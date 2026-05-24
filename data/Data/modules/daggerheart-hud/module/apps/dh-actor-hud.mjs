@@ -1,0 +1,2080 @@
+// module/apps/dh-actor-hud.mjs
+
+import { L, Lpath, Ltrait } from "../helpers/i18n.mjs";
+import { sendItemToChat } from "../helpers/chat-utils.mjs";
+import { getSetting, S } from "../settings.mjs";
+import { enrichItemDescription, toHudInlineButtons } from "../helpers/inline-rolls.mjs";
+
+
+function placeAtBottom(appEl, offsetPx = 110) {
+  if (!appEl?.getBoundingClientRect) return;
+  appEl.style.position = "absolute";
+  appEl.style.bottom = `${offsetPx}px`;
+  appEl.style.top = "auto";
+  appEl.style.right = "auto";
+  const rect = appEl.getBoundingClientRect();
+  const left = Math.max(0, (window.innerWidth - rect.width) / 2);
+  appEl.style.left = `${left}px`;
+}
+
+function enableDragByRing(appEl, appInstance) {
+  const handle = appEl.querySelector(".dhud-ring");
+  if (!handle) return;
+
+  let startX, startY, startLeft, startTop, didMove = false;
+
+  const onMove = (ev) => {
+    if (!didMove) {
+      // primeira vez que realmente move: sair de bottom e travar top no valor atual
+      const r0 = appEl.getBoundingClientRect();
+      appEl.style.bottom = "auto";
+      appEl.style.top = `${r0.top}px`;
+      didMove = true;
+    }
+    appInstance._isDragging = true;
+    const dx = ev.clientX - startX;
+    const dy = ev.clientY - startY;
+    appEl.style.left = `${startLeft + dx}px`;
+    appEl.style.top  = `${startTop  + dy}px`;
+  };
+
+  const onUp = async () => {
+    handle.style.cursor = "grab";
+    window.removeEventListener("pointermove", onMove, true);
+    window.removeEventListener("pointerup", onUp, true);
+
+    if (didMove) {
+      appInstance._justDraggedTs = Date.now();
+
+      // Save the user's preferred HUD position (not per-actor)
+      try {
+        const rect = appEl.getBoundingClientRect();
+        // Clamp to viewport a bit so we don't persist negative coords
+        const left = Math.max(0, Math.round(rect.left));
+        const top  = Math.max(0, Math.round(rect.top));
+        await game.user.setFlag("daggerheart-hud", "globalPosition", { left, top });
+      } catch (err) {
+        console.warn("[DHUD] Failed to persist HUD position", err);
+      }
+    }
+
+    didMove = false;
+
+    // Release dragging flag and then recompute panel direction (up/down)
+    requestAnimationFrame(() => {
+      appInstance._isDragging = false;
+
+      // If a tab is currently open, recompute its open direction now that position changed
+      try {
+        const shell    = appEl.querySelector(".dhud");
+        const openName = shell?.getAttribute("data-open");
+        if (openName) {
+          const panel = appEl.querySelector(`.dhud-panel[data-panel='${openName}']`);
+          if (panel && typeof setPanelOpenDirection === "function") {
+            setPanelOpenDirection(panel);
+          }
+        }
+      } catch (e) {
+        console.debug("[DHUD] setPanelOpenDirection after drag skipped", e);
+      }
+    });
+  };
+
+
+  const onDown = (ev) => {
+    if (ev.button !== 0) return;
+    ev.preventDefault();
+    handle.style.cursor = "grabbing";
+
+    const r = appEl.getBoundingClientRect();
+    // NÃO mexe em bottom/top aqui; só quando começar a mover
+    startX = ev.clientX; startY = ev.clientY;
+    startLeft = r.left;  startTop = r.top;
+
+    window.addEventListener("pointermove", onMove, true);
+    window.addEventListener("pointerup", onUp, true);
+  };
+
+  handle.addEventListener("pointerdown", onDown);
+}
+
+function setWingsState(rootEl, state /* "open" | "closed" */) {
+  if (!rootEl) return;
+  const shell = rootEl.querySelector(".dhud");
+  const leftWing  = rootEl.querySelector(".dhud-wing--left");
+  const rightWing = rootEl.querySelector(".dhud-wing--right");
+  const ring      = rootEl.querySelector(".dhud-ring");
+  if (!shell || !leftWing || !rightWing || !ring) return;
+
+  // 1) captura centro do ring antes
+  const pre = ring.getBoundingClientRect();
+  const cxPre = pre.left + pre.width / 2;
+
+  // 2) aplica estado
+  shell.setAttribute("data-wings", state);
+
+  // acessibilidade
+  const closed = state === "closed";
+  leftWing.toggleAttribute("inert", closed);
+  rightWing.toggleAttribute("inert", closed);
+  if (closed) shell.setAttribute("data-open", "");
+
+  // 3) compensa deslocamento p/ manter core ancorado
+  requestAnimationFrame(() => {
+    const post = ring.getBoundingClientRect();
+    const cxPost = post.left + post.width / 2;
+    const dx = cxPost - cxPre;
+    if (Math.abs(dx) > 0.5) {
+      const app = rootEl;
+      const currentLeft = parseFloat(app.style.left || "0");
+      app.style.left = `${currentLeft - dx}px`;
+    }
+  });
+}
+
+/**
+ * Decide whether a tab panel should open up or down.
+ * Sets:
+ *   panel.dataset.openDir = "up" | "down"
+ *   panel.style.setProperty("--dhud-panel-maxh", "<px>")  (so it scrolls if tight)
+ */
+function setPanelOpenDirection(panel) {
+  if (!panel) return;
+
+  // Measure the tabwrap (panel’s offset parent is .dhud-tabwrap)
+  const wrap = panel.closest(".dhud-tabwrap") || panel.parentElement;
+  const rect = wrap.getBoundingClientRect();
+
+  const spaceAbove = rect.top;                                 // px to viewport top
+  const spaceBelow = window.innerHeight - rect.bottom;         // px to viewport bottom
+
+  // Estimate needed height: content’s natural height (capped)
+  // Using scrollHeight lets us respect the actual content size.
+  const contentHeight = panel.scrollHeight || 320;
+  const minRoom = 220;     // lower bound so short panels don’t jitter
+  const need = Math.max(minRoom, Math.min(contentHeight, 700));
+
+  // Choose direction
+  let dir;
+  if (spaceBelow >= need) dir = "down";
+  else if (spaceAbove >= need) dir = "up";
+  else dir = (spaceBelow >= spaceAbove) ? "down" : "up";
+
+  // Apply direction and max height
+  panel.setAttribute("data-open-dir", dir);
+  // Let CSS clamp the panel with a friendly margin to edges
+  const maxH = (dir === "down" ? Math.max(180, spaceBelow - 12) : Math.max(180, spaceAbove - 12));
+  panel.style.setProperty("--dhud-panel-maxh", `${maxH}px`);
+  panel.style.setProperty("--dhud-panel-gap", "6px"); // small visual gap below/above the tab
+}
+
+
+function attachDHUDToggles(root) {
+  if (!root) return;
+
+  // helper para setar/alternar o atributo data-open no elemento .dhud
+  const dhud = root.querySelector(".dhud");
+  if (!dhud) return;
+
+  const tabs = root.querySelectorAll(".dhud-tab");
+
+  const setOpen = (name) => {
+    const curr = dhud.getAttribute("data-open") || "";
+    const next = curr === name ? "" : name;
+    dhud.setAttribute("data-open", next);
+    tabs.forEach(t => t.setAttribute("aria-expanded", String(t.dataset.tab === next)));
+  };
+
+  tabs.forEach(tab => {
+    tab.addEventListener("click", () => setOpen(tab.dataset.tab));
+    tab.addEventListener("keydown", (ev) => {
+      if (ev.key === "Enter" || ev.key === " ") { ev.preventDefault(); setOpen(tab.dataset.tab); }
+    });
+  });
+
+  // fechar ao clicar fora do HUD
+  const onDocPointer = (ev) => {
+    if (!root.contains(ev.target)) setOpen("");
+  };
+  document.addEventListener("pointerdown", onDocPointer, { capture: true });
+
+  // fechar com ESC quando o foco estiver dentro do HUD
+  root.addEventListener("keydown", (ev) => {
+    if (ev.key === "Escape") setOpen("");
+  });
+}
+
+// Function to detect if an item has actions (works with Foundry Collections)
+function itemHasActions(item) {
+  const actions = item.system?.actions;
+  if (!actions) return false;
+  
+  // Check if it's a Foundry Collection with size property
+  if (typeof actions.size === 'number') {
+    return actions.size > 0;
+  }
+  
+  // Fallback to standard object detection
+  if (typeof actions === 'object') {
+    return Object.keys(actions).length > 0;
+  }
+  
+  return false;
+}
+
+// ✅ APIs V2
+const { ApplicationV2, HandlebarsApplicationMixin } = foundry.applications.api;
+
+const clamp = (n, min, max) => Math.min(max, Math.max(min, n));
+
+async function bumpResource(actor, path, delta, { min = 0, max = Number.MAX_SAFE_INTEGER } = {}) {
+  const curr = Number(foundry.utils.getProperty(actor, path) ?? 0);
+  const next = clamp(curr + delta, min, max);
+  if (next === curr) return;
+  const update = {}; foundry.utils.setProperty(update, path, next);
+  await actor.update(update);
+}
+
+async function setResource(actor, path, value, { min = 0, max = Number.MAX_SAFE_INTEGER } = {}) {
+  const next = clamp(Number(value ?? 0), min, max);
+  const curr = Number(foundry.utils.getProperty(actor, path) ?? 0);
+  if (next === curr) return;
+  const update = {}; foundry.utils.setProperty(update, path, next);
+  await actor.update(update);
+}
+
+function getActorThemeOrDefault(actor) {
+  // Check GM theme override first - this applies to ALL characters
+  const gmThemeOverride = game.settings.get("daggerheart-hud", "gmThemeOverride");
+  if (gmThemeOverride) {
+    const gmTheme = game.settings.get("daggerheart-hud", "gmGlobalTheme");
+    if (gmTheme) return gmTheme;
+  }
+
+  // Fall back to actor-specific flags only if GM override is disabled
+  return actor?.getFlag("daggerheart-hud", "colorScheme") || "default";
+}
+
+function getActorRingImageOrDefault(actor, type) {
+  // Check GM override first - this applies to ALL characters
+  const gmOverride = game.settings.get("daggerheart-hud", "gmRingOverride");
+  if (gmOverride) {
+    const gmRing = type === "main" 
+      ? game.settings.get("daggerheart-hud", "gmPortraitRing")
+      : game.settings.get("daggerheart-hud", "gmWeaponsRing");
+    if (gmRing) return gmRing;
+  }
+
+  // Fall back to actor-specific flags only if GM override is disabled
+  const flagKey = type === "main" ? "ringPortrait" : "ringWeapons";
+  return actor?.getFlag("daggerheart-hud", flagKey) || "";
+}
+
+export class DaggerheartActorHUD extends HandlebarsApplicationMixin(ApplicationV2) {
+  static DEFAULT_OPTIONS = {
+    id: "daggerheart-hud",
+    window: { title: "Daggerheart HUD", positioned: true, resizable: false },
+    position: { width: "auto", height: "auto" },
+    classes: ["daggerheart-hud", "app"]
+  };
+
+  static PARTS = {
+    body: { template: "modules/daggerheart-hud/templates/actor/hud-character.hbs" }
+  };
+
+  constructor({ actor, token } = {}, options = {}) {
+    super(options);    
+    this.actor = actor ?? null;
+    this.token = token ?? actor?.getActiveTokens()?.[0]?.document ?? null;
+    this.customButtons = new Map(); 
+  }  
+
+  reattachDragHandlers() {
+    const root = this.element;
+    if (root) {
+      this._dragHooked = false;
+      requestAnimationFrame(() => {
+        enableDragByRing(root, this);
+        this._dragHooked = true;
+      });
+    }
+  }
+
+  async _executeItem(item, actionPath = "use") {
+    const Action = CONFIG?.DAGGERHEART?.Action ?? CONFIG?.DH?.Action;
+    try {
+      if (typeof item.rollAction === "function") return await item.rollAction(actionPath);
+      if (typeof item.use === "function")       return await item.use({ action: actionPath });
+      if (Action?.execute)                      return await Action.execute({ source: item, actionPath });
+      item.sheet?.render(true, { focus: true });
+    } catch (err) {
+      console.error("[DHUD] Item exec failed", err);
+      ui.notifications?.error("Action failed (see console)");
+    }
+  }
+
+  // Custom buttoms
+  static registerCustomButton(config) {
+    const { id, section, icon, title, handler, condition } = config;
+    
+    if (!id || !section || !handler) {
+      console.warn("[DHUD] Invalid button config:", config);
+      return;
+    }
+    
+    // Store in global registry
+    if (!this._customButtons) this._customButtons = new Map();
+    this._customButtons.set(id, { section, icon, title, handler, condition });
+  }
+
+  // === STATUS CONTEXT MENU METHODS ===
+
+  _showStatusContextMenu(x, y) {
+    this._hideStatusGrid();
+    const menu = this.element.querySelector('#dhud-context-menu');
+    const portrait = this.element.querySelector('.dhud-portrait');
+    
+    if (!menu || !portrait) return;
+    
+    // First, show the menu off-screen to measure it
+    menu.style.left = '-9999px';
+    menu.style.top = '-9999px';
+    menu.classList.add('show');
+    
+    // Force a reflow to ensure styles are applied
+    menu.offsetHeight;
+    
+    // Get menu and portrait dimensions
+    const menuRect = menu.getBoundingClientRect();
+    const portraitRect = portrait.getBoundingClientRect();
+    const menuWidth = menuRect.width;
+    const menuHeight = menuRect.height;
+    
+    // Get viewport dimensions for boundary checking
+    const viewportWidth = window.innerWidth;
+    const viewportHeight = window.innerHeight;
+    
+    // Position relative to portrait center
+    const portraitCenterX = portraitRect.left + (portraitRect.width / 2);
+    const portraitCenterY = portraitRect.top + (portraitRect.height / 2);
+    
+    // Get the HUD container's position to convert back to relative coordinates
+    const hudRect = this.element.getBoundingClientRect();
+    
+    // Calculate initial position relative to portrait center
+    let menuX = portraitCenterX - (menuWidth / 2); // Center horizontally
+    let menuY = portraitRect.bottom - 200; // Position below portrait with 10px gap
+    
+    // Adjust horizontal position if it goes off viewport
+    if (menuX + menuWidth > viewportWidth) {
+      menuX = viewportWidth - menuWidth - 10; // 10px margin from edge
+    }
+    if (menuX < 10) {
+      menuX = 10; // 10px margin from left edge
+    }
+    
+    // Adjust vertical position if it goes off viewport
+    if (menuY + menuHeight > viewportHeight) {
+      // Try positioning above the portrait
+      menuY = portraitRect.top - menuHeight - 10;
+      
+      // If still off-screen, clamp to viewport
+      if (menuY < 10) {
+        menuY = 10;
+      }
+    }
+    
+    // Convert back to coordinates relative to HUD container
+    const relativeX = menuX - hudRect.left;
+    const relativeY = menuY - hudRect.top;
+    
+    // Apply final position
+    menu.style.left = `${relativeX}px`;
+    menu.style.top = `${relativeY}px`;
+    
+  }
+
+  _hideStatusContextMenu() {
+    const menu = this.element?.querySelector('#dhud-context-menu');
+    if (menu) menu.classList.remove('show');
+  }
+
+  _hideStatusGrid() {
+    const grid = this.element?.querySelector('#dhud-status-grid');
+    if (grid) grid.classList.remove('show');
+  }
+
+  _hideTooltip() {
+    const tooltip = this.element?.querySelector('#dhud-tooltip');
+    if (tooltip) tooltip.classList.remove('show');
+  }
+
+  _showStatusGrid(x, y) {
+    const grid = this.element.querySelector('#dhud-status-grid');
+    if (!grid) return;
+    
+    // Show off-screen first to measure
+    grid.style.left = '-9999px';
+    grid.style.top = '-9999px';
+    grid.classList.add('show');
+    
+    // Force reflow
+    grid.offsetHeight;
+    
+    // SYNC: Update visual states to match actual condition states
+    const statusIcons = grid.querySelectorAll('.dhud-status-icon');
+    statusIcons.forEach(icon => {
+      const conditionId = icon.dataset.conditionId;
+      if (conditionId) {
+        const isActive = this._isConditionActive(conditionId);
+        if (isActive) {
+          icon.classList.add('active');
+        } else {
+          icon.classList.remove('active');
+        }
+      }
+    });
+    
+    // Get dimensions
+    const gridRect = grid.getBoundingClientRect();
+    const hudRect = this.element.getBoundingClientRect();
+    const viewportWidth = window.innerWidth;
+    const viewportHeight = window.innerHeight;
+    
+    // Position relative to where the context menu was (x, y are HUD-relative)
+    // Convert to viewport coordinates for boundary checking
+    const viewportX = hudRect.left + x;
+    const viewportY = hudRect.top + y + 50; // Offset below the context menu
+    
+    let adjustedX = x;
+    let adjustedY = y + 50; // Start 50px below the context menu position
+    
+    // Adjust if grid would go off-screen
+    if (viewportX + gridRect.width > viewportWidth) {
+      adjustedX = x - gridRect.width;
+    }
+    
+    // FIX: Better vertical positioning logic
+    if (viewportY + gridRect.height > viewportHeight) {
+      // Try positioning above the context menu instead
+      adjustedY = y - gridRect.height - 20;
+      
+      // If still off-screen above, position at top of viewport
+      if (hudRect.top + adjustedY < 10) {
+        adjustedY = 10 - hudRect.top;
+      }
+    }
+    
+    // Ensure minimum bounds
+    if (hudRect.left + adjustedX < 10) {
+      adjustedX = 10 - hudRect.left;
+    }
+    
+    // Apply final position
+    grid.style.left = `${adjustedX}px`;
+    grid.style.top = `${adjustedY}px`;
+  }
+
+  _showTooltip(x, y, text) {
+    const tooltip = this.element.querySelector('#dhud-tooltip');
+    if (!tooltip) return;
+    
+    tooltip.textContent = text;
+    tooltip.style.left = `${x + 10}px`;
+    tooltip.style.top = `${y - 30}px`;
+    tooltip.classList.add('show');
+  }
+
+  async _applyCondition(conditionId) {
+    if (!this.actor) return;
+    
+   
+    // Find condition data
+    const condition = this._currentContext?.availableConditions?.find(c => c.id === conditionId);
+    if (!condition) {
+      console.warn('[DEBUG] Condition not found:', conditionId);
+      return;
+    }
+    
+    const effectData = {
+      name: game.i18n.localize(condition.name),
+      img: condition.img,
+      statuses: [conditionId],
+      description: condition.description ? game.i18n.localize(condition.description) : "",
+      // Store the condition ID for easy lookup
+      flags: {
+        'daggerheart-hud': {
+          conditionId: conditionId
+        }
+      }
+    };
+    
+    
+    try {
+      await this.actor.createEmbeddedDocuments("ActiveEffect", [effectData]);
+    } catch (err) {
+      console.error("[DHUD] Failed to apply condition", err);
+      ui.notifications?.error("Failed to apply condition");
+    }
+  }
+
+  async _removeCondition(conditionId) {
+    if (!this.actor) return;
+        
+    // Find the effect by the condition ID flag first, fallback to statuses
+    let effect = this.actor.effects.find(e => 
+      e.getFlag('daggerheart-hud', 'conditionId') === conditionId && !e.disabled
+    );
+    
+    // Fallback to the old method if flag doesn't exist (for existing effects)
+    if (!effect) {
+      effect = this.actor.effects.find(e => 
+        e.statuses?.includes(conditionId) && !e.disabled
+      );
+    }
+    
+    if (!effect) {
+      console.warn('[DEBUG] No effect found for condition:', conditionId);
+      return;
+    }
+        
+    try {
+      await this.actor.deleteEmbeddedDocuments("ActiveEffect", [effect.id]);
+    } catch (err) {
+      console.error("[DHUD] Failed to remove condition", err);
+      ui.notifications?.error("Failed to remove condition");
+    }
+  }
+
+  _isConditionActive(conditionId) {
+    const actor = this.actor;
+    if (!actor) return false;
+
+    // Some Foundry versions expose effects as a Collection; both of these should work:
+    const effects = Array.isArray(actor.effects) ? actor.effects : actor.effects?.contents ?? [];
+
+    for (const e of effects) {
+      if (!e || e.disabled) continue;
+
+      // 1) Check the custom flag (safely)
+      let hasFlag = false;
+      try {
+        hasFlag = e.getFlag?.('daggerheart-hud', 'conditionId') === conditionId;
+      } catch {
+        // swallow and continue
+      }
+      if (hasFlag) return true;
+
+      // 2) Fallback: normalize statuses and check inclusion
+      const s = e.statuses;
+      const list =
+        Array.isArray(s) ? s :
+        s instanceof Set ? Array.from(s) :
+        typeof s === 'string' ? [s] :
+        (s && typeof s === 'object') ? Object.values(s) :
+        [];
+
+      if (list.includes(conditionId)) return true;
+    }
+
+    return false;
+  }
+
+  async _rollWeapon(btn, { secondary=false } = {}) {
+    if (this._justDraggedTs && (Date.now() - this._justDraggedTs) < 160) return;
+
+    const actor = this.actor;
+    if (!actor) return;
+
+    const isUnarmed = btn.dataset.unarmed === "true";
+    const Action = CONFIG?.DAGGERHEART?.Action ?? CONFIG?.DH?.Action;
+
+    try {
+
+      const currentTargets = [...game.user.targets];
+      if (currentTargets.length === 0 && getSetting(S.showTargetNotifications)) {
+        ui.notifications?.info("No target selected — the attack will not auto-apply damage.");
+      }
+
+      if (isUnarmed) {
+        const unarmedAttack = this.actor.system.usedUnarmed || this.actor.system.attack;
+        
+        try {
+          // Try the attack object's own methods first
+          if (typeof unarmedAttack.rollAction === "function") {
+            return await unarmedAttack.rollAction("attack");
+          }
+          if (typeof unarmedAttack.use === "function") {
+            return await unarmedAttack.use({ action: "attack" });
+          }
+          
+          return;
+          
+        } catch (err) {
+          console.error("[DHUD] Unarmed attack failed", err);
+        }
+        
+        // Only open sheet if everything else fails
+        actor.sheet?.render(true, { focus: true });
+        ui.notifications?.info("Open the Unarmed Attack and click Attack");
+        return;
+      }
+
+      let item = btn.dataset.itemId ? actor.items.get(btn.dataset.itemId) : null;
+      if (!item) {
+        const weaponsAll = actor.items.filter(i => i.type === "weapon");
+        const equipped   = weaponsAll.filter(w => w.system?.equipped === true);
+        if (secondary) {
+          const primaryId = this.element.querySelector("[data-action='roll-primary']")?.dataset?.itemId ?? null;
+          item = equipped.find(w => w.system?.secondary === true)
+              ?? equipped.find(w => w.id && w.id !== primaryId)
+              ?? null;
+        } else {
+          item = equipped.find(w => w.system?.secondary !== true) ?? null;
+        }
+      }
+      if (!item) return void ui.notifications?.warn(secondary ? "No secondary weapon found" : "No primary weapon found");
+
+      if (typeof item.rollAction === "function") return await item.rollAction("attack");
+      if (typeof item.use       === "function")  return await item.use({ action: "attack" });
+      if (Action?.execute)                      return await Action.execute({ source: item, actionPath: "attack" });
+
+      item.sheet?.render(true, { focus: true });
+      ui.notifications?.info("Open the weapon and click Attack");
+    } catch (err) {
+      console.error("[DHUD] Weapon roll failed", err);
+      ui.notifications?.error("Weapon roll failed - this may be a system issue");
+    }
+  }
+
+  _bindResourceAdjusters(rootEl) {
+    // LEFT CLICK = minus for HP/Stress; fill bar for Hope; damage armor
+    rootEl.addEventListener("click", async (ev) => {
+      const actor = this.actor; if (!actor) return;
+
+      // HP / Stress on .value
+      const valueEl = ev.target.closest(".dhud-count .value");
+      if (valueEl) {
+        ev.preventDefault();
+        ev.stopPropagation();
+        
+        const bind = valueEl.dataset.bind;
+        if (bind === "hp") {
+          const max = Number(this.actor.system?.resources?.hitPoints?.max ?? 0);
+          await bumpResource(actor, "system.resources.hitPoints.value", +1, { min: 0, max });
+          return;
+        }
+        if (bind === "stress") {
+          const max = Number(this.actor.system?.resources?.stress?.max ?? 0);
+          await bumpResource(actor, "system.resources.stress.value", +1, { min: 0, max });
+          return;
+        }
+      }
+
+      // HOPE: click a pip to fill up to that point (index+1)
+      const pip = ev.target.closest(".dhud-pips .pip");
+      if (pip) {
+        ev.preventDefault();
+        ev.stopPropagation();
+        
+        const idx = Number(pip.dataset.index || 0);
+        const max = Number(this.actor.system?.resources?.hope?.max ?? (pip.parentElement?.children?.length || 0));
+        await setResource(actor, "system.resources.hope.value", idx + 1, { min: 0, max });
+        return;
+      }
+
+      // ARMOR: left click = add a mark (damage), clamp to max
+      const armorEl = ev.target.closest(".dhud-badge--right");
+      if (armorEl) {
+        ev.preventDefault();
+        ev.stopPropagation();
+
+        const equippedArmor = (this.actor?.items ?? []).find(
+          (item) => item.type === "armor" && item.system?.equipped === true
+        );
+
+        if (!equippedArmor) {
+          ui.notifications?.warn("No equipped armor found");
+          return;
+        }
+
+        const current = Math.max(0, Number(equippedArmor.system?.marks?.value ?? 0));
+        const maxMarks = Math.max(
+          0,
+          Number(
+            equippedArmor.system?.marks?.max ??
+              this.actor?.system?.armorScore ??
+              equippedArmor.system?.baseScore ??
+              0
+          )
+        );
+
+        const next = Math.min(maxMarks, current + 1);
+        if (next !== current) {
+          try {
+            await equippedArmor.update({ "system.marks.value": next });
+          } catch (err) {
+            console.error("[DHUD] Failed to update armor", err);
+            ui.notifications?.error("Failed to update armor");
+          }
+        }
+        return;
+      }
+
+    }, true);
+
+    // RIGHT CLICK = plus for HP/Stress; reduce hope; repair armor
+    rootEl.addEventListener("contextmenu", async (ev) => {
+      const actor = this.actor; if (!actor) return;
+
+      // SKIP portrait clicks - let the status menu handle them
+      const portrait = ev.target.closest('.dhud-portrait, .dhud-portrait-img');
+      if (portrait) return;
+
+      // HP / Stress on .value
+      const valueEl = ev.target.closest(".dhud-count .value");
+      if (valueEl) {
+        ev.preventDefault();
+        ev.stopPropagation();
+        
+        const bind = valueEl.dataset.bind;
+        if (bind === "hp") {
+          const max = Number(this.actor.system?.resources?.hitPoints?.max ?? 0);
+          await bumpResource(actor, "system.resources.hitPoints.value", -1, { min: 0, max });
+          return;
+        }
+        if (bind === "stress") {
+          const max = Number(this.actor.system?.resources?.stress?.max ?? 0);
+          await bumpResource(actor, "system.resources.stress.value", -1, { min: 0, max });
+          return;
+        }
+      }      
+
+      // HOPE: right-click a pip to set to that index (reduce hope)
+      const pip = ev.target.closest(".dhud-pips .pip");
+      if (pip) {
+        ev.preventDefault();
+        ev.stopPropagation();
+        
+        const idx = Number(pip.dataset.index || 0);
+        const max = Number(this.actor.system?.resources?.hope?.max ?? (pip.parentElement?.children?.length || 0));
+        await setResource(actor, "system.resources.hope.value", idx, { min: 0, max });
+        return;
+      }
+
+      // ARMOR: right click = remove a mark (repair), clamp to 0
+      const armorEl = ev.target.closest(".dhud-badge--right");
+      if (armorEl) {
+        ev.preventDefault();
+        ev.stopPropagation();
+
+        const equippedArmor = (this.actor?.items ?? []).find(
+          (item) => item.type === "armor" && item.system?.equipped === true
+        );
+
+        if (!equippedArmor) {
+          ui.notifications?.warn("No equipped armor found");
+          return;
+        }
+
+        const current = Math.max(0, Number(equippedArmor.system?.marks?.value ?? 0));
+        const next = Math.max(0, current - 1);
+
+        if (next !== current) {
+          try {
+            await equippedArmor.update({ "system.marks.value": next });
+          } catch (err) {
+            console.error("[DHUD] Failed to update armor", err);
+            ui.notifications?.error("Failed to update armor");
+          }
+        }
+        return;
+      }
+              
+      }, true);
+  }
+
+  _bindDelegatedEvents() {
+    const rootEl = this.element;
+    if (!rootEl || this._delegatedBound) return;
+
+    const stop = (ev) => { ev.preventDefault(); ev.stopPropagation(); };
+
+    // === STATUS CONTEXT MENU HANDLERS ===
+
+    // Right-click on portrait to show context menu
+    rootEl.addEventListener('contextmenu', async (ev) => {
+      const portrait = ev.target.closest('.dhud-portrait, .dhud-portrait-img');
+      if (portrait) {
+        ev.preventDefault();
+        ev.stopPropagation();
+        const hudRect = this.element.getBoundingClientRect();
+        const relativeX = ev.clientX - hudRect.left;
+        const relativeY = ev.clientY - hudRect.top;
+        this._showStatusContextMenu(relativeX, relativeY);
+        return;
+      }
+    }, true);
+
+    // Context menu item clicks
+    rootEl.addEventListener('click', async (ev) => {
+      const contextItem = ev.target.closest('.dhud-context-item');
+      if (contextItem) {
+        stop(ev);
+        const action = contextItem.dataset.action;
+
+        if (action === 'apply-status') {
+          const menu = this.element.querySelector('#dhud-context-menu');
+          if (menu) {
+            const menuStyle = menu.style;
+            const x = parseInt(menuStyle.left) || 0;
+            const y = parseInt(menuStyle.top) || 0;
+            this._showStatusGrid(x, y);
+          }
+        }
+
+        if (action === 'short-rest' || action === 'long-rest') {
+          try {
+            const DowntimeDialog = game.system.api.applications.dialogs.Downtime;
+            let dialog;
+            dialog = (action === 'short-rest')
+              ? new DowntimeDialog(this.actor, 'anything') // Short Rest
+              : new DowntimeDialog(this.actor);            // Long Rest
+            dialog.render(true);
+          } catch (error) {
+            console.error("Error opening downtime dialog:", error);
+            ui.notifications.error("Failed to open rest dialog");
+          }
+        }
+
+        this._hideStatusContextMenu();
+        return;
+      }
+    }, true);
+
+    // Status icon interactions
+    rootEl.addEventListener('click', async (ev) => {
+      const statusIcon = ev.target.closest('.dhud-status-icon');
+      if (statusIcon) {
+        stop(ev);
+        const conditionId = statusIcon.dataset.conditionId;
+        const isActive = this._isConditionActive(conditionId);
+        if (isActive) {
+          await this._removeCondition(conditionId);
+          statusIcon.classList.remove('active');
+        } else {
+          await this._applyCondition(conditionId);
+          statusIcon.classList.add('active');
+        }
+        return;
+      }
+    }, true);
+
+    // Status icon tooltips
+    rootEl.addEventListener('mouseover', (ev) => {
+      const statusIcon = ev.target.closest('.dhud-status-icon');
+      if (statusIcon) {
+        const name = statusIcon.dataset.conditionName;
+        this._showTooltip(ev.clientX, ev.clientY, name);
+      }
+    });
+
+    rootEl.addEventListener('mouseout', (ev) => {
+      const statusIcon = ev.target.closest('.dhud-status-icon');
+      if (statusIcon) {
+        this._hideTooltip();
+      }
+    });
+
+    // Close menus on outside clicks
+    document.addEventListener('click', (ev) => {
+      const clickedElement = ev.target;
+      const statusIcon = clickedElement.closest('.dhud-status-icon');
+      const contextMenu = clickedElement.closest('#dhud-context-menu, .dhud-context-menu');
+      const statusGrid = clickedElement.closest('#dhud-status-grid, .dhud-status-grid');
+      const withinHUD = this.element && this.element.contains(clickedElement);
+      if (!statusIcon && !contextMenu && !statusGrid && !withinHUD) {
+        this._hideStatusContextMenu();
+        this._hideStatusGrid();
+      }
+    }, { capture: true });
+
+    // Close menus on Escape
+    rootEl.addEventListener('keydown', (ev) => {
+      if (ev.key === 'Escape') {
+        this._hideStatusContextMenu();
+        this._hideStatusGrid();
+      }
+    });
+
+    // Double-click portrait to open character sheet
+    rootEl.addEventListener("dblclick", async (ev) => {
+      const portrait = ev.target.closest(".dhud-portrait, .dhud-portrait-img");
+      if (portrait && this.actor) {
+        if (this._justDraggedTs && (Date.now() - this._justDraggedTs) < 300) return;
+        stop(ev);
+        this.actor.sheet.render(true, { focus: true });
+        return;
+      }
+    }, true);
+
+    // ---------- NEW: Block <summary> toggle for dice/value/reaction (register ONCE) ----------
+    rootEl.addEventListener("click", (ev) => {
+      const blocker = ev.target.closest("summary .icon, summary .value, summary .dhud-reaction-btn, summary .dhud-inline-roll, summary .dhud-inline-dr, summary .dhud-dicechip");
+      if (blocker) { ev.preventDefault(); ev.stopPropagation(); }
+    }, true);
+
+    rootEl.addEventListener("keydown", (ev) => {
+      if (ev.key !== "Enter" && ev.key !== " ") return;
+      const blocker = ev.target.closest("summary .icon, summary .value, summary .dhud-reaction-btn");
+      if (blocker) { ev.preventDefault(); ev.stopPropagation(); }
+    }, true);
+
+    // Optional: keyboard activation for reaction chip
+    rootEl.addEventListener("keydown", (ev) => {
+      if (ev.key !== "Enter" && ev.key !== " ") return;
+      const btn = ev.target.closest("[data-action='roll-trait-reaction']");
+      if (!btn) return;
+      ev.preventDefault(); ev.stopPropagation();
+      if (this._justDraggedTs && (Date.now() - this._justDraggedTs) < 160) return;
+      const traitKey = btn.dataset.trait;
+      ui.chat?.processMessage?.(`/dr trait=${traitKey} reaction=true`);
+    }, true);
+
+    // When a tab is clicked, after the DOM toggles, compute its open direction
+    rootEl.addEventListener("click", (ev) => {
+      const tabBtn = ev.target.closest(".dhud-tab");
+      if (!tabBtn) return;
+
+      // Which panel is paired with this tab?
+      const name = tabBtn.dataset.tab; // e.g., "traits"
+      const panel = rootEl.querySelector(`.dhud-panel[data-panel='${name}']`);
+      if (!panel) return;
+
+      // After toggler changes visibility, compute direction
+      requestAnimationFrame(() => {
+        // Only bother if this panel is actually open/visible in your current logic
+        const dhudShell = rootEl.querySelector(".dhud");
+        const openName = dhudShell?.getAttribute("data-open") || "";
+        if (openName !== name) return; // tab is closing or another opened
+
+        try { setPanelOpenDirection(panel); } catch (_) { /* no-op */ }
+      });
+    }, true);
+
+    
+
+    // -----------------------------------------------------------------------
+
+    // MAIN CLICK HANDLER - All non-resource interactions
+    rootEl.addEventListener("click", async (ev) => {
+      const actor = this.actor;
+      if (!actor) return;
+
+      // In your click handler
+      const customBtn = ev.target.closest("[data-action^='custom-']");
+      if (customBtn) {
+        stop(ev);
+        const buttonId = customBtn.dataset.action.replace('custom-', '');
+        const config = DaggerheartActorHUD._customButtons?.get(buttonId);
+        if (config) {
+          const traitKey = customBtn.dataset.trait;
+          await config.handler(this.actor, traitKey);
+        }
+        return;
+      }
+
+      // Handle death move button
+      const deathBtn = ev.target.closest("[data-action='death-move']");
+      if (deathBtn) {
+        stop(ev);
+        const DeathMove = game.system.api.applications.dialogs.DeathMove;
+        const dialog = new DeathMove(this.actor);
+        dialog.render(true);
+        return;
+      }
+
+      // Ring toggle (wings) - only if NOT clicking on interactive elements
+      const ring = ev.target.closest(".dhud-ring");
+      if (ring) {
+        const isInteractiveElement = ev.target.closest(".dhud-pips, .dhud-count, .dhud-badge, [data-action]");
+        if (isInteractiveElement) return;
+        if (this._justDraggedTs && (Date.now() - this._justDraggedTs) < 160) return;
+        stop(ev);
+        const shell = rootEl.querySelector(".dhud");
+        const willOpen = shell?.getAttribute("data-wings") !== "open";
+        const next = willOpen ? "open" : "closed";
+        setWingsState(rootEl, next);
+        this._wingsState = next;
+      }
+
+      // Trait roll
+      const traitBtn = ev.target.closest("[data-action='roll-trait']");
+      if (traitBtn) {
+        if (this._justDraggedTs && (Date.now() - this._justDraggedTs) < 160) return;
+        stop(ev);
+        const traitKey = traitBtn.dataset.trait;
+        ui.chat?.processMessage?.(`/dr trait=${traitKey}`);
+        return;
+      }
+
+      // Reaction roll (immediate): /dr trait=<key> reaction=true
+      const reactBtn = ev.target.closest("[data-action='roll-trait-reaction']");
+      if (reactBtn) {
+        if (this._justDraggedTs && (Date.now() - this._justDraggedTs) < 160) return;
+        stop(ev);
+        const traitKey = reactBtn.dataset.trait;
+        ui.chat?.processMessage?.(`/dr trait=${traitKey} reaction=true`);
+        return;
+      }
+
+      // Primary / Secondary weapon rolls
+      const prim = ev.target.closest("[data-action='roll-primary']");
+      if (prim) { stop(ev); await this._rollWeapon(prim, { secondary: false }); return; }
+
+      const sec = ev.target.closest("[data-action='roll-secondary']");
+      if (sec) { stop(ev); await this._rollWeapon(sec, { secondary: true }); return; }
+
+      // Execute item (features, consumables, domain cards)
+      const execBtn = ev.target.closest("[data-action='item-exec']");
+      if (execBtn) {
+        stop(ev);
+        const item = actor.items.get(execBtn.dataset.itemId);
+        const actionPath = execBtn.dataset.actionpath || "use";
+        if (item) await this._executeItem(item, actionPath);
+        return;
+      }
+
+      // Send to chat
+      const chatBtn = ev.target.closest("[data-action='to-chat']");
+      if (chatBtn) {
+        stop(ev);
+        const item = actor.items.get(chatBtn.dataset.itemId);
+        if (item) await sendItemToChat(item, actor);
+        return;
+      }
+
+      // Move domain card (loadout <-> vault)
+      const mvBtn = ev.target.closest("[data-action='to-vault'],[data-action='to-loadout']");
+      if (mvBtn) {
+        stop(ev);
+        const item = actor.items.get(mvBtn.dataset.itemId);
+        if (item) await item.update({ "system.inVault": mvBtn.dataset.action === "to-vault" });
+        return;
+      }
+
+      // Universal resource change
+      const universalBtn = ev.target.closest("[data-action='universal-change']");
+      if (universalBtn) {
+        stop(ev);
+        const itemId = universalBtn.dataset.itemId;
+        const field = universalBtn.dataset.field;
+        const delta = parseInt(universalBtn.dataset.delta);
+        const item = actor.items.get(itemId);
+        
+        if (item) {
+          this._updatingQuantity = true;
+          
+          try {
+            // Generic approach - handle any field path
+            const current = foundry.utils.getProperty(item.system, field) || 0;
+            let newVal = Math.max(0, current + delta);
+            
+            // Check for max constraint by examining the field path
+            let maxVal = null;
+            if (field === "uses.value" && item.system.uses?.max) {
+              maxVal = parseInt(item.system.uses.max);
+            } else if (field.includes("uses.value") && field.startsWith("actions.")) {
+              // Extract action ID and check its max
+              const actionId = field.split('.')[1];
+              const action = item.system.actions?.get?.(actionId) || item.system.actions?.[actionId];
+              if (action?.uses?.max) {
+                maxVal = parseInt(action.uses.max);
+              }
+            } else if (field === "resource.value" && item.system.resource?.max) {
+              maxVal = parseInt(item.system.resource.max);
+            }
+            
+            // Apply max constraint if there's a max value
+            if (maxVal && !isNaN(maxVal) && maxVal > 0) {
+              newVal = Math.min(newVal, maxVal);
+            }
+            
+            // Check if this is an action-level uses that should use the system API
+            if (field.startsWith('actions.') && field.includes('.uses.value') && delta < 0) {
+              // Try to use the item's .use() method for consuming action uses
+              const hasActions = item.system.actions?.size > 0;
+              if (hasActions) {
+                try {
+                  await item.use();
+                } catch (useError) {
+                  // Fallback to manual update
+                  await item.update({[`system.${field}`]: newVal});
+                }
+              } else {
+                await item.update({[`system.${field}`]: newVal});
+              }
+            } else {
+              // Standard property update for all other cases
+              await item.update({[`system.${field}`]: newVal});
+            }
+            
+          } catch (err) {
+            console.error("[DHUD] Failed to update resource", err);
+            ui.notifications?.error("Failed to update resource");
+          } finally {
+            // Update the input field to show the new value immediately
+            const input = rootEl.querySelector(`.dhud-qty-input[data-item-id="${itemId}"][data-field="${field}"]`);
+            if (input) {
+              const updatedValue = foundry.utils.getProperty(item.system, field);
+              input.value = updatedValue;
+            }
+            
+            this._updatingQuantity = false;
+          }
+        }
+        return;
+      }
+
+      // Inline standard roll button (from [[/r ...]])
+      const inlineBtn = ev.target.closest("[data-action='inline-roll']");
+      if (inlineBtn) {
+        ev.preventDefault(); ev.stopPropagation();
+        const formula = inlineBtn.dataset.formula;
+        if (formula) {
+          const speaker = ChatMessage.getSpeaker({ actor: this.actor });
+          const roll = await (new Roll(formula)).roll({ async: true });
+          await roll.toMessage({ speaker, flavor: `${this.actor.name}: ${formula}` });
+        }
+        return;
+      }
+
+      // Inline duality (from [[/dr ...]])
+      const dualityBtn = ev.target.closest("[data-action='inline-duality']");
+      if (dualityBtn) {
+        ev.preventDefault(); ev.stopPropagation();
+        const params = dualityBtn.dataset.params || "";
+        const speaker = ChatMessage.getSpeaker({ actor: this.actor });
+        await ChatMessage.create({ speaker, content: `/dr ${params}` });
+        return;
+      }
+
+      // Toggle diceValue "used" state (click on the die chip)
+      {
+        const chip = ev.target.closest(".dhud-dicechip");
+        if (chip) {
+          stop(ev);
+          const idxStr = String(chip.dataset.index ?? "");
+          const itemId = chip.dataset.itemId;
+          if (!idxStr || !itemId) return;
+
+          const item = actor.items.get(itemId);
+          if (!item) return;
+
+          // Duplicate current resource and diceStates (object OR array)
+          const res = foundry.utils.duplicate(item.system?.resource ?? {});
+          let states = res.diceStates ?? {};
+
+          // Normalize: allow array or object, but we will write back in the same shape
+          const wasArray = Array.isArray(states);
+          const getState = (k) => (wasArray ? states[Number(k)] : states[k]);
+
+          // Ensure the target entry exists
+          const current = getState(idxStr) ?? { value: Number(res.value ?? 0), used: false };
+          const nextUsed = !Boolean(current.used);
+
+          // Optimistic UI
+          chip.classList.toggle("used", nextUsed);
+          chip.setAttribute("aria-pressed", nextUsed ? "true" : "false");
+
+          // Mutate the duplicate
+          if (wasArray) {
+            const i = Number(idxStr);
+            if (!states[i]) states[i] = current;
+            states[i].used = nextUsed;
+          } else {
+            if (!states[idxStr]) states[idxStr] = current;
+            states[idxStr].used = nextUsed;
+          }
+
+          try {
+            // Force-write the entire diceStates blob so the sheet definitely sees it
+            await item.update({ "system.resource.diceStates": states }, { diff: false });
+            // (Optional) If you want immediate sheet reflect even on other clients:
+            // item.sheet?.render(false);
+          } catch (err) {
+            console.error("[DHUD] Failed toggling dice used", err);
+            ui.notifications?.error("Failed to update die state");
+            // Revert optimistic UI
+            chip.classList.toggle("used", !nextUsed);
+            chip.setAttribute("aria-pressed", (!nextUsed) ? "true" : "false");
+          }
+          return;
+        }
+      }
+
+    }, true);
+
+    // Quantity input changes (separate event listener for typing)
+    rootEl.addEventListener('input', async (ev) => {
+      const qtyInput = ev.target.closest(".dhud-qty-input");
+      if (qtyInput) {
+        const itemId = qtyInput.dataset.itemId;
+        const field = qtyInput.dataset.field;
+        const newVal = Math.max(0, parseInt(qtyInput.value) || 0);
+        const item = this.actor.items.get(itemId);
+        
+        if (item && newVal !== foundry.utils.getProperty(item.system, field)) {
+          this._updatingQuantity = true;
+          
+          // Apply max constraint for limited resources
+          let constrainedVal = newVal;
+          if (field === "uses.value") {
+            const max = parseInt(item.system.uses.max) || 0;
+            constrainedVal = Math.min(newVal, max);
+          } else if (field === "resource.value") {
+            const max = parseInt(item.system.resource.max) || 0;
+            constrainedVal = Math.min(newVal, max);
+          }
+          
+          await item.update({[`system.${field}`]: constrainedVal});
+          
+          // Update input if value was constrained
+          if (constrainedVal !== newVal) {
+            qtyInput.value = constrainedVal;
+          }
+          
+          this._updatingQuantity = false;
+        }
+      }
+    }, true);
+
+    this._delegatedBound = true;
+  }
+
+  async _prepareContext(_options) { 
+    const actor = this.actor ?? null;
+
+    // Fallbacks
+    let actorName = "—";
+    let portrait  = "icons/svg/mystery-man.svg";
+
+    if (actor) {
+      actorName = actor.name ?? "—";
+      // Prefer the actor portrait; fall back to the prototype token's texture if empty
+      const protoSrc = actor?.prototypeToken?.texture?.src;
+      portrait = (actor.img && actor.img.trim()) ? actor.img : (protoSrc || portrait);
+    }
+
+    // Canonical system root (guarded)
+    const sys = actor?.system ?? {};
+
+    const customButtons = {
+      traits: [],
+      inventory: [],
+      // other sections...
+    };
+
+    // Collect custom buttons for each section
+    if (DaggerheartActorHUD._customButtons) {
+      for (const [id, config] of DaggerheartActorHUD._customButtons) {
+        if (config.section === "traits") {
+          // Check condition if provided
+          if (!config.condition || config.condition(this.actor)) {
+            customButtons.traits.push({ id, ...config });
+          }
+        }
+      }
+    }
+
+    // === PRIMARY WEAPON (only equipped & NOT secondary); else Unarmed ===
+    let primaryWeapon = null;
+    {
+      const items = this.actor?.items ?? [];
+      const weapons = items.filter(i => i.type === "weapon");
+
+      // Only consider EQUIPPED weapons that are NOT marked as secondary
+      const equippedNonSecondary = weapons.filter(w => w.system?.equipped === true && w.system?.secondary !== true);
+
+      const pick = equippedNonSecondary[0] ?? null;
+
+      if (pick) {
+        primaryWeapon = {
+          id: pick.id,
+          name: pick.name,
+          img: pick.img || "icons/svg/sword.svg",
+          isUnarmed: false
+        };
+      }
+    }
+
+    // If none, show Unarmed from actor.system.usedUnarmed or attack
+    if (!primaryWeapon) {
+      const un = sys.usedUnarmed || sys.attack;
+      if (un) {
+        const locName = game.i18n?.has?.(un.name) ? game.i18n.localize(un.name) : (un.name || "Unarmed Attack");
+        primaryWeapon = {
+          id: null,
+          name: locName,
+          img: un.img || "icons/skills/melee/unarmed-punch-fist-yellow-red.webp",
+          isUnarmed: true
+        };
+      }
+    }
+
+    // === SECONDARY WEAPON ===
+    let secondaryWeapon = null;
+    {
+      const items = this.actor?.items ?? [];
+      const weaponsAll = items.filter(i => i.type === "weapon");
+      const equipped   = weaponsAll.filter(w => w.system?.equipped === true);
+
+      const primaryId = primaryWeapon?.isUnarmed ? null : primaryWeapon?.id ?? null;
+      
+      // Check if primary weapon is two-handed
+      const primaryWeaponItem = primaryId ? items.find(w => w.id === primaryId) : null;
+      const isTwoHanded = primaryWeaponItem?.system?.burden === "twoHanded";
+      
+      let pick = null;
+      
+      if (isTwoHanded && primaryWeaponItem) {
+        // For two-handed weapons, use the same weapon for both slots
+        pick = primaryWeaponItem;
+      } else {
+        // Original logic for one-handed weapons
+        pick = equipped.find(w => w.system?.secondary === true) ??
+              equipped.find(w => w.id !== primaryId) ??
+              null;
+      }
+
+      if (pick) {
+        secondaryWeapon = {
+          id: pick.id,
+          name: pick.name,
+          img: pick.img || "icons/svg/shield.svg",
+          isUnarmed: false
+        };
+      }
+    }
+
+    // If none, fall back to Unarmed
+    if (!secondaryWeapon) {
+      const un = sys.attack;
+      if (un) {
+        const locName = game.i18n?.has?.(un.name) ? game.i18n.localize(un.name) : (un.name || "Unarmed Attack");
+        secondaryWeapon = {
+          id: null,
+          name: locName,
+          img: un.img || "icons/skills/melee/unarmed-punch-fist-yellow-red.webp",
+          isUnarmed: true
+        };
+      }
+    }
+
+    // === ACTIVE STATUS EFFECTS ===
+    const activeStatuses = new Set();
+    const statusEffects = [];
+
+    for (const effect of (this.actor?.effects ?? [])) {
+      if (effect.disabled) continue;
+      
+      // Track which statuses are currently active
+      if (effect.statuses?.length) {
+        effect.statuses.forEach(status => activeStatuses.add(status));
+      }
+      
+      statusEffects.push({
+        id: effect.id,
+        name: effect.name,
+        img: effect.img || "icons/svg/aura.svg",
+        statuses: effect.statuses || [],
+        isTemporary: effect.duration?.rounds !== null || effect.duration?.turns !== null
+      });
+    }
+
+    // === AVAILABLE CONDITIONS ===
+    const daggerheartConditions = [];
+    const genericConditions = [];
+
+    // Get Daggerheart-specific conditions first
+    const dhConditions = CONFIG.DH?.GENERAL?.conditions || {};
+    Object.values(dhConditions).forEach(condition => {
+      daggerheartConditions.push({
+        id: condition.id,
+        name: condition.name, // This is an i18n key
+        img: condition.img,
+        description: condition.description, // Also an i18n key
+        isActive: activeStatuses.has(condition.id),
+        source: 'daggerheart'
+      });
+    });
+
+    // Only add generic Foundry conditions if the system setting allows it
+    const showGenericStatuses = game.settings.get('daggerheart', 'Appearance').showGenericStatusEffects;
+    if (showGenericStatuses) {
+      CONFIG.statusEffects
+        .filter(effect => !effect.systemEffect)
+        .forEach(effect => {
+          genericConditions.push({
+            id: effect.id,
+            name: effect.name, // i18n key
+            img: effect.img,
+            description: effect.description || "",
+            isActive: activeStatuses.has(effect.id),
+            source: 'foundry'
+          });
+        });
+    }
+
+    const availableConditions = [...daggerheartConditions, ...genericConditions];
+
+
+    // === MISCELLANEOUS FEATURES ===
+    const miscFeatures = [];
+    for (const it of (this.actor?.items ?? [])) {
+      if (it.type !== "feature") continue;
+      if (it.system?.originItemType) continue; // Skip ancestry/community/class/subclass
+      
+      const hasActions = itemHasActions(it);
+      miscFeatures.push({
+        id: it.id,
+        name: it.name,
+        img: it.img || "icons/svg/aura.svg",
+        description: it.system?.description ?? "", // optional raw
+        descriptionHTML: toHudInlineButtons(await enrichItemDescription(it)),
+        hasActions: hasActions,
+        actionPath: (() => {
+          const s = it.system ?? {};
+          if (s.actions && typeof s.actions === "object") {
+            const first = Object.values(s.actions)[0];
+            return first?.systemPath || "use";
+          }
+          return "use";
+        })()
+      });
+    }
+
+    
+    // === ANCESTRY / COMMUNITY FEATURES ===
+    const ancestryFeatures = [];
+    const communityFeatures = [];
+
+    for (const it of (this.actor?.items ?? [])) {
+      if (it.type !== "feature") continue;
+
+      const origin = it.system?.originItemType;
+      if (origin !== "ancestry" && origin !== "community") continue;
+
+      const hasActions = itemHasActions(it);
+
+      const entry = {
+        id: it.id,
+        name: it.name,
+        img: it.img || "icons/svg/aura.svg",
+        description: it.system?.description ?? "", // optional raw
+        descriptionHTML: toHudInlineButtons(await enrichItemDescription(it)),
+        hasActions: hasActions,
+        system: it.system,
+        actionPath: (() => {
+          const sys = it.system ?? {};
+          if (sys.actions && typeof sys.actions === "object") {
+            const first = Object.values(sys.actions)[0];
+            if (first?.systemPath) return first.systemPath;
+          }
+          return "use";
+        })()
+      };
+
+      if (origin === "ancestry") ancestryFeatures.push(entry);
+      else communityFeatures.push(entry);
+    }
+
+    // === CLASS / SUBCLASS FEATURES (originItemType) with TIER GATING FOR SUBCLASS ===
+    const classFeatures = [];
+    const subclassFeatures = [];
+
+    // 1) Determine allowed subclass identifiers from the actor's subclass featureState
+    //    featureState: 1 = foundation, 2 = specialization, 3 = mastery
+    const subclasses = (this.actor?.items ?? []).filter(i => i.type === "subclass");
+    let subclassTier = 0;
+    for (const sc of subclasses) {
+      const t = Number(sc.system?.featureState ?? 0);
+      if (t > subclassTier) subclassTier = t; // in case of multiclass, allow the highest
+    }
+
+    const allowedSubclassIds = new Set();
+    if (subclassTier >= 1) allowedSubclassIds.add("foundation");
+    if (subclassTier >= 2) allowedSubclassIds.add("specialization");
+    if (subclassTier >= 3) allowedSubclassIds.add("mastery");
+
+    // 2) Collect features, gating subclass ones by identifier
+    for (const it of (this.actor?.items ?? [])) {
+      if (it.type !== "feature") continue;
+      const origin = it.system?.originItemType;
+
+      const hasActions = itemHasActions(it);
+
+      if (origin === "class") {
+        classFeatures.push({
+          id: it.id,
+          name: it.name,
+          img: it.img || "icons/svg/aura.svg",
+          description: it.system?.description ?? "", // optional raw
+          descriptionHTML: toHudInlineButtons(await enrichItemDescription(it)),
+          hasActions: hasActions,
+          system: it.system,
+          actionPath: (() => {
+            const s = it.system ?? {};
+            if (s.actions && typeof s.actions === "object") {
+              const first = Object.values(s.actions)[0];
+              if (first?.systemPath) return first.systemPath;
+            }
+            return "use";
+          })()
+        });
+        continue;
+      }
+
+      if (origin === "subclass") {
+        const ident = (it.system?.identifier || "").toString().toLowerCase();
+        if (!allowedSubclassIds.has(ident)) continue;
+
+        subclassFeatures.push({
+          id: it.id,
+          name: it.name,
+          img: it.img || "icons/svg/aura.svg",
+          description: it.system?.description ?? "", // optional raw
+          descriptionHTML: toHudInlineButtons(await enrichItemDescription(it)),
+          hasActions: hasActions,
+          system: it.system,
+          actionPath: (() => {
+            const s = it.system ?? {};
+            if (s.actions && typeof s.actions === "object") {
+              const first = Object.values(s.actions)[0];
+              if (first?.systemPath) return first.systemPath;
+            }
+            return "use";
+          })()
+        });
+      }
+    }
+
+    // === Actor Domains (header label, localized) ===
+    const rawDomains = Array.isArray(sys.domains) ? sys.domains : [];
+    const domainsHeader = rawDomains
+      .map(d => String(d).trim())
+      .filter(Boolean)
+      .map(key => {
+        // Try i18n label: DAGGERHEART.GENERAL.Domain.<key>.label
+        const i18nKey = `DAGGERHEART.GENERAL.Domain.${key}.label`;
+        const loc = game.i18n?.localize?.(i18nKey);
+        if (loc && loc !== i18nKey) return loc; // localized OK
+        // Fallback: TitleCase the raw key
+        return key.charAt(0).toUpperCase() + key.slice(1);
+      })
+      .join(" & ") || null;
+
+    // (optional) if you want a tooltip with the concatenated descriptions:
+    const domainsHeaderTitle = rawDomains
+      .map(key => {
+        const dKey = String(key).trim();
+        const name = game.i18n?.localize?.(`DAGGERHEART.GENERAL.Domain.${dKey}.label`);
+        const desc = game.i18n?.localize?.(`DAGGERHEART.GENERAL.Domain.${dKey}.description`);
+        return (name && desc) ? `${name}: ${desc}` : null;
+      })
+      .filter(Boolean)
+      .join("\n") || "";
+
+    // === RESOURCES (exact system paths) ===
+    const hitPoints = {
+      // system.resources.hitPoints.{value,max,isReversed}
+      value: sys.resources?.hitPoints?.value ?? 0,
+      max:   sys.resources?.hitPoints?.max   ?? 0,
+      isReversed: !!sys.resources?.hitPoints?.isReversed
+    };
+    
+    const isDying = hitPoints.value >= hitPoints.max; 
+
+    const stress = {
+      // system.resources.stress.{value,max,isReversed}
+      value: sys.resources?.stress?.value ?? 0,
+      max:   sys.resources?.stress?.max   ?? 0,
+      isReversed: !!sys.resources?.stress?.isReversed
+    };
+
+    // === HOPE ===
+    const rawValue = sys.resources?.hope?.value ?? 0;
+    const rawMax   = sys.resources?.hope?.max   ?? 0;
+    const hopeMax  = Math.max(0, Number(rawMax));
+    const hopeValue= Math.min(hopeMax, Math.max(0, Number(rawValue)));
+
+    const hopePips = Array.from({ length: hopeMax }, (_, i) => ({
+      filled: i < hopeValue
+    }));
+
+    // Determine the spellcasting trait key (prefer subclass, then class)
+    let spellcastingTraitKey = null;
+    if (this.actor?.items) {
+      const subclass = this.actor.items.find(i => i.type === "subclass" && i.system?.spellcastingTrait);
+      const klass    = this.actor.items.find(i => i.type === "class"    && i.system?.spellcastingTrait);
+      spellcastingTraitKey = subclass?.system?.spellcastingTrait || klass?.system?.spellcastingTrait || null;
+    }
+
+    // === TRAITS (ordered + localized via i18n helper) ===
+    const TRAIT_ORDER = ["agility","strength","finesse","instinct","presence","knowledge"];
+
+    const traits = TRAIT_ORDER.map(key => {
+      const value = Number(sys.traits?.[key]?.value ?? 0);
+      const loc = Ltrait(key); // { name, verbs[], description }
+      return {
+        key,
+        name: loc.name,           // e.g., "Agility"
+        value,                    // e.g., 2
+        description: loc.description, // e.g., "Sprint, Leap, Maneuver"
+        isSpellcasting: key === spellcastingTraitKey
+      };
+    });
+
+    // === PROFICIENCY / DEFENSES ===
+    const proficiency = sys.proficiency ?? 0;
+    const evasion     = sys.evasion     ?? 0; 
+
+    // === EXPERIENCES ===
+    const experiences = [];
+    const rawExperiences = sys.experiences ?? {};
+    for (const [id, exp] of Object.entries(rawExperiences)) {
+      if (!exp || typeof exp !== 'object') continue;
+      experiences.push({
+        id: id,                           
+        key: id,                         
+        name: exp.name || "Unnamed",
+        value: Number(exp.value ?? 0),
+        core: !!exp.core,
+        description: exp.description || ""
+      });
+    }
+
+    // === ARMOR (marks live on the equipped item; MAX comes from ACTOR (post-effects)) ===
+    const equippedArmor = (this.actor?.items ?? []).find(item => 
+      item.type === "armor" && item.system?.equipped === true
+    );
+
+    let armor;
+    if (equippedArmor) {
+      const armorSys    = equippedArmor.system;
+      const baseScore   = Number(armorSys.baseScore ?? 0);                
+      const effectiveMax= Math.max(0, Number(this.actor?.system?.armorScore ?? baseScore)); 
+      const rawMarks    = Number(armorSys.marks?.value ?? 0);
+      const marks       = Math.max(0, Math.min(effectiveMax, rawMarks));  
+
+      armor = {
+        max:   effectiveMax,      // Total armor slots (post-effects)
+        value: marks,             // We keep the inverted UX: value === DAMAGE MARKS
+        marks: marks,             // Damage marks taken
+        isReversed: false,        // Armor doesn't use isReversed like HP/Stress
+        name: equippedArmor.name,
+        itemId: equippedArmor.id,
+        hasArmor: true
+      };
+    } else {
+      armor = {
+        max: 0,
+        value: 0,
+        marks: 0,
+        isReversed: false,
+        name: "",
+        itemId: null,
+        hasArmor: false
+      };
+    }
+
+    // === DAMAGE THRESHOLDS ===
+    const thresholds = {
+      major:  sys.damageThresholds?.major  ?? 0,
+      severe: sys.damageThresholds?.severe ?? 0
+    };
+
+    // === RESISTANCE ===
+    const resistance = {
+      physical: {
+        resistance: !!sys.resistance?.physical?.resistance,
+        immunity:   !!sys.resistance?.physical?.immunity,
+        reduction:  sys.resistance?.physical?.reduction ?? 0
+      },
+      magical: {
+        resistance: !!sys.resistance?.magical?.resistance,
+        immunity:   !!sys.resistance?.magical?.immunity,
+        reduction:  sys.resistance?.magical?.reduction ?? 0
+      }
+    };
+
+    // === INVENTORY ===
+    const invConsumables = [];
+    const invLoot = [];
+
+    for (const it of (this.actor?.items ?? [])) {
+      if (it.type !== "consumable" && it.type !== "loot") continue;
+
+      const hasActions = itemHasActions(it);
+
+      const entry = {
+        id: it.id,
+        type: it.type,
+        name: it.name,
+        img: it.img || "icons/svg/aura.svg",
+        qty: Number(it.system?.quantity ?? 0),
+        description: it.system?.description ?? "", // optional raw
+        descriptionHTML: toHudInlineButtons(await enrichItemDescription(it)),
+        hasActions: hasActions,
+        system: it.system,
+        actionPath: (() => {
+          if (it.type !== "consumable") return "";
+          const sys = it.system ?? {};
+          if (sys.actionPath) return sys.actionPath;
+          if (sys.actions && typeof sys.actions === "object") {
+            const first = Object.values(sys.actions)[0];
+            return first?.systemPath || "use";
+          }
+          return "use";
+        })()
+      };
+
+      if (it.type === "consumable") invConsumables.push(entry);
+      if (it.type === "loot") invLoot.push(entry);
+    }
+
+    // === DOMAIN CARDS ===
+    const domainLoadout = [];
+    const domainVault = [];
+
+    for (const it of (this.actor?.items ?? [])) {
+      if (it.type !== "domainCard") continue;
+
+      const isInVault = !!it.system?.inVault;
+      // Cards in vault should not be clickable for actions
+      const hasActions = isInVault ? false : itemHasActions(it);
+
+      const entry = {
+        id: it.id,
+        name: it.name,
+        img: it.img || "icons/svg/aura.svg",
+        description: it.system?.description ?? "", // optional raw
+        descriptionHTML: toHudInlineButtons(await enrichItemDescription(it)),
+        hasActions: hasActions,
+        recallCost: Number(it.system?.recallCost ?? 0),
+        domain: (it.system?.domain ?? "").toString(),
+        inVault: isInVault,
+        system: it.system,
+        actionPath: (() => {
+          const s = it.system ?? {};
+          if (s.actionPath) return s.actionPath;
+          if (s.actions && typeof s.actions === "object") {
+            const first = Object.values(s.actions)[0];
+            return first?.systemPath || "use";
+          }
+          return "use";
+        })()
+      };
+
+      (entry.inVault ? domainVault : domainLoadout).push(entry);
+    }
+
+    // === PARENT ITEMS: ancestry / community / class / subclass (for header captions) ===
+    const byType = (t) => (this.actor?.items ?? []).find(i => i.type === t) ?? null;
+
+    const ancestryItem  = byType("ancestry");
+    const communityItem = byType("community");
+    const classItem     = byType("class");
+    const subclassItem  = byType("subclass");
+
+    const ancestryInfo  = ancestryItem  ? { id: ancestryItem.id,  name: ancestryItem.name,  img: ancestryItem.img  } : null;
+    const communityInfo = communityItem ? { id: communityItem.id, name: communityItem.name, img: communityItem.img } : null;
+    const classInfo     = classItem     ? { id: classItem.id,     name: classItem.name,     img: classItem.img     } : null;
+    const subclassInfo  = subclassItem  ? { id: subclassItem.id,  name: subclassItem.name,  img: subclassItem.img  } : null;
+
+    // Return everything your HBS references today (+ a few future-safe keys)
+    return {
+      actorName,
+      portrait,
+      isDying,
+      // hasRingArt,
+
+      // resources
+      hitPoints,
+      stress,
+      hope: { value: hopeValue, max: hopeMax },
+      hopePips,
+
+      // defenses & scores
+      evasion,
+      armor,
+      thresholds,
+      proficiency,
+      experiences,
+
+      //features
+      miscFeatures,
+
+      // traits & resistances (even if HBS doesn't show yet, ready to use)
+      traits,
+      resistance,
+
+      // weapons
+      primaryWeapon,
+      secondaryWeapon,
+      ancestryFeatures, communityFeatures, classFeatures, subclassFeatures,
+      ancestryInfo, communityInfo, classInfo, subclassInfo,
+      invConsumables, invLoot,
+      domainLoadout, domainVault,domainsHeader, domainsHeaderTitle,
+      
+      //effects
+      statusEffects,
+      availableConditions,
+      showGenericStatusSection: showGenericStatuses,
+      
+      //custom buttons
+      customButtons
+    };
+  }
+  
+  async _onRender() {
+    // Respect per-user disable toggle
+    if (getSetting(S.disableForMe)) { this.close(); return; }
+
+    const root = this.element;
+    if (!root) return;
+
+    // Apply dying state (btn, desaturate) 
+    const hpValue = this.actor?.system?.resources?.hitPoints?.value ?? 0;
+    const hpMax = this.actor?.system?.resources?.hitPoints?.max ?? 0;
+    if (hpValue >= hpMax) {
+      root.classList.add("dhud--dying");
+    } else {
+      root.classList.remove("dhud--dying");
+    }
+
+    // Hide initially if we're going to restore a layout
+    if (this._initiallyHidden) {
+      root.style.visibility = 'hidden';
+      this._initiallyHidden = false;
+    }
+
+    // Initialize wings state immediately to prevent blinking
+    if (!this._wingsInit) {
+      const saved = (await game.user.getFlag("daggerheart-hud", "wings")) || "closed";
+      // Set wings state immediately on the root element before other rendering
+      setWingsState(root, saved);
+      this._wingsState = saved;
+      this._wingsInit = true;
+    }
+
+    // Store context for later use
+    this._currentContext = await this._prepareContext();
+
+    // Debug: portrait image element presence
+    const imgEl = root.querySelector(".dhud-portrait img");
+    console.debug("[DHUD] _onRender: portrait img element", {
+      found: !!imgEl,
+      src: imgEl?.getAttribute("src"),
+      alt: imgEl?.getAttribute("alt")
+    });
+
+    // Normalize image paths to routed URLs
+    function toRouteURL(p) {
+      if (!p) return "none";
+      let cleanPath = p.trim();
+
+      // Full URLs pass through
+      if (cleanPath.startsWith("http://") || cleanPath.startsWith("https://")) {
+        return `url("${cleanPath}")`;
+      }
+
+      // Absolute module/asset paths
+      if (cleanPath.startsWith("/")) {
+        const abs = foundry.utils.getRoute(cleanPath);
+        return `url("${abs}")`;
+      }
+
+      // Ensure leading slash for relative asset paths
+      if (!cleanPath.startsWith("/")) {
+        cleanPath = `/${cleanPath}`;
+      }
+
+      const abs = foundry.utils.getRoute(cleanPath);
+      return `url("${abs}")`;
+    }
+
+    // --- Theme: Use GM override logic
+    const prefix = "dhud-theme-";
+    const scheme = getActorThemeOrDefault(this.actor);
+
+    // remove any previous theme classes
+    for (const c of Array.from(root.classList)) {
+      if (c.startsWith(prefix)) root.classList.remove(c);
+    }
+
+    // apply the requested scheme
+    root.classList.add(prefix + scheme);
+
+    // verify the theme actually defines vars; if not, fallback to default
+    const cs = getComputedStyle(root);
+    if (!cs.getPropertyValue("--dh-accent").trim()) {
+      console.warn(`[DHUD] Unknown or missing theme "${scheme}" for ${this.actor?.name}; falling back to "default".`);
+      root.classList.remove(prefix + scheme);
+      root.classList.add(prefix + "default");
+    }
+
+    // --- Ring art: Actor flags only (no GM/global fallback)
+    const mainRing = getActorRingImageOrDefault(this.actor, "main");
+    const weapRing = getActorRingImageOrDefault(this.actor, "weapon");
+    root.style.setProperty("--dhud-ring-main",  toRouteURL(mainRing));
+    root.style.setProperty("--dhud-ring-weapon", toRouteURL(weapRing));
+
+    // Cosmetic pointer cursor for roll targets
+    root.querySelectorAll(".dhud-roll").forEach(el => {
+      el.style.cursor = "pointer";
+      el.setAttribute("aria-pressed", "false");
+    });
+
+    // Feature toggles on the HUD
+    attachDHUDToggles(root);
+
+    // One-time wiring for resource adjusters
+    if (!this._resAdjBound) {
+      this._bindResourceAdjusters(root);
+      this._resAdjBound = true;
+    }
+
+    // Hooks to re-apply art/theme on changes coming from the Configurator
+    if (!this._imgHooked) {
+      // Re-apply both rings and theme when the Configurator saves
+      this._reapplyAppearance ??= async ({ actorIds = [] } = {}) => {
+        if (!this.actor) return;
+        if (actorIds.length && !actorIds.includes(this.actor.id)) return;
+
+        // rings
+        const mr = getActorRingImageOrDefault(this.actor, "main");
+        const wr = getActorRingImageOrDefault(this.actor, "weapon");
+        root.style.setProperty("--dhud-ring-main",  toRouteURL(mr));
+        root.style.setProperty("--dhud-ring-weapon", toRouteURL(wr));
+
+        // theme only - NO position changes
+        const scheme = getActorThemeOrDefault(this.actor);
+        const prefix = "dhud-theme-";
+        Array.from(root.classList).forEach(c => { if (c.startsWith(prefix)) root.classList.remove(c); });
+        root.classList.add(`${prefix}${scheme}`);
+        
+        // Don't touch any position-related styles here
+      };
+
+      // Listen only to the Configurator's saves
+      Hooks.on("daggerheart-hud:rings-updated",      this._reapplyAppearance);
+      Hooks.on("daggerheart-hud:appearance-updated", this._reapplyAppearance);
+
+      this._imgHooked = true;
+    }
+
+    // Apply once now
+    await this._reapplyAppearance?.({ actorIds: [this.actor?.id].filter(Boolean) });
+
+    // First boot: placement and resize behavior
+    if (!this._booted) {
+      const applyPlacement = () => {
+        // Check if user has a saved global position
+        const userGlobalPos = game.user.getFlag("daggerheart-hud", "globalPosition");
+        
+        if (userGlobalPos) {
+          // Use the user's saved position
+          root.style.position = "absolute";
+          root.style.left = `${userGlobalPos.left}px`;
+          root.style.top = `${userGlobalPos.top}px`;
+          root.style.bottom = "auto";
+        } else {
+          // Use default bottom positioning for first time
+          const rawOffset = getSetting(S.bottomOffset);
+          const fresh = (rawOffset !== null && rawOffset !== undefined) ? Number(rawOffset) : 110;
+          placeAtBottom(root, fresh);
+        }
+      };
+
+      root.classList.add("is-booting");
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          applyPlacement();
+          root.classList.remove("is-booting");
+          this._booted = true;
+        });
+      });
+
+      // Replace your current resize handler with this:
+      this._onResize = () => {
+        if (this._isDragging) return;
+
+        // 1) keep your existing bottom/center placement logic
+        applyPlacement?.();
+
+        // 2) if a tab panel is open, recompute whether it should open up/down
+        const root  = this.element;
+        const shell = root?.querySelector(".dhud");
+        const openName = shell?.getAttribute("data-open");   // e.g., "traits", "inventory", etc.
+        if (!openName) return;
+
+        const panel = root.querySelector(`.dhud-panel[data-panel='${openName}']`);
+        if (panel && typeof setPanelOpenDirection === "function") {
+          setPanelOpenDirection(panel);
+        }
+      };
+
+      // (re)attach listener
+      window.addEventListener("resize", this._onResize);
+    }
+
+    // Drag support (by the ring) - always re-setup and add delay for DOM readiness
+    if (!this._dragHooked) {
+      // Use requestAnimationFrame to ensure DOM is fully rendered
+      requestAnimationFrame(() => {
+        enableDragByRing(root, this);
+      });
+      this._dragHooked = true;
+    }    
+
+    // Delegated HUD interactions (ring, traits, weapons, exec, chat, move)
+    this._bindDelegatedEvents();
+
+    // If a tab is open, compute its up/down direction AFTER layout paints
+    requestAnimationFrame(() => {
+      const shell = root.querySelector(".dhud");
+      const openName = shell?.getAttribute("data-open");
+      if (!openName) return;
+      const panel = root.querySelector(`.dhud-panel[data-panel='${openName}']`);
+      if (!panel || typeof setPanelOpenDirection !== "function") return;
+      requestAnimationFrame(() => setPanelOpenDirection(panel));
+    });
+
+  }
+
+  async close(opts) {
+    try {
+      if (this._imgHooked) {
+        // Unhook configurator updates
+        if (this._reapplyAppearance) {
+          Hooks.off("daggerheart-hud:rings-updated",      this._reapplyAppearance);
+          Hooks.off("daggerheart-hud:appearance-updated", this._reapplyAppearance);
+        }
+
+        // Clear refs
+        this._reapplyAppearance = null;
+        this._imgHooked = false;
+      }
+
+      // Remove window resize listener if set
+      if (this._onResize) {
+        window.removeEventListener("resize", this._onResize);
+        this._onResize = null;
+      }
+    } finally {
+      return super.close(opts);
+    }
+  }
+
+}

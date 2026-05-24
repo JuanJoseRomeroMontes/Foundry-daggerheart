@@ -11,6 +11,11 @@
     <button type="button" class="control-icon" data-action="sort" data-direction="down" data-tooltip="HUD.ToBack">
         <img src="{{icons.down}}">
     </button>
+    {{#if hasCompanion}}
+        <button type="button" class="control-icon clown-car" data-action="toggleCompanions" data-tooltip="{{#if companionOnCanvas}}{{localize "DAGGERHEART.APPLICATIONS.HUD.tokenHUD.retrieveCompanionTokens"}}{{else}}{{localize "DAGGERHEART.APPLICATIONS.HUD.tokenHUD.depositCompanionTokens"}}{{/if}}">
+            <img {{#if companionOnCanvas}}class="flipped"{{/if}} src="{{icons.toggleClowncar}}">
+        </button>
+    {{/if}}
 
     {{#if canConfigure}}
     <button type="button" class="control-icon" data-action="config" data-tooltip="HUD.OpenConfig">
@@ -40,20 +45,45 @@
     </button>
     {{/if}}
 
+    {{#if usesEffects}}
     <button type="button" class="control-icon" data-action="togglePalette" data-palette="effects" data-tooltip="HUD.AssignStatusEffects">
         <img src="{{icons.effects}}">
     </button>
     <div class="palette status-effects" data-palette="effects">
         {{#each systemStatusEffects as |status|}}
-            <img class="effect-control {{status.cssClass}}" src="{{status.src}}" data-action="effect" data-status-id="{{status.id}}" {{#if status.title}}data-tooltip-text="{{status.title}}"{{/if}}>
+            <div 
+                class="effect-control effect-control-container {{status.cssClass}} {{#if (or status.disabled status.locked)}}disabled{{/if}}" 
+                {{#if status.disabled}}data-tooltip="{{localize "DAGGERHEART.UI.Tooltip.immune"}}"{{else if status.title}}data-tooltip-text="{{status.title}}"{{/if}}
+                data-action="effect" data-status-id="{{status.id}}"
+            >
+                <img src="{{status.src}}" />
+                {{#if status.disabled}}
+                    <span class="effect-control-disabled-marker">/</span>
+                {{/if}}
+                {{#if status.locked}}<i class="effect-locked fa-solid fa-lock"></i>{{/if}}
+            </div>
         {{/each}}
         {{#if genericStatusEffects}}
             <label class="palette-category-title">{{localize "DAGGERHEART.APPLICATIONS.HUD.tokenHUD.genericEffects"}}</label>
             {{#each genericStatusEffects as |status|}}
-                <img class="effect-control {{status.cssClass}}" src="{{status.src}}" data-action="effect" data-status-id="{{status.id}}" {{#if status.title}}data-tooltip-text="{{status.title}}"{{/if}}>
+                <div 
+                    class="effect-control effect-control-container {{status.cssClass}} {{#if (or status.disabled status.locked)}}disabled{{/if}}" 
+                    {{#if status.title}}data-tooltip-text="{{status.title}}"{{/if}}
+                    data-action="effect" data-status-id="{{status.id}}"
+                >
+                    <img src="{{status.src}}" />
+                    {{#if status.locked}}<i class="effect-locked fa-solid fa-lock"></i>{{/if}}
+                </div>
             {{/each}}
         {{/if}}
     </div>
+    {{/if}}
+    
+    {{#if (eq actorType 'party')}}
+        <button type="button" class="control-icon clown-car" data-action="togglePartyTokens" data-tooltip="{{#if partyOnCanvas}}{{localize "DAGGERHEART.APPLICATIONS.HUD.tokenHUD.retrievePartyTokens"}}{{else}}{{localize "DAGGERHEART.APPLICATIONS.HUD.tokenHUD.depositPartyTokens"}}{{/if}}">
+            <img {{#if partyOnCanvas}}class="flipped"{{/if}} src="{{icons.toggleClowncar}}">
+        </button>
+    {{/if}}
 
     <button type="button" class="control-icon" data-action="togglePalette" data-palette="movementActions"
             aria-label="{{ localize "HUD.SelectMovementAction" }}" data-tooltip>

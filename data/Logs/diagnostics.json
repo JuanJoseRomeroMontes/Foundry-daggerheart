@@ -1,5 +1,5 @@
 {
-  "timestamp": 1767621752588,
+  "timestamp": 1779634893836,
   "os": {
     "platform": "win32",
     "version": "10.0.19045",
@@ -13,6 +13,9 @@
     "hosting": null
   },
   "modules": {
+    "actor-journal-helper": {
+      "version": "2.0.2"
+    },
     "art-for-daggerheart": {
       "version": "1.0.0"
     },
@@ -31,17 +34,41 @@
     "crlngn-ui": {
       "version": "2.14.11"
     },
+    "daggerheart-advmanager": {
+      "version": "0.2.4"
+    },
     "daggerheart-es": {
       "version": "0.1.0"
     },
     "daggerheart-extra-content": {
       "version": "1.3.9"
     },
+    "daggerheart-gm-hud": {
+      "version": "1.4.0"
+    },
+    "daggerheart-hud": {
+      "version": "1.11.1"
+    },
     "daggerheart-plus": {
       "version": "1.2.9"
     },
+    "daggerheart-quickrules": {
+      "version": "0.1.8"
+    },
+    "daggerheart-store": {
+      "version": "0.2.2"
+    },
+    "dh-importer": {
+      "version": "1.2.2"
+    },
+    "dh-stream-overlay": {
+      "version": "2.1.0"
+    },
     "dice-so-nice": {
       "version": "5.2.4"
+    },
+    "forien-quest-log": {
+      "version": "v0.9.0"
     },
     "hourglass": {
       "version": "1.9.0"
@@ -51,6 +78,12 @@
     },
     "lib-wrapper": {
       "version": "1.13.4.0"
+    },
+    "popout": {
+      "version": "2.23"
+    },
+    "potato-or-not": {
+      "version": "0.9.0"
     },
     "progress-countdown-tracker": {
       "version": "1.0.21"
@@ -70,13 +103,13 @@
   },
   "systems": {
     "daggerheart": {
-      "version": "1.1.2",
-      "playtime": 40020
+      "version": "1.8.0",
+      "playtime": 58038
     }
   },
   "worlds": {},
   "playtime": {
-    "total": 40020,
-    "max": 40020
+    "total": 58038,
+    "max": 58038
   }
 }

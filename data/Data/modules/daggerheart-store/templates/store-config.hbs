@@ -1,0 +1,45 @@
+<div class="daggerheart-store-config">
+    <!-- Config Tabs -->
+    <nav class="sheet-tabs tabs">
+        <a class="item {{#if (eq activeTab 'general')}}active{{/if}}" data-tab="general"><i class="fas fa-cogs"></i> General</a>
+        <a class="item {{#if (eq activeTab 'categories')}}active{{/if}}" data-tab="categories"><i class="fas fa-eye"></i> Categories</a>
+        <a class="item {{#if (eq activeTab 'tiers')}}active{{/if}}" data-tab="tiers"><i class="fas fa-layer-group"></i> Tiers</a>
+        <a class="item {{#if (eq activeTab 'compendiums')}}active{{/if}}" data-tab="compendiums"><i class="fas fa-book"></i> Custom Compendiums</a>
+        <a class="item {{#if (eq activeTab 'stock')}}active{{/if}}" data-tab="stock"><i class="fas fa-boxes"></i> Stock Management</a>
+    </nav>
+
+    <!-- Tab: General -->
+    <div class="tab-content {{#if (eq activeTab 'general')}}active{{/if}}" data-tab="general">
+        {{> "modules/daggerheart-store/templates/partials/config-general-tab.hbs"}}
+    </div>
+
+    <!-- Tab: Categories -->
+    <div class="tab-content {{#if (eq activeTab 'categories')}}active{{/if}}" data-tab="categories">
+        {{> "modules/daggerheart-store/templates/partials/config-categories-tab.hbs"}}
+    </div>
+
+    <!-- Tab: Tiers -->
+    <div class="tab-content {{#if (eq activeTab 'tiers')}}active{{/if}}" data-tab="tiers">
+        {{> "modules/daggerheart-store/templates/partials/config-tiers-tab.hbs"}}
+    </div>
+
+    <!-- Tab: Custom Compendiums -->
+    <div class="tab-content {{#if (eq activeTab 'compendiums')}}active{{/if}}" data-tab="compendiums">
+        {{> "modules/daggerheart-store/templates/partials/config-compendiums-tab.hbs"}}
+    </div>
+
+    <!-- Tab: Stock Management -->
+    <div class="tab-content {{#if (eq activeTab 'stock')}}active{{/if}}" data-tab="stock">
+        {{> "modules/daggerheart-store/templates/partials/config-stock-tab.hbs"}}
+    </div>
+
+    <!-- Footer -->
+    <footer class="sheet-footer config-footer">
+        <button type="button" data-action="openInstructions" class="config-btn-secondary">
+            <i class="fas fa-book-open"></i> Instructions
+        </button>
+        <button type="submit" class="config-btn-primary">
+            <i class="fas fa-save"></i> Save Settings
+        </button>
+    </footer>
+</div>

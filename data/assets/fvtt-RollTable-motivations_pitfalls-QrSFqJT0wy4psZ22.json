@@ -1,0 +1,350 @@
+{
+  "name": "Motivations/Pitfalls",
+  "img": "icons/svg/d20-grey.svg",
+  "description": "<p>JournalEntry.6z84yWIGPyJTxR09</p>",
+  "results": [
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        1,
+        1
+      ],
+      "_id": "fXieMcVkoGgWs39z",
+      "name": "Benevolencia",
+      "img": "icons/svg/d20.svg",
+      "description": "",
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.361",
+        "systemId": "daggerheart",
+        "systemVersion": "2.2.4",
+        "createdTime": 1779617683209,
+        "modifiedTime": 1779617794766,
+        "lastModifiedBy": "nB3m8cDJk8RFQZTB",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "documentUuid": null
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        2,
+        2
+      ],
+      "_id": "t4oIdOyzDEL3LNts",
+      "name": "Descubrimiento",
+      "img": "icons/svg/d20.svg",
+      "description": "",
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.361",
+        "systemId": "daggerheart",
+        "systemVersion": "2.2.4",
+        "createdTime": 1779617684564,
+        "modifiedTime": 1779617800003,
+        "lastModifiedBy": "nB3m8cDJk8RFQZTB",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "documentUuid": null
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        3,
+        3
+      ],
+      "_id": "fTPRvHGe23G02H6k",
+      "name": "Libertad",
+      "img": "icons/svg/d20.svg",
+      "description": "",
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.361",
+        "systemId": "daggerheart",
+        "systemVersion": "2.2.4",
+        "createdTime": 1779617684743,
+        "modifiedTime": 1779617808338,
+        "lastModifiedBy": "nB3m8cDJk8RFQZTB",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "documentUuid": null
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        4,
+        4
+      ],
+      "_id": "c3PW2CPHlx6v70q9",
+      "name": "Avaricia",
+      "img": "icons/svg/d20.svg",
+      "description": "",
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.361",
+        "systemId": "daggerheart",
+        "systemVersion": "2.2.4",
+        "createdTime": 1779617684923,
+        "modifiedTime": 1779617812724,
+        "lastModifiedBy": "nB3m8cDJk8RFQZTB",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "documentUuid": null
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        5,
+        5
+      ],
+      "_id": "W79GTLuQj9RWC59Y",
+      "name": "Autoridad superior",
+      "img": "icons/svg/d20.svg",
+      "description": "",
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.361",
+        "systemId": "daggerheart",
+        "systemVersion": "2.2.4",
+        "createdTime": 1779617685109,
+        "modifiedTime": 1779617819193,
+        "lastModifiedBy": "nB3m8cDJk8RFQZTB",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "documentUuid": null
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        6,
+        6
+      ],
+      "_id": "Nh8z1vSvhYpJGCyl",
+      "name": "Justicia",
+      "img": "icons/svg/d20.svg",
+      "description": "",
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.361",
+        "systemId": "daggerheart",
+        "systemVersion": "2.2.4",
+        "createdTime": 1779617685281,
+        "modifiedTime": 1779617824723,
+        "lastModifiedBy": "nB3m8cDJk8RFQZTB",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "documentUuid": null
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        7,
+        7
+      ],
+      "_id": "R0qmwQsJELfyU5a1",
+      "name": "Legado",
+      "img": "icons/svg/d20.svg",
+      "description": "",
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.361",
+        "systemId": "daggerheart",
+        "systemVersion": "2.2.4",
+        "createdTime": 1779617685458,
+        "modifiedTime": 1779617828837,
+        "lastModifiedBy": "nB3m8cDJk8RFQZTB",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "documentUuid": null
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        8,
+        8
+      ],
+      "_id": "FHO7xLD33aCjsGBB",
+      "name": "Paz",
+      "img": "icons/svg/d20.svg",
+      "description": "",
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.361",
+        "systemId": "daggerheart",
+        "systemVersion": "2.2.4",
+        "createdTime": 1779617685653,
+        "modifiedTime": 1779617832958,
+        "lastModifiedBy": "nB3m8cDJk8RFQZTB",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "documentUuid": null
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        9,
+        9
+      ],
+      "_id": "NuSsMeVdzAPlh9yx",
+      "name": "Poder",
+      "img": "icons/svg/d20.svg",
+      "description": "",
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.361",
+        "systemId": "daggerheart",
+        "systemVersion": "2.2.4",
+        "createdTime": 1779617685829,
+        "modifiedTime": 1779617851854,
+        "lastModifiedBy": "nB3m8cDJk8RFQZTB",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "documentUuid": null
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        10,
+        10
+      ],
+      "_id": "NBfRvLEFiPpnleSR",
+      "name": "Proteccion",
+      "img": "icons/svg/d20.svg",
+      "description": "",
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.361",
+        "systemId": "daggerheart",
+        "systemVersion": "2.2.4",
+        "createdTime": 1779617686006,
+        "modifiedTime": 1779617857769,
+        "lastModifiedBy": "nB3m8cDJk8RFQZTB",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "documentUuid": null
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        11,
+        11
+      ],
+      "_id": "T0DhNP7zPG71Xqtk",
+      "name": "Jolgorio",
+      "img": "icons/svg/d20.svg",
+      "description": "",
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.361",
+        "systemId": "daggerheart",
+        "systemVersion": "2.2.4",
+        "createdTime": 1779617686448,
+        "modifiedTime": 1779617892264,
+        "lastModifiedBy": "nB3m8cDJk8RFQZTB",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "documentUuid": null
+    },
+    {
+      "type": "text",
+      "weight": 1,
+      "range": [
+        12,
+        12
+      ],
+      "_id": "51krrvuE9H6Nm38b",
+      "name": "Venganza",
+      "img": "icons/svg/d20.svg",
+      "description": "",
+      "drawn": false,
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.361",
+        "systemId": "daggerheart",
+        "systemVersion": "2.2.4",
+        "createdTime": 1779617686826,
+        "modifiedTime": 1779617901274,
+        "lastModifiedBy": "nB3m8cDJk8RFQZTB",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "documentUuid": null
+    }
+  ],
+  "replacement": true,
+  "displayRoll": true,
+  "folder": null,
+  "flags": {
+    "daggerheart": {
+      "formulaName": "Roll Formula",
+      "altFormula": {},
+      "activeAltFormula": null
+    }
+  },
+  "_stats": {
+    "coreVersion": "14.361",
+    "systemId": "daggerheart",
+    "systemVersion": "2.2.4",
+    "createdTime": 1779616909347,
+    "modifiedTime": 1779617692979,
+    "lastModifiedBy": "nB3m8cDJk8RFQZTB",
+    "compendiumSource": null,
+    "duplicateSource": "RollTable.QrSFqJT0wy4psZ22",
+    "exportSource": {
+      "worldId": "solo-adventure",
+      "uuid": "RollTable.QrSFqJT0wy4psZ22",
+      "coreVersion": "14.361",
+      "systemId": "daggerheart",
+      "systemVersion": "2.2.4"
+    }
+  },
+  "formula": "1d12",
+  "ownership": {
+    "default": 0
+  }
+}

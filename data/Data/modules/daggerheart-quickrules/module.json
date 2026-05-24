@@ -1,0 +1,89 @@
+{
+  "id": "daggerheart-quickrules",
+  "title": "Daggerheart: Quick Rules",
+  "version": "0.1.8",
+  
+  "compatibility": {
+    "minimum": "13",
+    "verified": "13"
+  },
+  
+  "authors": [
+    {
+      "name": "Mestre Digital"
+    }
+  ],
+  
+  "esmodules": [
+    "scripts/module.js"
+  ],
+  "styles": [
+    "styles/quickrules.css"
+  ],
+  
+  "relationships": {
+    "systems": [
+      {
+        "id": "daggerheart",
+        "type": "system",
+        "compatibility": {
+          "minimum": "1.4.6"
+        }
+      }
+    ]
+  },
+
+  "media": [{
+    "type": "setup",
+    "url": "modules/daggerheart-quickrules/assets/images/thumbnail.webp",
+    "thumbnail": "modules/daggerheart-quickrules/assets/images/thumbnail.webp"
+  }], 
+  
+  "url": "https://github.com/brunocalado/daggerheart-quickrules",
+  "manifest": "https://raw.githubusercontent.com/brunocalado/daggerheart-quickrules/main/module.json",
+  "download": "https://codeload.github.com/brunocalado/daggerheart-quickrules/zip/main",
+  
+  "description": "A quick reference module for displaying the Daggerheart SRD content.",
+  
+  "packs": [
+    {
+      "label": "Quick Rules",
+      "type": "JournalEntry",
+      "name": "quickrules",
+      "path": "packs/quickrules",
+      "system": "daggerheart",
+      "ownership": {
+        "PLAYER": "NONE",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {},
+      "banner": "modules/daggerheart-quickrules/assets/images/banner.webp" 
+    },
+    {
+      "label": "Macros",
+      "type": "Macro",
+      "name": "macros",
+      "path": "packs/macros",
+      "system": "daggerheart",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {},
+      "banner": "modules/daggerheart-quickrules/assets/images/banner.webp" 
+    }    
+  ],
+
+  "packFolders": [
+    {
+      "name": "📜 Quick Rules 📜",
+      "sorting": "a",
+      "color": "#5c0547",
+      "packs": [        
+        "quickrules",
+        "macros"
+      ],
+      "folders": []
+    }
+  ]  
+}

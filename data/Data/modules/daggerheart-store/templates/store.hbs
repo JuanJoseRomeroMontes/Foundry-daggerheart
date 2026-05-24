@@ -1,0 +1,42 @@
+<form class="daggerheart-store-container">
+    {{> "modules/daggerheart-store/templates/partials/store-header.hbs"}}
+
+    {{#unless isGM}}
+        {{#unless hasActor}}
+        <div class="error-banner">
+            Warning: You have no assigned character. You cannot make purchases.
+        </div>
+        {{/unless}}
+    {{/unless}}
+
+    <!-- Tab Navigation -->
+    <nav class="sheet-tabs tabs">
+        {{#each categories}}
+        <a class="item {{#if (eq this.id ../activeTab)}}active{{/if}}" data-tab="{{this.id}}">{{this.label}}</a>
+        {{/each}}
+    </nav>
+
+    <!-- Content -->
+    <section class="content">
+        {{#each categories as |cat|}}
+        <div class="tab" data-tab="{{cat.id}}" style="display: {{#if (eq cat.id ../activeTab)}}block{{else}}none{{/if}};">
+
+            {{> "modules/daggerheart-store/templates/partials/store-search-bar.hbs"}}
+
+            {{#each (lookup ../tabs cat.id) as |group|}}
+                {{#if group.label}}
+                <div class="tier-separator {{#if group.isHiddenGroup}}hidden-group-separator{{/if}}">{{{group.label}}}</div>
+                {{/if}}
+
+                <div class="item-list">
+                    {{#each group.items}}
+                    {{> "modules/daggerheart-store/templates/partials/store-item-row.hbs"}}
+                    {{/each}}
+                </div>
+            {{else}}
+                <p class="empty-tab">No items available in this category based on current GM settings.</p>
+            {{/each}}
+        </div>
+        {{/each}}
+    </section>
+</form>

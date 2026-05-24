@@ -14,12 +14,12 @@
                             <div class="suggested-trait-container">{{this}}</div>
                         {{/each}}
                     </div>
-                    <button class="action-button" data-action="useSuggestedTraits">{{localize "Use"}}</button>
+                    <button class="action-button" data-action="useSuggestedTraits">{{localize "DAGGERHEART.GENERAL.use"}}</button>
                 </fieldset>
                 <div class="traits-inner-container">
                     {{#each traits.values}}
                         <div class="trait-container">
-                            <div>{{this.name}}</div>
+                            <span>{{this.name}}</span>
                             <select name="{{concat "traits." this.key ".value"}}" data-dtype="Number">
                                 {{selectOptions this.options selected=this.value valueAttr="key" labelAttr="value" blank=""}}
                             </select>

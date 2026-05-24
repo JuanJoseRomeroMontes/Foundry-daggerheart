@@ -1,0 +1,24 @@
+{"level":"info","message":"Running on Node.js - Version 20.18.3","timestamp":"2026-03-12 18:59:39"}
+{"level":"info","message":"Foundry Virtual Tabletop - Version 13 Build 348","timestamp":"2026-03-12 18:59:39"}
+{"level":"info","message":"User Data Directory - \"..\"","timestamp":"2026-03-12 18:59:39"}
+{"level":"info","message":"Application Options:\n{\n  \"compressStatic\": true,\n  \"fullscreen\": false,\n  \"hostname\": null,\n  \"language\": \"en.core\",\n  \"localHostname\": null,\n  \"port\": 30000,\n  \"proxyPort\": null,\n  \"proxySSL\": false,\n  \"routePrefix\": null,\n  \"updateChannel\": \"stable\",\n  \"upnp\": true,\n  \"awsConfig\": null,\n  \"compressSocket\": true,\n  \"cssTheme\": \"dark\",\n  \"deleteNEDB\": false,\n  \"hotReload\": false,\n  \"passwordSalt\": null,\n  \"sslCert\": null,\n  \"sslKey\": null,\n  \"world\": null,\n  \"serviceConfig\": null,\n  \"telemetry\": true,\n  \"adminPassword\": null,\n  \"noBackups\": false\n}","timestamp":"2026-03-12 18:59:39"}
+{"level":"info","message":"Software license verification succeeded","timestamp":"2026-03-12 18:59:39"}
+{"level":"info","message":"Requesting UPnP port forwarding to destination port 30000","timestamp":"2026-03-12 18:59:39"}
+{"level":"info","message":"Running Electron application with version 34.4.0 using Chromium 132.0.6834.210","timestamp":"2026-03-12 18:59:39"}
+{"level":"info","message":"Server started and listening on port 30000","timestamp":"2026-03-12 18:59:41"}
+{"level":"info","message":"Created client session 08b04a402348b4eafbb02869","timestamp":"2026-03-12 18:59:46"}
+{"level":"info","message":"Core software stable update 13.351 is available!","timestamp":"2026-03-12 18:59:48"}
+{"level":"info","message":"Shutting down Foundry Virtual Tabletop server","timestamp":"2026-03-12 18:59:53"}
+{"level":"info","message":"Shut-down success. Goodbye!","timestamp":"2026-03-12 18:59:53"}
+{"level":"info","message":"Running on Node.js - Version 20.18.3","timestamp":"2026-03-12 19:00:20"}
+{"level":"info","message":"Foundry Virtual Tabletop - Version 13 Build 348","timestamp":"2026-03-12 19:00:20"}
+{"level":"info","message":"User Data Directory - \"..\"","timestamp":"2026-03-12 19:00:20"}
+{"level":"info","message":"Application Options:\n{\n  \"compressStatic\": true,\n  \"fullscreen\": false,\n  \"hostname\": null,\n  \"language\": \"en.core\",\n  \"localHostname\": null,\n  \"port\": 30000,\n  \"proxyPort\": null,\n  \"proxySSL\": false,\n  \"routePrefix\": null,\n  \"updateChannel\": \"stable\",\n  \"upnp\": true,\n  \"awsConfig\": null,\n  \"compressSocket\": true,\n  \"cssTheme\": \"dark\",\n  \"deleteNEDB\": false,\n  \"hotReload\": false,\n  \"passwordSalt\": null,\n  \"sslCert\": null,\n  \"sslKey\": null,\n  \"world\": null,\n  \"serviceConfig\": null,\n  \"telemetry\": true,\n  \"adminPassword\": null,\n  \"noBackups\": false\n}","timestamp":"2026-03-12 19:00:20"}
+{"level":"info","message":"Software license verification succeeded","timestamp":"2026-03-12 19:00:20"}
+{"level":"info","message":"Requesting UPnP port forwarding to destination port 30000","timestamp":"2026-03-12 19:00:20"}
+{"level":"info","message":"Running Electron application with version 34.4.0 using Chromium 132.0.6834.210","timestamp":"2026-03-12 19:00:20"}
+{"level":"info","message":"Server started and listening on port 30000","timestamp":"2026-03-12 19:00:20"}
+{"level":"info","message":"Created client session 4a8337c18770c840e8abb962","timestamp":"2026-03-12 19:00:22"}
+{"level":"info","message":"Core software stable update 13.351 is available!","timestamp":"2026-03-12 19:00:23"}
+{"level":"info","message":"Shutting down Foundry Virtual Tabletop server","timestamp":"2026-03-12 19:00:25"}
+{"level":"info","message":"Shut-down success. Goodbye!","timestamp":"2026-03-12 19:00:25"}

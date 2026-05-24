@@ -1,0 +1,10 @@
+{
+	"PotatoOrNot.BadTitle": "Patate fade",
+	"PotatoOrNot.BadDescription": "Si tu as un portable ou un ordinateur peu puissant, utilise ce paramètre pour une expérience optimale !",
+	"PotatoOrNot.MediumTitle": "Patate",
+	"PotatoOrNot.MediumDescription": "Tu as un ordinateur milieu de gamme qui n'est pas mauvais, mais qui commence à prendre de l'âge.",
+	"PotatoOrNot.GoodTitle": "Patate de luxe",
+	"PotatoOrNot.GoodDescription": "Ton ordinateur puissant est presque membre du club VIP.",
+	"PotatoOrNot.Selection": "Sélectionne le niveau de performance de ton ordinateur :",
+	"PotatoOrNot.Accept": "Accepter"
+}

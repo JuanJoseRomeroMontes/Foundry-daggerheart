@@ -1,0 +1,42 @@
+<div class="potato potato-container">
+
+	<h1 id="potato-title">{{ localize "PotatoOrNot.Selection"}}</h1>
+
+	<div class='potato-master-container'>
+		<div class='potato-level-container' level='0' {{#if (eq potato_quality 0)}} active="true" {{/if}} >
+			<div class="potato-level-row">
+				<img src='modules/potato-or-not/styles/img/bad_potato.jpg'>
+			</div>
+			<div class="potato-level-row-text">
+				<h2>{{ localize "PotatoOrNot.BadTitle" }}</h2>
+				<p>{{ localize "PotatoOrNot.BadDescription" }}</p>
+			</div>
+		</div>
+		<div class='potato-level-container' level='1' {{#if (eq potato_quality 1)}} active="true" {{/if}} >
+			<div class="potato-level-row">
+				<img src='modules/potato-or-not/styles/img/potato.png'>
+			</div>
+			<div class="potato-level-row-text">
+				<h2>{{ localize "PotatoOrNot.MediumTitle" }}</h2>
+				<p>{{ localize "PotatoOrNot.MediumDescription" }}</p>
+			</div>
+		</div>
+		<div class='potato-level-container' level='2' {{#if (eq potato_quality 2)}} active="true" {{/if}} >
+			<div class="potato-level-row">
+				<img src='modules/potato-or-not/styles/img/good_potato.jpg'>
+			</div>
+			<div class="potato-level-row-text">
+				<h2>{{ localize "PotatoOrNot.GoodTitle" }}</h2>
+				<p>{{ localize "PotatoOrNot.GoodDescription" }}</p>
+			</div>
+		</div>
+	</div>
+
+	<hr>
+
+	<button class="dialog-button" data-button="confirm">
+		<i class="fa-solid fa-potato"></i>
+		{{ localize "PotatoOrNot.Accept" }}
+	</button>
+
+</div>

@@ -1,0 +1,155 @@
+<div class="dh-adv-manager-content">
+
+    <!-- Mode Toggle Buttons -->
+    <div class="stat-row dp-mode-row">
+        <div class="mode-toggle-buttons dp-mode-buttons">
+            <button type="button"
+                data-action="setMode"
+                data-value="duality"
+                class="roll-btn {{#if isDualityMode}}active{{/if}}"
+                title="Duality Dice (2d12)">
+                <i class="fas fa-dice"></i> Duality Dice
+            </button>
+            <button type="button"
+                data-action="setMode"
+                data-value="d20"
+                class="roll-btn {{#if isD20Mode}}active{{/if}}"
+                title="D20 System">
+                <i class="fas fa-dice-d20"></i> D20
+            </button>
+        </div>
+    </div>
+
+    <div class="form-group">
+
+        {{#if isDualityMode}}
+        <!-- ========== DUALITY DICE MODE ========== -->
+
+        <!-- Die 1 Buttons -->
+        <div class="stat-row">
+            <span class="stat-label">Die 1</span>
+            <div class="die-btn-group">
+                {{#each die1Buttons}}
+                <button type="button"
+                        class="roll-btn small {{this.cssClass}}"
+                        data-action="setDie1"
+                        data-value="{{this.value}}">
+                    {{this.label}}
+                </button>
+                {{/each}}
+            </div>
+        </div>
+
+        <!-- Die 2 Buttons -->
+        <div class="stat-row">
+            <span class="stat-label">Die 2</span>
+            <div class="die-btn-group">
+                {{#each die2Buttons}}
+                <button type="button"
+                        class="roll-btn small {{this.cssClass}}"
+                        data-action="setDie2"
+                        data-value="{{this.value}}">
+                    {{this.label}}
+                </button>
+                {{/each}}
+            </div>
+        </div>
+
+        {{> "modules/daggerheart-advmanager/templates/partials/dp-roll-type.hbs" disTitle="Disadvantage" normTitle="Normal" advTitle="Advantage"}}
+
+        <!-- Advantage Die Selection (Conditionally Visible or Disabled) -->
+        <div class="stat-row {{#unless showAdvDie}}dp-disabled-row{{/unless}}">
+            <span class="stat-label">{{advLabel}}</span>
+            <div class="die-btn-group">
+                {{#each advButtons}}
+                <button type="button"
+                        class="roll-btn small {{this.cssClass}}"
+                        data-action="setAdvDie"
+                        data-value="{{this.value}}">
+                    {{this.label}}
+                </button>
+                {{/each}}
+            </div>
+        </div>
+
+        {{else}}
+        <!-- ========== D20 MODE ========== -->
+
+        {{> "modules/daggerheart-advmanager/templates/partials/dp-roll-type.hbs" disTitle="Disadvantage (2d20 keep lowest)" normTitle="Normal (1d20)" advTitle="Advantage (2d20 keep highest)"}}
+
+        <!-- Critical Threshold -->
+        <div class="stat-row">
+            <span class="stat-label">Critical Threshold</span>
+            <div class="select-wrapper dp-select-wrapper">
+                <select name="criticalThreshold" class="stats-type-select">
+                    {{#each critOptions}}
+                    <option value="{{this.value}}" {{#if this.selected}}selected{{/if}}>{{this.label}}+</option>
+                    {{/each}}
+                </select>
+                <i class="fas fa-chevron-down select-arrow"></i>
+            </div>
+        </div>
+
+        {{/if}}
+
+        <!-- ========== SHARED FIELDS ========== -->
+
+        <!-- Modifier Input -->
+        <div class="stat-row">
+            <span class="stat-label">Modifier (+/-)</span>
+            <div class="dp-input-wrapper">
+                <input type="number" name="modifier" class="stats-type-select dp-modifier-input" value="{{currentModifier}}" placeholder="0">
+            </div>
+        </div>
+
+        <!-- Difficulty -->
+        <div class="stat-row">
+            <span class="stat-label">Difficulty</span>
+            <div class="select-wrapper dp-select-wrapper">
+                <select name="difficulty" class="stats-type-select">
+                    {{#each diffOptions}}
+                    <option value="{{this.value}}" {{#if this.selected}}selected{{/if}}>{{this.label}}</option>
+                    {{/each}}
+                </select>
+                <i class="fas fa-chevron-down select-arrow"></i>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Results Section -->
+    <div class="probability-results dp-results">
+        <h3 class="dp-results-header">Results</h3>
+
+        <div class="stat-row">
+            <span class="stat-label">Roll</span>
+            <span class="stat-value dp-roll-notation">{{results.diceNotation}}</span>
+        </div>
+
+        <div class="stat-row dp-result-row-border">
+            <span class="stat-label dp-color-success">Success Chance</span>
+            <span class="stat-value dp-color-success dp-result-bold">{{results.success}}%</span>
+        </div>
+
+        <div class="stat-row">
+            <span class="stat-label dp-color-fail">Failure Chance</span>
+            <span class="stat-value dp-color-fail">{{results.fail}}%</span>
+        </div>
+
+        <div class="stat-row">
+            {{#if isDualityMode}}
+            <span class="stat-label dp-color-crit">Critical (Doubles)</span>
+            {{else}}
+            <span class="stat-label dp-color-crit">Critical ({{results.criticalThreshold}}+)</span>
+            {{/if}}
+            <span class="stat-value dp-color-crit">{{results.crit}}%</span>
+        </div>
+    </div>
+
+    <footer class="sheet-footer dp-footer">
+        <button type="button" data-action="sendToChat" class="dp-chat-btn">
+            <i class="fas fa-comment-dots"></i> Send to Chat
+        </button>
+    </footer>
+
+</div>

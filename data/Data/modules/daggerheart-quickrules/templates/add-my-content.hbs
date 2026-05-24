@@ -1,0 +1,42 @@
+<div class="dh-add-mycontent-container">
+    <div class="dh-mycontent-header">
+        <p>Select folders to import content into <strong>📜 My Custom Content</strong>.</p>
+    </div>
+
+    {{!-- Tabs --}}
+    <nav class="dh-tabs">
+        <button type="button" class="dh-tab-btn {{#if isItems}}active{{/if}}" data-action="switchTab" data-tab="Item">
+            <i class="fas fa-suitcase"></i> Items
+        </button>
+        <button type="button" class="dh-tab-btn {{#if isActors}}active{{/if}}" data-action="switchTab" data-tab="Actor">
+            <i class="fas fa-users"></i> Actors
+        </button>
+    </nav>
+
+    {{!-- Folder List --}}
+    <div class="dh-folder-list">
+        {{#each folders}}
+        <div class="dh-folder-row" style="padding-left: {{this.paddingLeft}}px;">
+            <label class="dh-checkbox-label">
+                {{#if (gt this.paddingLeft 0)}}<i class="fas fa-level-up-alt fa-rotate-90" style="margin-right: 5px; color: #555; font-size: 0.8em;"></i>{{/if}}
+                
+                <input type="checkbox" value="{{this.id}}" data-action="toggleFolder" {{checked this.checked}}>
+                <i class="fas fa-folder{{#if this.checked}}-open{{/if}}" style="color: #dcb15d; margin: 0 5px;"></i>
+                {{this.name}}
+                <span class="dh-count">({{this.count}})</span>
+            </label>
+        </div>
+        {{else}}
+            <div class="dh-empty-folders">
+                No folders found for {{activeTab}}s.
+            </div>
+        {{/each}}
+    </div>
+
+    {{!-- Footer --}}
+    <footer class="dh-footer">
+        <button type="button" class="dh-build-btn" data-action="buildCustom" {{#unless hasSelection}}disabled{{/unless}}>
+            <i class="fas fa-hammer"></i> Build Custom Journal
+        </button>
+    </footer>
+</div>

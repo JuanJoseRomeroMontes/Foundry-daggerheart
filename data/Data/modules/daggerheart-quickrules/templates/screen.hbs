@@ -1,0 +1,206 @@
+<div class="dh-quickrules-container {{theme}}">
+    {{!-- Left Sidebar --}}
+    <aside class="dh-quickrules-sidebar">
+        <div class="dh-sidebar-header">
+            {{!-- Top Row: All Buttons in one container --}}
+            <div class="dh-view-modes" style="display: flex; align-items: center; gap: 4px;">
+                {{!-- Main View Toggles --}}
+                <div class="dh-left-controls" style="display: flex; gap: 4px; flex: 1;">
+                    <button type="button" class="dh-mode-btn {{#if (eq viewMode 'all')}}active{{/if}}" 
+                            data-action="toggleViewMode" data-mode="all">
+                        All
+                    </button>
+                    <button type="button" class="dh-mode-btn {{#if (eq viewMode 'favorites')}}active{{/if}}" 
+                            data-action="toggleViewMode" data-mode="favorites">
+                        Favorites
+                    </button>
+                </div>
+
+                {{!-- Separator --}}
+                <div style="width: 1px; height: 20px; background: #555; margin: 0 2px;"></div>
+
+                {{!-- Source Toggles (3 Square Buttons - Now Inline) --}}
+                <div class="dh-filter-group" style="display: flex; gap: 2px;">
+                    <button type="button" class="dh-mode-btn square-btn {{#if filters.rules}}active{{/if}}" 
+                            data-action="toggleFilter" data-filter="rules"
+                            data-tooltip="Toggle Rules">
+                        <i class="fas fa-book"></i>
+                    </button>
+                    <button type="button" class="dh-mode-btn square-btn {{#if filters.compendiums}}active{{/if}}" 
+                            data-action="toggleFilter" data-filter="compendiums"
+                            data-tooltip="Toggle Compendiums">
+                        <i class="fas fa-atlas"></i>
+                    </button>
+                    <button type="button" class="dh-mode-btn square-btn {{#if filters.custom}}active{{/if}}" 
+                            data-action="toggleFilter" data-filter="custom"
+                            data-tooltip="Toggle Custom Content">
+                        <i class="fas fa-feather-alt"></i>
+                    </button>
+                </div>
+            </div>
+
+            {{!-- Search Row with Clear Button and Deep Search Toggle --}}
+            <div class="dh-search-container">
+                <input type="text" class="dh-search-input" placeholder="Search pages..." autocomplete="off" value="{{searchQuery}}">
+                
+                <button type="button" class="dh-mode-btn square-btn dh-clear-btn" 
+                        data-action="clearSearch" 
+                        data-tooltip="Clear Search">
+                    <i class="fas fa-times"></i>
+                </button>
+
+                {{!-- Deep Search Toggle Button --}}
+                <button type="button" class="dh-mode-btn square-btn dh-deep-search-btn {{#if deepSearch}}active{{/if}}"
+                        data-action="toggleDeepSearch"
+                        data-tooltip="Toggle Deep Search (Search Inside Content)">
+                    <i class="fas fa-file-alt"></i>
+                </button>
+
+                {{!-- AI Assistant Button (GM Only, requires API key) --}}
+                {{#if hasApiKey}}
+                <button type="button" class="dh-mode-btn square-btn dh-ai-btn"
+                        data-action="askAI"
+                        data-tooltip="Ask AI about search query">
+                    <i class="fas fa-robot"></i>
+                </button>
+                {{/if}}
+            </div>
+        </div>
+        
+        <ul class="dh-page-list">
+            {{#each alphabetizedPages as |group letter|}}
+                <li class="dh-letter-group" data-letter="{{letter}}">
+                    <div class="dh-letter-header">{{letter}}</div>
+                    <ul class="dh-sub-list">
+                        {{#each group as |page|}}
+                            <li class="dh-page-item" data-page-name="{{page.name}}">
+                                {{!-- Favorite Button --}}
+                                <button type="button" 
+                                        class="dh-fav-btn {{#if page.isFavorite}}is-fav{{/if}}"
+                                        data-action="toggleFavorite"
+                                        data-page-id="{{page.id}}"
+                                        data-tooltip="{{#if page.isFavorite}}Remove from Favorites{{else}}Add to Favorites{{/if}}">
+                                    <i class="{{#if page.isFavorite}}fas{{else}}far{{/if}} fa-star"></i>
+                                </button>
+
+                                {{!-- View Button --}}
+                                <button type="button" 
+                                        class="dh-page-btn {{#if page.active}}active{{/if}}"
+                                        data-action="viewPage" 
+                                        data-page-id="{{page.id}}">
+                                    {{#if page.isCompendium}}<i class="fas fa-book-atlas"></i> {{/if}}
+                                    {{#if page.isCustom}}<i class="fas fa-feather-alt"></i> {{/if}}
+                                    {{page.name}}
+                                    {{#if page.category}}
+                                        <span class="dh-tag">{{page.category}}</span>
+                                    {{/if}}
+                                </button>
+                            </li>
+                        {{/each}}
+                    </ul>
+                </li>
+            {{/each}}
+            
+            {{#unless hasPages}}
+                <li class="dh-empty-state" style="color: #777; padding: 10px; text-align: center;">
+                    {{#if (eq viewMode 'favorites')}}
+                        No favorites yet.<br>Star items in "All" mode!
+                    {{else}}
+                        No content visible.<br>
+                        Check filters above.
+                    {{/if}}
+                </li>
+            {{/unless}}
+        </ul>
+    </aside>
+
+    {{!-- Right Content Area --}}
+    <main class="dh-content-area" style="font-size: {{fontSize}}px;">
+        {{#if activeContent}}
+            <div class="dh-content-controls">
+                
+                {{!-- SEQUENTIAL BOOK ORDER NAVIGATION --}}
+                {{#if hasRuleOrder}}
+                    {{#if prevRuleId}}
+                    <button type="button" class="dh-control-btn" data-action="navigatePage" data-page-id="{{prevRuleId}}" title="Previous Rule">
+                        <i class="fas fa-step-backward"></i> Prev
+                    </button>
+                    {{else}}
+                    <button type="button" class="dh-control-btn disabled" disabled style="opacity: 0.5; cursor: default;">
+                        <i class="fas fa-step-backward"></i> Prev
+                    </button>
+                    {{/if}}
+
+                    {{#if nextRuleId}}
+                    <button type="button" class="dh-control-btn" data-action="navigatePage" data-page-id="{{nextRuleId}}" title="Next Rule">
+                        Next <i class="fas fa-step-forward"></i>
+                    </button>
+                    {{else}}
+                    <button type="button" class="dh-control-btn disabled" disabled style="opacity: 0.5; cursor: default;">
+                        Next <i class="fas fa-step-forward"></i>
+                    </button>
+                    {{/if}}
+
+                    {{!-- Divider --}}
+                    <div style="width: 1px; height: 20px; background: #999; margin: 0 4px;"></div>
+                {{/if}}
+
+                {{!-- Font Size Controls --}}
+                <button type="button" class="dh-control-btn" data-action="changeFontSize" data-direction="down" title="Decrease Text Size">
+                    <i class="fas fa-minus"></i>
+                </button>
+                <span class="dh-font-label">Font Size</span>
+                <button type="button" class="dh-control-btn" data-action="changeFontSize" data-direction="up" title="Increase Text Size">
+                    <i class="fas fa-plus"></i>
+                </button>
+                <button type="button" class="dh-control-btn" data-action="changeFontSize" data-direction="reset" title="Reset Font Size">
+                    <i class="fas fa-redo"></i>
+                </button>
+                
+                {{!-- Divider --}}
+                <div style="width: 1px; height: 20px; background: #999; margin: 0 4px;"></div>
+
+                {{!-- Theme Toggle (MOVED HERE) --}}
+                <button type="button" class="dh-control-btn square-btn" 
+                        data-action="toggleTheme" 
+                        data-tooltip="{{#if (eq theme 'light')}}Switch to Dark Mode{{else}}Switch to Light Mode{{/if}}">
+                    {{#if (eq theme 'light')}}
+                        <i class="fas fa-moon"></i>
+                    {{else}}
+                        <i class="fas fa-sun"></i>
+                    {{/if}}
+                </button>
+
+                {{!-- NEW Divider after Theme Button --}}
+                <div style="width: 1px; height: 20px; background: #999; margin: 0 4px;"></div>
+
+                {{!-- GM Only: Force Open for Players --}}
+                {{#if isGM}}
+                <button type="button" class="dh-control-btn" data-action="forceOpen" title="Show to Players (Force Open)">
+                    <i class="fas fa-users"></i> Show Players
+                </button>
+                {{/if}}
+
+                {{!-- Share Button --}}
+                <button type="button" class="dh-control-btn" data-action="sharePage" title="Send to Chat">
+                    <i class="fas fa-comment-alt"></i> Send to Chat
+                </button>
+            </div>
+
+            {{!-- Added container style override for images to remove padding --}}
+            <div class="journal-entry-page" {{#if isImage}}style="padding: 0; overflow: hidden; display: flex; background: #000;"{{/if}}>
+                {{{activeContent}}}
+            </div>
+        {{else}}
+            {{!-- Empty State with Avatar --}}
+            <div class="dh-empty-state-container">
+                <h2 class="dh-empty-title">Daggerheart</h2>
+                <h3 class="dh-empty-subtitle">Quick Rules</h3>
+                <p class="dh-empty-text">Select a page from the list to view its contents.</p>
+                
+                {{!-- Added Avatar Image --}}
+                <img src="modules/daggerheart-quickrules/assets/images/avatar.webp" class="dh-empty-state-img">
+            </div>
+        {{/if}}
+    </main>
+</div>
